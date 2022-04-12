@@ -1,0 +1,115 @@
+<form [formGroup]="contactform">
+<div class="container custom-container">
+    <div class="col-md-12">
+        <h2 class="mb-3 text-center mainheading">Contact Us</h2>
+
+        <div class="row">
+
+            <div class="col-sm-7">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.518199827196!2d80.25354211430522!3d13.066310916329535!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5266133ddd0001%3A0xfa6d3b7d8eb4abfc!2sKAINOS%20INNOVATIVE%20SOLUTIONS!5e0!3m2!1sen!2sin!4v1641373437865!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+             </div>
+
+            <div class="col-sm-5">
+                <!-- <h2 class="mb-3 text-left mainheading">Contact Us</h2> -->
+
+                <p class="text-black mb-50">It would be great to hear from you! If you got any questions, please do not hesitate to send us a message. We are looking forward to hearing from you! We reply within <span class="tooltip-content-2" data-original-title="Mon-Fri 10am–7pm (GMT +1)" data-toggle="tooltip" data-placement="top"> 24 hours !</span></p>
+
+                <div class="form-group form-inline">
+  
+                    <label class="lblwidthContactus">Name <span style="color: red;">*</span></label>
+
+                   <input type="text" style="width: 230px;"  [(ngModel)]="currentUsername"  class="form-control"  formControlName='name' placeholder="" value="{{currentUsername}}">
+                   
+                    <div *ngIf="contactform.controls['name'].touched && contactform.controls['name'].invalid "> 
+
+                   <div *ngIf="contactform.controls['name'].errors" style="color: red;"> 
+
+                   <div *ngIf="contactform.controls['name'].errors.required" style="margin-left: 107px;font-size: 12px;">
+                    Name is required.
+                </div> 
+                
+                </div>
+                </div>
+
+                </div>
+
+
+                <div class="form-group form-inline">
+                    <label class="lblwidthContactus">Phone Number<span style="color: red;">*</span> </label>
+                    <input type="text"  style="width: 175px;" [(ngModel)]="isloggedinUser" class="form-control" formControlName='mobileno' placeholder="" value="{{isloggedinUser}}" >
+                    
+                    <div *ngIf="contactform.controls['mobileno'].touched && contactform.controls['mobileno'].invalid "> 
+
+                        <div *ngIf="contactform.controls['mobileno'].errors" style="color: red;"> 
+     
+                        <div *ngIf="contactform.controls['mobileno'].errors.required" style="margin-left: 107px;font-size: 12px;">
+                            Mobile Number is required.
+                     </div>
+                     <div *ngIf="contactform.controls['mobileno'].errors.pattern" style="margin-left: 107px;font-size: 12px;">
+                        Mobile Number is not valid.
+                      </div>  
+                     </div>
+                     </div>
+                </div>
+                
+
+
+                <div class="form-group form-inline">
+                    <label class="lblwidthContactus">Email<span style="color: red;">*</span></label>
+                    <input type="text"  class="form-control"  formControlName='emailid' placeholder="">
+                    
+                    <div *ngIf="contactform.controls['emailid'].touched && contactform.controls['emailid'].invalid "> 
+
+                        <div *ngIf="contactform.controls['emailid'].errors" style="color: red;"> 
+     
+                        <div *ngIf="contactform.controls['emailid'].errors.required" style="margin-left: 107px;font-size: 12px;">
+                            Emailid is required.
+                     </div> 
+                     <div *ngIf="contactform.controls['emailid'].errors.pattern" style="margin-left: 107px;font-size: 12px;">
+                        Emailid is not valid.
+                   </div> 
+                     </div>
+                     </div>
+
+                
+                </div>
+
+                <div class="form-group form-inline">
+
+                   <label class="lblwidthContactus2" >Message <span style="color: red;">*</span></label>
+
+                    <textarea id="message" rows="3" style="border: 1px solid #000407;" class=" form-control2"  formControlName='message'></textarea>
+                    <div *ngIf="contactform.controls['message'].touched && contactform.controls['message'].invalid "> 
+
+                        <div *ngIf="contactform.controls['message'].errors" style="color: red;"> 
+     
+                        <div *ngIf="contactform.controls['message'].errors.required" style="margin-left: 107px;font-size: 12px;">
+                            Message is required.
+                     </div> 
+                    </div>
+                     </div>
+            
+
+                <div class="col-sm-12 message">
+                    <br><br>
+                    <button class="btn allSubmitbtn" [disabled]='!contactform.valid' (click)="submite(contactform.value)"  >Send Your Message</button>
+                </div>
+
+
+                <div class="form-group form-inline">
+                 <input type="hidden" [(ngModel)]="shopowner"  class="form-control"  formControlName='user_role' placeholder="" value="{{shopowner}}">
+              </div>
+
+      
+
+           
+
+        </div>
+
+
+
+        
+    </div>
+</div>
+
+<div style="height: 160px;"></div>

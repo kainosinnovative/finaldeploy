@@ -1,0 +1,346 @@
+
+
+.page.pdf span.date-toggle { 
+
+    display: none; 
+    
+    }
+
+.accordion{
+    // box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
+    margin: 12px;
+    margin-left:80px;
+
+    padding:10px;
+
+}
+ .accordion1{
+    // box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
+    margin: 12px;
+    margin-left:80px;
+
+    padding:10px;
+
+}
+
+.accordion2{
+    // box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
+    margin: 12px;
+    margin-left:80px;
+
+    padding:10px;
+
+}
+
+.title  {
+  padding-left: 6px;
+  background-color:#202c45;
+  color: white;
+}
+.title1
+{
+    padding-left: 6px;
+    background-color:#202c45;
+    color: white;
+}
+.title2
+{
+    padding-left: 6px;
+    background-color:#202c45;
+    color: white;
+}
+
+.content {
+  padding: 12px;
+}
+
+.content-container  {
+    overflow: hidden;
+    max-height: 0;
+    margin-left:20px;
+    margin-bottom:10px;
+}
+.content-container1
+{
+    overflow: hidden;
+    max-height: 0;
+    margin-left:20px;
+    margin-bottom:10px;
+}
+.content-container2
+{
+    overflow: hidden;
+    max-height: 0;
+    margin-left:20px;
+    margin-bottom:10px;
+}
+
+.content-container.opened  {
+  max-height: none;
+}
+.content-container1.opened1
+{
+    max-height: none;
+}
+.content-container2.opened2
+{
+    max-height: none;
+}
+.form-control
+{
+    width:300px;
+    font-size: 13px !important;
+    height: 28px;
+    padding-top: 3px;
+    padding-left: 2px !important;
+    display: inline;
+}
+
+
+.requiredfield
+{
+    color:red;
+}
+.selectoption
+{
+    height: 28px;
+    width: 170px !important;
+    padding-left: 2px !important;
+    // margin-left: 75px;
+
+
+}
+.selectoptiongender
+{
+    height: 28px;
+    width: 85px !important;
+    padding-top: 3px;
+    padding-left: 2px !important;
+    // margin-left: 12px;
+
+}
+
+// .city{
+//     padding-left: 2px !important;
+//     width: 170px;
+//     margin-left: 32px;
+//  }
+
+//  .cartype{
+//     padding-left: 2px !important;
+//     width: 200px;
+//     margin-left: 25px;
+//  }
+
+//  .fueltype{
+//     padding-left: 2px !important;
+//     width: 180px;
+//     margin-left: 19px;
+//  }
+
+//  .carbrand{
+//     padding-left: 2px !important;
+//     width: 260px !important;
+//     margin-left: 20px;
+//  }
+
+//  .carcolor{
+//     width: 175px;
+//     padding-left: 2px !important;
+//     margin-left: 24px;
+//  }
+
+//  .carmodel{
+//     padding-left: 2px !important;
+//     width: 240px;
+//     margin-left: 25px;
+//  }
+
+//  @media screen and (max-width: 768px){
+
+// .addresscls{
+//     width: 190px !important;
+// }
+
+// .streetcls{
+//     width: 200px !important;
+// }
+
+// .lastname{
+//     margin-top: 22px !important;
+// }
+
+.emailid{
+    width: 209px !important;
+    //margin-top: 22px !important;
+    // margin-left: 70px;
+ }
+// .gendercls{
+//     margin-left: 60px;
+// }
+// .citycls{
+//     margin-left: 80px;
+//     width: 180px !important;
+// }
+// .cartypecls{
+//     margin-left: 49px !important;
+// }
+// .fueltype{
+//     margin-left: 44px !important;
+// }
+// .carbrand{
+//     margin-left: 42px !important;
+//     width: 198px !important;
+//     margin-top: 22px !important;
+// }
+// .carcolor{
+//     margin-left: 44px !important;
+// }
+// .carmodel{
+//     margin-left: 39px !important;
+//     width: 205px !important;
+//     margin-top: 22px !important;
+//       }
+
+// .emailvalid{
+//     margin-left: 112px !important;
+//       }
+
+//  .gendervalid{
+//         margin-left: 112px !important;
+//           }
+//  .cityvalid{
+//      margin-left: 112px !important;
+//   }
+//   .cartypevalid{
+//     margin-left: 112px !important;
+//  }
+//  .fueltypevalid{
+//     margin-left: 112px !important;
+//  }
+//  .carbrandvalid{
+//     margin-left: 112px !important;
+//  }
+//  .carcolorvalid{
+//     margin-left: 112px !important;
+//  }
+//  }
+
+select {
+    height: 28px;
+}
+
+input {
+    height: 28px;
+}
+
+.customerProfileLbl{
+    width: 130px;
+}
+
+@media screen and (max-width: 768px){
+.mobilecarDeatail{
+    width: 400px;
+}
+.labelFieldSpace{
+    display: block !important;
+}
+
+}
+
+@media screen and (min-width: 768px){
+.webonlybtn{
+    margin-left: -78px;
+}
+.webbuttonAddCustomer{
+    margin-top: -55px;
+  }
+}
+
+
+.slick-slider {
+    width: 88%;
+    margin: auto;
+    background: rgb(14, 13, 13);
+  }
+
+body .slick-prev,
+body .slick-next {
+    height: 45px;
+    width: 40px;
+    background: #15e65b !important;
+    z-index: 100;
+}
+
+.slick-prev:before, .slick-next:before {
+
+  color: black !important;
+
+}
+
+.btn-success1{
+    color: #fff;
+    background-color: #0c6dbd;
+    //border-color: #1872f3;
+}
+
+.noBorder  {
+    border-bottom: hidden;
+    border-right: hidden;
+    border-left: hidden;
+    border-top: hidden;
+  }
+  .carousel-item {
+    height: 65vh;
+     min-height: 250px;
+    background: no-repeat center center scroll;
+
+//     transition: -webkit-transform 0.1s ease;
+//   transition: transform 0.1s ease;
+//   transition: transform 0.1s ease, -webkit-transform 0.1s ease;
+    // -webkit-background-size: cover;
+    // -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+  .slick-slider {
+    width: 90% !important;
+    margin: auto !important;
+  }
+
+  #container {
+    width: 100%;
+    margin: 5em auto;
+    padding: 0;
+    .ng2-carouselamos-container{
+        width: 70%;
+        margin: auto;
+    }
+    .slide-items{
+        margin-right: 10px;
+        img{
+            width: 210px;
+        }
+    }
+}
+
+
+.slick-slide {
+    width: 14vw !important;
+    // for absorbing width from @Ken Wheeler answer
+    box-sizing: border-box !important;
+}
+.slick-slider{
+    width: 70% !important;
+    margin: auto;
+    height:180px !important;
+    background: #f8f8f5 !important;
+}
+
+.table>:not(:first-child) {
+    border-top: 1px solid #c4c3c3 !important;
+}
+
+.thfontwt {
+font-weight: normal;
+}

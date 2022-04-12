@@ -1,0 +1,107 @@
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+
+<section class="team-section text-center my-5" style="overflow: hidden;">
+
+
+  
+
+
+  <h2 *ngIf="fetchdata1 !=''" class="h1-responsive fontsize-text mainheading">Testimonials</h2>
+
+  
+
+
+  <div class="row text-center" style="margin-left:50px;margin-right:50px;">
+
+    
+
+
+    <div class="col-md-4 mb-md-0 mb-5" *ngFor="let test of fetchdata1; let i=index; " >
+      
+      <div class="testimonial" >
+<!-- <p>{{i}}</p> -->
+        <div class="avatar mx-auto">
+          <div *ngIf="test.profile_img"><img style="width: 100px;height: 100px;padding:5px;" src="{{apiurlforhtm}}/{{test.profile_img}}" class="rounded-circle"></div>
+          <div *ngIf="!test.profile_img"> <img style="width: 100px;height: 100px;padding:5px;" src="{{apiurlforhtm}}/images/avatar.png" class="rounded-circle"></div>
+        </div>
+        <!--Content-->
+        <h4 class="font-weight-bold dark-grey-text mt-4 subheading">{{test.firstname}}</h4>
+        <!-- <h6 class="font-weight-bold blue-text my-3">{{test.user_title}}</h6> -->
+        <p style="height: 54px;" class="font-weight-normal dark-grey-text secondsubheading">
+          {{test.user_description}}
+      </p>
+        <!--Review-->
+
+        <!-- <div role="progressbar"   style="--value:{{test.user_rating}}"></div> -->
+
+        <!-- <span><circle-progress [percent]="70" [radius]="40" [outerStrokeWidth]="2" 
+  [outerStrokeColor]="'#3777BE'" [innerStrokeColor]="'#7f9fc1'" 
+ ></circle-progress></span> -->
+
+        <!-- <div class="inside-circle"> 75% </div> -->
+        
+        <div *ngIf="test.user_rating == 1">
+          
+          <span  class="fa fa-star checked"></span>
+<span  class="fa fa-star "></span>
+<span  class="fa fa-star "></span>
+<span  class="fa fa-star"></span>
+<span  class="fa fa-star"></span>
+</div>
+
+<div *ngIf="test.user_rating == 2">
+          
+  <span  class="fa fa-star checked"></span>
+<span  class="fa fa-star checked"></span>
+<span  class="fa fa-star "></span>
+<span  class="fa fa-star"></span>
+<span  class="fa fa-star"></span>
+</div>
+
+<div *ngIf="test.user_rating == 3">
+ 
+  <span  class="fa fa-star checked"></span>
+<span  class="fa fa-star checked"></span>
+<span  class="fa fa-star checked"></span>
+<span  class="fa fa-star"></span>
+<span  class="fa fa-star"></span>
+</div>
+
+<div *ngIf="test.user_rating == 4">
+          
+  <span  class="fa fa-star checked"></span>
+<span  class="fa fa-star checked"></span>
+<span  class="fa fa-star checked"></span>
+<span  class="fa fa-star checked"></span>
+<span  class="fa fa-star"></span>
+</div>
+
+<div *ngIf="test.user_rating == 5">
+          
+  <span  class="fa fa-star checked"></span>
+<span  class="fa fa-star checked"></span>
+<span  class="fa fa-star checked"></span>
+<span  class="fa fa-star checked"></span>
+<span  class="fa fa-star checked"></span>
+</div>
+       
+      </div>
+
+      <!-- <i style="color:red" class="fa fa-less-than"></i> -->
+
+    </div>
+   
+    
+
+
+    
+    <!--Grid column-->
+
+  </div>
+  <!--Grid row-->
+
+</section>
+<!-- Section: Testimonials v.3 -->
+
+<br>
+

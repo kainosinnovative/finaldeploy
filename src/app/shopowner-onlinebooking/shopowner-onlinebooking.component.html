@@ -1,0 +1,557 @@
+
+
+<div id="movetopid"></div>
+<h2 class="mainheading" style="text-align:center;">Online Booking</h2>
+
+<div style="text-align: center;" >
+  <img src="{{apiurlforhtm}}/{{ShopProfileDetailsLogo}}" style="width: 50px;margin-top: -7px;"><b class="subheading"> {{ShopProfileDetailsName}}</b>
+  </div>
+
+<div >
+
+  <form [formGroup]="onlinebooking" class="form-container" >
+      <mat-card style="border: 1px solid #aeaeae;background-color: #f3f3f3;">
+
+        <!-- <mat-card-header>
+          <mat-card-title>
+            <h2 class="mainheading" style=" margin-top: -17px;">  Booking Details</h2>
+            </mat-card-title>
+        </mat-card-header> -->
+
+
+        <div class="row" style="padding-top: 10px;padding-bottom: 10px;margin-left: -1px;">
+          <div class="col-sm-7">
+            <h2 class="mainheading" >  Booking Details</h2>
+          <div class="table-responsive">
+          <table>
+
+            <tr >
+              <td style="width: 190px">
+                <!-- <div > -->
+                <label>Customer <span class="requiredfield">  *</span></label> <br>
+                <select   class="carmodelcls" formControlName="Customer_id"  style="border: 1px solid;height: 34px;width: 180px;background: white;" (change)="loadcarDetailsById($event)" id="customerid2">
+
+                  <option value="">--Select--</option>
+                  <option *ngFor="let c1 of custDetBycity1" [value]="c1.customer_id">
+                    {{c1.firstname}}-{{c1.mobileno}}
+                    </option>
+                   </select>
+                  <!-- </div> -->
+
+                   <div *ngIf="onlinebooking.controls['Customer_id'].touched && onlinebooking.controls['Customer_id'].invalid">
+
+                    <div *ngIf="onlinebooking.controls['Customer_id'].errors" style="color: red;">
+                      <div *ngIf="onlinebooking.controls['Customer_id'].errors.required" style="font-size: 11px;">
+                          Select customer
+                      </div>
+
+                   </div>
+
+                  </div>
+              </td>
+              <td style="width: 50px"></td>
+
+              <td style="width: 129px">
+                <div >
+                <label>Model <span class="requiredfield">  *</span></label> <br>
+                <select   class="carmodelcls" formControlName="model_id"  style="border: 1px solid;height: 34px;width: 119px;background: white;" (change)="getRegistrationNumberByModel($event)">
+
+                  <option value="">--Select--</option>
+                  <option *ngFor="let c1 of carDetailsById1" [value]="c1.model">
+                    {{c1.model_name}}
+                    </option>
+                   </select>              </div>
+
+                   <div *ngIf="onlinebooking.controls['model_id'].touched && onlinebooking.controls['model_id'].invalid">
+
+                    <div *ngIf="onlinebooking.controls['model_id'].errors" style="color: red;">
+                      <div *ngIf="onlinebooking.controls['model_id'].errors.required" style="font-size: 11px;">
+                          Select model
+                      </div>
+
+                   </div>
+
+                  </div>
+              </td>
+
+              <td style="width: 50px"></td>
+
+              <td style="width: 130px">
+
+                <div >
+                <label>Registration No<span class="requiredfield">  *</span></label> <br>
+                <select   class="carmodelcls" formControlName="vehicle_number" id="box1"  style="border: 1px solid;height: 34px;width: 119px;background: white;"  >
+
+                  <!-- <option value="">--Select--</option>   -->
+                  <option *ngFor="let c2 of carDetailsById3" [value]="c2.vehicle_number">
+                    {{c2.vehicle_number}}
+                    </option>
+                   </select>
+
+                   <div *ngIf="onlinebooking.controls['vehicle_number'].touched && onlinebooking.controls['vehicle_number'].invalid">
+
+                    <div *ngIf="onlinebooking.controls['vehicle_number'].errors" style="color: red;">
+                      <div *ngIf="onlinebooking.controls['vehicle_number'].errors.required" style="font-size: 11px;">
+                          Select reg.no
+                      </div>
+
+                   </div>
+
+                  </div>
+                </div>
+              </td>
+
+              <td style="width: 50px"></td>
+
+              <td style="width: 120px">
+                <div >
+                <label>Booking Date <span class="requiredfield">  *</span></label> <br>
+                <input class="datecls" type="date" min="{{current_date}}" style="border: 1px solid;height: 34px;width: 110px;background: white;" matinput="" formControlName="bookingdate" placeholder="Date From" id="booking_date" >
+              </div>
+              </td>
+
+              <td style="width: 50px"></td>
+
+
+
+              <!-- <td >
+                <label style="width: 1px;"></label>
+              </td> -->
+
+
+            </tr>
+          </table>
+<br>
+          <table>
+<tr>
+  <td style="width: 170px;">
+    <div  *ngIf="getPickupAvlData2 == 1">
+      <label class="pickupDroplbl">Do you need pick-up and drop?</label>
+<br>
+
+      <label>No</label> &nbsp;
+      <label class="switch" >
+        <input (change)="disabledPickupDetails()" type="checkbox" formControlName="pickup_drop" >
+        <span class="slider round"></span>
+      </label> &nbsp;
+      <label>Yes</label>
+
+
+
+      </div>
+  </td>
+</tr>
+          </table>
+<br>
+          <table>
+
+
+            <tr>
+
+              <!-- <td >
+                <label style="width: 1px;"></label>
+              </td> -->
+              <td  style="width: 241px;">
+                <div id="pickupdateTdid" *ngIf="getPickupAvlData2 == 1" style="width: 110px;">
+                <label >Pick-up Date <span class="requiredfield">  *</span></label>
+    <br>
+
+    <input class="datecls" min="{{current_date}}" type="date" (change)="dropdatapicker()" style="border: 1px solid;height: 34px;width: 116px;" matinput="" formControlName="pickup_date" id="pickup_dateid2" placeholder="Date From" >
+</div>
+              </td>
+
+              <!-- <td >
+                <label style="width: 20px;"></label>
+              </td> -->
+
+              <td style="width: 178px;" class="pickuptimeMob">
+                <div *ngIf="getPickupAvlData2 == 1" id="pickuptimetdid" style="width: 67px;">
+                <label >Pick-up time</label>
+    <br>
+    <select style="height: 34px;" formControlName="pickup_time" class="fromdata">
+      <option value="">--Select---</option>
+      <!-- <option value="12:00 am">12:00 am</option>
+      <option value="1:00 am">1:00 am</option>
+      <option value="2:00 am">2:00 am</option>
+      <option value="3:00 am">3:00 am</option>
+      <option value="4:00 am">4:00 am</option>
+      <option value="5:00 am">5:00 am</option>
+      <option value="6:00 am">6:00 am</option>
+      <option value="7:00 am">7:00 am</option>
+      <option value="8:00 am">8:00 am</option>
+      <option value="9:00 am">9:00 am</option> -->
+      <option value="10:00 am">10:00 AM</option>
+      <option value="11:00 am">11:00 AM</option>
+      <option value="12:00 pm">12:00 PM</option>
+      <option value="1:00 pm">1:00 PM</option>
+      <option value="2:00 pm">2:00 PM</option>
+      <option value="3:00 pm">3:00 PM</option>
+      <option value="4:00 pm">4:00 PM</option>
+      <option value="5:00 pm">5:00 PM</option>
+      <!-- <option value="6:00 pm">6:00 pm</option>
+      <option value="7:00 pm">7:00 pm</option>
+      <option value="8:00 pm">8:00 pm</option>
+      <option value="9:00 pm">9:00 pm</option>
+      <option value="10:00 pm">10:00 pm</option>
+      <option value="11:00 pm">11:00 pm</option> -->
+    </select>
+
+                      <!-- <select  style="height: 34px;" formControlName="pickup_time" class="fromdata" >
+                        <option value="">--Select---</option>
+                        <option value="9">9 AM</option>
+                        <option value="9.30">9.30 AM</option>
+                        <option value="10">10 AM</option>
+                        <option value="10.30">10.30 AM</option>
+                        </select> -->
+                      </div>
+              </td>
+
+              <!-- <td >
+                <label style="width: 20px;"></label>
+              </td> -->
+
+              <td style="width: 180px;" class="dropdateMob">
+                <div id="dropdatetdid" *ngIf="getPickupAvlData2 == 1" style="width: 110px;">
+                <label >Drop Date</label>
+    <br>
+
+
+    <input class="datecls" min="{{current_date}}" type="date" style="border: 1px solid;height: 34px;width: 116px;" matinput="" formControlName="drop_date" placeholder="Date From" (change)="dropdatapicker()" id="drop_dateid">
+    <br>  <span id="enddate_message1" style="color: red;display: none;">To date Invalid</span>
+           </div>
+
+
+
+
+              </td>
+              <td style="width: 173px;">
+                <div id="droptimetdid" *ngIf="getPickupAvlData2 == 1" style="">
+                <label >Drop time</label>
+    <br>
+
+                      <select formControlName="drop_time" style="height: 34px;background: white;"  class="fromdata" >
+                        <option value="">--Select---</option>
+                        <!-- <option value="12:00 am">12:00 am</option> -->
+      <!-- <option value="1:00 am">1:00 am</option>
+      <option value="2:00 am">2:00 am</option>
+      <option value="3:00 am">3:00 am</option>
+      <option value="4:00 am">4:00 am</option>
+      <option value="5:00 am">5:00 am</option>
+      <option value="6:00 am">6:00 am</option>
+      <option value="7:00 am">7:00 am</option>
+      <option value="8:00 am">8:00 am</option>
+      <option value="9:00 am">9:00 am</option> -->
+      <option value="10:00 am">10:00 AM</option>
+      <option value="11:00 am">11:00 AM</option>
+      <option value="12:00 pm">12:00 PM</option>
+      <option value="1:00 pm">1:00 PM</option>
+      <option value="2:00 pm">2:00 PM</option>
+      <option value="3:00 pm">3:00 PM</option>
+      <option value="4:00 pm">4:00 PM</option>
+      <option value="5:00 pm">5:00 PM</option>
+      <!-- <option value="6:00 pm">6:00 pm</option>
+      <option value="7:00 pm">7:00 pm</option>
+      <option value="8:00 pm">8:00 pm</option>
+      <option value="9:00 pm">9:00 pm</option>
+      <option value="10:00 pm">10:00 pm</option>
+      <option value="11:00 pm">11:00 pm</option> -->
+                        </select>
+                        </div>
+              </td>
+
+
+            </tr>
+          </table>
+<br>
+          <table>
+<tr>
+  <td  style="width: 330px;">
+    <div id="pickupupDropInstructionId" *ngIf="getPickupAvlData2 == 1" >
+    <label >Pickup & Drop Instructions <span class="requiredfield">  *</span></label>
+    <!-- <p style="margin-top: 10px;"></p> -->
+    <!-- <br> -->
+      <textarea class="textcls" formControlName="instructions" style="border: 1px solid;height: 34px;width: 673px !important;" id="instructions" matinput="" placeholder=""></textarea>
+
+      <div *ngIf="onlinebooking.controls['bookingdate'].touched && onlinebooking.controls['bookingdate'].invalid ">
+        <div *ngIf="onlinebooking.controls['bookingdate'].errors" style="color: red;">
+         <div *ngIf="onlinebooking.controls['bookingdate'].errors.required" style="margin-left: 0px;font-size: 12px;">
+             Select Date
+         </div>
+       </div>
+     </div>
+    </div>
+  </td>
+</tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="col-sm-5">
+        <div *ngIf="offerslist != null && offerslist.length !=0">
+        <h2 class="mainheading" style="text-align: center;">Deal Of The Day (offers)</h2>
+<!-- <div class="accordion1" *ngIf="offerslist != null && offerslist.length !=0"> -->
+  <!---End of Booking details-->
+
+
+     <!-- <h2 class="title1 subheading"  (click)="opened1 = !opened1">Deal Of The Day (offers)  <i class="fa fa-chevron-down"></i> </h2>  -->
+     <!-- <div class="content-container1" [class.opened1]="opened1"> -->
+
+ <div class="row" >
+   <!-- <div class="col-sm-12">
+     <div class="container"> -->
+
+     <ngx-slick-carousel class="carousel" style="width:100%;background: none;"
+                     #slickModal="slick-carousel"
+                     [config]="slideConfig1"
+                     (init)="slickInit1($event)"
+                     (breakpoint)="breakpoint1($event)"
+                     (afterChange)="afterChange1($event)"
+                     (beforeChange)="beforeChange1($event)">
+     <div ngxSlickItem *ngFor="let s of offerslist" class="slide1" style="width:100%;">
+       <div class=" card" >
+         <!-- <div class="image-container oneimage" style="border:1px solid;background-image: url('')" > -->
+              <div class="first">
+                 <div class="d-flex justify-content-between align-items-center">
+                   <span style="margin-left: 6px;margin-top: 5px;"*ngIf="s.offer_percent != 0" class="discount">Up to {{s.offer_percent}}% Off</span>
+                   <span *ngIf="s.offer_percent == 0" class="discount"></span>
+
+                   <!-- <span  class="discount2"> {{s.offer_name}} </span> -->
+
+                   <ng-template  #other_content1></ng-template>
+
+                   <!-- <span  *ngIf = "date >= s.leave_from_date && date <= s.leave_to_date;else other_content1" class="openClosed">Closed</span> -->
+
+                   <!-- <span class="wishlist"><i class="fa fa-heart-o"></i></span>  -->
+                 </div>
+             </div>
+
+         <!-- </div> -->
+
+         <div class="row" >
+          <table>
+            <tr>
+              <td>
+               <p class="subheading" style="margin-left: 19px;"><i class="fa fa-car" style="color: #429c68;"></i>&nbsp; <b >{{s.offer_name}}</b></p>
+
+              </td>
+
+              <td>
+                <div id="checkmarkicon_{{s.offer_id}}" style="display: none;" class="wrapper"> <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                  <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none" />
+                  <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
+              </svg>
+          </div>
+               <!-- <i id="checkmarkicon_{{s.offer_id}}" style="font-size: 40px;color: #ff2007;display: none;" class="fa fa-check-circle"></i> -->
+
+              </td>
+            </tr>
+          </table>
+
+
+        </div>
+
+         <div class="product-detail-container p-2">
+
+           <div class="d-flex justify-content-between align-items-center pt-1">
+             <!-- <div class="color-select d-flex ">
+               <img src="" style="width: 50px;margin-top: -7px;"> {{s.name}}
+               </div> -->
+          </div>
+
+
+
+           <!-- <span ><i class="fa fa-car" style="color: #429c68;"></i>&nbsp; <b>{{s.offer_name}}</b></span>
+<br> -->
+             <b>Services:</b>
+              <div style="height: 50px;overflow: auto;">
+              <div *ngFor="let m of  s.services.split(',');let j=index" >
+               <div *ngFor="let m1 of  MasterServiceid1;" >
+              <span *ngIf="m === m1.service_id"><i class="fa fa-check-circle" style="color: #429c68;"></i>&nbsp; {{m1.service_name}}</span>
+              </div>
+              </div>
+              </div>
+
+
+             <div class="d-flex justify-content-between align-items-center">
+                 <h5 class="dress-name">{{s.model_name}}</h5>
+              </div>
+
+             <div class="d-flex justify-content-between align-items-center" style="height:20px">
+               <h5 *ngIf="s.offer_percent != 0"  class="dress-name">Offer Price &nbsp; <i class="fa fa-rupee"></i> &nbsp;
+                 <span class="offerpriceMobile" style="display: none;">
+
+                 </span><input type="text" readonly id="offerprice_{{s.offer_id}}" class="combovaluebox" value="{{s.combo_price}}">  /-</h5>
+               <h5 *ngIf="s.offer_percent == 0" class="dress-name">Price <i class="fa fa-rupee"></i>
+                 <span class="offerpriceMobile" style="display: none;"></span>
+                 <input type="text" readonly id="offerprice_{{s.offer_id}}" class="combovaluebox" value="{{s.original_amount}}">  /-</h5>
+              </div>
+
+              <div class="d-flex justify-content-between align-items-center">
+               <span *ngIf="s.offer_percent != 0"><b>Save Upto </b> <i class="fa fa-rupee"></i> {{s.original_amount - s.combo_price }}</span>
+             </div>
+
+           <!-- <div class="d-flex justify-content-between align-items-center pt-1">
+             <span *ngIf="s.offer_percent != 0" class="buy">Save Upto <i class="fa fa-rupee"></i> {{s.original_amount - s.combo_price }} +</span>
+           </div> -->
+
+           <!-- <a  style="text-decoration: none;cursor: pointer;" class="booknowntn"  >Book Now</a> -->
+
+<div style="text-align: right;">
+        <button id="select_{{s.offer_id}}" (click)="changeBgColor(s.offer_id);getComboOfferDetails(s.offer_id,s.combo_price,s.offer_name)"   class="comboselectbtm" >{{text}}</button>    </div>
+       </div>
+     </div>
+     </div>
+</ngx-slick-carousel>
+
+<br><br><br>
+<div class="comboofferpricediv" style="font-size: 17px;margin-top: 15px;text-align: center;">
+<input type="hidden" formControlName="combo_id" id="ComboPrimaryIdArr" class="selectnow2"  >
+<label class="mainheading" id="name" >Combo Offer price </label> &nbsp; <i style="margin-right: -13px;" class="fa fa-rupee"></i>
+<input type="number" readonly id="finalamount" formControlName="comboprice_total" class="selectnow2"  >
+<br>
+<!-- <div > -->
+ <p style="text-align: center" id="offernameShow"></p>
+<!-- </div> -->
+
+<!-- </div>
+</div> -->
+</div>
+</div>
+<!-- </div> -->
+<!-- </div> -->
+</div>
+      </div>
+
+     </div>
+    <br>
+
+        <!-- </mat-card-title>
+     </mat-card-header>  -->
+
+
+      <!---End of Pricing plan-->
+<br>
+
+<div class="accordionShopBooking" *ngIf="shopdetails1 != null && shopdetails1.length !=0">
+  <h2 class="title subheading"  (click)="opened = !opened">Add Extra Services <i class="fa fa-chevron-down"></i> </h2>
+  <div class="content-container" [class.opened]="opened">
+    <div class="row">
+      <div class="col-sm-6 heightdiv" style="display: inline;" *ngFor="let shoplist of shopdetails1;let j=index" >
+
+        <!-- <ng-template  #other_content><span  class="openClosed">no</span></ng-template>
+
+                      <span #other_content *ngIf = "date2 >= shoplist.from_date && date2 <= shoplist.to_date && shoplist.offer_percent!=0;else other_content" class="openClosed">yes</span> -->
+
+
+        <div class="extser">
+
+          <div class="d-flex justify-content-between align-items-center" *ngIf = "date2 >= shoplist.from_date && date2 <= shoplist.to_date && shoplist.offer_percent!=0;">
+             <span class="discount2" >Up to {{shoplist. offer_percent}}% Off {{shoplist.is_pickup_drop_avl}}</span>
+        </div>
+          <!--Section: Content-->
+            <div class="text-center white-text d-md-flex justify-content-between p6 indigo lighten-2"  >
+              <div class="servicename">
+               <p class="font-weight-bold;back" >
+                {{shoplist.service_name}}</p>
+               </div>
+              <br>
+              <div class="serviceprice">
+                <ng-template  #other_content>
+                  <p  > Service Price @
+                    <input readonly type="text" class="selectnow3" value="{{shoplist.actual_amount}}" id="amount_{{shoplist.service_id}}">
+                  </p>
+
+                </ng-template>
+
+                <p #other_content *ngIf = "date2 >= shoplist.from_date && date2 <= shoplist.to_date && shoplist.offer_percent!=0;else other_content" > Offer Price @
+                  <input readonly type="text" class="selectnow3" value="{{shoplist.offer_price}}" id="amount_{{shoplist.service_id}}">
+                </p>
+
+                      <!-- <span #other_content *ngIf = "date2 >= shoplist.from_date && date2 <= shoplist.to_date && shoplist.offer_percent!=0;else other_content" class="openClosed">yes</span> -->
+              </div>
+              <!-- <div class="serviceprice">
+              <p *ngIf="shoplist.offer_percent!=0" > Offer Price @
+                <input readonly type="text" class="selectnow3" value="{{shoplist.offer_price}}" id="amount_{{shoplist.service_id}}">
+              </p>
+
+              <p *ngIf="shoplist.offer_percent ==0" > Service Price @
+                <input readonly type="text" class="selectnow3" value="{{shoplist.actual_amount}}" id="amount_{{shoplist.service_id}}">
+              </p>
+            </div> -->
+
+            <div class="MobServSelectbtn">
+              <button id="chooice_{{shoplist.service_id}}" class="selectnow" (click)="selectbuttoncolor(shoplist.service_id,shoplist.j)">{{textcontent}}</button>
+            </div>
+
+
+
+            </div>
+
+
+
+      </div>
+      <br>
+
+  </div>
+</div>
+
+</div>
+</div>
+
+      <!-- <mat-card-header>
+         <mat-card-title>
+          <h2 class="mainheading" style="margin-top: -17px;margin-left: -17px;">Add Extra  Services</h2>
+          </mat-card-title>
+       </mat-card-header>  -->
+      <mat-card-content >
+
+
+
+    </mat-card-content>
+
+    <div style="font-size: 17px;text-align: right;margin-right: 28px;">
+      <div *ngIf="shopdetails1 != null && shopdetails1.length !=0">
+        <label class="mainheading">Extra Services price: </label> &nbsp; <i style="margin-right: -13px;" class="fa fa-rupee"></i>
+      <input readonly type="number" id="totalamount" formControlName="serviceprice_total" class="selectnow2"  >
+    </div>
+<br><br>
+<!-- <input  type="checkbox" id="vehicle1" name="vehicle1" checked formControlName="payment_type" disabled> &nbsp;
+<label for="vehicle1"> Cash On Delivery</label> &nbsp; &nbsp; -->
+
+<label class="mainheading">Payment Type: </label>
+      <input readonly type="text" formControlName="payment_type" style="margin-left: 4px;border: none;width: 129px;color: #198754;font-weight: bold;"   class="selectnow2"  >
+&nbsp;
+<input type="hidden" formControlName="services"  class="selectnow2"  >
+<label class="mainheading">Net Amount Payable: </label> &nbsp; <i style="margin-right: -13px;" class="fa fa-rupee"></i>
+      <input readonly type="number" formControlName="payable_amt" id="final_totalamount" class="selectnow2"  >
+      <br><br>
+
+
+      <!-- <br> <br> -->
+
+      <button class="allSubmitbtn btn" mat-raised-button=""  [disabled]='!onlinebooking.valid' (click)="OnlineBooking(onlinebooking.value)">Confirm Booking</button>
+      </div>
+
+     <mat-card-actions style="text-align: right;">
+
+     <!-- <label>Totally:</label> -->
+
+     <!-- <input type="number" id="finalamount" class="selectnow2"  > -->
+     </mat-card-actions>
+
+   </mat-card>
+    </form>
+    </div>
+    <script>
+    function slideShowController($scope, $timeout) {
+      var slidesInSlideshow = 4;
+      var slidesTimeIntervalInMs = 3000;
+
+      $scope.slideshow = 1;
+      var slideTimer =
+      $timeout(function interval() {
+          $scope.slideshow = ($scope.slideshow % slidesInSlideshow) + 1;
+          slideTimer = $timeout(interval, slidesTimeIntervalInMs);
+          }, slidesTimeIntervalInMs);
+        }
+          </script>

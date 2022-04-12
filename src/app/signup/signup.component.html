@@ -1,0 +1,89 @@
+
+
+<form [formGroup]="dataForm3" (ngSubmit)="sendotp3(dataForm3.value)">
+  <div fxLayout="row" fxLayoutAlign="center center" class="login-main signupMobile" style="width: 280px;">
+
+    <div  style="text-align: right;margin-top: -15px;margin-right: -9px;">
+      <a style="cursor: pointer;font-size: 20px;" (click)="closeMe()">×</a>
+    </div>
+    
+    <mat-card-header style="padding-left: 33%;margin-bottom: 10px;" >
+      <mat-card-title class="mainheading">Sign Up</mat-card-title>
+      <br>
+    </mat-card-header>
+ 
+
+     <div>
+
+
+        <input style=" height: 32px;  width: 295px;border:1px solid; " class="form-control signupname" type="text" matInput placeholder="Your name" formControlName='username'>
+
+        <div *ngIf="dataForm3.controls['username'].touched && dataForm3.controls['username'].invalid "> 
+          
+          <div *ngIf="dataForm3.controls['username'].errors" style="color: red;font-size: 12px;"> 
+            <div *ngIf="dataForm3.controls['username'].errors.required" >
+                Name is required.
+            </div> 		   
+           
+         </div> 
+          
+        </div>
+
+        </div>
+
+        <label style="margin-top: 10px;"></label>
+        <div>
+
+        <input style=" height: 32px;  width: 295px;border:1px solid; " type="text" class="form-control signupemailText"  placeholder="Email" formControlName='emailid'>
+        <div *ngIf="dataForm3.controls['emailid'].touched && dataForm3.controls['emailid'].invalid "> 
+          
+          <div *ngIf="dataForm3.controls['emailid'].errors" style="color: red;font-size: 12px"> 
+            <div *ngIf="dataForm3.controls['emailid'].errors.required" >
+                Email id is required.
+            </div> 		   
+            <div *ngIf="dataForm3.controls['emailid'].errors.pattern" >
+                 Email id is not valid.
+            </div> 
+         </div> 
+          
+        </div>
+        </div>
+
+        <label style="padding-left: 8%;"> </label>
+
+        <div>
+        <select id = "myList" onchange = "favTutorial()"  style=" height: 32px;width: 63px;">   
+         
+          <option> + 91</option>  
+           </select>  
+
+           <label style="padding-left: 2%;"> </label>
+
+          <input style=" height: 32px;  width: 75%;border:1px solid;" type="text" matInput placeholder="Mobile number" formControlName='registermobno' (keyup)="removeErrorMsg()">
+
+          <div *ngIf="dataForm3.controls['registermobno'].touched && dataForm3.controls['registermobno'].invalid "> 
+          
+            <div *ngIf="dataForm3.controls['registermobno'].errors" style="color: red;font-size: 12px"> 
+              <div *ngIf="dataForm3.controls['registermobno'].errors.required" >
+                  Mobile Number is required.
+              </div> 		   
+              <div *ngIf="dataForm3.controls['registermobno'].errors.pattern" >
+                Mobile Number is not valid.
+              </div> 
+           </div> 
+            
+          </div>
+
+           </div>
+ <br>
+
+ <p id="pleaseregister1" style="color:red;font-size: 13px;"></p>
+
+    <mat-card-actions style="text-align: center;">
+        <button mat-raised-button class="" style="border-radius: 21px;width: 92%;border: 1px solid  black;background-color: white !important" [disabled]='!dataForm3.valid'>Receive a Code Via SMS</button>
+    </mat-card-actions>
+
+    
+</div>
+</form>
+   

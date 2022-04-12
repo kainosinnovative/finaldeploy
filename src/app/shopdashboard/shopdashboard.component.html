@@ -1,0 +1,439 @@
+
+ <div class="accordion" >
+  <h2 class="title subheading"  (click)="opened = !opened">Upcoming Booking <i class="fa fa-chevron-down"></i> </h2>
+  <div class="content-container " [class.opened]="opened" >
+    <div class="table-responsive" >
+    <table  class="table  servicecss" *ngIf="posts"  datatable="ng"  datatable [dtOptions]="dtOptions" style="border: 0.5px solid #000000 !important">
+      <thead style="color: black;text-align: left;background-color: #80808091;">
+
+          <tr>
+          <th  style="display:none;width: 0px;">b</th>
+          <th style="width:8%;text-align: center;padding-left: 12px;" class="fontwghtcls">Booking Id</th>
+          <th style="width: 12%;text-align: center; padding-left: 0px;" class="fontwghtcls">Registration No</th>
+          <th style="width:8%;text-align: center;" class="fontwghtcls">Date</th>
+          <th style="width:18%;text-align: center;" class="fontwghtcls">Customer Name</th>
+           <th style="width:10%;text-align: center;" class="fontwghtcls">Total (<span><i class="fa fa-rupee"></i></span>) </th>
+           <th style="width:5%;text-align: center;" class="fontwghtcls">Confirm</th>
+          <th style="width:5%;text-align: center;" class="fontwghtcls">Reject</th>
+
+
+        </tr>
+      </thead>
+
+      <tbody >
+        <tr *ngFor="let b of  posts | paginate: config ;  let i=index;" style="border-bottom:1px solid #aeaeae;text-align: left;">
+
+          <td style="display:none;width: 0px;">{{b.id}}</td>
+          <td class="fontwghtcls"><a style="cursor: pointer;color: #26a0fc;text-decoration: underline;margin-left: 51px;"  (click)="ViewDetailsPopup(b.Booking_id,'Upcoming Booking')" >{{b.Booking_id}}</a></td>
+          <td ><p style="margin-left: 75px;">{{b.vehicle_number}}</p></td>
+          <td>
+            <p style="margin-left: 69px;">{{b.bookingdate | date: 'dd-MM-yyyy'}}</p>
+            <!-- <input type="date" value="{{b.bookingdate}}" readonly style="width: 110px;border: none;"> -->
+          </td>
+          <td><p style="margin-left: 145px;">{{b.firstname}}</p></td>
+          <!-- <td>     {{b.combo_id}}           </td>  -->
+          <!-- <td>{{b.comboprice_total}}</td> -->
+          <!-- <td>
+            <div *ngIf="b.services != null">
+            <div *ngFor="let m of  b.services.split(',');let j=index" >
+              <div *ngFor="let m1 of  MasterServiceData1;" >
+
+<span *ngIf="m === m1.service_id"><i class="fa fa-check-circle" style="color: #429c68;"></i>&nbsp; {{m1.service_name}}</span>
+              </div>
+
+            </div>
+          </div>
+            </td>  -->
+          <!-- <td>{{b.serviceprice_total}}</td> -->
+          <td >
+            <p style="text-align: right;margin-right: 84px;">{{b.payable_amt}}</p>
+
+          </td>
+          <!-- <td>
+            <span *ngIf = "b.pickup_drop == 0;else pickDropid" >No</span>
+
+              <ng-template  #pickDropid>
+                <span>Yes</span>
+              </ng-template>
+            </td> -->
+
+          <td style="text-align: center;">
+            <a  (click)="acceptrejectbooking('Accepted',b.Booking_id,b.pickup_drop)" ><i style="color: #01992d;font-size: 20px;cursor: pointer;" class="fa fa-check-circle"></i></a> </td>
+            <td style="text-align: center;">
+            <a  (click)="acceptrejectbooking('Rejected',b.Booking_id,b.pickup_drop)" ><i style="color: #bf3900;font-size: 20px;cursor: pointer;" class="fa fa-times-circle"></i></a>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+    </div>
+    </div>
+    <br>
+    <div class="accordion1" >
+      <h2 class="title1 subheading"  (click)="opened1 = !opened1">Car Wash Status <i class="fa fa-chevron-down"></i> </h2>
+      <div class="content-container1" [class.opened1]="opened1">
+        <div class="table-responsive carwashstatustbl" >
+        <table  class="table  servicecss"  *ngIf="posts1"  datatable="ng"  datatable [dtOptions]="dtOptions1" style="border: 0.5px solid #000000 !important">
+          <thead style="color: black;text-align: left;background-color: #80808091;">
+
+              <tr >
+                <th  style="display:none;width: 0px;">b</th>
+              <th style="width:8%;text-align: center;padding-left: 12px;" class="fontwghtcls">Booking Id</th>
+              <th style="width: 12%;text-align: center;padding-left: 0px;" class="fontwghtcls">Registration No</th>
+              <th style="width:8%;text-align: center;padding-left: 11px;" class="fontwghtcls">Date</th>
+              <th style="width:18%;text-align: center;" class="fontwghtcls">Customer Name</th>
+             <th style="width:10%;text-align: center;" class="fontwghtcls">Total (<span><i class="fa fa-rupee"></i></span>) </th>
+              <th   hidden>Status</th>   <!-- for excel print only -->
+
+              <th  style="width:5%;text-align: center;" class="fontwghtcls">Status</th>
+              <th style="width:5%;text-align: center;" class="fontwghtcls">Update</th>
+
+
+            </tr>
+          </thead>
+          <!-- <tbody *ngIf = "AcceptbookingDetails1 == ''">
+            <tr>
+              <td colspan="13" style="text-align: center;">
+                No data available
+              </td>
+            </tr>
+          </tbody> -->
+          <!-- <tbody *ngIf = "AcceptbookingDetails1 != ''"> -->
+            <tbody>
+            <tr *ngFor="let b of  posts1;  let i=index;" style="border-bottom:1px solid #aeaeae;text-align: left;">
+
+              <td style="display:none;width: 0px;">{{b.id}}</td>
+              <td class="fontwghtcls"><a style="cursor: pointer;color: #26a0fc;text-decoration: underline;margin-left: 49px;" (click)="ViewDetailsPopup(b.Booking_id,'Carwash Status')">{{b.Booking_id}}</a></td>
+              <td><p style="margin-left: 71px;">{{b.vehicle_number}}</p></td>
+              <td>
+                <p style="margin-left: 62px;">{{b.bookingdate | date: 'dd-MM-yyyy'}}</p>
+              </td>
+              <td style="text-align: left;"><p style="margin-left: 141px;">{{b.firstname}}</p></td>
+
+              <td ><p style="text-align: right;margin-right: 81px;">{{b.payable_amt}}</p></td>
+
+                <td hidden>
+                  <span *ngFor="let m1 of  carwashstatus1;" >
+
+                    <span *ngIf="b.carwash_status === m1.id">{{m1.carwash_status_name}}</span>
+                  </span>
+
+                  <!-- for excel print only -->
+                </td>
+                <td>
+
+                  <select  style="width: 100px;height: 26px;margin-left: 25px;"   id="carwash_{{b.Booking_id}}" [(ngModel)]="b.carwash_status" >
+                    <option value="">--Select---</option>
+                   <option *ngFor="let c of carwashstatus1" [value]="c.id">
+                    {{c.carwash_status_name}}
+                    </option>
+                    </select>
+
+                </td>
+              <td style="text-align: center;">
+                <a (click)="updateCarwashStatus(b.Booking_id)"><i style="color: #01992d;font-size: 20px;cursor: pointer;" class="fa fa-check-circle"></i></a>
+               </td>
+
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+        </div>
+        </div>
+<br>
+        <div class="accordion2" >
+          <h2 class="title2 subheading"  (click)="opened2 = !opened2">Active Offer's Analysis<i class="fa fa-chevron-down"></i> </h2>
+          <div class="content-container2" [class.opened2]="opened2">
+            <div *ngIf="currentOffer1 == '' && serviceDataOffers1 =='' && combocustomer1 ==''">
+              <!-- <div> -->
+<p style="text-align: center;" class="mainheading">No data available</p>
+            </div>
+
+            
+            <div class="row" >
+
+              <!-- Combo Offers start -->
+
+              <div class="row" *ngIf="currentOffer1 != '' && combocustomer1 =='' && serviceDataOffers1 == ''">
+                <h2 style="text-align: center;" class="mainheading"> Combo Offers</h2>
+                <div class="col-sm-4" ></div>
+                  <div class="col-sm-4" >
+                    <div > <!--  style="border: 1px solid #aeaeae;" -->
+                    <div id="chart" style="text-align: center;">
+                      <apx-chart
+                        [series]="chartOptions.series"
+                        [chart]="chartOptions.chart"
+                        [dataLabels]="chartOptions.dataLabels"
+                        [plotOptions]="chartOptions.plotOptions"
+                        [xaxis]="chartOptions.xaxis"
+                      ></apx-chart>
+                    </div>
+                  </div>
+                  </div>
+                  <div class="col-sm-4" ></div>
+              </div>
+
+              <div class="col-sm-6" *ngIf="currentOffer1 != '' && serviceDataOffers1 !='' && combocustomer1 ==''">
+               
+                
+                <div class="row">
+                  <div class="col-sm-2" ></div>
+                  <div class="col-sm-8" >
+                    <h2 style="text-align: center;" class="mainheading"> Combo Offers</h2>
+                    <div > <!--  style="border: 1px solid #aeaeae;" -->
+                      <div id="chart" style="text-align: center;">
+                        <apx-chart
+                          [series]="chartOptions.series"
+                          [chart]="chartOptions.chart"
+                          [dataLabels]="chartOptions.dataLabels"
+                          [plotOptions]="chartOptions.plotOptions"
+                          [xaxis]="chartOptions.xaxis"
+                        ></apx-chart>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-2" ></div>
+                </div>
+
+                  
+                    
+                  
+                  
+              </div>
+
+
+              <div class="col-sm-6" *ngIf="currentOffer1 != '' && serviceDataOffers1 =='' && combocustomer1 !=''">
+                <div class="row">
+                  <div class="col-sm-2" ></div>
+                  <div class="col-sm-8" >
+                    <h2 style="text-align: center;" class="mainheading"> Combo Offers</h2>
+                    <div > <!--  style="border: 1px solid #aeaeae;" -->
+                      <div id="chart" style="text-align: center;">
+                        <apx-chart
+                          [series]="chartOptions.series"
+                          [chart]="chartOptions.chart"
+                          [dataLabels]="chartOptions.dataLabels"
+                          [plotOptions]="chartOptions.plotOptions"
+                          [xaxis]="chartOptions.xaxis"
+                        ></apx-chart>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-2" ></div>
+                </div>
+                  
+              </div>
+
+
+              <div class="col-sm-4" *ngIf="currentOffer1 != '' && serviceDataOffers1 !='' && combocustomer1 !=''">
+                <h2 style="text-align: center;" class="mainheading"> Combo Offers</h2>
+
+                  <div class="col-sm-12" >
+                    <div > <!--  style="border: 1px solid #aeaeae;" -->
+                    <div id="chart" style="text-align: center;">
+                      <apx-chart
+                        [series]="chartOptions.series"
+                        [chart]="chartOptions.chart"
+                        [dataLabels]="chartOptions.dataLabels"
+                        [plotOptions]="chartOptions.plotOptions"
+                        [xaxis]="chartOptions.xaxis"
+                      ></apx-chart>
+                    </div>
+                  </div>
+                  </div>
+                  
+              </div>
+
+              <!-- Combo Offers end -->
+
+
+              <!-- Services Offers start -->
+
+              <div class="row" *ngIf="currentOffer1 == '' && serviceDataOffers1 !='' && combocustomer1 ==''">
+                <h2 style="text-align: center;" class="mainheading">Services Offers</h2>
+                
+                <div class="col-sm-3" ></div>
+                <div class="col-sm-6" >
+                <div > <!-- style="border: 1px solid #aeaeae;" -->
+                  <div  [chart]="donutChart"></div>
+                </div>
+              </div>
+                <div class="col-sm-3" ></div>
+                
+             </div>
+
+
+
+             <div class="col-sm-6" *ngIf="currentOffer1 != '' && serviceDataOffers1 !='' && combocustomer1 ==''">
+              <h2 style="text-align: center;" class="mainheading">Services Offers</h2>
+              <div > <!-- style="border: 1px solid #aeaeae;" -->
+                <div  [chart]="donutChart"></div>
+              </div>
+             </div>
+
+              <div class="col-sm-6" *ngIf="currentOffer1 == '' && serviceDataOffers1 !='' && combocustomer1 !=''">
+                <h2 style="text-align: center;" class="mainheading">Services Offers</h2>
+                <div > <!-- style="border: 1px solid #aeaeae;" -->
+                  <div  [chart]="donutChart"></div>
+                </div>
+              </div>
+
+              
+
+
+              <div class="col-sm-4" *ngIf="currentOffer1 != '' && serviceDataOffers1 !='' && combocustomer1 !=''">
+                <h2 style="text-align: center;" class="mainheading">Services Offers</h2>
+                <div > <!-- style="border: 1px solid #aeaeae;" -->
+                  <div  [chart]="donutChart"></div>
+                </div>
+              </div>
+              
+
+             
+
+
+           <!-- Services Offers end -->
+
+
+
+           <!-- Combo Offers- Customer Booking Details start -->
+
+           <div class="row" *ngIf="currentOffer1 == ''  && serviceDataOffers1 == '' && combocustomerArr1 !=''">
+           
+              <h2 style="text-align: center;" class="mainheading"> Combo Offers- Customer Booking Details</h2>
+              <div class="row">  
+                <div class="col-sm-3"></div>
+                <div class="col-sm-6">
+                  <div id="chart" style="text-align: center;">
+                    <apx-chart
+                      [series]="chartOptions3.series"
+                      [chart]="chartOptions3.chart"
+                      [dataLabels]="chartOptions3.dataLabels"
+                      [plotOptions]="chartOptions3.plotOptions"
+                      [xaxis]="chartOptions3.xaxis"
+                    ></apx-chart>
+                  </div>
+                </div>
+              
+              <div class="col-sm-3"></div>
+            
+           </div>
+          </div>
+
+           <div class="col-sm-6" *ngIf="currentOffer1 != '' && serviceDataOffers1 =='' && combocustomerArr1 !=''">
+            <div class="row" >
+              <div class="col-sm-7" >
+                <h2 style="text-align: center;" class="mainheading"> Combo Offers- Customer Booking Details</h2>
+              </div>
+           
+          </div>
+            <div id="chart" style="text-align: center;">
+              <apx-chart
+                [series]="chartOptions3.series"
+                [chart]="chartOptions3.chart"
+                [dataLabels]="chartOptions3.dataLabels"
+                [plotOptions]="chartOptions3.plotOptions"
+                [xaxis]="chartOptions3.xaxis"
+              ></apx-chart>
+            </div>
+           </div>
+
+           <div class="col-sm-6" *ngIf="currentOffer1 == '' && serviceDataOffers1 !='' && combocustomerArr1 !=''">
+            <div class="row" >
+              <div class="col-sm-7" >
+                <h2 style="text-align: center;" class="mainheading"> Combo Offers- Customer Booking Details</h2>
+              </div>
+           
+          </div>
+            <div id="chart" style="text-align: center;">
+              <apx-chart
+                [series]="chartOptions3.series"
+                [chart]="chartOptions3.chart"
+                [dataLabels]="chartOptions3.dataLabels"
+                [plotOptions]="chartOptions3.plotOptions"
+                [xaxis]="chartOptions3.xaxis"
+              ></apx-chart>
+            </div>
+           </div>
+           <!--  -->
+           <div class="col-sm-4">
+            <div class="col-sm-12" *ngIf="currentOffer1 != '' && serviceDataOffers1 !='' && combocustomerArr1 !=''">
+          
+          
+              <div class="row" >
+                <div class="col-sm-12" style="text-align: center;">
+                  
+                  <h2 style="text-align: center;" class="mainheading"> Combo Offers- Customer Booking Details</h2>
+                  <div >
+                    <div id="chart" style="text-align: center;">
+                      <apx-chart
+                        [series]="chartOptions3.series"
+                        [chart]="chartOptions3.chart"
+                        [dataLabels]="chartOptions3.dataLabels"
+                        [plotOptions]="chartOptions3.plotOptions"
+                        [xaxis]="chartOptions3.xaxis"
+                      ></apx-chart>
+                    </div>
+                  </div>
+                  <div>
+          
+                  </div>
+                  </div>
+                </div>
+          
+          
+          
+                      </div>
+                      <div>
+          
+                      </div>
+                      </div>
+
+             
+
+
+          
+
+
+              </div>
+
+ <!-- Combo Offers- Customer Booking Details end -->
+
+ <!-- <div class="col-sm-4">
+  <div class="col-sm-12" *ngIf="combocustomerArr1 != ''">
+
+
+    <div class="row" >
+      <div class="col-sm-12" style="text-align: center;">
+        <h2 style="text-align: center;" class="mainheading"> Combo Offers- Customer Booking Details</h2>
+        <div >
+          <div id="chart" style="text-align: center;">
+            <apx-chart
+              [series]="chartOptions3.series"
+              [chart]="chartOptions3.chart"
+              [dataLabels]="chartOptions3.dataLabels"
+              [plotOptions]="chartOptions3.plotOptions"
+              [xaxis]="chartOptions3.xaxis"
+            ></apx-chart>
+          </div>
+        </div>
+        <div>
+
+        </div>
+        </div>
+      </div>
+
+
+
+            </div>
+            <div>
+
+            </div>
+            </div> -->
+<br>
+
+
+
+

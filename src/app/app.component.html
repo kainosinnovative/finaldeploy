@@ -1,0 +1,283 @@
+
+<mat-sidenav-container fullscreen id="cont_id">
+  <!-- <h5><u><i>Footer creation using angular material !!</i></u></h5> -->
+  <mat-sidenav #sidenav class="sidenavstyle" >
+  <mat-list >
+
+
+    <!-- customer mobile start -->
+    <mat-list-item *ngIf="currentUsername"> <a class="txtunderline_remove" mat-list-item >Hi, {{currentUsername}}</a> </mat-list-item>
+   
+    <mat-list-item class="menudesk1 "   *ngIf="userroleSes=='CustomerSes' || !userroleSes"> <a (click)="selectcity()" class="txtunderline_remove2" mat-list-item routerLink='/first' ><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp; Select a City
+    </a> </mat-list-item>
+    <mat-list-item   class="menudesk1" *ngIf="userroleSes=='CustomerSes' || !userroleSes"> <a class="txtunderline_remove2" style="cursor: pointer" mat-list-item routerLink='/home' [routerLinkActive]="['is-active']">Home
+    </a> </mat-list-item>
+    <!-- <mat-list-item class="menudesk1" *ngIf="userroleSes=='CustomerSes' || !userroleSes"> <a class="txtunderline_remove2" mat-list-item routerLink='/onlinebooking'>Online Booking
+    </a> </mat-list-item> -->
+
+   <mat-list-item *ngIf="userroleSes=='CustomerSes'"> <a class="txtunderline_remove" mat-list-item routerLink='/customercreate' [routerLinkActive]="['is-active']">My Profile</a> </mat-list-item>
+   <mat-list-item *ngIf="userroleSes=='CustomerSes'"> <a class="txtunderline_remove" routerLink="/MyBooking" [routerLinkActive]="['is-active']"  mat-list-item >My Booking</a> </mat-list-item>
+
+   <mat-list-item *ngIf="userroleSes=='CustomerSes'"> <a class="txtunderline_remove" (click)="searchshopMobile()" mat-list-item ><i class="fa fa-search" aria-hidden="true"></i>&nbsp; Search</a> </mat-list-item>
+
+    <mat-list-item class="menudesk1 " *ngIf="!currentUsername"> <a class="txtunderline_remove2 cursorcls"  mat-list-item (click)="login();loginCheck1()">
+      Login</a></mat-list-item>
+
+      <!-- customer mobile end -->
+
+
+
+      <!-- for shop owner -->
+
+      <mat-list-item class="menudesk1" *ngIf="userroleSes=='shopOwnerSes'"> <a class="txtunderline_remove2" mat-list-item routerLink='/ShopDashboard' [routerLinkActive]="['is-active']">Home
+      </a> </mat-list-item>
+
+  <mat-list-item *ngIf="userroleSes=='shopOwnerSes'" > <a class="txtunderline_remove"  mat-list-item routerLink='/ShopService' [routerLinkActive]="['is-active']">Services</a> </mat-list-item>
+  <mat-list-item *ngIf="userroleSes=='shopOwnerSes'"> <a class="txtunderline_remove" mat-list-item routerLink='/ComboOffers' [routerLinkActive]="['is-active']">Combo Offers</a> </mat-list-item>
+
+  <mat-list-item *ngIf="userroleSes=='shopOwnerSes'"> <a class="txtunderline_remove" mat-list-item routerLink='/ShopProfile' [routerLinkActive]="['is-active']">My Profile</a> </mat-list-item>
+
+
+
+  <mat-list-item *ngIf="userroleSes=='shopOwnerSes'"> <a class="txtunderline_remove" mat-list-item routerLink='/contactus' [routerLinkActive]="['is-active']">Contact Us</a> </mat-list-item>
+  
+
+  <!-- for shop owner -->
+
+
+      <!-- both customer and shop owner -->
+
+
+
+      <mat-list-item *ngIf="currentUsername"> <a class="txtunderline_remove lock"  mat-list-item routerLink='/home'   (click)="logout()"><i class="fa fa-power-off" aria-hidden="true"></i></a> </mat-list-item>
+
+      <!-- both customer and shop owner -->
+      <!-- <mat-list-item *ngIf="userroleSes=='shopOwnerSes'"> <a class="" mat-list-item >{{currentshopname}}</a></mat-list-item> -->
+
+
+  </mat-list>
+  </mat-sidenav>
+  <mat-toolbar color="primary" #toolbar  id="headerdisplay">
+  <button class="sidemenucls"  mat-icon-button color="accent" aria-label="Example icon button with a menu icon" (click)="sidenav.open()">
+  <mat-icon >menu</mat-icon>
+  </button>
+
+
+  <mat-list-item  *ngIf="userroleSes=='CustomerSes'" > <img src="{{apiurlforhtm}}/images/Kainos_logo.png" style="width: 60px;"> </mat-list-item>
+  <!-- <mat-list-item  *ngIf="userroleSes=='shopOwnerSes'"> <img src="{{apiurlforhtm}}/{{shoplogo}}" style="width: 60px;"> </mat-list-item> -->
+  <label style="width: 55px;"></label>
+  <mat-list-item class="menudesk" *ngIf="currentUsername" > <a  class="colorheaderMenu" >Hi, {{currentUsername}}</a> </mat-list-item> &nbsp; &nbsp;
+  <mat-list-item class="menudesk" *ngIf="userroleSes=='shopOwnerSes'"> <a class="colorheaderMenu" mat-list-item routerLink='/ShopDashboard' [routerLinkActive]="['is-active']">Home</a> </mat-list-item> <span *ngIf="userroleSes=='shopOwnerSes'">&nbsp; &nbsp;</span>
+
+
+  <mat-list-item class="menudesk" *ngIf="userroleSes=='CustomerSes' || !userroleSes"> <a class="colorheaderMenu" mat-list-item routerLink='/home' [routerLinkActive]="['is-active']">Home</a> </mat-list-item> <span *ngIf="userroleSes=='CustomerSes' || !userroleSes">&nbsp; &nbsp;</span>
+
+
+<!-- for cust general user -->
+  <mat-list-item class="menudesk" *ngIf="userroleSes=='CustomerSes' || !userroleSes"> <a class="colorheaderMenu cursorcls" mat-list-item (click)="selectcity()"><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp; {{cityname}} </a> </mat-list-item> <span *ngIf="userroleSes=='CustomerSes' || !userroleSes">&nbsp; &nbsp;</span>
+<!-- for cust general user -->
+
+  <!-- both customer and shop owner -->
+  <!-- <mat-list-item class="menudesk" *ngIf="userroleSes=='CustomerSes' || !userroleSes"> <a class="colorheaderMenu" mat-list-item routerLink='/home'>Home</a> </mat-list-item> <span *ngIf="userroleSes=='CustomerSes' || !userroleSes">&nbsp; &nbsp;</span> -->
+<!-- both customer and shop owner -->
+
+  <!-- <mat-list-item class="menudesk"> <a class="colorheaderMenu" mat-list-item routerLink='/shop'>Shop</a> </mat-list-item>  &nbsp; &nbsp; -->
+
+<!--<mat-list-item class="menudesk"> <a class="colorheaderMenu" mat-list-item routerLink='/first'>Offers/Deals</a> </mat-list-item>  &nbsp; &nbsp;-->
+
+<!-- <mat-list-item class="menudesk cursorcls"> <a class="colorheaderMenu" style="text-decoration: unset;" >Offers/Deals</a> </mat-list-item>  &nbsp; &nbsp; -->
+
+
+<!-- for customer -->
+  <!-- <mat-list-item  class="menudesk cursorcls" *ngIf="userroleSes=='CustomerSes' || !userroleSes"> <a class="colorheaderMenu" mat-list-item routerLink='/onlinebooking'>Online Booking </a> </mat-list-item> <span *ngIf="userroleSes=='CustomerSes' || !userroleSes">&nbsp; &nbsp;</span> -->
+
+  <mat-list-item *ngIf="userroleSes=='CustomerSes'" class="menudesk cursorcls"> <a class="colorheaderMenu" mat-list-item routerLink='/customercreate' [routerLinkActive]="['is-active']">My Profile </a> </mat-list-item> <span *ngIf="userroleSes=='CustomerSes'">&nbsp; &nbsp;</span>
+
+  <mat-list-item *ngIf="userroleSes=='CustomerSes'" class="menudesk cursorcls"> <a class="colorheaderMenu" mat-list-item routerLink="/MyBooking" [routerLinkActive]="['is-active']">My Booking </a> </mat-list-item> <span *ngIf="userroleSes=='CustomerSes'">&nbsp; &nbsp;</span>
+
+  <mat-list-item class="menudesk cursorcls" *ngIf="!userroleSes" > <a  class="colorheaderMenu" (click)="login();loginCheck1()" >Login</a> </mat-list-item>
+
+<!-- for customer -->
+
+
+<!-- for shop owner -->
+<mat-list-item  class="menudesk cursorcls" *ngIf="userroleSes=='shopOwnerSes'"> <a class="colorheaderMenu" mat-list-item routerLink='/ShopService' [routerLinkActive]="['is-active']">Services </a> </mat-list-item> &nbsp; &nbsp;
+
+<mat-list-item  class="menudesk cursorcls" *ngIf="userroleSes=='shopOwnerSes'"> <a class="colorheaderMenu" mat-list-item routerLink='/ComboOffers'  [routerLinkActive]="['is-active']">Combo Offers </a> </mat-list-item> &nbsp; &nbsp;
+
+
+<mat-list-item *ngIf="userroleSes=='shopOwnerSes'" class="menudesk cursorcls"> <a class="colorheaderMenu" mat-list-item routerLink='/ShopProfile' [routerLinkActive]="['is-active']">My Profile </a> </mat-list-item> <span *ngIf="userroleSes=='shopOwnerSes'">&nbsp; &nbsp;</span>
+
+<mat-list-item *ngIf="userroleSes=='shopOwnerSes'" class="menudesk cursorcls"> <a class="colorheaderMenu" mat-list-item  (click)="bookingRedirect()" routerLink='/shopownerOnlineBooking' [routerLinkActive]="['is-active']">Booking </a> </mat-list-item> <span *ngIf="userroleSes=='shopOwnerSes'">&nbsp; &nbsp;&nbsp; </span>
+
+<mat-list-item *ngIf="userroleSes=='shopOwnerSes'" class="menudesk cursorcls"> <a class="colorheaderMenu" mat-list-item routerLink='/contactus' [routerLinkActive]="['is-active']">Contact Us </a> </mat-list-item> <span *ngIf="userroleSes=='shopOwnerSes'">&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;</span>
+
+<!-- for shop owner -->
+
+  <!-- both customer and shop owner -->
+
+  <mat-list-item class="menudesk cursorcls" style="margin-left: -32px;" *ngIf="currentUsername" > <a routerLink='/home'  class="colorheaderMenu" title="Logout" (click)="logout()"><i class="fa fa-power-off" aria-hidden="true"></i></a> </mat-list-item>
+  <!-- both customer and shop owner -->
+ 
+
+  <mat-list-item *ngIf="userroleSes=='shopOwnerSes'"> <a class="txtunderline_remove" style="font-size: 16px !important;font-style: italic;color: #2700ff;font-weight: bolder;margin-left: 572px;text-transform: uppercase !important;">{{currentshopname}}</a> </mat-list-item>&nbsp;
+
+  <mat-list-item  *ngIf="userroleSes=='shopOwnerSes'"> <img src="{{apiurlforhtm}}/{{shoplogo}}" class="rounded-circle" style="height: 52px; width: 65px;"> </mat-list-item>
+
+
+  <mat-list-item *ngIf="userroleSes=='CustomerSes'"  class="menudesk cursorcls" style="margin-left: 506px;"> <a class="colorheaderMenu"   routerLink='/search' [routerLinkActive]="['is-active']" mat-list-item >
+    <i class="fa fa-search" aria-hidden="true"></i>&nbsp;&nbsp;</a>
+    
+    <!-- <input class="search" type="text" placeholder="Search" > -->
+
+    <!-- <div style="text-align: center;"> -->
+      <input class="search" type="text" placeholder="Search" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto">
+      <mat-autocomplete #auto="matAutocomplete" placeholder="select shop">
+        <mat-option class="ss" *ngFor="let option of filteredOptions | async" [value]="option.name1" style="width: 300px !important;" (onSelectionChange)="onSelFunc(option.id);onSelFunc1(option.id)" >
+          {{option.name1}}
+        </mat-option>
+      </mat-autocomplete>
+  <!-- </div> -->
+  
+    <!-- <mat-form-field class="example-full-width">
+    <input class="search" type="text" placeholder="Search" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto">
+    <mat-autocomplete #auto="matAutocomplete" placeholder="select shop">
+      <mat-option class="ss" *ngFor="let option of filteredOptions | async" [value]="option.name1" style="width:250px !important;" (onSelectionChange)="onSelFunc(option.id);onSelFunc1(option.id)" >
+        {{option.name1}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field> -->
+
+   </mat-list-item>
+
+  </mat-toolbar>
+
+
+ 
+
+
+  <!-- <mat-sidenav-content> -->
+    <router-outlet (activate)="onActivate($event)"></router-outlet>
+
+     
+
+
+<div class="footer" style="height: 340px;background-color: #202c45 !important;" #footer id="footerdisplay">
+  <footer class=" page-footer font-small blue pt-4">
+
+    <!-- Footer Links -->
+    <div class="container-fluid text-center text-md-left" style="background-color: #202c45 !important;">
+
+      <!-- Grid row -->
+      <div class="row">
+
+        
+        <!-- Grid column -->
+          <div class="col-md-6 mt-md-0 mt-3">
+              <div class="row" style="height: 300px;">
+                <iframe  class="embed-responsive-item" loop="1" autoplay="" src="https://www.youtube.com/embed/PU5orW-mtVs" allowfullscreen></iframe>
+
+                  </div>
+
+          </div>
+            <div class="col-lg-3 col-md-6 footerpopularlink">
+              <div class="footer-link footerpopularlink" >
+                  <h2>Popular Links </h2>
+<div class="footerpopularlink">
+
+<p class="bloglinkMob">
+  <a href="#" ><i class="fa fa-arrow-right" style="font-size:8px"></i> &nbsp;Blog</a>
+</p>
+                  <!-- <a href="#"><i class="fa fa-arrow-right" style="font-size:8px"></i> &nbsp;Online Booking</a> -->
+                  <!-- <a href="#"><i class="fa fa-arrow-right" style="font-size:8px"></i> &nbsp;Offers and Deals</a> -->
+
+
+                    <!-- <a *ngIf="!userroleSes" class="" style="cursor: pointer;padding-top:0px !important;margin-top:0px!important;" (click)="loginCheck();login()" ><i class="fa fa-arrow-right" style="font-size:8px"></i> &nbsp;For Shop</a> -->
+
+                  </div>
+              </div>
+          </div>
+        <!-- <div class="col-md-3 mb-md-0 mb-3">-->
+
+            <!-- Links -->
+            <!-- <h4 class="text-uppercase">Quick Links</h4>
+
+            <ul class="list-unstyled">
+              <li *ngIf="!userroleSes">
+                <a class="txtunderline_remove" style="cursor: pointer;" (click)="loginCheck();login()" >Login - Shop Owner</a>
+              </li>
+              <li>
+                <a class="txtunderline_remove" routerLink='/home/'>Home</a>
+              </li>
+              <li>
+                <a class="txtunderline_remove" routerLink='/testimonial/'>Testimonials</a>
+              </li>
+              <li>
+                <a class="txtunderline_remove" routerLink='/shop/'>Shop</a>
+              </li>
+               <li>
+
+ <a class="txtunderline_remove" routerLink='#'>   Blog</a>
+              </li> -->
+              <!-- <li>
+
+                <a class="txtunderline_remove" routerLink='/contactus/'>   Contact Us</a>
+                             </li>
+            </ul>-->
+
+          <!-- </div>  -->
+          <!-- Grid column -->
+
+
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-contact">
+                <h2 style="text-align:left;">Get In Touch</h2>
+                <p><i class="fa fa-location-arrow"></i>No: 176 & 177, Ethiraj Salai, Egmore, Chennai 600008.</p>
+                <p> <i class="fa fa-phone"></i>
+                  IND: +91 9841791489, +91 9360878500 
+                  <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;USA: +1(517) 399-9224
+                </p>
+                <!-- <p><i class="fa fa-phone"></i>+1(517) 399-9224</p> -->
+                <p><i class="fa fa-envelope"></i>info@kainosinnovative.com</p>
+                <div class="footer-social">
+                    <a class="btn" href=""><i class="fa fa-twitter"></i></a>
+                    <a class="btn" href=""><i class="fa fa-facebook-f"></i></a>
+                    <a class="btn" href=""><i class="fa fa-youtube"></i></a>
+                    <a class="btn" href=""><i class="fa fa-instagram"></i></a>
+                    <a class="btn" href=""><i class="fa fa-linkedin-square"></i></a>
+                </div>
+            </div>
+        </div>
+
+      </div>
+      <!-- Grid row -->
+
+    </div>
+
+
+    <!-- Footer Links -->
+
+    <!-- Copyright -->
+    <div style="background: white;" class="footer-copyright text-center py-3" >
+
+      © 2022 Copyright:
+      <a href="http://www.kainosinnovative.com"> Kainos Innovative Solutions</a>
+      <mat-list-item  *ngIf="userroleSes=='shopOwnerSes'" > <img target="_blank" src="{{apiurlforhtm}}/images/Kainos_logo.png" style="width: 40px;"> </mat-list-item>
+    </div>
+    <!-- Copyright -->
+
+
+
+  </footer>
+  <!-- Footer -->
+
+
+
+
+
+
+</div>
+
+
+<app-rightsidebar></app-rightsidebar>
+  </mat-sidenav-container>

@@ -1,0 +1,273 @@
+
+<div *ngIf ="(dashboardShop1 == '' && dashboardShopoffer1 == '');" style="text-align: center;height: 240px;">
+  <br>
+  <p style="font-weight: bold;font-size: 16px;">No data available</p>
+</div>
+
+
+<div *ngIf="dashboardShop1 != ''">
+ 
+<div *ngFor="let s of dashboardShop1;let k=index">
+
+  <h2 *ngIf="k==0" style="text-align: center;" class="mainheading">Combo Offers Of The Day </h2>
+  <p *ngIf="k==0" class="dark-blue-text w-responsive mx-auto fontitalyHome" style="text-align: center;margin-bottom: 2%;">Special Deal Limited Offer Today
+    <!-- <img style="height: 50px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRyNBH8h9mrcFvdSft9AiYrolk-c8E4Z5OOaKwwBpxpOWdTzSSuFociZ1KI_Dt_f7cs3o&usqp=CAU"> -->
+     <img style="height: 40px;" src="https://thumbs.dreamstime.com/b/hurry-up-154424269.jpg">
+     <!-- <img style="height: 50px;" src="https://t3.ftcdn.net/jpg/04/73/13/54/360_F_473135463_64SB5yRtYoiZzHNDq7aDTkX3IWB1sNWn.jpg"> -->
+  </p>
+</div>
+
+
+</div>
+
+
+
+
+<ngx-slick-carousel class="carousel" style="width:90%;background: none;"
+                        #slickModal="slick-carousel"
+                        [config]="slideConfig"
+                        (init)="slickInit($event)"
+                        (breakpoint)="breakpoint($event)"
+                        (afterChange)="afterChange($event)"
+                        (beforeChange)="beforeChange($event)">
+        <div ngxSlickItem *ngFor="let s of dashboardShop1" class="slide col-sm-6">
+          <div class=" card" style="height: 417px !important;">
+            <div class="image-container oneimage" style="border:1px solid;background-image: url('{{apiurlforhtm}}/{{s.shop_image}}')" >
+                <div class="first">
+                    <div class="d-flex justify-content-between align-items-center"> <span class="discount" style="border-radius:50px;">Up to {{s.offer_percent}}% Off</span>
+
+
+                      <!-- <div style="display: none !important;" *ngIf="date >= s.leave_from_date && date <= s.leave_to_date;else other_content"> -->
+                        <!-- content here ... -->
+                    <!-- </div> -->
+      <!-- <ng-template  #other_content><span  class="openClosed">Open</span></ng-template>
+
+                      <span #other_content *ngIf = "date >= s.leave_from_date && date <= s.leave_to_date;else other_content" class="openClosed">Closed</span> -->
+
+
+                     </div>
+                </div>
+
+            </div>
+
+
+
+            <div class="product-detail-container p-2">
+
+              <div class="d-flex justify-content-between align-items-center pt-1">
+                <div class="color-select d-flex ">
+                  <img src="{{apiurlforhtm}}/{{s.shop_logo}}" style="width: 50px;margin-top: -7px;"> {{s.name}}
+                  </div>
+                 
+                  <!-- <div *ngFor="let s1 of CustomerWhislistData1"> -->
+                    <div *ngIf="s.wishlistcheck === 'Yes';else whislistElse"  class="fa fa-heart " id="wishlistvalue_{{s.shop_id}}" style="margin-top:12px;color: red;cursor: pointer;" (click)="clickEvent(s.shop_id,'combooffer')"> </div> 
+                  
+                     
+                     <!-- </div> -->
+                     
+                     <ng-template #whislistElse>
+                      <span class="wishlist"  title="Add to Wishlist" id="wishlistvalue_{{s.shop_id}}" (click)="clickEvent(s.shop_id,'combooffer')" style="margin-top:12px;color: gray;cursor: pointer;"><i class="fa fa-heart"></i> </span>
+                     </ng-template>
+
+                   <!-- <span class="wishlist" id="wishlistvalue_{{s.shop_id}}" (click)="clickEvent(s.shop_id)" style="margin-top:12px;color: gray;"><i class="fa fa-heart "></i></span> -->
+             </div>
+
+             <b>Services:</b>
+             <div style="height: 50px;overflow: auto;">
+             <div *ngFor="let m of  s.services.split(',');let j=index" >
+              <div *ngFor="let m1 of  MasterServiceData1;" >
+
+<span *ngIf="m === m1.service_id && j<2"><i class="fa fa-check-circle" style="color: #429c68;"></i>&nbsp; {{m1.service_name}}</span>
+<!-- <span *ngIf="j>2">....</span> -->
+              </div>
+
+            </div>
+          </div>
+            <div class="d-flex justify-content-between align-items-center">
+              <h5 class="dress-name">{{s.offer_percent}}% OFF inside..! Great offers on car get a clean</h5>
+
+              </div>
+
+
+                <div class="d-flex justify-content-between align-items-center">
+                    <h5 class="dress-name">{{s.model_name}}</h5>
+
+                </div>
+
+                <div class="d-flex justify-content-between align-items-center">
+                  <h5 class="dress-name">Offer Price <i class="fa fa-rupee"></i> {{s.comboprice}}/-</h5>
+
+              </div>
+
+                <div class="d-flex justify-content-between align-items-center pt-1">
+                       <span class="buy">Save Upto <i class="fa fa-rupee"></i> {{s.original_amount - s.comboprice }} +</span>
+
+                    <!-- <a *ngIf = "date <= s.leave_from_date;else booknowDisable11"></a>
+                    
+                  <ng-template  #booknowDisable11>
+                     <a  style="text-decoration: none;visibility: hidden;" class="" >Book Now</a>
+                  </ng-template>
+                  <a *ngIf = "date >= s.leave_from_date && date <= s.leave_to_date;else booknowDisable" ></a>
+
+                    <ng-template  #booknowDisable>
+                       <a  style="text-decoration: none;" class="booknowntn" routerLink=""  (click)="userloggedin(s.shop_id)">Book Now</a>
+                    </ng-template> -->
+
+                    <a style="text-decoration: unset;" class="openClosed" *ngIf = "s.leavecheck == 'Closed';else booknowDisable" >Closed</a>
+                     
+                    <ng-template  #booknowDisable>
+                      <a *ngIf="s.modelAvail == 'Available';else checkModelAvail" style="text-decoration: none;" class="booknowntn" routerLink=""  (click)="userloggedin(s.shop_id,s.model_id)">Book Now</a>
+
+                      <ng-template #checkModelAvail>
+                       <a *ngIf="currentUsername" style="text-decoration: none;cursor: pointer;" class="booknowntn"  (click)="checkModelAvail2(s.model_name)">Book Now</a>
+                       
+                       <a *ngIf="!currentUsername" style="text-decoration: none;cursor: pointer;" class="booknowntn"  (click)="userloggedin(s.shop_id,s.model_id)">Book Now</a>
+                     </ng-template>
+                      <!-- <a  style="text-decoration: none;" class="booknowntn" routerLink=""  (click)="userloggedin(s.shop_id)">Book Now</a> -->
+                    </ng-template>
+
+                </div>
+
+            </div>
+        </div>
+        </div>
+</ngx-slick-carousel>
+<br>
+
+<!-- <tbody *ngIf ="dashboardShopoffer1 == '';">
+  <tr>
+    <td colspan="13" class="nodata">
+      No data available
+    </td>
+  </tr>
+</tbody> -->
+<div *ngIf="dashboardShopoffer1 != ''">
+ 
+
+  <div *ngFor="let s of dashboardShopoffer1;let k=index">
+    <h2 *ngIf="k==0" style="text-align: center;" class="mainheading">Service Offers</h2>
+    <p *ngIf="k==0 && s.offer_percent > 0" class="dark-blue-text w-responsive mx-auto fontitalyHome" style="text-align: center;margin-bottom: 2%;">Incredible Services for Incredible People, Deals made especially for you
+    </p>
+  </div>
+  <!-- <p class="dark-blue-text w-responsive mx-auto " style="text-align: center;margin-bottom: 2%;">Today offer upto 60%, Enjoy and 1st booking have 25% discount..! -->
+
+  <!-- </p> -->
+</div>
+
+
+
+<ngx-slick-carousel class="carousel" style="width:90%;background: none;"
+                        #slickModal="slick-carousel"
+                        [config]="slideConfig1"
+                        (init)="slickInit1($event)"
+                        (breakpoint)="breakpoint1($event)"
+                        (afterChange)="afterChange1($event)"
+                        (beforeChange)="beforeChange1($event)">
+        <div ngxSlickItem *ngFor="let s of dashboardShopoffer1" class="slide1">
+          <div class=" card" style="width: 90% !important; height: 417px !important;">
+            <div class="image-container oneimage" style="border:1px solid;background-image: url('{{apiurlforhtm}}/{{s.shop_image}}')" >
+                <div class="first">
+                    <div class="d-flex justify-content-between align-items-center">
+                      <span *ngIf="s.offer_percent != 0" class="discount">Up to {{s.offer_percent}}% Off</span>
+                      <span *ngIf="s.offer_percent == 0" class="discount"></span>
+                      <!-- <ng-template  #other_content1><span  class="openClosed">Open</span></ng-template> -->
+
+                      <!-- <span  *ngIf = "date >= s.leave_from_date && date <= s.leave_to_date;else other_content1" class="openClosed">Closed</span> -->
+
+                      <!-- <span class="wishlist"><i class="fa fa-heart-o"></i></span>  -->
+                    </div>
+                </div>
+
+            </div>
+
+
+
+            <div class="product-detail-container p-2">
+
+              <div class="d-flex justify-content-between align-items-center pt-1">
+                <div class="color-select d-flex ">
+                  <img src="{{apiurlforhtm}}/{{s.shop_logo}}" style="width: 50px;margin-top: -7px;"> {{s.name}}
+                  </div>
+
+                  <div *ngIf="s.wishlistcheck === 'Yes';else whislistElse2"  class="fa fa-heart " id="wishlistvalue2_{{s.shop_id}}" style="margin-top:12px;color: red;cursor: pointer;" (click)="clickEvent(s.shop_id,'offer')"> </div> 
+                  
+                
+                 
+                  <ng-template #whislistElse2>
+                   <span class="wishlist"  title="Add to Wishlist" id="wishlistvalue2_{{s.shop_id}}" (click)="clickEvent(s.shop_id,'offer')" style="margin-top:12px;color: gray;cursor: pointer;"><i class="fa fa-heart"></i> </span>
+                  </ng-template>
+
+                  
+             </div>
+
+             <!-- <b>Service: </b> -->
+             <!-- <span>{{s.service_id}}</span> -->
+             <!-- <div style="height: 50px;"> -->
+             <!-- <div *ngFor="let m of  s.serviceid.split(',');let j=index" > -->
+
+
+            <!-- </div> -->
+          <!-- </div> -->
+
+            <div class="d-flex justify-content-between align-items-center">
+              <span *ngFor="let m1 of  MasterServiceData1;" style="height: 52px;overflow: auto;">
+                <h5 *ngIf="s.offer_percent != 0 && s.service_id === m1.service_id" class="dress-name">{{s.offer_percent}}% OFF on {{m1.service_name}}..! Great offers on car get a clean</h5>
+
+                <h5 *ngIf="s.offer_percent == 0 && s.service_id === m1.service_id" class="dress-name">{{m1.service_name}}. affordable price on car get a clean</h5>
+                              </span>
+
+              </div>
+
+
+                <div class="d-flex justify-content-between align-items-center">
+                    <h5 class="dress-name">{{s.model_name}}</h5>
+
+                </div>
+
+                <div class="d-flex justify-content-between align-items-center" style="height:20px">
+                  <h5 *ngIf="s.offer_percent != 0" class="dress-name">Offer Price <i class="fa fa-rupee"></i> {{s.offer1}}/-</h5>
+                  <h5 *ngIf="s.offer_percent == 0" class="dress-name">Price <i class="fa fa-rupee"></i>  {{s.actual_amount}}/-</h5>
+
+              </div>
+
+              <div class="d-flex justify-content-between align-items-center pt-1">
+                <!-- <div>  -->
+                   <!-- <i class="fa fa-star-o rating-star"></i> <span class="rating-number">4.8</span> -->
+                 <!-- </div>  -->
+                  <span *ngIf="s.offer_percent != 0" class="buy">Save Upto <i class="fa fa-rupee"></i> {{s.actual_amount - s.offer1 }} +</span>
+                  <span *ngIf="s.offer_percent == 0" class="buy"></span>
+
+
+                  <!-- <a *ngIf = "date <= s.leave_from_date;else booknowDisable11"></a> 
+                  
+                  <ng-template  #booknowDisable11>
+                     <a  style="text-decoration: none;visibility: hidden;" class="" >Book Now</a>
+                  </ng-template>
+                  <a *ngIf = "date >= s.leave_from_date && date <= s.leave_to_date;else booknowDisable1"></a> 
+                  
+                  <ng-template  #booknowDisable1>
+                     <a  style="text-decoration: none;cursor: pointer;" class="booknowntn" (click)="userloggedin(s.shop_id)" >Book Now</a>
+                  </ng-template> -->
+
+
+                  <a style="text-decoration: unset;" class="openClosed" *ngIf = "s.leavecheck == 'Closed';else booknowDisable" >Closed</a>
+                     
+                    <ng-template  #booknowDisable>
+                      <a *ngIf="s.modelAvail == 'Available';else checkModelAvail" style="text-decoration: none;" class="booknowntn" routerLink=""  (click)="userloggedin(s.shop_id,s.model_id)">Book Now</a>
+
+                      <ng-template #checkModelAvail>
+                       <a *ngIf="currentUsername" style="text-decoration: none;cursor: pointer;" class="booknowntn"  (click)="checkModelAvail2(s.model_name)">Book Now</a>
+                       
+                       <a *ngIf="!currentUsername" style="text-decoration: none;cursor: pointer;" class="booknowntn"  (click)="userloggedin(s.shop_id,s.model_id)">Book Now</a>
+                     </ng-template>
+                       <!-- <a  style="text-decoration: none;" class="booknowntn" routerLink=""  (click)="userloggedin(s.shop_id)">Book Now</a> -->
+                    </ng-template>
+
+
+            </div>
+
+            </div>
+        </div>
+        </div>
+</ngx-slick-carousel>
+<br>

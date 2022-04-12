@@ -1,0 +1,77 @@
+.form-control {
+    display: unset !important;
+    width: 330px;
+    height: 35px;
+    font-size: 15px;
+    margin-left: 8px;
+}
+
+
+
+.lblwidthContactus {
+    width: 100px;
+}
+
+.lblwidthContactus2{
+
+    width: 100px;
+    display: inline-block;
+   vertical-align: top;
+   // padding-bottom: 10px;
+   
+
+}
+.form-group {
+    height: 60px;
+}
+
+button {
+    font-size: 12px;
+}
+
+.form-control2 {
+    // display: block;
+    width: 330px;
+    padding: .375rem .75rem;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    margin-left: 8px;
+}
+
+.message{
+
+    text-align: right;    
+    margin-left: -14px;
+}
+
+@media screen and (max-width: 768px){
+
+    .form-control{
+    width: 257px !important;
+    }
+
+    .form-control2 {
+        // display: block;
+        width: 257px !important;
+    }
+    .message{
+        margin-right: 11px !important;
+    }
+}
+
+@media screen and (min-width: 768px){
+.message{
+    margin-left: -88px;
+}
+   
+}

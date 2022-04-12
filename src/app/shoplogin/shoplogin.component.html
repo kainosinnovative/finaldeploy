@@ -1,0 +1,103 @@
+<!-- <p>shoplogin works!</p> -->
+<div style="overflow:hidden">
+ <div class="row" style="margin-top: 160px;">
+   
+    <div class="col-sm-2" >
+
+    </div>
+<div class="col-sm-4 " style="border: 2px solid; border-color: #e81c2e;border-right: none;">
+
+  <!-- <mat-list-item >  -->
+    <img src="{{apiurlforhtm}}/images/Kainos_logo.png" style="margin-left: 13px;width: 113px;height: 69px; margin-top: 37px;"> 
+  <!-- </mat-list-item>    <br>
+   <mat-card-title class="" style="margin-left: 13px;color: #202c45;">Kainos </mat-card-title> -->
+
+  <p style="margin-left: 13px;color: #202c45;margin-top:  36px;">Manage your Shop on Kainos</p>
+  <div class="bg">
+  </div>
+</div>
+
+
+
+<div class="col-sm-4" style="border: 2px solid; border-color: #e81c2e;    padding-left: 0px;
+padding-right: 0px;">
+
+  <form  [formGroup]="shopform"  method="post" (ngSubmit)="sendotp1(shopform.value)" >  
+
+    <mat-card  class="bordercard" style="background-color: #dcdcde5c;">
+      <br><br>
+    <mat-card-header >
+        <mat-card-title class="mainheading" style="margin-left: 150px;"><i class="fa fa-sign-in" aria-hidden="true"></i> &nbsp;Login</mat-card-title>
+      </mat-card-header>
+
+      <mat-card-content style="text-align: center;margin-top: 10px;"  class="form-inline">
+        <div>
+    
+    <select id = "myList" type="readonly" onchange = "favTutorial()"  class="countrycodecls" style=" height: 32px;width: 63px;">   
+           
+            <option> + 91</option>  
+             </select>   
+  
+             <label style="padding-left: 2%;"> </label>
+  
+             <input style=" height: 32px;  width: 182px;" type="text" matInput placeholder="Mobile number" formControlName='mobile' class="" (keyup)="removesignupErrorMsg()">
+   
+  
+             <div *ngIf="shopform.controls['mobile'].touched && shopform.controls['mobile'].invalid " style="text-align: center;"> 
+            <br>
+              <div *ngIf="shopform.controls['mobile'].errors" style="color: red;font-size: 12px;"> 
+                <div *ngIf="shopform.controls['mobile'].errors?.['required']" >
+                    Mobile number is required.
+                </div> 	
+                <div *ngIf="shopform.controls['mobile'].errors?.['pattern']" >
+                  Mobile number is not valid.
+              </div> 	   
+               
+             </div> 
+              
+            </div> 
+  
+    </div>
+   
+       </mat-card-content>
+
+       <p id="pleaseregister" style="color:red;font-size: 12px;text-align: center;"></p>
+
+       
+  <mat-card-actions style="text-align: center;margin-top: 15px;" >
+    <button mat-raised-button class="" style="border-radius: 21px;width: 58%;height: 36px;border: 1px solid #202c45;background-color: white !important;" (click)="logincheck()"  [disabled]='!shopform.valid'>Receive a Code Via SMS</button>
+</mat-card-actions>
+
+
+
+<mat-card-actions style="text-align: center;padding: 0px;" >
+    <h3>
+  
+        <!-- <mat-list-item  > <a  mat-list-item (click)="signup()">
+           </a></mat-list-item> -->
+  <br>
+            <mat-list-item class="menudesk subheading">Want to get your Shop listed on Kainos..?  <br>
+              <a style="cursor: pointer;text-decoration: unset;" class="colorheaderMenu" (click)="signup();signupcheck()"> &nbsp; Partner with us</a>
+             </mat-list-item>
+  
+          </h3>
+  </mat-card-actions>
+  <!-- <p style="margin-left: 46px;">
+  <span style="padding-bottom: 10px;"><i class="fa fa-check-circle" style="color: #429c68;"></i> Keep your car looking new</span><br><br>
+           <span><i class="fa fa-check-circle" style="color: #429c68;"></i> Enjoy our fast and friendly service</span><br><br>
+           <span><i class="fa fa-check-circle" style="color: #429c68;"></i> Excellence in car care!</span>
+          </p> -->
+      
+  
+      </mat-card>
+   
+
+       </form> 
+</div>
+
+<div class="col-sm-2"></div>
+</div>
+  
+    <br><br>
+
+  </div>

@@ -1,0 +1,33 @@
+<div class="sticky-container" *ngIf="!userroleSes" id="rightsidebarShopRemove">
+    <ul class="sticky">
+        <li>
+            <!-- <a *ngIf="userroleSes == 'CustomerSes'" style="cursor: pointer;" (click)="testimonialAdd()">
+                <img src="" width="40" height="38">
+                
+            </a> -->
+
+            <a  (click)="loginToRate()" style="cursor: pointer;" title="Login to Rate1">
+                <!-- Feedback -->
+                <img src="{{apiurlforhtm}}/images/rating.png" width="40" height="38" >
+            </a>
+        </li>
+        
+    </ul>
+  </div>
+
+
+  <div class="sticky-container" *ngIf="userroleSes == 'CustomerSes'">
+    <ul class="sticky">
+        <li>
+            <a  style="cursor: pointer;" (click)="testimonialAdd()">
+                <img src="{{apiurlforhtm}}/images/rating.png" width="40" height="38">
+                
+            </a>
+
+            <!-- <a  (click)="loginToRate()" style="cursor: pointer;" >
+                <img src="" width="40" height="38" title="Please Login to Rate">
+            </a> -->
+        </li>
+        
+    </ul>
+  </div>

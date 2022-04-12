@@ -1,0 +1,29 @@
+<button
+  style="margin: 50px; padding: 10px"
+  type="button"
+  class="btn btn-primary"
+  (click)="openPopup()">Show Data
+</button>
+<div
+  class="modal"
+  tabindex="-1"
+  role="dialog"
+  [ngStyle]="{'display':displayStyle}" >
+  <div class="modal-dialog" role="document" style="max-width: 700px;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">GeeksForGeeks</h4>
+      </div>
+      <div class="modal-body">
+        <p>One Stop Solution for all CS problems</p>
+  
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" 
+                (click)="closePopup()">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

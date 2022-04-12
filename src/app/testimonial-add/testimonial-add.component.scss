@@ -1,0 +1,72 @@
+.fa-star-o:before {
+    content: "\f006";
+    padding: 10px;
+}
+
+.fa-star:before {
+    content: "\f005";
+    padding: 10px;
+}
+
+label.star {
+    
+    font-size: 20px !important;
+    float: unset !important;
+}
+
+label.star.star-4.ng-star-inserted {
+    font-size: 20px !important;
+}
+
+
+.toast-top-center { 
+    top: 12px; 
+    left: 50%; 
+    margin-left: -150px; 
+} 
+@media all and (max-width: 240px) { 
+    .toast-top-center { 
+        margin-left: -54px; 
+    } 
+} 
+@media all and (min-width: 241px) and (max-width: 320px) { 
+    .toast-top-center { 
+        margin-left: -64px; 
+    } 
+} 
+@media all and (min-width: 321px) and (max-width: 480px) { 
+    .toast-top-center { 
+        margin-left: -96px; 
+    } 
+}
+
+
+@media screen and (min-width: 768px) {
+.tesimonialaddMobile{
+    margin-left: 6px;
+}
+
+
+}
+
+@media screen and (max-width: 768px) {
+    .tesimonialaddMobile{
+        width: 340px;
+    }
+
+    .reviewheadingMobile{
+        margin-left: -35px;
+    }
+    .testimonialClosemobile {
+        margin-left: -71px;
+    }
+    }
+
+    .Addbtn{
+        width: 75px;
+        color:black;
+        border-radius: 21px;
+        height: 26px;
+        border: 1px solid #7ab4df;
+        background-color: #7ab4df !important;
+    }

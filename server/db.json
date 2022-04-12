@@ -1,0 +1,129 @@
+{
+  "customers": [
+    {
+      "name": "kannan",
+      "email": "kannan@g.com",
+      "phone": "45781122",
+      "gender": "Male",
+      "doorno": "2111122",
+      "street": "nattar amman kovil street",
+      "area": "eral",
+      "Pincode": "628801",
+      "city": "tuticorin",
+      "landmark": "near therasa's school",
+      "id": 1
+    },
+    {
+      "name": "ramu",
+      "email": "ramu@g.com",
+      "phone": "8976543212",
+      "gender": "male",
+      "doorno": "11",
+      "street": "west st",
+      "area": "565656",
+      "Pincode": "velachery",
+      "city": "chennai",
+      "landmark": "near school",
+      "id": 2
+    },
+    {
+      "name": "somu",
+      "email": "somu@g.com",
+      "phone": "0909876543",
+      "gender": "Male",
+      "doorno": "90",
+      "street": "south st",
+      "area": "kurumbur ",
+      "Pincode": "628811",
+      "city": "tuticorin",
+      "landmark": "near college",
+      "id": 3
+    },
+    {
+      "name": "leela",
+      "email": "leela@g.com",
+      "phone": "9898989876",
+      "gender": "Female",
+      "doorno": "11",
+      "street": "west st",
+      "area": "chrompet",
+      "Pincode": "111111",
+      "city": "chennai",
+      "landmark": "near park",
+      "id": 4
+    },
+    {
+      "name": "krish",
+      "email": "krish@g.com",
+      "phone": "9089906745",
+      "gender": "Male",
+      "doorno": "11",
+      "street": "west st",
+      "area": "kurumbur",
+      "Pincode": "628834",
+      "city": "tuticorin",
+      "landmark": "near shop",
+      "id": 5
+    },
+    {
+      "name": "maaran",
+      "email": "maaran@g.com",
+      "phone": 0,
+      "gender": "Male",
+      "doorno": "",
+      "street": "",
+      "area": "tiruchendur",
+      "Pincode": "",
+      "city": "",
+      "landmark": "near park",
+      "id": 6
+    },
+    {
+      "name": "yryrtyy",
+      "email": "",
+      "phone": 0,
+      "gender": "",
+      "doorno": "",
+      "street": "",
+      "area": "",
+      "Pincode": "",
+      "city": "",
+      "landmark": "",
+      "id": 7
+    }
+  ],
+  "testimonial": [
+    {
+      "name": "Mahesh",
+      "profile": "https://mdbootstrap.com/img/Photos/Avatars/img%20(1).webp",
+      "phone": "45781122",
+      "title": "THIS IS TITLE 1",
+      "description": "this is desc1",
+      "id": 1
+    },
+    {
+      "name": "Sabari",
+      "profile": "https://mdbootstrap.com/img/Photos/Avatars/img%20(1).webp",
+      "phone": "457833333",
+      "title": "THIS IS TITLE 2",
+      "description": "this is desc2",
+      "id": 2
+    },
+    {
+      "name": "Rajesh",
+      "profile": "https://mdbootstrap.com/img/Photos/Avatars/img%20(1).webp",
+      "phone": "5555553333",
+      "title": "THIS IS TITLE 3",
+      "description": "this is desc3",
+      "id": 3
+    },
+    {
+      "name": "Raja",
+      "profile": "https://mdbootstrap.com/img/Photos/Avatars/img%20(1).webp",
+      "phone": "55555444444",
+      "title": "THIS IS TITLE 4",
+      "description": "this is desc4",
+      "id": 4
+    }
+  ]
+}

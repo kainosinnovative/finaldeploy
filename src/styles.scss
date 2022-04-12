@@ -1,0 +1,392 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$angular6-sidenav-example-primary: mat.define-palette(mat.$indigo-palette);
+$angular6-sidenav-example-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$angular6-sidenav-example-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$angular6-sidenav-example-theme: mat.define-light-theme((
+  color: (
+    primary: $angular6-sidenav-example-primary,
+    accent: $angular6-sidenav-example-accent,
+    warn: $angular6-sidenav-example-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($angular6-sidenav-example-theme);
+@import "~@ng-select/ng-select/themes/default.theme.css";
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%;
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+}
+body {
+  margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-size:12px !important;
+  // background-color: white !important;
+}
+.mat-form-field-appearance-legacy .mat-form-field-underline {
+  background: none !important;
+  //margin-left:37%;
+  display:none;
+}
+
+.apexcharts-bar-area{
+  fill:#3b49d0 !important;
+}
+
+line {
+  stroke: #aeaeae;
+  stroke-dasharray: 5 !important;
+  stroke-width: 1px !important;
+  stroke-linecap: butt;
+}
+
+.ng-select .ng-select-container {
+
+  width: 93% !important;
+}
+
+.apexcharts-legend {
+  // justify-content: center !important;
+  // top: 156px !important;
+  // width: 52%;
+  
+}
+
+.apexcharts-canvas {
+  // position: relative;
+  // user-select: none;
+  // margin-top: 100px;
+}
+
+.apexcharts-legend {
+  
+  //  top: 198px !important; 
+  // right: 250px !important;
+}
+
+@media screen and (min-width: 768px) {
+  .mat-autocomplete-panel.mat-autocomplete-visible {
+    visibility: visible;
+    //margin-left:250px !important;
+    border:none !important;
+  }
+  .mat-autocomplete-panel
+{
+
+  min-width:350px !important;
+  overflow:inherit !important;
+
+}
+
+}
+@media screen and (max-width: 768px) {
+  .mat-autocomplete-panel.mat-autocomplete-visible {
+    visibility: visible;
+    margin-left:0px !important;
+    border:none !important;
+  }
+  .mat-autocomplete-panel
+{
+
+  min-width:350px !important;
+  overflow:inherit !important;
+
+}
+}
+
+
+// .a{
+//   font-size: 5px;
+// }
+
+// .footer {
+//     position: fixed;
+//     left: 0;
+//     bottom: 0;
+//     width: 100%;
+//     background-color: red;
+//     color: white;
+//     text-align: center;
+//  }
+
+.mobilenumbercls{
+  width: 120px !important;
+  padding-left: 2px !important;
+  margin-left: 12px;
+}
+
+
+.Shopnamecls
+{
+  width: 250px !important;
+  padding-left: 2px !important;
+  margin-left: 33px;
+}
+.emailidcls {
+  width: 280px !important;
+  margin-left: 13px;
+  padding-left: 2px !important;
+
+}
+
+.dateofbirthcls {
+  width: 150px !important;
+  margin-left: 38px;
+  padding-left: 2px !important;
+}
+
+.street{
+  width: 150px;
+  margin-left: 28px;
+  padding-left: 2px !important;
+}
+.streetshop
+{
+  width: 150px;
+  margin-left: 28px;
+  padding-left: 2px !important;
+
+}
+.doornocls {
+  //width: 205px;
+  padding-left: 2px !important;
+  margin-left: 56px;
+  display: inline;
+}
+
+.cartypecls {
+  width: 200px !important;
+}
+
+.zipcodecls{
+  width: 80px !important;
+  margin-left: 55px;
+  padding-left: 2px !important;
+}
+.shopzipcodecls{
+  width: 80px !important;
+  margin-left: 58px;
+  padding-left: 2px !important;
+}
+
+.form-control{
+border: 1px solid #000407 !important;
+border-radius: 0px !important;
+line-height: unset !important;
+
+}
+
+.carwashbtn {
+  margin-right: 14px !important;
+    width: 94px !important;
+    height: 35px !important;
+    padding-top: 4px !important;
+    padding-bottom: 4px !important;
+    font-size: 14px;
+}
+.shopgender
+{
+  height: 28px;
+  width: 85px !important;
+  padding-top: 3px;
+  padding-left: 2px !important;
+  margin-left: 16px;
+
+}
+
+.carwashbtn1 {
+
+    border: 1px solid #0bae62;
+    background-color: white !important;
+
+}
+
+.mainheading {
+  font-size: 16px !important;
+  font-weight: 900 !important;
+}
+
+.subheading {
+  font-size: 14px !important;
+  // font-weight: 900 !important;
+}
+
+.secondsubheading {
+
+    font-size: 12px !important;
+    // font-weight: 900 !important;
+
+}
+
+.slick-prev:before, .slick-next:before {
+
+  color: black !important;
+
+}
+
+// .slick-prev{
+//   left:5px !important;
+// }
+
+// .slick-next{
+//   left:5px !important;
+// }
+
+// .autocomplete-container .suggestions-container ul li a {
+  // padding: 14px 15px;
+  // display: block;
+  // text-decoration: none;
+  // color: black !important;
+  // cursor: pointer;
+
+  // font-size: 79px !important;
+  //  background: rgb(17, 192, 183) !important;
+  //  z-index: 100px;
+// }
+.select::-ms-expand { display: block !important; }
+
+.mat-drawer-content {
+
+  background: white !important;
+}
+.autocomplete-container .input-container input
+{
+    border:1px solid black !important;
+}
+
+
+.autocomplete-container .input-container input {
+  font-size: 14px;
+  /* box-sizing: border-box; */
+  border: none;
+  /* box-shadow: none; */
+  /* outline: none; */
+  background-color: #fff;
+  color: #000000de;
+  width: 200px;
+  // padding: 0 15px;
+  /* line-height: 40px; */
+  height: 30px !important;
+}
+
+.autocomplete-container {
+  box-shadow: unset !important;
+
+}
+
+.allSubmitbtn {
+  background-color: #1872f3 !important;
+  color: white !important;
+}
+// .mat-dialog-container
+// {
+//   width:80% !important;
+// }
+
+.apexcharts-tooltip-title {
+  display: none;
+}
+
+.mat-calendar-body-cell.selected {
+  background-color: none !important;
+ // background-color: skyblue !important;
+  border-radius: 50% !important;
+  // color: white !important;
+}
+
+.mat-calendar-body-cell-content.mat-calendar-body-cell.selected{
+  background-color: green !important;
+  color: white !important;
+}
+
+@media screen and (max-width: 768px){
+  .autocomplete-container .input-container input {
+
+    width: 200px !important;
+  }
+  }
+
+.btn {
+  font-size: 12px !important;
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+.dt-buttons
+  {
+    padding-bottom: 10px;
+    font-size: 20px !important;
+    text-align: right;
+
+
+  }
+
+
+  // .table {
+  //   //border: 0.5px solid #000000 !important;
+  // }
+
+  .dataTables_wrapper .dataTables_filter {
+
+    padding-bottom: 10px;
+}
+
+.tr {
+  background-color: red !important;
+}
+
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+
+  background: linear-gradient(to bottom, white 0%, gray 100%) !important;
+}
+
+.fa-file-excel-o:before{
+  color: #008000 !important;
+}
+
+.fa-file-text-o:before{
+  color: red !important;
+}
+
+
+.mat-autocomplete-panel.mat-autocomplete-visible {
+
+  overflow: auto !important;
+
+}
+.ngx-pagination .current {
+  padding: 0.1875rem 0.625rem;
+  background: gray !important;
+  color: #fefefe;
+  cursor: default;
+}

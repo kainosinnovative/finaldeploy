@@ -1,0 +1,325 @@
+<!-- <div style="background-color: #f3f3f3;"> -->
+  <div style="overflow: hidden !important;">
+<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> -->
+<h2 style="text-align: center;" class="mainheading">Services/Offer Details</h2>
+
+<!-- <div style="text-align: right;">
+  <button class="btn btn-success" (click)="DisplayForm()" >Add New Service</button>
+
+</div> -->
+
+
+<div class="row">
+
+
+    <div class="col-sm-12" style="width: 98%;">
+
+
+        <table  class="table table-responsive servicecss" *ngIf="serviceData1!=''" style="background-color: #f3f3f3;">
+            <thead style="border-bottom: 0.5px solid #aeaeae;color: white;width: 100%;">
+              <tr style="background: #202c45;">
+                <th colspan="6" style="text-align:center;border-right:solid 1px;font-weight: normal;font-size:14px;">Services offered in my shop</th>
+                <th colspan="5"  style="text-align:center;font-weight:normal;font-size:14px">Offer Details</th>
+                </tr>
+                <tr style="color: black;">
+                <th style="width:40px;" class="fontwghtcls">Sl. No.</th>
+                <th style="width:150px;text-align: left;padding-left:40px !important;" class="fontwghtcls">Service Name</th>
+                <th style="width:70px;text-align: left;" class="fontwghtcls">Service Status	 </th>
+                <th style="width:150px;text-align: left;padding-left: 33px !important;" class="fontwghtcls">Model </th>
+                <th style="width:90px;text-align: left;" class="fontwghtcls">Service Amount <span><i class="fa fa-rupee"></i></span></th>
+
+                <th  style="width:100px;border-right:solid 1px;" class="fontwghtcls">Update</th>
+
+                <th style="width:85px;text-align: left;padding-left: 31px !important;" class="fontwghtcls">Offer(%) </th>
+                <th style="width:85px;text-align: left;padding-left: 20px !important;" class="fontwghtcls">Offer Price (<span><i class="fa fa-rupee"></i></span>)</th>
+                <th style="width:35px;text-align: left;padding-left: 50px !important;" class="fontwghtcls">Start Date</th>
+                <th style="width:35px;text-align: left;padding-left: 50px !important;" class="fontwghtcls">End Date</th>
+                <th  style="width:100px;" class="fontwghtcls">Update</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let service of  serviceData1 | paginate: config ;  let i=index;" >
+
+                <td>{{i+1}}</td>
+                <td ><input id="service_{{service.service_id}}__{{i}}" type="number" value="{{service.service_id}}"  hidden><input id="servicename_{{service.service_id}}_{{i}}" type="text" value="{{service.service_name}}"  style="width: 250px;border:none;text-align: left;padding-left:21px;background-color: #f3f3f3;" readonly></td>
+                <td style="text-align: left;padding-left:21px;">
+
+                  <span *ngIf="service.status == '1'">&nbsp;</span>
+                  <label class="switch" *ngIf="service.status == '1'"  (click)="changeServiceStatus(service.id,service.status)">
+                    <input  type="checkbox" checked>
+                    <span class="slider round"></span>
+                  </label>
+
+                  <span *ngIf="service.status == '0'">&nbsp;</span>
+                  <label class="switch" *ngIf="service.status == '0'"  (click)="changeServiceStatus(service.id,service.status)">
+                    <input type="checkbox" >
+                    <span class="slider round"></span>
+                  </label>
+
+
+                                    </td>
+                <td>  <input id="model_{{service.service_id}}_{{i}}" type="number" value="{{service.model_id}}"  style="width: 60px;" hidden> <input id="modelname_{{service.service_id}}_{{i}}" type="text" value="{{service.model_name}}"  style="width: 150px;border:none;text-align: left;padding-left:21px;background-color: #f3f3f3;" readonly></td>
+                <td style="text-align: left;"> <input id="amount_{{service.service_id}}_{{i}}"   type="number" min="0" value="{{service.actual_amount}}" (keyup)="removevalidateMsg(service.service_id)" style="width: 60px;">
+                  <p id="validateamount_{{service.service_id}}_{{i}}" style="color: red;display: none;font-size:10px;"> Enter the Amount</p>
+                  <p id="validateamount1_{{service.service_id}}_{{i}}" style="color: red;display: none;font-size:10px;"> Enter the valided service Amount</p>
+                </td>
+
+
+                    <td style="border-right:solid 1px;">
+                      <a  *ngIf="service.status == '1';else butdisable" id="updatebtn_{{service.service_id}}_{{i}}" (click)="UpdateServiceAmount(service.service_id,i)" ><i style="color: #01992d;font-size: 20px;cursor: pointer;" class="fa fa-check-circle"></i></a>
+                      <!-- <button  class="allSubmitbtn" *ngIf="service.status == '1';else butdisable" style="border-radius: 21px;width: 60px;border: none;height: 22px;font-weight:bold;" id="updatebtn_{{service.service_id}}_{{i}}" (click)="UpdateServiceAmount(service.service_id,i)">Update</button> -->
+                      <ng-template #butdisable>
+                        <a  id="updatebtn_{{service.service_id}}_{{i}}"><i style="color: gray;font-size: 20px;opacity:.65;" class="fa fa-check-circle"></i></a>
+                      <!-- <button   class="allSubmitbtn" style="border-radius: 21px;width: 60px;border: none;height: 22px;font-weight:bold;opacity:.65" id="updatebtn_{{service.service_id}}_{{i}}" (click)="UpdateServiceAmount(service.service_id,i)" disabled>Update</button> -->
+                    </ng-template>
+                    </td>
+                <td >
+                 &nbsp; <input   type="number"    class="offerptage"  (click)="removeoffervalidata(service.service_id,i)"  id="offer_{{service.service_id}}_{{i}}" #term  value="{{service.offer_percent}}"  (keyup)="getOfferPrice(term.value,term.id)">
+                 <p id="validateoffer_{{service.service_id}}_{{i}}" style="color: red;display: none;font-size:10px;"> Enter the Offer %</p>
+                 <p id="validateoffer1_{{service.service_id}}_{{i}}" style="color: red;display: none;font-size:10px;">0% offer not accepted</p>
+                 <p id="validateoffer2_{{service.service_id}}_{{i}}" style="color: red;display: none;font-size:10px;">Invalid Offer</p>
+                </td>
+                <td>
+                  &nbsp;<input readonly  class="offerprice" id="offeramount_{{service.service_id}}_{{i}}" type="number" value="{{service.offer_price}}"  style="width: 60px;">
+
+                </td>
+                <td>
+
+                  <input type="date"  id="offerfromdate_{{service.service_id}}_{{i}}" (click)="removedatevalidate(service.service_id,i)"  class=" dateofbirthcls" style="width:112px !important;" value="{{service.from_date}}"  placeholder="">
+                  <p id="validatefromdate_{{service.service_id}}_{{i}}" style="color: red;display: none;font-size:10px;">Select Offer Starting Date</p> <p id="validatefromdateformat_{{service.service_id}}_{{i}}" style="color: red;display: none;font-size:10px;">Offer From Date Greater than To Date</p></td>
+                <td> <input type="date"  id="offertodate_{{service.service_id}}_{{i}}" (click)="removedatevalidatesms(service.service_id,i)"  class=" dateofbirthcls"  style="width:112px !important;" value="{{service.to_date}}" placeholder="">
+                  <p id="validatetodate_{{service.service_id}}_{{i}}" style="color: red;display: none;font-size:10px;">Select Offer Ending Date</p>  <p id="validatetodateformat_{{service.service_id}}_{{i}}" style="color: red;display: none;font-size:10px;">Offer To Date Less than From Date</p></td>
+                <td>
+
+
+                   <a  *ngIf="service.status == '1';else butdisable1" id="updatebtn_{{service.service_id}}" (click)="UpdateOfferAmount(service.service_id,i)" ><i style="color: #01992d;font-size: 20px;cursor: pointer;" class="fa fa-check-circle"></i></a>
+
+                     <!-- <button class="allSubmitbtn"  *ngIf="service.status == '1';else butdisable1" style="border-radius: 21px;width: 60px;border: none;height: 22px;font-weight:bold;" id="updatebtn_{{service.service_id}}" (click)="UpdateOfferAmount(service.service_id,i)">Update</button> -->
+                     <ng-template #butdisable1>
+                      <a  id="updatebtn_{{service.service_id}}" ><i style="color:grey;font-size: 20px;opacity: 0.65;visibility: unset;" class="fa fa-check-circle"></i></a>
+                      <!-- <button   class="allSubmitbtn" style="border-radius: 21px;width: 60px;border: none;height: 22px;font-weight:bold;opacity:.65" id="updatebtn_{{service.service_id}}_{{i}}" (click)="UpdateServiceAmount(service.service_id,i)" disabled>Update</button> -->
+                    </ng-template>
+
+
+
+            </td>
+              </tr>
+
+            </tbody>
+          </table>
+
+
+            <div style="text-align: center;" *ngIf="serviceData1!=''">
+              <br>
+              <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
+            </div>
+
+    </div>
+
+
+</div>
+<div class="row" >
+
+  <div class="col-md-6">
+
+
+
+    <div class="row">
+    <div class="accordion" style="background-color: #f3f3f3;">
+      <h2 class="title subheading " style="text-align: left;" (click)="opened = !opened">Add Service Price <i class="fa fa-chevron-down"></i>  </h2>
+      <div class="content-container" [class.opened]="opened" style="background-color: #f3f3f3;">
+
+
+
+    <!-- <div style="border: 1px solid;overflow:auto;"> -->
+      <!-- <h2 style="text-align: center;" class="mainheading">Add Service Price</h2> -->
+    <form [formGroup]="shopserviceForm" name="pf">
+     <div class="table-responsive  boxwidht" style="display: block;width: 100%;overflow-x: unset;padding-top: 10px;height:  56px;" id="shopservFormid" >
+      <table class="table table-responsive servicecss" style="border: none;margin-left:0px !important;">
+        <tr style="text-align: left;">
+          <td>Service</td>
+          <td style="width: 170px;">
+            <!-- <label style="width: 50px;">Service</label>  -->
+
+          <select   class="carmodelcls"  id="service" formControlName="service_id" style="width: 170px;background-color: white;" (ngModelChange) ="changeOtherToadd($event)">
+
+            <option value="">--Select Services--</option>
+
+            <option *ngFor="let service of MasterServiceData1" [value]="service.service_id">
+              {{service.service_name}}
+              </option>
+              <!-- <option value="Others">Others</option>  -->
+             </select>
+              <div *ngIf="shopserviceForm.controls['service_id'].touched && shopserviceForm.controls['service_id'].invalid">
+
+              <div *ngIf="shopserviceForm.controls['service_id'].errors" style="color: red;">
+                <div *ngIf="shopserviceForm.controls['service_id'].errors.required" style="font-size: 12px;">
+                    Select service
+                </div>
+
+             </div>
+
+            </div>
+          </td>
+          <td style="width: 2px;"></td>
+          <td style="display: none;" id="hiddenServidTd">
+            <label style="width: 100px;">Service Name</label>
+            <input type="text"   style="padding-left: 2px !important;"   id="hidden_service" placeholder=""  >
+
+          </td>
+          <td style="width:60px;padding-left:12px;">Model</td>
+          <td>
+            <!-- <label style="width: 100px;">Model</label>  -->
+
+                <select   class="carmodelcls "  id="model" formControlName="model_id" style="padding-left: 2px !important;background-color: white;">
+
+                  <option value="">--Select Model--</option>
+                  <option *ngFor="let m of servicemodelsdataobj" [value]="m.id">
+                    {{m.model_name}}
+                    </option>
+                   </select>
+                    <div *ngIf="shopserviceForm.controls['model_id'].touched && shopserviceForm.controls['model_id'].invalid">
+
+                    <div *ngIf="shopserviceForm.controls['model_id'].errors" style="color: red;">
+                      <div *ngIf="shopserviceForm.controls['model_id'].errors.required" style="font-size: 12px;">
+                          Select car model
+                      </div>
+
+                   </div>
+
+                  </div>
+          </td>
+          <td>Amount</td>
+
+          <td>
+            <!-- <label class="customerProfileLbl" style="width: 100px;">Amount</label> -->
+
+             <input type="number" min="1"   style="padding-left: 2px !important;"  id="newamount" class="lastname" placeholder="" formControlName="actual_amount" style="width: 60px;height: 25px;background-color: white;">
+              <div *ngIf="shopserviceForm.controls['actual_amount'].touched && shopserviceForm.controls['actual_amount'].invalid ">
+
+                <div *ngIf="shopserviceForm.controls['actual_amount'].errors" style="color: red;">
+                  <div *ngIf="shopserviceForm.controls['actual_amount'].errors.required" style="font-size: 12px;">
+                       Enter the amount
+                  </div>  
+
+               </div>
+
+              </div>
+          </td>
+          <td  >
+            <button class="allSubmitbtn  btn" id="addserviceshopbtn" style="width:68px; border:none; height:28px;" (click)="AddShopserviceDetails(shopserviceForm.value)" [disabled]='!shopserviceForm.valid'>Add</button>
+
+          </td>
+
+
+        </tr>
+
+
+      </table>
+
+
+          </div>
+        </form>
+
+      <!-- </div> -->
+  </div>
+
+
+
+</div>
+</div>
+  </div>
+
+  <div class="col-md-6" >
+    <div class="accordion1" style="background-color: #f3f3f3;">
+      <h2 class="title1 subheading" style="text-align: left;" (click)="opened1 = !opened1">Add New Service <i class="fa fa-chevron-down"></i> </h2>
+      <div class="content-container1" [class.opened1]="opened1">
+    <!-- <div style="border: 1px solid;margin-left:0px!important;height: 68px;"> -->
+      <!-- <h2 style="text-align: center;" class="mainheading">Add New Service</h2> -->
+      <form [formGroup]="MasterserviceForm" name="pf">
+      <div class="table-responsive boxwidht" style="display: block;width: 100%;overflow-x: unset;padding-top: 3px;height: 100px;height: 65px !important;" id="shopservFormid2">
+        <table class="table" style="border: none;margin-top: -36px;border-collapse: inherit !important;padding-left:0px!important;margin-left:0px !important;">
+          <tr style="text-align: Center;">
+
+            <td>Service</td>
+            <td class="">
+
+        <ng-autocomplete class="ng-autocomplete"  minlength="3"  [data]="MasterServiceData1" formControlName="service_name" [searchKeyword]="keyword" (selected)='selectEvent($event)'
+              (inputChanged)='onChangeSearch($event)'    (inputFocused)='onFocused($event)' [itemTemplate]="itemTemplate"
+              [notFoundTemplate]="notFoundTemplate" >
+            </ng-autocomplete>
+
+          <ng-template #itemTemplate let-item >
+              <a [innerHTML]="item.service_name"></a>
+          </ng-template>
+
+          <ng-template #notFoundTemplate let-notFound>
+              <div [innerHTML]="notFound"></div>
+          </ng-template>
+
+              <!--
+              <input type="text"   style="padding-left: 2px !important;"  formControlName="service_name"  placeholder=""  > -->
+              <div style="margin-top: -27px;" *ngIf="MasterserviceForm.controls['service_name'].touched && MasterserviceForm.controls['service_name'].invalid">
+
+                <div *ngIf="MasterserviceForm.controls['service_name'].errors" style="color: red;text-align: left;">
+                  <div *ngIf="MasterserviceForm.controls['service_name'].errors.required" style="font-size: 12px;">
+                      Enter the service name
+                  </div>
+
+               </div>
+
+              </div>
+            </td>
+
+        <td style="text-align: left;">
+              <button class="allSubmitbtn btn" style="margin-top: -9px;margin-left: 12px; width:68px; border:none; height:28px;"  (click)="AddMasterserviceDetails(MasterserviceForm.value)" [disabled]='!MasterserviceForm.valid'  >Add</button>
+
+            </td>
+
+
+          </tr>
+
+        </table>
+
+
+            </div>
+          </form>
+    <!-- </div> -->
+
+
+
+  </div>
+</div>
+  </div>
+
+  </div>
+<br><br>
+
+<div class="row"  style="margin-bottom: -8px; margin-top: -19px ! important;"  >
+  <!-- <div *ngIf="let data of  statuspickupvalue;" > -->
+
+  <label class="switch subheading" style="white-space:nowrap;margin-left: 18px;" >Do you provide pick & drop service?&nbsp;&nbsp;
+
+   <!-- {{statuspickupvalue}} -->
+
+    <span *ngIf="statuspickupvalue == '1'">&nbsp;</span>
+
+    <label class="switch" *ngIf="statuspickupvalue == '1'"  (click)="changepickupStatus(statuspickupvalue)">
+      <input  type="checkbox" checked>
+      <span class="slider round"></span>
+    </label>
+
+    <span *ngIf="statuspickupvalue == '0'">&nbsp;</span>
+    <label class="switch" *ngIf="statuspickupvalue == '0'"   (click)="changepickupStatus(statuspickupvalue)">
+      <input type="checkbox" >
+      <span class="slider round"></span>
+    </label>
+
+    <!-- <input style="float:  right; text-align: right;" type="checkbox" >
+    <span class="slider round"  style="margin-left: 250px;  width: 43px;"></span> -->
+  </label>
+
+  <div style="height: 30px;"></div>
+<!-- </div> -->
+    </div>
+  </div>

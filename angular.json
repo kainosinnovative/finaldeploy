@@ -1,0 +1,150 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": "28b8ea41-df1d-4756-8196-c5ce0d0e19aa"
+  },
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "angular6-sidenav-example": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        },
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
+      "root": "",
+      "sourceRoot": "src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/angular6-sidenav-example",
+            "index": "src/index.html",
+            "main": "src/main.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "src/styles.scss",
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "./node_modules/datatables.net-dt/css/jquery.dataTables.css",
+              "./node_modules/ngx-toastr/toastr.css",
+              "./node_modules/font-awesome/css/font-awesome.css",
+              "./node_modules/slick-carousel/slick/slick.scss",
+              "./node_modules/slick-carousel/slick/slick-theme.scss"
+
+
+            ],
+            "scripts": [
+              "./node_modules//bootstrap//dist//js//bootstrap.bundle.js",
+              "./node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "./node_modules/bootstrap/dist/js/bootstrap.js",
+              "./node_modules/jquery/dist/jquery.min.js",
+              "./node_modules/jquery/dist/jquery.js",
+              "./node_modules/jszip/dist/jszip.js",
+              "./node_modules/datatables.net/js/jquery.dataTables.js",
+              "./node_modules/datatables.net-buttons/js/dataTables.buttons.js",
+              "./node_modules/datatables.net-buttons/js/buttons.colVis.js",
+              "./node_modules/datatables.net-buttons/js/buttons.flash.js",
+              "./node_modules/datatables.net-buttons/js/buttons.html5.js",
+              "./node_modules/datatables.net-buttons/js/buttons.print.js",
+              "./node_modules/slick-carousel/slick/slick.min.js"
+
+
+
+            ]
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "10mb",
+                  "maximumError": "10mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "10mb",
+                  "maximumError": "10mb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "angular6-sidenav-example:build:production"
+
+            },
+            "development": {
+              "browserTarget": "angular6-sidenav-example:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "angular6-sidenav-example:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "src/test.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "tsconfig.spec.json",
+            "karmaConfig": "karma.conf.js",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "src/styles.scss",
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "./node_modules/ngx-toastr/toastr.css",
+              "./node_modules/font-awesome/css/font-awesome.css"
+
+            ],
+            "scripts": [
+              "./node_modules//bootstrap//dist//js//bootstrap.bundle.js"
+
+            ]
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "angular6-sidenav-example"
+}

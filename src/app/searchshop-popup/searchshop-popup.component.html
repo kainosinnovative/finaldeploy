@@ -1,0 +1,27 @@
+<mat-card style="box-shadow: none;">
+    <div >
+<div  style="text-align: right;margin-top: -17px;margin-right: -14px;">
+  <a style="cursor: pointer;font-size: 20px;" (click)="closesearchshopPopup()">×</a>
+</div>
+
+       <div class=" popupwidthSelect" style="height: 150px;overflow:hidden;">
+        
+        <h2 class="mainheading" style="text-align: center;">Search for Shop /Services</h2>
+        <div style="text-align: center;">
+            <input class="search" type="text" placeholder="Search" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto">
+            <mat-autocomplete #auto="matAutocomplete" placeholder="select shop">
+              <mat-option class="ss" *ngFor="let option of filteredOptions | async" [value]="option.name1" style="width: 300px !important;" (onSelectionChange)="onSelFunc(option.id);onSelFunc1(option.id)" >
+                {{option.name1}}
+              </mat-option>
+            </mat-autocomplete>
+        </div>
+    </div>
+</div>
+</mat-card>
+
+
+
+
+    
+    
+      

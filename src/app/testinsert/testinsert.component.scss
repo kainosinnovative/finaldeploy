@@ -1,0 +1,156 @@
+h4 {
+  text-align: center;
+  font: normal 17px sans-serif;
+  margin: 20px 0;
+}
+
+#doughnut-chart-ui {
+  font: normal 12px sans-serif;
+  max-width: 900px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #313b3f;
+  margin: 0 10%;
+  padding: 20px 0;
+  border-radius: 6px;
+}
+
+.category {
+  font: bold 14px sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.chart:nth-child(2) {
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+}
+
+.chart {
+  width: 300px;
+  padding-top: 10px;
+
+  .color-wrapper {
+    display: grid;
+    margin-right: 10px;
+  }
+
+  .color-ref {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    transform: translateY(4px);
+  }
+
+  .chart-specs {
+    display: grid;
+    grid-template-columns: 20px calc(100% - 75px) 20px;
+    line-height: 23px;
+    margin-top: 30px;
+    margin-left: 20px;
+  }
+}
+
+.label-ref,
+.percent {
+  display: grid;
+
+  >div {
+    white-space: nowrap;
+    color: #ffffff;
+  }
+}
+
+.percent {
+  margin-left: 10px;
+}
+
+@media screen and (max-width: 1400px) {
+  #doughnut-chart-ui {
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  #doughnut-chart-ui {
+    margin: 0 20px;
+  }
+}
+
+@media screen and (max-width:768px) {
+  #doughnut-chart-ui {
+    display: block;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+
+    .chart {
+      padding: 0;
+      border: none;
+      overflow: auto;
+      margin-bottom: 30px;
+    }
+  }
+
+  .chart {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+
+    .chart-specs {
+      transform: none;
+    }
+  }
+
+  .category {
+    text-align: left;
+    margin-left: 0;
+    border-bottom: 1px solid;
+    padding-bottom: 10px;
+    padding-left: 20px;
+  }
+
+  .category+div {
+    float: left;
+  }
+}
+
+@media screen and (max-width:600px){
+
+  #doughnut-chart-ui {
+    max-width: 350px;
+  }
+  .category+div {
+    float: none;
+    max-width: 275px;
+    margin: 0 auto;
+  }
+
+  .chart {
+    margin-bottom: 50px;
+
+    .chart-specs {
+      margin-top: 20px;
+    }
+
+    .category {
+      padding-left: 20px;
+      margin: 0;
+    }
+  }
+
+  #doughnut-chart-ui {
+    .chart:last-child {
+      margin: 0;
+    }
+
+    .chart:first-child {
+      .category {
+        margin: 0;
+      }
+    }
+  }
+}

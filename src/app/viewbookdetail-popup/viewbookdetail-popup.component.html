@@ -1,0 +1,139 @@
+<div style="width: 100%;">
+    <div  style="text-align: right;margin-top: -15px;margin-right: -12px;">
+        <a style="cursor: pointer;font-size: 20px;" (click)="closeMe()">×</a>
+      </div>
+
+      <h2 style="text-align: center;" class="mainheading">{{ViewBooking_heading}}</h2>
+
+<div style="border: 1px solid #051b87;padding: 14px;" *ngFor="let b of  bookingDetailsById; let i=index;">
+    <div class="row" >
+        
+            <div class="col-sm-6">
+                <div class="row">
+                    <div class="col-sm-6"><b>Booking Id</b></div>
+                    <div class="col-sm-6 fontwt500">{{b.Booking_id}}</div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="row">
+                    <!-- <p>Time Format From  24 to 12 : {{'23:11:00' | convertFrom24To12Format}}</p> -->
+                    <div class="col-sm-6"><b>Pick-up & Drop</b></div>
+                    <div class="col-sm-6 fontwt500"><span *ngIf = "b.pickup_drop == 0;else pickDropid" >No</span>
+                        
+                        <ng-template  #pickDropid>
+                            
+                          <span>Yes<br>
+                            <span *ngIf="userroleSes == 'CustomerSes';else shoproleSesid">
+                                <span *ngIf="b.pickedAndDrop_status == ''">{{b.pickedAndDrop_status}}  on {{b.pickup_date}} <span *ngIf="b.pickup_time">@ {{b.pickup_time}}</span></span>
+                            </span>
+
+                            <ng-template  #shoproleSesid>
+                              <span> {{b.instructions}} </span> on {{b.pickup_date}} <span *ngIf="b.pickup_time">@ {{b.pickup_time}}</span>
+
+                            </ng-template>
+
+                            <!-- <span *ngIf="userroleSes == 'CustomerSes'">
+                                {{b.pickedAndDrop_status}} <span *ngIf="b.pickup_time">@ {{b.pickup_time}}</span> on {{b.pickup_date}} <span *ngIf="b.pickup_time">@ {{b.pickup_time}}</span>
+                            </span> -->
+                        
+                        <!-- {{b.instructions}} -->
+                        </span>
+                        </ng-template>
+                    </div>
+                </div>
+            </div>
+       
+    </div>
+    
+    <p style="border-bottom:1px solid #051b87;;"></p>
+
+    <!-- <hr style="color:#051b87;opacity: unset;"> -->
+
+    <div class="row" >
+        
+        <div class="col-sm-6">
+<div class="row">
+    <div class="col-sm-6"><b>Combo Service & Price (<span><i class="fa fa-rupee"></i></span>)</b></div>
+            <div class="col-sm-6">
+                <div *ngIf="b.combo_id != null;else nocomboservice">
+                    
+                    <div *ngFor="let m of  b.combo_id.split(',');let j=index" >
+                        <div *ngFor="let m1 of  loadmasterComboOfferval1;" >
+                         
+            <span *ngIf="m === m1.offer_id">
+               <b>{{m1.offer_name}}</b> 
+                <div class="fontwt500" *ngFor="let m2 of  m1.services.split(',');let k=index" >
+                    <div *ngFor="let m3 of  MasterServiceData1;" >
+                        
+                        <span  *ngIf="m2 === m3.service_id"><i class="fa fa-check-circle" style="color: #429c68;"></i>&nbsp;  {{m3.service_name}}</span>
+                                    </div>
+            </div>
+              
+            </span>
+                        </div>
+                        
+                      </div>
+                </div>
+
+                <ng-template  #nocomboservice>
+                    <span class="fontwt500">None</span>
+                  </ng-template>
+
+                <div style="color: #f90832;font-weight: bold;" *ngIf="b.comboprice_total != null;else nocombototal">
+                    <i class="fa fa-rupee"></i> {{b.comboprice_total}}
+                </div>
+                <ng-template  #nocombototal>
+                    <span></span>
+                  </ng-template>
+                </div>
+</div>
+        </div>
+
+        <div class="col-sm-6">
+
+            <div class="row">
+                <div class="col-sm-6"><b>Extra Services & Price</b></div>
+                <div class="col-sm-6"><div *ngIf="b.services != null;else noservice">
+                    <div *ngFor="let m of  b.services.split(',');let j=index" >
+                      <div class="fontwt500" *ngFor="let m1 of  MasterServiceData1;" >
+                       
+          <span *ngIf="m === m1.service_id"><i class="fa fa-check-circle" style="color: #429c68;"></i>&nbsp; {{m1.service_name}}</span>
+                      </div>
+                      
+                    </div>
+                    <div style="color: #f90832;font-weight: bold;" *ngIf="b.serviceprice_total != null;else noserviceamount">
+                        <i class="fa fa-rupee"></i> {{b.serviceprice_total}}
+                    </div>
+                    <ng-template  #noserviceamount>
+                        <span class="fontwt500">None</span>
+                      </ng-template>
+                  </div></div>
+                  <ng-template  #noservice>
+                    <span class="fontwt500">None</span>
+                  </ng-template>
+            </div>
+
+        </div>
+        </div>
+
+        <p style="border-bottom:1px solid #051b87;"></p>
+        <!-- <hr style="color:#051b87;opacity: unset;"> -->
+
+<div class="row" >
+    <div class="col-sm-6">
+       
+        <div class="row" >
+            <div class="col-sm-6"><b>Total (<span><i class="fa fa-rupee"></i></span>)</b></div>
+            <div class="col-sm-6" style="color: #f90832;font-weight: bold;"><i class="fa fa-rupee"></i> {{b.payable_amt}}</div>
+        </div>
+        
+    </div>
+
+    <div class="col-sm-6">
+       
+        
+    </div>
+</div>
+</div>
+
+</div>

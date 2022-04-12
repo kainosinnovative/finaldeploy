@@ -1,0 +1,116 @@
+<div class="loginpopup" >
+
+    <form  [formGroup]="dataForm" (ngSubmit)="holidaysUpdate(dataForm.value)" method="post"  >  
+     
+      
+    
+    
+        <mat-card  style="box-shadow: none !important;">
+          <div  style="text-align: right;margin-top: -29px;margin-right: -21px;">
+            <a style="cursor: pointer;font-size: 20px;" (click)="closeMe()">×</a>
+          </div>
+        <mat-card-header class="loginheadingweb" >
+            <div class="col-sm-12" >
+                <h2  class="mainheading holidaypopupheading" style="text-align: center;">Select Holidays - Timings</h2>
+            </div>
+          
+        </mat-card-header>
+    
+    
+        <mat-card-content style="text-align: center;margin-top: 10px;"  class="form-inline">
+          <div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <label  class="" style="margin-left: -7px;">Selected Date - <b>{{holidayDateselected}}</b></label>
+                    </div>
+                    </div>
+<br>
+            <div class="row">
+            <div class="col-sm-6">
+                <label  class="">Timing From</label>
+                <p class="labelFieldSpace" style="display: none;"></p>
+        <select  placeholder=""   class="shopgender3" formControlName="leave_timing_from" >
+            <option value="">--Select---</option>
+            <option value="09:00">09 AM</option>
+            <option value="10:00">10 AM</option>
+            <option value="11:00">11 AM</option>
+            <option value="12:00">12 PM</option>
+            <option value="13:00">01 PM</option>
+            <option value="14:00">02 PM</option>
+            <option value="15:00">03 PM</option>
+            <option value="16:00">04 PM</option>
+            <option value="17:00">05 PM</option>
+            <option value="18:00">06 PM</option>
+            </select>
+            
+            <div *ngIf="dataForm.controls['leave_timing_from'].touched && dataForm.controls['leave_timing_from'].invalid "> 
+
+                <div *ngIf="dataForm.controls['leave_timing_from'].errors" style="color: red;font-size: 12px"> 
+                    Select from Timing
+                <!-- <div *ngIf="dataForm.controls['leave_timing_from'].errors.required" style="font-size: 12px;">
+                    Select the Timings
+                </div> 		    -->
+                
+                </div> 
+                
+            </div>
+            <p class="businesshrcls" style="display: none;"></p>
+         </div>
+
+            <div class="col-sm-6"> 
+                <label >Timing To</label>
+                <p class="labelFieldSpace" style="display: none;"></p>
+
+                    <select  placeholder=""   class="shopgender3" formControlName="leave_timing_to" >
+                        <option value="">--Select---</option>
+            <option value="09:00">09 AM</option>
+            <option value="10:00">10 AM</option>
+            <option value="11:00">11 AM</option>
+            <option value="12:00">12 PM</option>
+            <option value="13:00">01 PM</option>
+            <option value="14:00">02 PM</option>
+            <option value="15:00">03 PM</option>
+            <option value="16:00">04 PM</option>
+            <option value="17:00">05 PM</option>
+            <option value="18:00">06 PM</option>
+                        </select>
+                        <div *ngIf="dataForm.controls['leave_timing_to'].touched && dataForm.controls['leave_timing_to'].invalid "> 
+        
+                            <div *ngIf="dataForm.controls['leave_timing_to'].errors" style="color: red;font-size: 12px"> 
+                            <!-- <div *ngIf="dataForm.controls['leave_timing_to'].errors.required" style="font-size: 12px;"> -->
+                                Select to Timing
+                            <!-- </div> 		    -->
+                            
+                            </div> 
+                        </div>
+            </div>
+
+        </div>
+    
+      </div>
+     
+              
+        
+        
+      
+      </mat-card-content>
+    
+    
+        
+    
+    
+      <div class="col-sm-12 addholidaypopup" style="text-align: right;" >
+          <button mat-raised-button class="allSubmitbtn btn"   [disabled]='!dataForm.valid'>Add</button>
+      </div>
+    
+    
+    
+     
+        
+    
+        </mat-card>
+     
+       
+    </form>
+    
+    </div>

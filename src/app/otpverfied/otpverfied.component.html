@@ -1,0 +1,52 @@
+<div class="otpverifyPopup" style="height: 30%;">
+    <div style="text-align: right;margin-top: -13px;">
+        <a style="cursor: pointer;font-size: 20px;" (click)="closeMe()">×</a>
+      </div>
+    <div >
+
+        <h5 style="font-size: 20px;padding-left: 56px;" class="mainheading">Mobile Number verification</h5>
+
+        <div style=" margin-bottom: 24px;"></div>
+
+        <span>Enter the code we just send on your mobile phone </span>
+
+        <div style=" margin-bottom: 19px;"></div>
+
+
+
+        <div class="d-flex flex-row">
+            
+
+            <input type="text"  #txt1 maxlength="1" class="form-control" [(ngModel)]="otpFirstDigit" (keyup)="move($event,'',txt1,txt2)">
+            <input type="text"  #txt2 maxlength="1" class="form-control" [(ngModel)]="otpSecondDigit" (keyup)="move($event,txt1,txt2,txt3)">
+            <input type="text"  #txt3 maxlength="1" class="form-control" [(ngModel)]="otpThirdDigit" (keyup)="move($event,txt2,txt3,txt4)">
+            <input type="text"  #txt4 maxlength="1" class="form-control" [(ngModel)]="otpFourthDigit" (keyup)="move($event,txt3,txt4,'')">
+        </div>
+
+
+        <label></label>
+        <p id="invalidOtp" style="color:red"></p>
+        <p id="pleaseregister" style="color:red;font-size: 12px;"></p>
+
+        <div *ngIf="showTimerContainer" style="text-align: right;">
+            <p (onload)='startTimer()'>{{timeLeft}} Seconds Left....</p>
+
+            </div>
+            <div *ngIf="showMyContainer" style="text-align: right;">
+                <span  class="font-weight-bold text-danger cursor" (click)="sendotp2(dataForm1.value)">Resend Code</span>
+              </div>
+       <div style="text-align: center;">
+         <button class="carwashbtn1" style="border-radius: 21px;width: 100px;height: 36px;" (click)="VerifyOtp()">Verify</button>
+        </div>
+<form [formGroup]="dataForm1" >
+        <input type="text" matInput placeholder="Phone" value="{{isloggedinUser}}" formControlName='mobile' style="visibility: hidden;">
+
+        <!--<div class="text-center"><p class="font-weight-bold text-danger cursor"  id="resendbutton" >Resend</p></div>-->
+
+    </form>
+
+
+
+
+    </div>
+</div>

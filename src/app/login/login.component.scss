@@ -1,0 +1,48 @@
+.login-main{
+    margin-top: 10%;
+    }
+    mat-card{
+    min-width: 40%;
+    }
+    .bordercard
+    {
+        border:none;
+        box-shadow: none;
+    }
+    .textboxmobileno
+    {
+        border-radius: 5px;
+    }
+
+
+    @media screen and (max-width: 768px) {
+        .countrycodecls{
+            width: 20%;
+        }
+
+        .loginheadingweb{
+            padding-left: 71px;
+        }
+       
+        .countrycodecls {
+            width: 52px;
+        }
+        .mobilenumberlogin {
+            width: 160px !important;
+        }
+    }
+
+    @media screen and (min-width: 768px) {
+        .loginpopup {
+            width: 336px;
+        }
+        .countrycodecls{
+            width: 32%;
+        }
+
+        .loginheadingweb {
+            padding-left: 107px;
+        }
+        
+        
+    }

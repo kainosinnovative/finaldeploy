@@ -1,0 +1,331 @@
+
+
+.accordion{
+    // box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
+    margin: 12px;
+    margin-left:80px;
+   
+    padding:10px;
+
+}
+ .accordion1{
+    // box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
+    margin: 12px;
+    margin-left:80px;
+    
+    padding:10px;
+
+}
+
+.title  {
+    padding-left: 6px;
+    background-color:#202c45;
+    color:white;
+    
+}
+.title1
+{
+    padding-left: 6px;
+    background-color:#202c45;
+    color:white;
+}
+.title2
+{
+    padding-left: 6px;
+    background-color:#202c45;
+    color:white;
+}
+.content {
+  padding: 12px;
+}
+
+.content-container  {
+    overflow: hidden;
+    max-height: 0;
+    margin-left:20px;
+    margin-bottom:10px;
+}
+.content-container1
+{
+    overflow: hidden;
+    max-height: 0;
+    margin-left:20px;
+    margin-bottom:10px;
+}
+.content-container2
+{
+    overflow: hidden;
+    max-height: 0;
+    margin-left:20px;
+    margin-bottom:10px;
+}
+
+.content-container.opened  {
+  max-height: none;
+}
+.content-container1.opened1
+{
+    max-height: none;
+}
+.content-container2.opened2
+{
+    max-height: none;
+}
+.form-control
+{
+    width:300px;
+    font-size: 13px !important;
+    height: 28px;
+    padding-top: 3px;
+    padding-left: 2px !important;
+    display: inline;
+}
+
+
+.requiredfield
+{
+    color:red;
+}
+
+.selectoptiongender
+{
+    height: 28px;
+    width: 85px !important;
+    padding-top: 3px;
+    padding-left: 2px !important;
+    margin-left: 12px;
+ 
+}
+
+.city{
+    padding-left: 2px !important;
+    width: 170px;
+    margin-left: 32px;
+ }
+
+ .cartype{
+    padding-left: 2px !important;
+    width: 200px;
+    margin-left: 25px;
+ }
+
+ .fueltype{
+    padding-left: 2px !important; 
+    width: 180px;
+    margin-left: 19px;
+ }
+
+ .carbrand{
+    padding-left: 2px !important;
+    width: 260px !important;
+    margin-left: 20px;
+ }
+
+ .carcolor{
+    width: 175px;
+    padding-left: 2px !important;
+    margin-left: 24px;
+ }
+
+ .carmodel{
+    padding-left: 2px !important;
+    width: 240px; 
+    margin-left: 25px; 
+ }
+ 
+ @media screen and (max-width: 768px){
+    
+    
+
+    .labelFieldSpace{
+        display: block !important;
+    }
+     .shopname{
+        width: 190px !important;
+        margin-left: 37px;
+     }
+     .emailid{
+        width: 201px !important;
+        // margin-left: 20px;
+        }
+    
+    
+    .leftnamemrg{
+        margin-left:-1px;
+        
+    }
+    .mobilecls{
+        // margin-left: 13px !important;
+    }
+    .firstnamecls{
+        width: 194px !important;
+        //margin-left: 41px;
+     
+    }
+    .lastnamecls{
+        // margin-left: 42px;
+        width: 200px;
+    }
+    .aadharcls{
+        width: 194px !important;
+       // margin-left:  41px !important;
+    }
+    .address{
+        width: 201px !important;
+        margin-left: 57px;
+    }
+    .dateofbirthcls{
+        // margin-left: 40px;
+    }
+    .shopgender2{
+        // margin-left: 16px;
+    }
+    .citycls{
+        width: 201px !important;
+       
+        }
+     .fromdata{
+        margin-left: 13px;
+        }
+     .leavefromdate{
+        margin-left: 0px;
+    }
+    .leavefromdate1{
+        width: 129px !important;
+    margin-right: -6px;
+    }
+    .leavefromdate2{
+        margin-left: 2px;
+    }
+    .closedate{
+        margin-top: 6px;
+    }
+    .businesshrcls{
+        display: block !important;
+    }
+    .row {
+        
+        --bs-gutter-x: 0rem !important;
+    }
+ }
+
+ .mat-calendar-body-cell.selected
+{
+//   background-color:skyblue !important;
+  border-radius: 50%
+}
+.drop-calendar
+{
+  width:30rem
+}
+
+.special-date {
+    background-color: green !important;
+    border-radius: 100%;
+  }
+
+
+  .mobilenumbercls2{
+    width: 120px !important;
+    
+  }
+//   .special-date1 {
+//     background-color: yellow !important;
+//     border-radius: 100%;
+//   }
+
+.shopzipcodecls2{
+    width: 87px !important;
+    //margin-left: 58px;
+    //padding-left: 2px !important;
+  }
+
+@media screen and (min-width: 768px){
+    .workinghoursupdcls{
+        margin-left: -5px;
+    }
+    .shopzipcodecls2{
+       
+        margin-left: 52px;
+    }
+    .streetcls{
+        // width: 194px !important;
+         margin-left: 31px;
+         // margin-left: 34px;
+         }
+
+    .selectoption
+{
+    height: 28px;
+    
+    padding-left: 2px !important;
+    margin-left: 37px;
+        
+
+}
+    .address2{
+        margin-left: 20px;
+      }
+    .firstLastnamecls2{
+        margin-left: 36px;
+    }
+    .emailid{
+        margin-left: -32px;
+    }
+    .dateofbirthcls2{
+        margin-left: 24px;
+    }
+    .aadharcls{
+        margin-left:46px !important;
+    }
+    .mobilenumbercls2{
+        
+        padding-left: 2px !important;
+        margin-left: 12px;
+      }
+
+    .firstLastnamecls{
+        width: 190px !important;
+        padding-left: 2px !important;
+        margin-left: 36px;
+      }
+
+    .aadharcls{
+        width: 190px !important;
+        margin-left: 45px !important;
+    }
+
+    .lastnamecls{
+        padding-left: 2px !important;
+        margin-left: 25px;
+    }
+    .shopgender2{
+        margin-left: -32px;
+    }
+
+    .shopgender3{
+        margin-left: 15px;
+    }
+    .citycls2{
+        margin-left:79px !important;
+    }
+
+}
+
+.shopgender2{
+    height: 28px;
+}
+
+.shopgender3{
+    height: 28px;
+}
+
+.firstLastnamecls2{
+    width: 190px !important;
+    
+    
+  }
+
+  .address2{
+    width: 201px !important;
+  }

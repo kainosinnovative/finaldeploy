@@ -1,0 +1,100 @@
+<div style="overflow-x: hidden;">
+
+<h2 style="text-align: center;padding-top: 7px;" class="mainheading">My Booking</h2>
+
+<div class="row">
+    <div class="col-sm-1"></div>
+
+    <div class="col-sm-10 table-responsive">
+
+
+        <table  class="table table-responsive servicecss" id="user" *ngIf="posts" datatable="ng"  datatable [dtOptions]="dtOptions" style="border:1px solid white; ">
+            <thead style="background: #2F9CE2FF;border-bottom: 0.5px solid #aeaeae;color: white;">
+
+                <tr>
+                  <th  style="display:none;width: 0px;">b</th>
+                <th style="width:10%;font-weight:normal;text-align: left;">Booking Id</th>
+                <th style="width: 17%;font-weight:normal;text-align: left;">Registration No</th>
+                <th style="width:11%;padding: left 9px;font-weight:normal;text-align: left;">Booking Date</th>
+                <th style="width:20%;font-weight:normal;text-align: left;">Shop</th>
+                <th style="width:13%;font-weight:normal;text-align: left;">Booked Status</th>
+                <th style="width:12%;font-weight:normal;text-align: left;">Service Status</th>
+                <th style="width:8%;font-weight:normal;text-align: right;">Total (<span><i class="fa fa-rupee"></i></span>) </th>
+
+
+
+              </tr>
+            </thead>
+            <!-- <tbody *ngIf = "MybookingDetails1 == '';else mybookintbl">
+              <tr>
+                <td colspan="13" style="text-align: center;">
+                  No data available
+                </td>
+              </tr>
+            </tbody> -->
+            <!-- <ng-template #mybookintbl> -->
+            <tbody  style="background-color: #ededed8c;" >
+              <tr  *ngFor="let b of  posts| paginate: config ;  let i=index;" style="border:1px solid #aeaeae; background-color: #ededed8c;">
+                <td style="display:none;width: 0px;">{{b.id}}</td>
+               <td><a style="cursor: pointer;color: #000000; text-decoration:underline;font-weight: 500;text-align: left;margin-left: 8px;"  (click)="ViewDetailsPopup(b.Booking_id,'My Booking')" >{{b.Booking_id}}</a></td>
+               <!-- <td><a style="cursor: pointer;color: #26a0fc;">{{b.Booking_id}}</a></td> -->
+                <td><p style="margin-left: 10px;">{{b.vehicle_number}} - 
+                  <span *ngFor="let m1 of  MasterModelData1;" >
+               
+                    <span *ngIf="b.modelname === m1.id"> {{m1.model_name}}</span>
+                  </span>
+                </p>
+                  </td>
+                <td><p style="margin-left: 8px;">{{b.bookingdate | date: 'dd-MM-yyyy'}}</p> </td>
+                <td><p style="margin-left: 8px;">{{b.shopname}} </p></td>
+                <td>
+                  <p style="margin-left: 8px;">
+                  <span style="color: black" *ngIf="b.booked_status == ''">Booking under confirmation</span>
+                  <span style="color: green;font-weight: bold;" *ngIf="b.booked_status == 'Accepted'">{{b.booked_status}}</span>
+                  <span style="color: red;font-weight: bold;" *ngIf="b.booked_status == 'Rejected'">{{b.booked_status}}</span>
+                </p>
+               </td>
+                <td style="font-weight: bold;">
+
+                    <div *ngFor="let m1 of carwashstatus1;let index i" style="margin-left: 8px;">
+
+
+      <span *ngIf="b.carwash_status === m1.id">
+        <span  *ngIf="m1.carwash_status_name === 'None'">
+          <span style="color: #ff7800;" *ngIf="b.pickedAndDrop_status !== null;else notAccepted">{{b.pickedAndDrop_status}} <span  *ngIf="b.pickup_date != null">-({{b.pickup_date | date: 'dd-MM-yyyy'}})</span> </span>
+          <ng-template #notAccepted>
+            <span style="color: blue;" >None</span>
+          </ng-template>
+
+          </span>
+        <span style="color: rgb(2, 15, 17);text-align: center !important;margin-left: 27px;" *ngIf="m1.carwash_status_name === '-'">-</span>
+        <span style="color: rgb(185, 18, 88);" *ngIf="m1.carwash_status_name === 'In Progress'">{{m1.carwash_status_name}}</span>
+        <span style="color: green;" *ngIf="m1.carwash_status_name === 'Completed'">{{m1.carwash_status_name}}</span>
+      </span>
+      <!-- <span *ngIf="j>2">....</span> -->
+                    </div>
+
+
+                  </td>
+
+                <td><p style="text-align: right;margin-right: 11px;">{{b.payable_amt}}</p></td>
+
+              </tr>
+
+            </tbody>
+          <!-- </ng-template> -->
+          </table>
+
+
+            <!-- <div style="text-align: center;" *ngIf="MybookingDetails1!=''">
+              <br>
+              <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
+            </div> -->
+
+    </div>
+
+    <div class="col-sm-1"></div>
+</div>
+<br>
+
+</div>
