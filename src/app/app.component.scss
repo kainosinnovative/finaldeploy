@@ -6,8 +6,22 @@
 //     right: 0;
 //     background: rgb(155, 184, 26);
 //     }
+
+// .mat-drawer-inner-container {
+    
+//     background: #8bc34a !important;
+   
+// }
+
+.menuitemcss{
+    // background: #8bc34a;
+    height: 97px;
+    /* margin-bottom: 113px; */
+    // border-bottom: 5px solid;
+    // border-block-color: #74b887;
+}
 .is-active {
-    color: #2700ff !important;
+    color: #ffffff !important;
     font-weight: bolder !important;
 }
 
@@ -44,7 +58,7 @@
     overflow: auto;
     }
     .sidenavstyle{
-    background-color: white;
+        background: #8bc34a;
     color: rgb(208, 206, 216);
     
     }
@@ -54,7 +68,7 @@
     }
 
     .colorheaderMenu{
-    color: black;
+        color: black;
     text-decoration: none;
     font-size: 17px;
     //font-weight:500;
@@ -63,7 +77,11 @@
     }
 
     .mat-toolbar.mat-primary {
-        background: #ffffff;
+        // background: #0c6d62;
+        background: #8BC34A;
+        height: 83px !important;
+        border-color: #FFFFFF;
+    border-width: 0px 0px 4px;
         
     }
 
@@ -246,7 +264,7 @@ text-align:left;
         padding-left: 11px;
         font-size: 17px;
         border-radius: 17px; 
-        width: 341px;
+        width: 326px;
         height: 35px;
         font-style:italic;
         // margin-left: 109px;

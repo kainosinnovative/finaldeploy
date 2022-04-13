@@ -1,7 +1,5 @@
 @media screen and (min-width: 768px) {
-.addholidaypopup{
-    margin-left: -49px;
-}
+
 }
 
 
@@ -9,5 +7,9 @@
 @media screen and (max-width: 768px) {
 .holidaypopupheading{
     margin-left: -21px;
+}
+.addholidaypopup{
+    // margin-left: -49px;
+    text-align: left !important;
 }
 }
