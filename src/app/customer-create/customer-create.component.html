@@ -1,3 +1,4 @@
+<div class="headerbelowheight" ></div>
 <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
 <h2 class="mainheading" style="text-align:center;">My Profile </h2>
 <!-- *ngFor = "let news  of CustomerDataById1" -->
@@ -7,7 +8,7 @@
     </ul> -->
 <form [formGroup]="profileform" name="pf">
 
- <div class="accordion" style="background-color: #f3f3f3;">
+ <div class="accordion" style="background-color: #ffffff;">
     <h2 class="title subheading"  (click)="opened = !opened">Personal Information <i class="fa fa-chevron-down"></i> </h2>
     <div class="content-container" [class.opened]="opened" >
            <!--phto-->
@@ -44,7 +45,7 @@
                     <div class="form-inline" >
                         <label class="customerProfileLbl">First Name<span class="requiredfield">  *</span></label>
                       <p class="labelFieldSpace" style="display: none;"></p>
-                        <input type="text"  class="" style="padding-left: 2px !important;width: 190px;"   [(ngModel)]="CustomerDataById1.firstname" formControlName="firstname" value="{{CustomerDataById1.firstname}}" >
+                        <input type="text" maxlength="15" class="" style="padding-left: 2px !important;width: 190px;"   [(ngModel)]="CustomerDataById1.firstname" formControlName="firstname" value="{{CustomerDataById1.firstname}}" >
                         <div *ngIf="profileform.controls['firstname'].touched && profileform.controls['firstname'].invalid ">
 
                             <div *ngIf="profileform.controls['firstname'].errors" style="color: red;">
@@ -300,7 +301,7 @@
 <form [formGroup]="cardetailForm">
   <!--Endof Personal-->
   <!--address start-->
-  <div class="accordion1" style="background-color: #f3f3f3;">
+  <div class="accordion1" style="background-color: #ffffff;">
     <h2 class="title1 subheading" (click)="opened1 = !opened1">Car Details<i class="fa fa-chevron-down"></i></h2>
     <div class="content-container1" [class.opened1]="opened1">
 
@@ -469,7 +470,7 @@
 
 
         <table class="table " style="border: 1px solid #aeaeae;">
-            <thead style="background: #202c45; border-bottom: 0.5px solid #aeaeae; color: white;font-weight: 400 !important;">
+            <thead style="background-color:#056a64;border-bottom: 0.5px solid #aeaeae; color: white;font-weight: 400 !important;">
               <th class="thfontwt">Registration No</th>
               <th class="thfontwt">Type</th>
               <th class="thfontwt">Brand</th>
@@ -509,7 +510,7 @@
 
 <br>
 
-<div class="accordion2" style="background-color: #f3f3f3;">
+<div class="accordion2" style="background-color: #ffffff;">
 
 
     <h2 class="title2 subheading" (click)="opened2 = !opened2">My Favorite Shops<i class="fa fa-chevron-down"></i></h2>

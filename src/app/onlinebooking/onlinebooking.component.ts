@@ -495,7 +495,7 @@ changeBgColor(offer_id:any){
         this.counter = this.counter - 1;
         // alert("count else>>"+this.counter);
       (<HTMLInputElement>document.getElementById(buttonid)).innerHTML = "Select";
-      (<HTMLInputElement>document.getElementById(buttonid)).style.backgroundColor = "#0c5578";
+      (<HTMLInputElement>document.getElementById(buttonid)).style.backgroundColor = "#00bdb0";
        offer_amt = Number((<HTMLInputElement>document.getElementById(offer_totalid)).value);
        this.finalvalue = this.finalvalue -(offer_amt);
        this.onlinebooking.controls.comboprice_total.setValue(this.finalvalue.toFixed());
@@ -529,7 +529,7 @@ selectbuttoncolor(service_id:any,indexval:any){
        } else {
 
      (<HTMLInputElement>document.getElementById(currentserviceid)).innerHTML = "Select";
-     (<HTMLInputElement>document.getElementById(currentserviceid)).style.backgroundColor = "#0C5578";
+     (<HTMLInputElement>document.getElementById(currentserviceid)).style.backgroundColor = "#00bdb0";
      var service_amt = Number((<HTMLInputElement>document.getElementById(service_totalid)).value);
      this.totalvalue = this.totalvalue -(service_amt);
     //  (<HTMLInputElement>document.getElementById("totalamount")).value =  this.totalvalue.toFixed();

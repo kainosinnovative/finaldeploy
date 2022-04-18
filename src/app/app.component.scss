@@ -82,7 +82,9 @@
         height: 58px !important;
         border-color: #FFFFFF;
     border-width: 0px 0px 4px;
-        
+    position: fixed;
+    z-index:999; 
+    border-bottom: 1px solid #000000;
     }
 
     .mat-button.mat-accent, .mat-icon-button.mat-accent, .mat-stroked-button.mat-accent {
@@ -99,6 +101,14 @@
             display:block !important;
             font-size: 12px !important;
             cursor: pointer;
+        }
+
+        .mobilelogocls{
+            display: block !important;
+        }
+
+        .weblogocls{
+            display: none !important;
         }
       }
 

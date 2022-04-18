@@ -85,6 +85,10 @@ line {
   // right: 250px !important;
 }
 
+.headerbelowheight{
+  height: 85px;
+}
+
 @media screen and (min-width: 768px) {
   .mat-autocomplete-panel.mat-autocomplete-visible {
     visibility: visible;

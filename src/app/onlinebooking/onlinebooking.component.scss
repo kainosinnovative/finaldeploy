@@ -173,7 +173,7 @@ padding: 1rem!important;
     height: 50px;
 }
 .selectnow{
-    background-color: #0C5578;
+    background-color: #00bdb0;
           border: none;
           // height: 30px;
           width: 80px;
@@ -202,7 +202,8 @@ padding: 1rem!important;
 }
 
 .comboselectbtm{
-    background-color:  #0c5578;
+    // background-color:  #0c5578;
+    background-color: #00bdb0;
           border: none;
           // height: 30px;
           width: 80px;
@@ -249,24 +250,19 @@ padding: 1rem!important;
 }
 
 .card {
-  background: white;
+  background: #f3f3f3;
   border: 1px solid #aeaeae;
     // width: 92%;
     // background: rgb(0 0 0 / 5%);
   }
 
 
-.accordion{
-  box-shadow: rgba(0, 0, 0, 0.14) 0px 5px 15px;
-  background: white;
-    // box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
-    // margin: 12px;
-    // margin-left:80px;
-    width:98%;
-    // margin-left:275px;
-
-    padding:10px;
-
+  .accordion {
+    box-shadow: rgba(0, 0, 0, 0.14) 0px 5px 15px;
+    background: white;
+    width: 84%;
+    padding: 10px;
+    // margin-left: 91px;
 }
 
 .accordion1{
@@ -282,7 +278,7 @@ padding: 1rem!important;
 
 .title  {
   padding-left: 6px;
-  background-color:#202c45;
+  background-color:#056a64;
   color: white;
 }
 
@@ -393,8 +389,17 @@ padding: 1rem!important;
     // margin-left: 188px;
       }
 
+      .onlinebookingforms {
+        padding-left: 98px;
+      }
+
+      .accordion {
+        
+        margin-left: 91px;
+    }
+
       .comboofferpricediv{
-        // margin-left: -67px;
+        margin-right: -23px;
       }
 
       .serviceprice{
@@ -405,6 +410,15 @@ padding: 1rem!important;
       width: 50% !important;
       margin: auto;
       background: rgb(14, 13, 13);
+    }
+    .extraservPrice{
+      margin-left: -95px;
+    }
+    .confirmbkngFinalcls {
+      margin-right: 97px;
+    }
+    .dealofthedaysection {
+      margin-right: -29px;
     }
     }
 

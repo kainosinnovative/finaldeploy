@@ -63,26 +63,54 @@
   </button>
 
 
-  <mat-list-item  *ngIf="!userroleSes" style=""> 
-   <img  src="{{apiurlforhtm}}/images/Kainos_logo1.png" style="width: 100px;border-bottom: 2px solid #d80000;height: 52px;"> 
+  <mat-list-item  *ngIf="!userroleSes" class="weblogocls" style=""> 
+    <div style="background-color: #ffffff;
+    /* height: 100px; */
+    /* background: green; */
+    width: 100px;
+    margin-top: 53px;
+    text-align: center;
+    padding: 9px;
+     border-radius: 15px;
+     border: 1px solid #000000; ">
+      <img src="{{apiurlforhtm}}/images/Kainos_logo1.png" style="width: 100%;"> 
+    </div> 
   
   </mat-list-item>
 
-  <mat-list-item  *ngIf="userroleSes=='CustomerSes'" style=""> 
+  <mat-list-item class="mobilelogocls" *ngIf="!userroleSes" style="display:none;margin-right: -132px;"> 
+    <div  style="text-align: right;">
+      <img src="{{apiurlforhtm}}/images/Kainos_logo1.png" style="width: 25%;"> 
+    </div>
+   
+    </mat-list-item>
+
+  <mat-list-item class="mobilelogocls" *ngIf="userroleSes=='CustomerSes'" style="display:none;margin-right: -152px;"> 
+  <div  style="text-align: right;">
+    <img src="{{apiurlforhtm}}/images/Kainos_logo1.png" style="width: 25%;"> 
+  </div>
+ 
+  </mat-list-item>
+
+  <mat-list-item class="weblogocls" *ngIf="userroleSes=='CustomerSes'" style="display:block;"> 
     <!-- <div class="row" style="height: 85px;background: #8BC34A;margin-left: -17px;"> -->
     <!-- <img src="https://o.remove.bg/downloads/948cfcc0-42ba-45df-9148-13b8b9a3bed9/Kainos_logo__1_-removebg-preview.png" style="width: 53%;"> -->
     <div style="background-color: #ffffff;
     /* height: 100px; */
     /* background: green; */
-    width: 62%;
+    width: 100px;
     margin-top: 53px;
     text-align: center;
     padding: 9px;
      border-radius: 15px;
-     border: 3px solid #8bc34a; ">
+     border: 1px solid #000000; ">
       <img src="{{apiurlforhtm}}/images/Kainos_logo1.png" style="width: 100%;"> 
     </div>
   <!-- </div> -->
+  </mat-list-item>
+
+  <mat-list-item class="weblogocls" *ngIf="userroleSes=='CustomerSes'"  >
+<div style="width: 30px;"></div>
   </mat-list-item>
   <!-- <mat-list-item  *ngIf="userroleSes=='shopOwnerSes'"> <img src="{{apiurlforhtm}}/{{shoplogo}}" style="width: 60px;"> </mat-list-item> -->
   <label style="width: 55px;"></label>
@@ -169,10 +197,10 @@
   </mat-form-field> -->
 
    </mat-list-item>
-
+<!-- <div style="color: white;height: 2px;border: 1px solid red;"></div> -->
   </mat-toolbar>
 
-
+<!-- <mat-toolbar style="border-bottom: 4px solid darkgreen;"></mat-toolbar> -->
  
 
 
@@ -182,11 +210,11 @@
      
 <div style="height: 60px;"></div>
 
-<div class="footer" style="height: 340px;background-color: #202c45 !important;" #footer id="footerdisplay">
+<div class="footer" style="height: 340px;background: linear-gradient(to right,#17B2A0 ,#88B135 100%);;" #footer id="footerdisplay">
   <footer class=" page-footer font-small blue pt-4">
 
     <!-- Footer Links -->
-    <div class="container-fluid text-center text-md-left" style="background-color: #202c45 !important;">
+    <div class="container-fluid text-center text-md-left" style="background: linear-gradient(to right,#17B2A0 ,#88B135 100%);">
 
       <!-- Grid row -->
       <div class="row">
@@ -202,7 +230,7 @@
           </div>
             <div class="col-lg-3 col-md-6 footerpopularlink">
               <div class="footer-link footerpopularlink" >
-                  <h2>Popular Links </h2>
+                  <h2 style="color: white;">Popular Links </h2>
 <div class="footerpopularlink">
 
 <p class="bloglinkMob">
@@ -251,7 +279,7 @@
 
           <div class="col-lg-3 col-md-6">
             <div class="footer-contact">
-                <h2 style="text-align:left;">Get In Touch</h2>
+                <h2 style="text-align:left;color: white;">Get In Touch</h2>
                 <p><i class="fa fa-location-arrow"></i>No: 176 & 177, Ethiraj Salai, Egmore, Chennai 600008.</p>
                 <p> <i class="fa fa-phone"></i>
                   IND: +91 9841791489, +91 9360878500 
