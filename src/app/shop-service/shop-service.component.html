@@ -1,7 +1,7 @@
 <!-- <div style="background-color: #f3f3f3;"> -->
   <div style="overflow: hidden !important;">
 <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> -->
-<h2 style="text-align: center;" class="mainheading">Services/Offer Details</h2>
+<h2 style="text-align: center;padding-top: 30px !important;" class="mainheading">Services/Offer Details</h2>
 
 <!-- <div style="text-align: right;">
   <button class="btn btn-success" (click)="DisplayForm()" >Add New Service</button>
@@ -37,7 +37,7 @@
                 <th  style="width:100px;" class="fontwghtcls">Update</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody style="    background-color: white;">
               <tr *ngFor="let service of  serviceData1 | paginate: config ;  let i=index;" >
 
                 <td>{{i+1}}</td>
@@ -125,9 +125,9 @@
 
 
     <div class="row">
-    <div class="accordion" style="background-color: #f3f3f3;">
+    <div class="accordion" style="background-color: white;padding-bottom: 11px;">
       <h2 class="title subheading " style="text-align: left;" (click)="opened = !opened">Add Service Price <i class="fa fa-chevron-down"></i>  </h2>
-      <div class="content-container" [class.opened]="opened" style="background-color: #f3f3f3;">
+      <div class="content-container" [class.opened]="opened" style="background-color: white;">
 
 
 
@@ -231,7 +231,7 @@
   </div>
 
   <div class="col-md-6" >
-    <div class="accordion1" style="background-color: #f3f3f3;">
+    <div class="accordion1" style="background-color: white;">
       <h2 class="title1 subheading" style="text-align: left;" (click)="opened1 = !opened1">Add New Service <i class="fa fa-chevron-down"></i> </h2>
       <div class="content-container1" [class.opened1]="opened1">
     <!-- <div style="border: 1px solid;margin-left:0px!important;height: 68px;"> -->
