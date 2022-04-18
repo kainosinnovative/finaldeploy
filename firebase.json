@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "dist/angular6-sidenav-example",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
