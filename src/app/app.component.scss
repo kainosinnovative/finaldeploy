@@ -79,7 +79,7 @@
     .mat-toolbar.mat-primary {
         // background: #0c6d62;
         background: #8BC34A;
-        height: 83px !important;
+        height: 58px !important;
         border-color: #FFFFFF;
     border-width: 0px 0px 4px;
         
@@ -276,3 +276,7 @@ text-align:left;
     // font-size: 17px;
     // margin-left: -32px;
     // }
+
+    .learndash-wrapper .ld-focus .ld-focus-header .ld-brand-logo {
+        background: #000;
+    }

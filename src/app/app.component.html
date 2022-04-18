@@ -63,15 +63,25 @@
   </button>
 
 
-  <mat-list-item  *ngIf="!userroleSes" > 
-   <img src="{{apiurlforhtm}}/images/Kainos_logo1.png" style="width: 100px;"> 
+  <mat-list-item  *ngIf="!userroleSes" style=""> 
+   <img  src="{{apiurlforhtm}}/images/Kainos_logo1.png" style="width: 100px;border-bottom: 2px solid #d80000;height: 52px;"> 
   
   </mat-list-item>
 
-  <mat-list-item  *ngIf="userroleSes=='CustomerSes'" > 
+  <mat-list-item  *ngIf="userroleSes=='CustomerSes'" style=""> 
     <!-- <div class="row" style="height: 85px;background: #8BC34A;margin-left: -17px;"> -->
     <!-- <img src="https://o.remove.bg/downloads/948cfcc0-42ba-45df-9148-13b8b9a3bed9/Kainos_logo__1_-removebg-preview.png" style="width: 53%;"> -->
-    <img src="{{apiurlforhtm}}/images/Kainos_logo1.png" style="width: 53%;"> 
+    <div style="background-color: #ffffff;
+    /* height: 100px; */
+    /* background: green; */
+    width: 62%;
+    margin-top: 53px;
+    text-align: center;
+    padding: 9px;
+     border-radius: 15px;
+     border: 3px solid #8bc34a; ">
+      <img src="{{apiurlforhtm}}/images/Kainos_logo1.png" style="width: 100%;"> 
+    </div>
   <!-- </div> -->
   </mat-list-item>
   <!-- <mat-list-item  *ngIf="userroleSes=='shopOwnerSes'"> <img src="{{apiurlforhtm}}/{{shoplogo}}" style="width: 60px;"> </mat-list-item> -->
@@ -141,7 +151,7 @@
     <!-- <input class="search" type="text" placeholder="Search" > -->
 
     <!-- <div style="text-align: center;"> -->
-      <input class="search" type="text" placeholder="Search" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto">
+      <input class="search" style="border: none !important;" type="text" placeholder="Search" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto">
       <mat-autocomplete #auto="matAutocomplete" placeholder="select shop">
         <mat-option class="ss" *ngFor="let option of filteredOptions | async" [value]="option.name1" style="width: 300px !important;" (onSelectionChange)="onSelFunc(option.id);onSelFunc1(option.id)" >
           {{option.name1}}
