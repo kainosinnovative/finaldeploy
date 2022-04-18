@@ -8,7 +8,7 @@
     <!-- customer mobile start -->
     <mat-list-item *ngIf="currentUsername"> <a class="txtunderline_remove" mat-list-item >Hi, {{currentUsername}}</a> </mat-list-item>
    
-    <mat-list-item class="menudesk1 "   *ngIf="userroleSes=='CustomerSes' || !userroleSes"> <a (click)="selectcity()" class="txtunderline_remove2" mat-list-item routerLink='/first' ><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp; Select a City
+    <mat-list-item class="menudesk1 "   *ngIf="userroleSes=='CustomerSes' || !userroleSes"> <a (click)="selectcity()" class="txtunderline_remove2" mat-list-item routerLink='/first' ><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp; {{cityname}}
     </a> </mat-list-item>
     <mat-list-item   class="menudesk1" *ngIf="userroleSes=='CustomerSes' || !userroleSes"> <a class="txtunderline_remove2" style="cursor: pointer" mat-list-item routerLink='/home' [routerLinkActive]="['is-active']">Home
     </a> </mat-list-item>
@@ -79,15 +79,33 @@
   </mat-list-item>
 
   <mat-list-item class="mobilelogocls" *ngIf="!userroleSes" style="display:none;margin-right: -132px;"> 
-    <div  style="text-align: right;">
-      <img src="{{apiurlforhtm}}/images/Kainos_logo1.png" style="width: 25%;"> 
+    <div  style="text-align: right;
+    background: white;
+    width: 100px;
+    /* margin-top: 1px; */
+    margin-left: 231px;
+    text-align: center;
+    padding: 4px;
+    border-radius: 15px;
+    border: 1px solid #000000;">
+      <img src="{{apiurlforhtm}}/images/Kainos_logo1.png" style="width: 95%;"> 
     </div>
    
     </mat-list-item>
 
   <mat-list-item class="mobilelogocls" *ngIf="userroleSes=='CustomerSes'" style="display:none;margin-right: -152px;"> 
   <div  style="text-align: right;">
-    <img src="{{apiurlforhtm}}/images/Kainos_logo1.png" style="width: 25%;"> 
+    <div  style="text-align: right;
+    background: white;
+    width: 100px;
+    /* margin-top: 1px; */
+    margin-left: 231px;
+    text-align: center;
+    padding: 4px;
+    border-radius: 15px;
+    border: 1px solid #000000;">
+      <img src="{{apiurlforhtm}}/images/Kainos_logo1.png" style="width: 95%;"> 
+    </div>
   </div>
  
   </mat-list-item>

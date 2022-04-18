@@ -52,6 +52,7 @@ export class SearchComponent implements OnInit {
   wishlistdata: any;
 wishlistdata1: any;
 date:any;
+isshopOrService:any;
 private innerWidth: number;
   private mobileBreakpoint = 480;
   ShopHolidaysDetails:any;
@@ -79,6 +80,9 @@ private innerWidth: number;
    carDetailsById:any;
    carDetailsById1:any;
    date1:any;
+   ProfileDataByIdObject:any;
+   ShopProfileDetails:any;
+   serviceidval:any;
   ngOnInit() {
     this.adjustsItemsPerSlide();
     this.date=new Date();
@@ -92,10 +96,38 @@ private innerWidth: number;
       const id2 = params['id'];
       this.onSelFunc(id2);
       this.onSelFunc1(id2);
+      let result = id2.includes("S");
+      if(result == true) {
+      this.isshopOrService = "service";
+      this.serviceidval = id2;
+      }
+      else {
+        this.isshopOrService = "shop";
+        this.readProfileDataById(id2);
+      }
     }
     )
     
   }
+
+
+  readProfileDataById(shopid:any) {
+  
+    
+    return this.restApi.readShopProfileDataById(shopid).subscribe((res)=>{
+      this.ProfileDataByIdObject = res
+  
+      
+      this.ShopProfileDetails = this.ProfileDataByIdObject.data.profile
+      console.log("ShopProfileDetails>>>",this.ShopProfileDetails)
+      
+    }
+      
+    
+    )
+    
+  }
+  
 
   // filter(val: string): Observable<any[]> {
   //   // call the service which makes the http-request

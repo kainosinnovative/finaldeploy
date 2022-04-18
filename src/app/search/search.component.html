@@ -5,7 +5,14 @@
   <br>
   <br>
   <br>
-  <p style="font-size: 16px;">No data available</p>
+  <div *ngIf="isshopOrService!='shop'" style="font-size: 16px;">No search data available for the service - 
+    <span *ngFor="let m1 of  MasterServiceData1;" >
+               
+      <span *ngIf="serviceidval === m1.search_id"> {{m1.service_name}}</span>
+    </span>
+                  </div>
+
+  <p *ngIf="isshopOrService=='shop'" style="font-size: 16px;">No search data available for the shop - {{ShopProfileDetails.name}}</p>
 </div>
 
 
