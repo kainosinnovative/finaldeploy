@@ -878,8 +878,9 @@ ViewDetailsPopup(Booking_id:any, heading:any){
   localStorage.setItem('ViewBooking_id',Booking_id);
   localStorage.setItem('ViewBooking_heading',heading);
 //   // alert("hi")
-  this.dialog.open(ViewbookdetailPopupComponent,{disableClose: true,
-  width: '50%'});
+  // this.dialog.open(ViewbookdetailPopupComponent,{disableClose: true,
+  // width: '50%'});
+  this.dialog.open(ViewbookdetailPopupComponent,{disableClose: true});
 
 }
 

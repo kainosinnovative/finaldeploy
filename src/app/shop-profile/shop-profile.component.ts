@@ -557,7 +557,7 @@ success => {
 
   setLeaveFromtoTime(sel_date:any){
     console.log("hiiiii1111");
-       this.dialog.open(LeavefromtotimeComponent,{disableClose: true, width: '40%'});
+       this.dialog.open(LeavefromtotimeComponent,{disableClose: true});
        
        localStorage.setItem('holidayDateselected',sel_date);
   }

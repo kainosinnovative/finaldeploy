@@ -7,7 +7,7 @@
 
         <div class="accordion1"  style="background-color: #f3f3f3;">
             <h2 class="title2 subheading" (click)="opened2 = !opened2">Shop Information<i class="fa fa-chevron-down"></i> </h2> 
-            <div class="content-container2" [class.opened2]="opened2" style="height: 278px !important;">
+            <div class="content-container2" [class.opened2]="opened2" >
                 <!--phto-->
                <div class="row">
                 <div class="col-sm-3" style="margin-bottom: 18px;">          
@@ -58,7 +58,7 @@
                 
 
                         <br>  
-                        <div class="form-group">
+                        <div class="form-group form-inline">
                             <label class="lblwidthProfile leftnamemrg">City</label><span class="requiredfield">  *</span>
                             <p class="labelFieldSpace" style="display: none;"></p>
                             <select class="firstnamecls citycls2" formControlName="city" style="width: 174px;height: 28px;" aria-placeholder="" [(ngModel)]="ShopProfileDetails.city">
@@ -304,7 +304,7 @@
                        <div class="form-group">
                         <label class="lblwidthProfile leftnamemrg">Date of Birth </label>
                         <p class="labelFieldSpace" style="display: none;"></p>
-                        <input type="date"   class="form-control dateofbirthcls2" style="width: 119px !important;padding-right: 0px;" [(ngModel)]="ShopProfileDetails.dob" placeholder="" formControlName="dob">
+                        <input type="date"   class="form-control dateofbirthcls2" style="width: 133px !important;padding-right: 0px;" [(ngModel)]="ShopProfileDetails.dob" placeholder="" formControlName="dob">
                         <!-- <div *ngIf="shopprofile.controls['dob'].touched && shopprofile.controls['dob'].invalid "> 
         
                             <div *ngIf="shopprofile.controls['dob'].errors" style="color: red;"> 
@@ -343,7 +343,7 @@
                                 <div class="form-group">
                                     <label class="leftnamemrg" style="width:99px !important;">Gender <span class="requiredfield ">  *</span> </label>
                                     <p class="labelFieldSpace" style="display: none;"></p>
-                                    <select  placeholder=""   class=" form-control shopgender2" style="width: 85px !important;" formControlName="gender" [(ngModel)]="ShopProfileDetails.gender">
+                                    <select  placeholder=""   class="  shopgender2" style="width: 85px !important;" formControlName="gender" [(ngModel)]="ShopProfileDetails.gender">
                                         <option value="">--Select---</option>
                                         <option value="Male">Male</option>
                                         <option value="FeMale">FeMale</option>

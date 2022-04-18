@@ -12,10 +12,10 @@
 <div class="row">
 
 
-    <div class="col-sm-12" style="width: 98%;">
+    <div class="col-sm-12 table-responsive shopservicetblcls" style="width: 98%;">
 
 
-        <table  class="table table-responsive servicecss" *ngIf="serviceData1!=''" style="background-color: #f3f3f3;">
+        <table  class="table  servicecss" *ngIf="serviceData1!=''" style="background-color: #f3f3f3;">
             <thead style="border-bottom: 0.5px solid #aeaeae;color: white;width: 100%;">
               <tr style="background: #202c45;">
                 <th colspan="6" style="text-align:center;border-right:solid 1px;font-weight: normal;font-size:14px;">Services offered in my shop</th>
@@ -134,8 +134,8 @@
     <!-- <div style="border: 1px solid;overflow:auto;"> -->
       <!-- <h2 style="text-align: center;" class="mainheading">Add Service Price</h2> -->
     <form [formGroup]="shopserviceForm" name="pf">
-     <div class="table-responsive  boxwidht" style="display: block;width: 100%;overflow-x: unset;padding-top: 10px;height:  56px;" id="shopservFormid" >
-      <table class="table table-responsive servicecss" style="border: none;margin-left:0px !important;">
+     <div class="table-responsive  boxwidht shopservicetblcls" style="display: block;width: 100%;padding-top: 10px;height:  56px;" id="shopservFormid" >
+      <table class="table  servicecss" style="border: none;margin-left:0px !important;">
         <tr style="text-align: left;">
           <td>Service</td>
           <td style="width: 170px;">

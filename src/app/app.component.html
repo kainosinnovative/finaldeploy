@@ -2,7 +2,7 @@
 <mat-sidenav-container fullscreen id="cont_id">
   <!-- <h5><u><i>Footer creation using angular material !!</i></u></h5> -->
   <mat-sidenav #sidenav class="sidenavstyle" >
-  <mat-list >
+  <mat-list class="menuitemcss" >
 
 
     <!-- customer mobile start -->
@@ -37,7 +37,7 @@
 
   <mat-list-item *ngIf="userroleSes=='shopOwnerSes'"> <a class="txtunderline_remove" mat-list-item routerLink='/ShopProfile' [routerLinkActive]="['is-active']">My Profile</a> </mat-list-item>
 
-
+  <mat-list-item *ngIf="userroleSes=='shopOwnerSes'"> <a class="txtunderline_remove" mat-list-item (click)="bookingRedirect()" routerLink='/shopownerOnlineBooking' [routerLinkActive]="['is-active']">Booking</a> </mat-list-item>
 
   <mat-list-item *ngIf="userroleSes=='shopOwnerSes'"> <a class="txtunderline_remove" mat-list-item routerLink='/contactus' [routerLinkActive]="['is-active']">Contact Us</a> </mat-list-item>
   
@@ -63,7 +63,17 @@
   </button>
 
 
-  <mat-list-item  *ngIf="userroleSes=='CustomerSes'" > <img src="{{apiurlforhtm}}/images/Kainos_logo.png" style="width: 60px;"> </mat-list-item>
+  <mat-list-item  *ngIf="!userroleSes" > 
+   <img src="{{apiurlforhtm}}/images/Kainos_logo1.png" style="width: 100px;"> 
+  
+  </mat-list-item>
+
+  <mat-list-item  *ngIf="userroleSes=='CustomerSes'" > 
+    <!-- <div class="row" style="height: 85px;background: #8BC34A;margin-left: -17px;"> -->
+    <!-- <img src="https://o.remove.bg/downloads/948cfcc0-42ba-45df-9148-13b8b9a3bed9/Kainos_logo__1_-removebg-preview.png" style="width: 53%;"> -->
+    <img src="{{apiurlforhtm}}/images/Kainos_logo1.png" style="width: 53%;"> 
+  <!-- </div> -->
+  </mat-list-item>
   <!-- <mat-list-item  *ngIf="userroleSes=='shopOwnerSes'"> <img src="{{apiurlforhtm}}/{{shoplogo}}" style="width: 60px;"> </mat-list-item> -->
   <label style="width: 55px;"></label>
   <mat-list-item class="menudesk" *ngIf="currentUsername" > <a  class="colorheaderMenu" >Hi, {{currentUsername}}</a> </mat-list-item> &nbsp; &nbsp;
@@ -160,7 +170,7 @@
     <router-outlet (activate)="onActivate($event)"></router-outlet>
 
      
-
+<div style="height: 60px;"></div>
 
 <div class="footer" style="height: 340px;background-color: #202c45 !important;" #footer id="footerdisplay">
   <footer class=" page-footer font-small blue pt-4">

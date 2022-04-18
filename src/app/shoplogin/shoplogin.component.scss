@@ -16,8 +16,30 @@
 
 
     @media screen and (max-width: 768px) {
+        .mobilecarimage {
+            border-bottom: none;
+        }
         .countrycodecls{
             width: 20%;
+        }
+
+        .bg {
+            /* The image used */
+            background: url("https://th.bing.com/th/id/OIP.wU_BdqtV8p16cYQ4rPchNgHaEK?pid=ImgDet&rs=1");
+          
+            /* Half height */
+            height: 50%;
+          
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin-top: -12px;
+            margin-right: -12px;
+            margin-left: -12px;
+          }
+          .shoplogintitle {
+            margin-left: 150px;
         }
         // .loginpopup {
         //     width: 100%;
@@ -31,17 +53,22 @@
         //     max-width: 0vw !important; 
         // }
     }
-
+    
     @media screen and (min-width: 768px) {
+
+        .shoplogintitle {
+            margin-left: 184px;
+        }
         .loginpopup {
             width: 336px;
         }
         .countrycodecls{
             width: 32%;
         }
+
         .bg {
             /* The image used */
-            background: url("https://th.bing.com/th/id/OIP.wU_BdqtV8p16cYQ4rPchNgHaEK?pid=ImgDet&rs=1")no-repeat center center;
+            background: url("https://th.bing.com/th/id/OIP.wU_BdqtV8p16cYQ4rPchNgHaEK?pid=ImgDet&rs=1");
           
             /* Half height */
             height: 50%;
@@ -50,8 +77,9 @@
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
-            margin-top: -12px;
+            margin-top: 15px;
             margin-right: -12px;
             margin-left: -12px;
           }
+        
     }

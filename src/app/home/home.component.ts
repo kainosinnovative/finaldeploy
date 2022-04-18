@@ -127,7 +127,7 @@ this.adjustsItemsPerSlide();
 
   }
 
-  slideConfig = {"slidesToShow": 4, "slidesToScroll": 4};
+  slideConfig = {"slidesToShow": 4, "slidesToScroll": 1};
 
   slickInit(e:any) {
     console.log('slick initialized');
@@ -316,11 +316,11 @@ else
       private adjustsItemsPerSlide() {
         this.innerWidth = window.innerWidth;
         if (this.innerWidth < this.mobileBreakpoint) {
-          this.slideConfig = {"slidesToShow": 1, "slidesToScroll": 4};
-          this.slideConfig1={"slidesToShow": 1, "slidesToScroll": 4};
+          this.slideConfig = {"slidesToShow": 1, "slidesToScroll": 1};
+          this.slideConfig1={"slidesToShow": 1, "slidesToScroll": 1};
         } else {
-          this.slideConfig = {"slidesToShow": 4, "slidesToScroll": 4};
-          this.slideConfig1={"slidesToShow": 4, "slidesToScroll": 4};
+          this.slideConfig = {"slidesToShow": 4, "slidesToScroll": 1};
+          this.slideConfig1={"slidesToShow": 4, "slidesToScroll": 1};
         }
       }
 
