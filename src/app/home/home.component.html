@@ -11,7 +11,7 @@
 </div> -->
 
 <br>
-<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+<!-- <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -20,19 +20,16 @@
   <div class="carousel-inner" data-interval="10" style=" padding-left: 55px; padding-right: 55px;">
     <div class="carousel-item active" style="background-image: url('https://th.bing.com/th/id/R.27ed71a34c058eaea70f7ea8007e06a9?rik=yc874wOyFjBKEw&riu=http%3a%2f%2f50-best.com%2fwp-content%2fuploads%2f2018%2f12%2fawesome_car_header-1024x512.jpg&ehk=tXAgONUfRZKYWxdMUSojFiUMnzMm7OErzXytBO%2by1sw%3d&risl=&pid=ImgRaw&r=0')">
       <div class="carousel-caption">
-        <!-- <h5>Trained Professionals</h5> -->
         <p>Fast car wash for busy people.</p>
       </div>
     </div>
     <div class="carousel-item" style="background-image: url('https://nofalautomotive.com/wp-content/uploads/2019/11/T1514742622703fc84973a20f1c0b35eeef313102b3image-1349x540.jpg')">
       <div class="carousel-caption">
-        <!-- <h5>Perfect Quality</h5> -->
         <p>Our car washing service is the name of excellence.</p>
       </div>
     </div>
     <div class="carousel-item" style="background-image: url('https://th.bing.com/th/id/R.68d6d1b55bc5c19b5092d1a5300f40e1?rik=99zmJCtVpW7ZtA&riu=http%3a%2f%2fwww.ecopro.ie%2fstatic2%2f68d6d1b55bc5c19b5092d1a5300f40e15bec898b4141eMeZ4jNyv68xFIoUiMpbd.png&ehk=bw7U1d%2bVyyqdOGtgYkh%2f02SaHLWOWn6EarMX6faWbYg%3d&risl=&pid=ImgRaw&r=0')">
       <div class="carousel-caption">
-        <!-- <h5>Best Products Used</h5> -->
         <p>You need oxygen, your car needs a wash.</p>
       </div>
     </div>
@@ -45,16 +42,14 @@
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Next</span>
   </button>
-</div>
+</div> -->
 
-<br><br>
-<div *ngIf="dashboardShop1 != ''">
+<!-- <br><br> -->
+<div *ngIf="dashboardShop1 != ''" style="">
   <h2 style="text-align: center;" class="mainheading">Combo Offers Of The Day </h2>
 <div *ngFor="let s of dashboardShop1;let k=index">
   <p *ngIf="k==0" class="dark-blue-text w-responsive mx-auto fontitalyHome" style="text-align: center;margin-bottom: 2%;font-size: 14px;">Special Deal Limited Offer Today 
-    <!-- <img style="height: 50px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRyNBH8h9mrcFvdSft9AiYrolk-c8E4Z5OOaKwwBpxpOWdTzSSuFociZ1KI_Dt_f7cs3o&usqp=CAU"> -->
      <img style="height: 40px;" src="{{apiurlforhtm}}/images/hurry-up-154424269.jpg"> 
-     <!-- <img style="height: 50px;" src="https://t3.ftcdn.net/jpg/04/73/13/54/360_F_473135463_64SB5yRtYoiZzHNDq7aDTkX3IWB1sNWn.jpg"> -->
   </p>
 </div>
   
@@ -72,9 +67,7 @@
                         (afterChange)="afterChange($event)"
                         (beforeChange)="beforeChange($event)">
         <div ngxSlickItem *ngFor="let s of dashboardShop1;let l=index" class="slide col-sm-6">
-          <!-- <div *ngFor="let h of ShopHolidaysDetails1;let k=index;"> --> 
           <div class=" card" style="height: 417px !important;">
-            <!-- height:300px;margin-top:28px;width: 245px;margin-left: 18px; -->
             <div class="image-container oneimage" style="border:1px solid;background-image: url('{{apiurlforhtm}}/{{s.shop_image}}')" >
                 <div class="first">
 
@@ -82,14 +75,7 @@
                       
 
 
-                      <!-- <span *ngIf="ShopHolidaysDetails1 == ''">Open</span> -->
-
-                      <!-- <span *ngFor="let h of ShopHolidaysDetails1;let k=index;" >
                       
-<span class="openClosed"  *ngIf="date == h.leave_date && h.shop_id == s.shop_id;" >Closed      </span>
-
-
-          </span>             -->
                       
                      </div>
                 </div> 
@@ -105,11 +91,9 @@
                   <img src="{{apiurlforhtm}}/{{s.shop_logo}}" style="width: 50px;margin-top: -7px;"> {{s.name}}
                   </div>
 
-                  <!-- <div *ngFor="let s1 of CustomerWhislistData1"> -->
                     <div *ngIf="s.wishlistcheck === 'Yes';else whislistElse"  class="fa fa-heart " id="wishlistvalue_{{s.shop_id}}" style="margin-top:12px;color: red;cursor: pointer;" (click)="clickEvent(s.shop_id,'combooffer')"> </div> 
                   
                      
-                     <!-- </div> -->
                      
                      <ng-template #whislistElse>
                       <span class="wishlist"  title="Add to Wishlist" id="wishlistvalue_{{s.shop_id}}" (click)="clickEvent(s.shop_id,'combooffer')" style="margin-top:12px;color: gray;cursor: pointer;"><i class="fa fa-heart"></i> </span>
