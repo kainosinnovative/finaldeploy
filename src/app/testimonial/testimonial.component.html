@@ -19,6 +19,7 @@
     <div class="col-md-4 mb-md-0 mb-5" *ngFor="let test of fetchdata1; let i=index; " >
       
       <div class="testimonial" >
+        <!-- <div class="col-sm-5"> -->
 <!-- <p>{{i}}</p> -->
         <div class="avatar mx-auto">
           <div *ngIf="test.profile_img"><img style="width: 100px;height: 100px;padding:5px;" src="{{apiurlforhtm}}/{{test.profile_img}}" class="rounded-circle"></div>
@@ -86,6 +87,7 @@
 </div>
        
       </div>
+    <!-- </div> -->
 
       <!-- <i style="color:red" class="fa fa-less-than"></i> -->
 
