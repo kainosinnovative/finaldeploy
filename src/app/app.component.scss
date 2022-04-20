@@ -82,7 +82,9 @@
         height: 58px !important;
         border-color: #FFFFFF;
     border-width: 0px 0px 4px;
-        
+    position: fixed;
+    z-index:999; 
+    border-bottom: 1px solid #000000;
     }
 
     .mat-button.mat-accent, .mat-icon-button.mat-accent, .mat-stroked-button.mat-accent {
@@ -99,6 +101,14 @@
             display:block !important;
             font-size: 12px !important;
             cursor: pointer;
+        }
+
+        .mobilelogocls{
+            display: block !important;
+        }
+
+        .weblogocls{
+            display: none !important;
         }
       }
 
@@ -170,7 +180,7 @@
     font-size: 20px;
     font-weight: 700;
     letter-spacing: 2px;
-    color: #E81C2E;
+    // color: #E81C2E;
 }
 
 .footer .footer-link a {
@@ -194,7 +204,7 @@
 }
 
 .footer .footer-link a:hover {
-    color: #E81C2E;
+    // color: #E81C2E;
     letter-spacing: 1px;
 }
 
@@ -233,8 +243,8 @@ text-align:left;
 }
 
 .footer .footer-social a:hover {
-    color: #ffffff;
-    background: #E81C2E;
+    color: #000000;
+    // background: #E81C2E;
 }
     @media screen and (max-width: 768px) {
         .sidemenucls {

@@ -19,12 +19,19 @@
 
 .testimonial
 {
-  background-color:#b5b0b087;
+  background-color:#ffffff;
   padding-top: 6px !important;
   padding-bottom: 6px;
   width: 420px;
+  border: 1px solid #aeaeae94;
 }
 
+@media screen and (min-width: 768px){
+.testimonialcontent{
+  margin-left:50px;
+  margin-right:50px;
+}
+}
 
   
   

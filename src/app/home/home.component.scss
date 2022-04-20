@@ -1,4 +1,8 @@
-
+@media screen and (min-width: 768px){
+.card {
+    width: 90% !important;
+}
+}
 // element.style {
 // }
 .carousel-indicators [data-bs-target] {
@@ -61,12 +65,13 @@
 }
 
 .card {
-    background-color: #f2f2f2;
+    background-color: #ffffff;
     border: none;
     border-radius: 10px;
-    width: 280px !important;
+    // width: 280px !important;
     // height: 700px;
     box-shadow: none;
+    border: 1px solid #aeaeae;
 }
 
 .image-container {

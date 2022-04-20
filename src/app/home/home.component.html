@@ -10,7 +10,7 @@
 </div>
 </div> -->
 
-<br>
+<!-- <br> -->
 <!-- <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -44,12 +44,14 @@
   </button>
 </div> -->
 
-<!-- <br><br> -->
+<!-- <br><br><br> -->
+<div class="headerbelowheight" ></div>
+
 <div *ngIf="dashboardShop1 != ''" style="">
   <h2 style="text-align: center;" class="mainheading">Combo Offers Of The Day </h2>
 <div *ngFor="let s of dashboardShop1;let k=index">
   <p *ngIf="k==0" class="dark-blue-text w-responsive mx-auto fontitalyHome" style="text-align: center;margin-bottom: 2%;font-size: 14px;">Special Deal Limited Offer Today 
-     <img style="height: 40px;" src="{{apiurlforhtm}}/images/hurry-up-154424269.jpg"> 
+     <img style="height: 40px;" src="{{apiurlforhtm}}/images/hurry-up-154424269.png"> 
   </p>
 </div>
   
@@ -185,7 +187,7 @@
                         (afterChange)="afterChange1($event)"
                         (beforeChange)="beforeChange1($event)">
         <div ngxSlickItem *ngFor="let s of dashboardShopOffer1" class="slide1" >
-          <div class=" card" style="width: 90% !important; height: 417px !important;">
+          <div class=" card" style="height: 417px !important;">
             <div class="image-container oneimage" style="border:1px solid;background-image: url('{{apiurlforhtm}}/{{s.shop_image}}')" >
                 <div class="first">
                     <div class="d-flex justify-content-between align-items-center"> 
