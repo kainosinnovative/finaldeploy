@@ -1,10 +1,13 @@
+
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-star-rating/4.1.2/js/star-rating.min.js" integrity="sha512-BjVoLC9Qjuh4uR64WRzkwGnbJ+05UxQZphP2n7TJE/b0D/onZ/vkhKTWpelfV6+8sLtQTUqvZQbvvGnzRZniTQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
-<div class="" style="width: 380px;">
+<div class="testimonialaddpopup" style="">
 <p  style="text-align: right;" class="testimonialClosemobile">
   <a style="cursor: pointer;font-size: 20px;" (click)="closeMe()">×</a>
 </p>
 <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
-<h1 class="mainheading reviewheadingMobile" style="text-align: center;margin-top: -19px;" mat-dialog-title>Add Review</h1>
+<div style="text-align: center;" class="addrvwheading">
+  <h1 class="mainheading reviewheadingMobile" style="margin-top: -19px;" mat-dialog-title>Add Review</h1>
+</div>
     <mat-dialog-content class="tesimonialaddMobile"> 
 
      
@@ -36,30 +39,35 @@
           </div>
           <br>
             <!-- <input  type="text" name = "user_rating"  [(ngModel)]="textbox"   value="{{rating}}"> -->
-            <div class="row" style="text-align: right;font-size: 5px !important;">
+            <!-- <div class="row" style="text-align: right;font-size: 5px !important;"> -->
               
-              <div class="col-sm-10">
+              <!-- <div class="col-sm-10"> -->
+                <div class="starratingcls" style="text-align: right;">
                 <ngx-star-rating formControlName="user_rating" [id]="'rating'" style="text-align: left;" ></ngx-star-rating>
               </div>
-              <div class="col-sm-2">
+              <!-- </div> -->
+              <!-- <div class="col-sm-2"> -->
                 
-              </div>
+              <!-- </div> -->
                 
-            </div>
+            <!-- </div> -->
 
            
 
               
-              <br>
+             
             
-            <div class="row" style="text-align: right;">
-              <br>
-              <div class="col-sm-9"></div>
-              <div class="col-sm-3">
+            <!-- <div class="row" style="text-align: right;"> -->
+             
+              <!-- <div class="col-sm-9"></div> -->
+              <!-- <div class="col-sm-3"> -->
+                <div style="text-align: right;">
+                  <br> <br> <br> 
                 <button class="allSubmitbtn btn" style="width: 68px !important;border: none;height: 28px !important;"  [disabled]='!testimonialForm.valid' >Add</button>
               </div>
-                
-            </div>
+              <!-- </div> -->
+                <!--  -->
+            <!-- </div> -->
             
 
         
