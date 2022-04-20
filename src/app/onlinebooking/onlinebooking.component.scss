@@ -423,6 +423,9 @@ padding: 1rem!important;
     }
 
   @media screen and (max-width: 768px) {
+    .accordion {
+      margin-left: 25px;
+  }
     .extraservPrice{
       text-align: center !important;
     }
