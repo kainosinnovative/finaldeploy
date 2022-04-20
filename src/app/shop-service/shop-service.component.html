@@ -41,7 +41,7 @@
               <tr *ngFor="let service of  serviceData1 | paginate: config ;  let i=index;" >
 
                 <td>{{i+1}}</td>
-                <td ><input id="service_{{service.service_id}}__{{i}}" type="number" value="{{service.service_id}}"  hidden><input id="servicename_{{service.service_id}}_{{i}}" type="text" value="{{service.service_name}}"  style="width: 250px;border:none;text-align: left;padding-left:21px;background-color: #f3f3f3;" readonly></td>
+                <td ><input id="service_{{service.service_id}}__{{i}}" type="number" value="{{service.service_id}}"  hidden><input id="servicename_{{service.service_id}}_{{i}}" type="text" value="{{service.service_name}}"  style="width: 250px;border:none;text-align: left;padding-left:21px;" readonly></td>
                 <td style="text-align: left;padding-left:21px;">
 
                   <span *ngIf="service.status == '1'">&nbsp;</span>
@@ -58,7 +58,7 @@
 
 
                                     </td>
-                <td>  <input id="model_{{service.service_id}}_{{i}}" type="number" value="{{service.model_id}}"  style="width: 60px;" hidden> <input id="modelname_{{service.service_id}}_{{i}}" type="text" value="{{service.model_name}}"  style="width: 150px;border:none;text-align: left;padding-left:21px;background-color: #f3f3f3;" readonly></td>
+                <td>  <input id="model_{{service.service_id}}_{{i}}" type="number" value="{{service.model_id}}"  style="width: 60px;" hidden> <input id="modelname_{{service.service_id}}_{{i}}" type="text" value="{{service.model_name}}"  style="width: 151px;border:none;text-align: left;padding-left:21px;" readonly></td>
                 <td style="text-align: left;"> <input id="amount_{{service.service_id}}_{{i}}"   type="number" min="0" value="{{service.actual_amount}}" (keyup)="removevalidateMsg(service.service_id)" style="width: 60px;">
                   <p id="validateamount_{{service.service_id}}_{{i}}" style="color: red;display: none;font-size:10px;"> Enter the Amount</p>
                   <p id="validateamount1_{{service.service_id}}_{{i}}" style="color: red;display: none;font-size:10px;"> Enter the valided service Amount</p>

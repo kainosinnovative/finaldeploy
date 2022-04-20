@@ -23,8 +23,8 @@
       <tbody >
         <tr *ngFor="let b of  posts | paginate: config ;  let i=index;" style="border-bottom:1px solid #aeaeae;text-align: left;">
 
-          <td style="display:none;width: 0px;">{{b.id}}</td>
-          <td class="fontwghtcls"><a style="cursor: pointer;color: #26a0fc;text-decoration: underline;margin-left: 51px;"  (click)="ViewDetailsPopup(b.Booking_id,'Upcoming Booking')" >{{b.Booking_id}}</a></td>
+          <td  style="display:none;width: 0px;">{{b.id}}</td>
+          <td class="fontwghtcls"><a class="bookingid" style="cursor: pointer;color: #26a0fc;text-decoration: underline;margin-left: 51px !important;"  (click)="ViewDetailsPopup(b.Booking_id,'Upcoming Booking')" >{{b.Booking_id}}</a></td>
           <td ><p style="margin-left: 75px;">{{b.vehicle_number}}</p></td>
           <td>
             <p style="margin-left: 69px;">{{b.bookingdate | date: 'dd-MM-yyyy'}}</p>
@@ -152,7 +152,7 @@
             </div>
 
             
-            <div class="row" >
+            <div class="row" style="background-color: white;">
 
               <!-- Combo Offers start -->
 
@@ -302,7 +302,7 @@
 
            <div class="row" *ngIf="currentOffer1 == ''  && serviceDataOffers1 == '' && combocustomerArr1 !=''">
            
-              <h2 style="text-align: center;" class="mainheading"> Combo Offers- Customer Booking Details</h2>
+              <h2 style="text-align: center;" class="mainheading comboheading"> Combo Offers- Customer Booking Details</h2>
               <div class="row">  
                 <div class="col-sm-3"></div>
                 <div class="col-sm-6">

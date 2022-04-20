@@ -105,6 +105,14 @@ table.dataTable tbody th, table.dataTable tbody td {
 }
 
 @media screen and (min-width: 768px) {
+
+  // .bookingid{
+
+  //   cursor: pointer;
+  //   color: #26a0fc;
+  //   text-decoration: underline;
+  //   margin-left: 51px !important;
+  // }
   .table-responsive {
     
   overflow-x: hidden !important;
@@ -113,4 +121,20 @@ table.dataTable tbody th, table.dataTable tbody td {
 .carwashstatustbl{
   overflow: hidden;
 }
+}
+
+@media screen and (min-width: 768px) {
+
+  // .bookingid{
+
+  //   cursor: pointer;
+  //   color: #26a0fc;
+  //   text-decoration: underline;
+  //   margin-left: 20px !important;
+  // }
+
+  .comboheading{
+    padding-top: 15px !important;
+    text-align: center;
+  }
 }
