@@ -100,9 +100,8 @@ constructor(private service: Service,private  dialog:  MatDialog, private  route
 
 
   ngOnInit(): void {
-    
 
-    console.log(this.currentshopname);
+     console.log(this.currentshopname);
 
     this.getholidaysForAll();
     this.date1=new Date();

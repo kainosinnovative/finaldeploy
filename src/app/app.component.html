@@ -50,7 +50,7 @@
 
 
 
-      <mat-list-item *ngIf="currentUsername"> <a class="txtunderline_remove lock"  mat-list-item routerLink='/home'   (click)="logout()"><i class="fa fa-power-off" aria-hidden="true"></i>&nbsp; LogOut</a> </mat-list-item>
+      <mat-list-item *ngIf="currentUsername"> <a class="txtunderline_remove lock"  mat-list-item routerLink='/home'   (click)="logout()" style="font-family: cursive;"><i class="fa fa-power-off" aria-hidden="true"></i>&nbsp; LogOut</a> </mat-list-item>
 
       <!-- both customer and shop owner -->
       <!-- <mat-list-item *ngIf="userroleSes=='shopOwnerSes'"> <a class="" mat-list-item >{{currentshopname}}</a></mat-list-item> -->
@@ -141,7 +141,7 @@
 
 
 <!-- for cust general user -->
-  <mat-list-item class="menudesk" *ngIf="userroleSes=='CustomerSes' || !userroleSes"> <a class="colorheaderMenu cursorcls" mat-list-item (click)="selectcity()" style="font-family: cursive;"><i class="fa fa-map-marker" aria-hidden="true" ></i> {{cityname}} </a> </mat-list-item> <span *ngIf="userroleSes=='CustomerSes' || !userroleSes">&nbsp; &nbsp;</span>
+<mat-list-item class="menudesk" *ngIf="userroleSes=='CustomerSes' || !userroleSes"> <a class="colorheaderMenu cursorcls" mat-list-item (click)="selectcity()" style="font-family: cursive;"><i class="fa fa-map-marker" aria-hidden="true" ></i> {{cityname}} </a> </mat-list-item> <span *ngIf="userroleSes=='CustomerSes' || !userroleSes">&nbsp; &nbsp;</span>
 <!-- for cust general user -->
 
   <!-- both customer and shop owner -->
