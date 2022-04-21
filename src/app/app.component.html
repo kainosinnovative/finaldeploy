@@ -10,7 +10,7 @@
    
     <mat-list-item class="menudesk1 "   *ngIf="userroleSes=='CustomerSes' || !userroleSes"> <a (click)="selectcity()" class="txtunderline_remove2" mat-list-item routerLink='/first' style="font-family: cursive;" ><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp; {{cityname}}
     </a> </mat-list-item>
-    <mat-list-item   class="menudesk1" *ngIf="userroleSes=='CustomerSes' || !userroleSes"> <a class="txtunderline_remove2" style="cursor: pointer;font-family: cursive;" mat-list-item routerLink='/home' [routerLinkActive]="['is-active']" ><i class="fa fa-home" aria-hidden="true"></i>&nbsp; Home
+    <mat-list-item   class="menudesk1" *ngIf="userroleSes=='CustomerSes' || !userroleSes"> <a class="txtunderline_remove2" style="cursor: pointer;font-family: cursive;" mat-list-item routerLink='/home' [routerLinkActive]="['is-active']" style="font-family: cursive;"><i class="fa fa-home" aria-hidden="true"></i>&nbsp; Home
     </a> </mat-list-item>
     <!-- <mat-list-item class="menudesk1" *ngIf="userroleSes=='CustomerSes' || !userroleSes"> <a class="txtunderline_remove2" mat-list-item routerLink='/onlinebooking'>Online Booking
     </a> </mat-list-item> -->
@@ -49,7 +49,7 @@
 
 
 
-      <mat-list-item *ngIf="currentUsername"> <a class="txtunderline_remove lock"  mat-list-item routerLink='/home'   (click)="logout()"><i class="fa fa-power-off" aria-hidden="true"></i></a> </mat-list-item>
+      <mat-list-item *ngIf="currentUsername"> <a class="txtunderline_remove lock"  mat-list-item routerLink='/home'   (click)="logout()"><i class="fa fa-power-off" aria-hidden="true"></i>&nbsp; Logout</a> </mat-list-item>
 
       <!-- both customer and shop owner -->
       <!-- <mat-list-item *ngIf="userroleSes=='shopOwnerSes'"> <a class="" mat-list-item >{{currentshopname}}</a></mat-list-item> -->
@@ -136,11 +136,11 @@
   <mat-list-item class="menudesk" *ngIf="userroleSes=='shopOwnerSes'"> <a class="colorheaderMenu" mat-list-item routerLink='/ShopDashboard' [routerLinkActive]="['is-active']" style="font-family: cursive;">Home</a> </mat-list-item> <span *ngIf="userroleSes=='shopOwnerSes'">&nbsp; &nbsp;</span>
 
 
-  <mat-list-item class="menudesk" *ngIf="userroleSes=='CustomerSes' || !userroleSes"> <a class="colorheaderMenu" mat-list-item routerLink='/home' [routerLinkActive]="['is-active']">Home</a> </mat-list-item> <span *ngIf="userroleSes=='CustomerSes' || !userroleSes">&nbsp; &nbsp;</span>
+  <mat-list-item class="menudesk" *ngIf="userroleSes=='CustomerSes' || !userroleSes"> <a class="colorheaderMenu" mat-list-item routerLink='/home' [routerLinkActive]="['is-active']" style="font-family: cursive;">Home</a> </mat-list-item> <span *ngIf="userroleSes=='CustomerSes' || !userroleSes">&nbsp; &nbsp;</span>
 
 
 <!-- for cust general user -->
-  <mat-list-item class="menudesk" *ngIf="userroleSes=='CustomerSes' || !userroleSes"> <a class="colorheaderMenu cursorcls" mat-list-item (click)="selectcity()"><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp; {{cityname}} </a> </mat-list-item> <span *ngIf="userroleSes=='CustomerSes' || !userroleSes">&nbsp; &nbsp;</span>
+  <mat-list-item class="menudesk" *ngIf="userroleSes=='CustomerSes' || !userroleSes"> <a class="colorheaderMenu cursorcls" mat-list-item (click)="selectcity()" style="font-family: cursive;"><i class="fa fa-map-marker" aria-hidden="true" ></i>&nbsp; {{cityname}} </a> </mat-list-item> <span *ngIf="userroleSes=='CustomerSes' || !userroleSes">&nbsp; &nbsp;</span>
 <!-- for cust general user -->
 
   <!-- both customer and shop owner -->
@@ -157,7 +157,7 @@
 <!-- for customer -->
   <!-- <mat-list-item  class="menudesk cursorcls" *ngIf="userroleSes=='CustomerSes' || !userroleSes"> <a class="colorheaderMenu" mat-list-item routerLink='/onlinebooking'>Online Booking </a> </mat-list-item> <span *ngIf="userroleSes=='CustomerSes' || !userroleSes">&nbsp; &nbsp;</span> -->
 
-  <mat-list-item *ngIf="userroleSes=='CustomerSes'" class="menudesk cursorcls"> <a class="colorheaderMenu" mat-list-item routerLink='/customercreate' [routerLinkActive]="['is-active']">My Profile </a> </mat-list-item> <span *ngIf="userroleSes=='CustomerSes'">&nbsp; &nbsp;</span>
+  <mat-list-item *ngIf="userroleSes=='CustomerSes'" class="menudesk cursorcls"> <a class="colorheaderMenu" mat-list-item routerLink='/customercreate' [routerLinkActive]="['is-active']" style="font-family: cursive;">My Profile </a> </mat-list-item> <span *ngIf="userroleSes=='CustomerSes'">&nbsp; &nbsp;</span>
 
   <mat-list-item *ngIf="userroleSes=='CustomerSes'" class="menudesk cursorcls"> <a class="colorheaderMenu" mat-list-item routerLink="/MyBooking" [routerLinkActive]="['is-active']" style="font-family: cursive;">My Booking </a> </mat-list-item> <span *ngIf="userroleSes=='CustomerSes'">&nbsp; &nbsp;</span>
 
@@ -182,7 +182,7 @@
 
   <!-- both customer and shop owner -->
 
-  <mat-list-item class="menudesk cursorcls" style="margin-left: -32px;" *ngIf="currentUsername" > <a routerLink='/home'  class="colorheaderMenu" title="Logout" (click)="logout()"><i class="fa fa-power-off" aria-hidden="true"></i></a> </mat-list-item>
+  <mat-list-item class="menudesk cursorcls" style="margin-left: -32px;" *ngIf="currentUsername" > <a routerLink='/home'  class="colorheaderMenu" title="Logout" (click)="logout()"><i class="fa fa-power-off" aria-hidden="true"></i> &nbsp; LogOut</a> </mat-list-item>
   <!-- both customer and shop owner -->
  
 
@@ -191,7 +191,7 @@
   <mat-list-item  *ngIf="userroleSes=='shopOwnerSes'"> <img src="{{apiurlforhtm}}/{{shoplogo}}" class="rounded-circle" style="height: 52px; width: 65px;"> </mat-list-item>
 
 
-  <mat-list-item *ngIf="userroleSes=='CustomerSes'"  class="menudesk cursorcls" style="margin-left: 506px;"> <a class="colorheaderMenu"   routerLink='/search' [routerLinkActive]="['is-active']" mat-list-item >
+  <mat-list-item *ngIf="userroleSes=='CustomerSes'"  class="menudesk cursorcls" style="margin-left: 426px;"> <a class="colorheaderMenu"   routerLink='/search' [routerLinkActive]="['is-active']" mat-list-item >
     <i class="fa fa-search" aria-hidden="true"></i>&nbsp;&nbsp;</a>
     
     <!-- <input class="search" type="text" placeholder="Search" > -->
