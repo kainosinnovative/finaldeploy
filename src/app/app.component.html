@@ -8,7 +8,7 @@
     <!-- customer mobile start -->
     <mat-list-item *ngIf="currentUsername"> <a class="txtunderline_remove" mat-list-item style="font-family: cursive;" >Hi, {{currentUsername}}</a> </mat-list-item>
    
-    <mat-list-item class="menudesk1 "   *ngIf="userroleSes=='CustomerSes' || !userroleSes"> <a (click)="selectcity()" class="txtunderline_remove2" mat-list-item routerLink='/first' style="font-family: cursive;" ><i class="fa fa-map-marker" aria-hidden="true"></i> {{cityname}}
+    <mat-list-item class="menudesk1 "   *ngIf="userroleSes=='CustomerSes' || !userroleSes"> <a (click)="selectcity()" class="txtunderline_remove2" mat-list-item routerLink='/first' style="font-family: cursive;" ><i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp; {{cityname}}
     </a> </mat-list-item>
     <mat-list-item   class="menudesk1" *ngIf="userroleSes=='CustomerSes' || !userroleSes"> <a class="txtunderline_remove2" style="cursor: pointer;font-family: cursive;" mat-list-item routerLink='/home' [routerLinkActive]="['is-active']" style="font-family: cursive;"><i class="fa fa-home" aria-hidden="true"></i>&nbsp; Home
     </a> </mat-list-item>
@@ -49,7 +49,7 @@
 
 
 
-      <mat-list-item *ngIf="currentUsername"> <a class="txtunderline_remove lock"  mat-list-item routerLink='/home'   (click)="logout()"><i class="fa fa-power-off" aria-hidden="true"></i>&nbsp; Logout</a> </mat-list-item>
+      <mat-list-item *ngIf="currentUsername"> <a class="txtunderline_remove lock"  mat-list-item routerLink='/home'   (click)="logout()"><i class="fa fa-power-off" aria-hidden="true"></i>&nbsp; LogOut</a> </mat-list-item>
 
       <!-- both customer and shop owner -->
       <!-- <mat-list-item *ngIf="userroleSes=='shopOwnerSes'"> <a class="" mat-list-item >{{currentshopname}}</a></mat-list-item> -->
@@ -182,7 +182,7 @@
 
   <!-- both customer and shop owner -->
 
-  <mat-list-item class="menudesk cursorcls" style="margin-left: -32px;" *ngIf="currentUsername" > <a routerLink='/home'  class="colorheaderMenu" title="Logout" (click)="logout()"><i class="fa fa-power-off" aria-hidden="true"></i> &nbsp; LogOut</a> </mat-list-item>
+  <mat-list-item class="menudesk cursorcls" style="margin-left: -32px;" *ngIf="currentUsername" > <a routerLink='/home'  class="colorheaderMenu" title="Logout" (click)="logout()"><i class="fa fa-power-off" aria-hidden="true"></i></a> </mat-list-item>
   <!-- both customer and shop owner -->
  
 
