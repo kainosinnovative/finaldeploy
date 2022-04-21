@@ -102,7 +102,8 @@ date2:any;
     this.adjustsItemsPerSlide();
     this.loadCustomerByCity();
     // (<HTMLInputElement>document.getElementById("movetopid")).scrollTop=0;
-    (<HTMLInputElement>document.getElementById("autofocus")).focus();
+    // (<HTMLInputElement>document.getElementById("autofocus")).focus();
+    (<HTMLInputElement>document.getElementById("shoponlinebookingfocus")).focus();
 
     this.date=new Date();
      this.current_date =this.datepipe.transform(this.date, 'yyyy-MM-dd');

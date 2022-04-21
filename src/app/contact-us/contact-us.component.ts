@@ -37,7 +37,7 @@ export class ContactUsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    
+    (<HTMLInputElement>document.getElementById("contactusfocus")).focus();
  this.date=new Date();
 let current_date =this.datepipe.transform(this.date, 'yyyy-MM-dd');
 
