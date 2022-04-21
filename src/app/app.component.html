@@ -8,7 +8,7 @@
     <!-- customer mobile start -->
     <mat-list-item *ngIf="currentUsername"> <a class="txtunderline_remove" mat-list-item style="font-family: cursive;" >Hi, {{currentUsername}}</a> </mat-list-item>
    
-    <mat-list-item class="menudesk1 "   *ngIf="userroleSes=='CustomerSes' || !userroleSes"> <a (click)="selectcity()" class="txtunderline_remove2" mat-list-item routerLink='/first' style="font-family: cursive;" ><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp; {{cityname}}
+    <mat-list-item class="menudesk1 "   *ngIf="userroleSes=='CustomerSes' || !userroleSes"> <a (click)="selectcity()" class="txtunderline_remove2" mat-list-item routerLink='/first' style="font-family: cursive;" ><i class="fa fa-map-marker" aria-hidden="true"></i> {{cityname}}
     </a> </mat-list-item>
     <mat-list-item   class="menudesk1" *ngIf="userroleSes=='CustomerSes' || !userroleSes"> <a class="txtunderline_remove2" style="cursor: pointer;font-family: cursive;" mat-list-item routerLink='/home' [routerLinkActive]="['is-active']" style="font-family: cursive;"><i class="fa fa-home" aria-hidden="true"></i>&nbsp; Home
     </a> </mat-list-item>
@@ -140,7 +140,7 @@
 
 
 <!-- for cust general user -->
-  <mat-list-item class="menudesk" *ngIf="userroleSes=='CustomerSes' || !userroleSes"> <a class="colorheaderMenu cursorcls" mat-list-item (click)="selectcity()" style="font-family: cursive;"><i class="fa fa-map-marker" aria-hidden="true" ></i>&nbsp; {{cityname}} </a> </mat-list-item> <span *ngIf="userroleSes=='CustomerSes' || !userroleSes">&nbsp; &nbsp;</span>
+  <mat-list-item class="menudesk" *ngIf="userroleSes=='CustomerSes' || !userroleSes"> <a class="colorheaderMenu cursorcls" mat-list-item (click)="selectcity()" style="font-family: cursive;"><i class="fa fa-map-marker" aria-hidden="true" ></i> {{cityname}} </a> </mat-list-item> <span *ngIf="userroleSes=='CustomerSes' || !userroleSes">&nbsp; &nbsp;</span>
 <!-- for cust general user -->
 
   <!-- both customer and shop owner -->
@@ -252,7 +252,7 @@
 <div class="footerpopularlink">
 
 <p class="bloglinkMob">
-  <a href="#" ><i class="fa fa-arrow-right" style="font-size:8px"></i> &nbsp;Blog</a>
+  <a href="#" ><i class="fa fa-arrow-right" style="    font-size: 13px; margin-left: -2px;"></i> &nbsp;Blog</a>
 </p>
                   <!-- <a href="#"><i class="fa fa-arrow-right" style="font-size:8px"></i> &nbsp;Online Booking</a> -->
                   <!-- <a href="#"><i class="fa fa-arrow-right" style="font-size:8px"></i> &nbsp;Offers and Deals</a> -->
@@ -315,8 +315,7 @@
                 <br>
             </div>
         </div>
-
-      </div>
+    </div>
       <!-- Grid row -->
 
     </div>
@@ -325,7 +324,7 @@
     <!-- Footer Links -->
 
     <!-- Copyright -->
-    <div style="background: white;" class="footer-copyright text-center py-3" >
+    <div style="background: white;padding-bottom: 5px !important;padding-top: 10px !important;" class="footer-copyright text-center py-3" >
 
       © 2022 Copyright:
       <a href="http://www.kainosinnovative.com"> Kainos Innovative Solutions</a>
