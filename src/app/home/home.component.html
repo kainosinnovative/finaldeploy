@@ -45,9 +45,11 @@
 </div> -->
 
 <!-- <br><br><br> -->
-<div class="headerbelowheight" ></div>
 
-<div *ngIf="dashboardShop1 != ''" style="">
+  <input type="text" id="autofocus2">
+<div class="headerbelowheight" ></div>
+<div *ngIf="dashboardShop1 != ''" >
+
   <h2 style="text-align: center;" class="mainheading">Combo Offers Of The Day </h2>
 <div *ngFor="let s of dashboardShop1;let k=index">
   <p *ngIf="k==0" class="dark-blue-text w-responsive mx-auto fontitalyHome" style="text-align: center;margin-bottom: 2%;font-size: 14px;">Special Deal Limited Offer Today 

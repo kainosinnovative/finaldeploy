@@ -55,6 +55,8 @@ ShopHolidaysDetails1:any;
   currenttime:any;
   ngOnInit(): void {
 
+    (<HTMLInputElement>document.getElementById("autofocus2")).focus();
+
     this.adjustsItemsPerSlide();
     this.date1=new Date();
     this.date=new Date();

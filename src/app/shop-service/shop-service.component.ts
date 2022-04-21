@@ -48,6 +48,9 @@ export class ShopServiceComponent implements  OnInit{
 
   ngOnInit(): void {
     
+
+    (<HTMLInputElement>document.getElementById("autofocus1")).focus();
+
     this.date=new Date();
     this.current_date =this.datepipe.transform(this.date, 'yyyy-MM-dd');
     this.loadServiceData();
