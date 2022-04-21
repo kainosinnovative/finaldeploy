@@ -16,6 +16,7 @@ import { config_url } from '../shared/customer/constant';
 })
 export class HomeComponent implements OnInit {
   apiurlforhtm = config_url;
+
   date:any;
   //data: any;
   selectedCity: any;

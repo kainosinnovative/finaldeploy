@@ -1,13 +1,15 @@
 <div class="headerbelowheight" ></div>
 <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
-<h2 class="mainheading" style="text-align:center;font-family: cursive;">My Profile </h2>
+<h2 class="mainheading" style="text-align:center;font-family: cursive;" >My Profile </h2>
 <!-- *ngFor = "let news  of CustomerDataById1" -->
 <div style="margin-left: -66px;">
     <!-- <ul *ngFor="let c of CustomerDataById">
         <li>hi {{c.data.profile.firstname}}</li>
     </ul> -->
-<form [formGroup]="profileform" name="pf">
 
+    <!-- <input type="text" style="visibility: hidden;" id="autofocus1"> -->
+<form [formGroup]="profileform" name="pf">
+ 
  <div class="accordion" style="background-color: #ffffff;">
     <h2 class="title subheading"  (click)="opened = !opened">Personal Information <i class="fa fa-chevron-down"></i> </h2>
     <div class="content-container" [class.opened]="opened" >
@@ -17,7 +19,7 @@
            <img *ngIf="!CustomerDataById1.profile_img" style="width: 180px;height: 100px;"  src="{{apiurlforhtm}}/images/avatar.png" class="rounded-circle">
 
             <div class="form-group form-inline">
-            <label >Profile Photo</label>
+            <label  >Profile Photo</label>
 
             </div>
             <div class= "border-right">
@@ -45,7 +47,7 @@
                     <div class="form-inline" >
                         <label class="customerProfileLbl">First Name<span class="requiredfield">  *</span></label>
                       <p class="labelFieldSpace" style="display: none;"></p>
-                        <input type="text" maxlength="15" class="" style="padding-left: 2px !important;width: 190px;"   [(ngModel)]="CustomerDataById1.firstname" formControlName="firstname" value="{{CustomerDataById1.firstname}}" >
+                        <input type="text"  id="autofocus1" maxlength="15" class="" style="padding-left: 2px !important;width: 190px;"   [(ngModel)]="CustomerDataById1.firstname" formControlName="firstname" value="{{CustomerDataById1.firstname}}" >
                         <div *ngIf="profileform.controls['firstname'].touched && profileform.controls['firstname'].invalid ">
 
                             <div *ngIf="profileform.controls['firstname'].errors" style="color: red;">

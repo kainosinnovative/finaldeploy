@@ -109,6 +109,8 @@ dynamicArray: Array<DynamicGrid> = [];
 
 ngOnInit() {
 
+  (<HTMLInputElement>document.getElementById("autofocus1")).focus();
+
   this.readCustomerDataById();
   this.loadcartype();
   this.loadcarbrand();

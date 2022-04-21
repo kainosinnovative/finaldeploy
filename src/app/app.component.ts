@@ -96,6 +96,8 @@ constructor(private service: Service,private  dialog:  MatDialog, private  route
 
   }
 
+  
+
 
   ngOnInit(): void {
     
@@ -262,7 +264,6 @@ this.router.navigate(['/shopownerOnlineBooking/'+shop_id]);
 searchshopMobile(){
 
   this.dialog.open(SearchshopPopupComponent,{disableClose: true,width: '100%'});
-
 }
 
 
