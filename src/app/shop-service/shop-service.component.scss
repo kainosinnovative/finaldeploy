@@ -84,17 +84,7 @@ tr
 
 
 
-.accordion{
-  // box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
-  // margin: 12px;
-  // margin-left:80px;
-  width:100%;
-  // margin-left:275px;
-  margin-left: 30px;
-  // height:  125px !important;
-  padding:10px;
 
-}
 
 .title  {
 padding-left: 6px;
@@ -119,12 +109,7 @@ max-height: none;
 }
 
 
-.accordion1{
-  // box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
-  width:94%;
-  margin-left: 30px;
-  padding:10px;
-}
+
 
 .title1  {
 padding-left: 6px;
@@ -156,7 +141,33 @@ max-height: none;
 
 
 @media screen and (max-width: 768px){
+  .sliderlblcls{
+    margin-left: 13px !important;
+  }
+  .servicecss {
+    margin-left: 11px !important;
+  }
+  .accordion1 {
+    width: 94%;
+    margin-left: 12px;
+    padding: 10px;
+}
 
+  .accordion{
+    // box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
+    // margin: 12px;
+    // margin-left:80px;
+    width:89%;
+    // margin-left:275px;
+    margin-left: 23px;
+    // height:  125px !important;
+    padding:10px;
+  
+  }
+
+.mobilepdingtp{
+  padding-top: 20px;
+}
   // .boxwidht{
   // overflow: auto;
   // width: 100%;
@@ -175,12 +186,31 @@ max-height: none;
  width: 40px !important;
   }
   .offerprice{
-    width: 25px !important;
+    width: 43px !important;
+    // width: 25px !important;
   }
 
 }
 
 @media screen and (min-width: 768px){
+  .accordion1{
+    // box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
+    width:94%;
+    margin-left: 30px;
+    padding:10px;
+  }
+
+  .accordion{
+    // box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
+    // margin: 12px;
+    // margin-left:80px;
+    width:100%;
+    // margin-left:275px;
+    margin-left: 30px;
+    // height:  125px !important;
+    padding:10px;
+  
+  }
 
   .offerptage{
 

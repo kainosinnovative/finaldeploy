@@ -167,7 +167,7 @@
               </td> -->
 
               <td style="width: 178px;" class="pickuptimeMob">
-                <div *ngIf="getPickupAvlData2 == 1" id="pickuptimetdid" style="width: 67px;">
+                <div class="mobpickuptime" *ngIf="getPickupAvlData2 == 1" id="pickuptimetdid" style="width: 67px;">
                 <label >Pick-up time</label>
     <br>
     <select style="height: 34px;" formControlName="pickup_time" class="fromdata">
@@ -226,8 +226,8 @@
 
 
               </td>
-              <td style="width: 173px;">
-                <div id="droptimetdid" *ngIf="getPickupAvlData2 == 1" style="">
+              <td  style="width: 173px;">
+                <div class="mobdropuptime" id="droptimetdid" *ngIf="getPickupAvlData2 == 1" style="">
                 <label >Drop time</label>
     <br>
 
@@ -451,7 +451,7 @@
              <span class="discount2" >Up to {{shoplist. offer_percent}}% Off {{shoplist.is_pickup_drop_avl}}</span>
         </div>
           <!--Section: Content-->
-            <div class="text-center white-text d-md-flex justify-content-between p6 indigo lighten-2"  >
+            <div class="text-center white-text d-md-flex justify-content-between p6 indigo lighten-2 pdingbtmreduceservice"  >
               <div class="servicename">
                <p class="font-weight-bold;back" >
                 {{shoplist.service_name}}</p>

@@ -47,6 +47,7 @@ export class ShopServiceComponent implements  OnInit{
 
 
   ngOnInit(): void {
+    
     this.date=new Date();
     this.current_date =this.datepipe.transform(this.date, 'yyyy-MM-dd');
     this.loadServiceData();

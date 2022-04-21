@@ -48,11 +48,7 @@ button {
     margin-left: 8px;
 }
 
-.message{
 
-    text-align: right;    
-    margin-left: -14px;
-}
 
 @media screen and (max-width: 768px){
 
@@ -65,13 +61,20 @@ button {
         width: 257px !important;
     }
     .message{
-        margin-right: 11px !important;
+        margin-right: 13px !important;
+        text-align: right;
     }
 }
 
 @media screen and (min-width: 768px){
 .message{
     margin-left: -88px;
+}
+
+.message{
+
+    text-align: right;    
+    // margin-left: -14px;
 }
    
 }

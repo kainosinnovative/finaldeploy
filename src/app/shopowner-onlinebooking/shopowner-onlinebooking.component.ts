@@ -95,6 +95,7 @@ date2:any;
 
 
   ngOnInit(): void {
+    
     this.date2=new Date();
     this.date2 =this.datepipe.transform(this.date2, 'yyyy-MM-dd');
 
