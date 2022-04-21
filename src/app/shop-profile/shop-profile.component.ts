@@ -62,6 +62,7 @@ citytype: any;
 
   ngOnInit(): void {
     
+    (<HTMLInputElement>document.getElementById("autofocus2")).focus();
     
     var currentUserId = localStorage.getItem('currentUserId');
     this.restApi.getShopHolidays(currentUserId).subscribe((res)=>{

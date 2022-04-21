@@ -43,7 +43,7 @@
                                       
                                             <label style class="">Shop Name</label><span class="requiredfield">  *</span>
                                             <p class="labelFieldSpace" style="display: none;"></p>
-                                                <input type="text"  class="form-control  firstLastnamecls2" [(ngModel)]="ShopProfileDetails.name" formControlName="name" value="{{ShopProfileDetails.name}}" >
+                                                <input type="text" id="autofocus2"  class="form-control  firstLastnamecls2" [(ngModel)]="ShopProfileDetails.name" formControlName="name" value="{{ShopProfileDetails.name}}" >
                                                 <div *ngIf="shopprofile1.controls['name'].touched && shopprofile1.controls['name'].invalid "> 
                             
                                                     <div *ngIf="shopprofile1.controls['name'].errors" style="color: red;"> 
