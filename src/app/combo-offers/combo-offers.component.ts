@@ -61,6 +61,7 @@ export class ComboOffersComponent implements OnInit {
     public restApi: RestApiService,public datepipe: DatePipe,private toastr: ToastrService) { }
 
   ngOnInit(): void {
+    (<HTMLInputElement>document.getElementById("comboofferfocus")).focus();
     this.date=new Date();
     this.current_date =this.datepipe.transform(this.date, 'yyyy-MM-dd');
     this.shortMonth = (new Date().getMonth() + 1).toString().slice(-2);
