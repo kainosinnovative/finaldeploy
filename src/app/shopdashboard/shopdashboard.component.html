@@ -26,7 +26,7 @@
         <tr *ngFor="let b of  posts | paginate: config ;  let i=index;" style="border-bottom:1px solid #aeaeae;text-align: left;">
 
           <td  style="display:none;width: 0px;">{{b.id}}</td>
-          <td class="fontwghtcls"><a class="bookingid" style="cursor: pointer;color: #26a0fc;text-decoration: underline;margin-left: 51px !important;"  (click)="ViewDetailsPopup(b.Booking_id,'Upcoming Booking')" >{{b.Booking_id}}</a></td>
+          <td class="fontwghtcls"><a class="bookingid" style="cursor: pointer;color: black;text-decoration: underline;margin-left: 51px !important;font-weight: 500 !important;"  (click)="ViewDetailsPopup(b.Booking_id,'Upcoming Booking')" >{{b.Booking_id}}</a></td>
           <td ><p style="margin-left: 75px;">{{b.vehicle_number}}</p></td>
           <td>
             <p style="margin-left: 69px;">{{b.bookingdate | date: 'dd-MM-yyyy'}}</p>
@@ -106,7 +106,7 @@
             <tr *ngFor="let b of  posts1;  let i=index;" style="border-bottom:1px solid #aeaeae;text-align: left;">
 
               <td style="display:none;width: 0px;">{{b.id}}</td>
-              <td class="fontwghtcls"><a style="cursor: pointer;color: #26a0fc;text-decoration: underline;margin-left: 49px;" (click)="ViewDetailsPopup(b.Booking_id,'Carwash Status')">{{b.Booking_id}}</a></td>
+              <td class="fontwghtcls"><a style="cursor: pointer;color: black;text-decoration: underline;margin-left: 49px;font-weight: 500 !important;" (click)="ViewDetailsPopup(b.Booking_id,'Carwash Status')">{{b.Booking_id}}</a></td>
               <td><p style="margin-left: 71px;">{{b.vehicle_number}}</p></td>
               <td>
                 <p style="margin-left: 62px;">{{b.bookingdate | date: 'dd-MM-yyyy'}}</p>
@@ -146,7 +146,7 @@
         </div>
 <br>
         <div class="accordion2" >
-          <h2 class="title2 subheading"  (click)="opened2 = !opened2">Active Offer's Analysis<i class="fa fa-chevron-down"></i> </h2>
+          <h2 class="title2 subheading"  (click)="opened2 = !opened2">Active Offers Analysis<i class="fa fa-chevron-down"></i> </h2>
           <div class="content-container2" [class.opened2]="opened2">
             <div *ngIf="currentOffer1 == '' && serviceDataOffers1 =='' && combocustomer1 ==''">
               <!-- <div> -->
