@@ -127,6 +127,7 @@ export class ShopdashboardComponent implements OnInit {
      }
 
   ngOnInit(): void {
+    (<HTMLInputElement>document.getElementById("shopdashboardfocus")).style.display="none";
     (<HTMLInputElement>document.getElementById("shopdashboardfocus")).focus();
     // alert(localStorage.getItem('is_pickup_drop_avl'))
     // this.AcceptedBookingList();
