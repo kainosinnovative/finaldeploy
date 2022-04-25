@@ -96,6 +96,7 @@ date2:any;
 
   ngOnInit(): void {
     
+    (<HTMLInputElement>document.getElementById("autofocus2")).focus();
     this.date2=new Date();
     this.date2 =this.datepipe.transform(this.date2, 'yyyy-MM-dd');
 

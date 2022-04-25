@@ -32,7 +32,7 @@
               <input type="hidden" id="autofocus" >
                 <!-- <div > -->
                 <label>Customer <span class="requiredfield">  *</span></label> <br>
-                <select   class="carmodelcls" formControlName="Customer_id"  style="border: 1px solid;height: 34px;width: 180px;background: white;" (change)="loadcarDetailsById($event)" id="customerid2">
+                <select   class="carmodelcls" id="autofocus2" formControlName="Customer_id"  style="border: 1px solid;height: 34px;width: 180px;background: white;" (change)="loadcarDetailsById($event)" id="customerid2">
 
                   <option value="">--Select--</option>
                   <option *ngFor="let c1 of custDetBycity1" [value]="c1.customer_id">

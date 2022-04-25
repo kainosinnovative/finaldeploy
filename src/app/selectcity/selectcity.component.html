@@ -4,9 +4,9 @@
   <a style="cursor: pointer;font-size: 20px;" (click)="closeSelectCity()">×</a>
 </div>
 
-       <div class="ng-autocomplete popupwidthSelect" style="height: 150px;overflow:hidden;">
+       <div class="ng-autocomplete popupwidthSelect" style="height: 164px;overflow:hidden;">
         
-        <h2 class="mainheading" style="text-align: center;">Enter your city to customize your experience</h2>
+        <h2 class="mainheading" style="text-align: center;">Enter your City to customize your experience</h2>
         <div >
         <ng-autocomplete [data]="citydata" [searchKeyword]="keyword" (selected)='selectEvent($event)'
             (inputChanged)='onChangeSearch($event)' (inputFocused)='onFocused($event)' [itemTemplate]="itemTemplate"

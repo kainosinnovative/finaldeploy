@@ -541,7 +541,7 @@ combocustomerinfo()
       ],
       chart: {
         toolbar: {
-          show: true,
+          show: false,
 
           tools: {
             // download: false,
@@ -651,7 +651,7 @@ currentComboOffers(){
       ],
       chart: {
         toolbar: {
-          show: true,
+          show: false,
 
           tools: {
             // download: false,
