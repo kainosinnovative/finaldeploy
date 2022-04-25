@@ -60,8 +60,8 @@ tr
       }
 
       input:checked + .slider {
-        background-color: #1872f3;
-      }
+        background-color: #1872f3b0
+       }
 
       input:focus + .slider {
         box-shadow: 0 0 1px #1872f3;
