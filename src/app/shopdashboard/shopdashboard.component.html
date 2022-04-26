@@ -1,11 +1,11 @@
 <input type="text" id="shopdashboardfocus">
 <div class="headerbelowheight" ></div>
 
- <div class="accordion" style="background-color: white;" >
+ <div class="accordion" style="background-color: #b3a9a930;" >
   <h2 class="title subheading"  (click)="opened = !opened">Upcoming Booking <i class="fa fa-chevron-down"></i> </h2>
   <div class="content-container " [class.opened]="opened" >
     <div class="table-responsive" >
-    <table  class="table  servicecss" *ngIf="posts"  datatable="ng"  datatable [dtOptions]="dtOptions" style="border: 0.5px solid #000000 !important">
+    <table  class="table  servicecss" *ngIf="posts"  datatable="ng"  datatable [dtOptions]="dtOptions" style="border: 0.5px solid #000000 !important;border-right: 2px solid !important;">
       <thead style="color: black;text-align: left;background-color: #80808091;">
 
           <tr>
@@ -72,11 +72,11 @@
     </div>
     </div>
     <br>
-    <div class="accordion1" style="background-color: white;">
+    <div class="accordion1" style="background-color: #b3a9a930;">
       <h2 class="title1 subheading"  (click)="opened1 = !opened1">Car Wash Status <i class="fa fa-chevron-down"></i> </h2>
       <div class="content-container1" [class.opened1]="opened1">
         <div class="table-responsive carwashstatustbl" >
-        <table  class="table  servicecss"  *ngIf="posts1"  datatable="ng"  datatable [dtOptions]="dtOptions1" style="border: 0.5px solid #000000 !important">
+        <table  class="table  servicecss"  *ngIf="posts1"  datatable="ng"  datatable [dtOptions]="dtOptions1" style="border: 0.5px solid #000000 !important;border-right: 2px solid !important;">
           <thead style="color: black;text-align: left;background-color: #80808091;">
 
               <tr >
@@ -145,7 +145,7 @@
         </div>
         </div>
 <br>
-        <div class="accordion2" >
+        <div class="accordion2" style="background-color: #b3a9a930;">
           <h2 class="title2 subheading"  (click)="opened2 = !opened2">Active Offers Analysis<i class="fa fa-chevron-down"></i> </h2>
           <div class="content-container2" [class.opened2]="opened2">
             <div *ngIf="currentOffer1 == '' && serviceDataOffers1 =='' && combocustomer1 ==''">

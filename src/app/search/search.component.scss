@@ -300,7 +300,7 @@ h3 {
       font-size: 12px;
       color: white;
       font-weight: 500;
-      background: #138808;
+      background: #009688;
       border-radius: 6px;
       padding-left: 4px;
       padding-right: 4px;
@@ -424,5 +424,8 @@ h3 {
     }
     .mat-input-element{
         margin-left:0px !important;
+    }
+    .card{
+        width: 100% !important;
     }
 }

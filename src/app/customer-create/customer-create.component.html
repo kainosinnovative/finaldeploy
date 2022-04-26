@@ -1,6 +1,6 @@
 <div class="headerbelowheight" ></div>
 <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
-<h2 class="mainheading" style="text-align:center;font-family: cursive;" >My Profile </h2>
+<h2 class="mainheading" style="text-align:center;" >My Profile </h2>
 <!-- *ngFor = "let news  of CustomerDataById1" -->
 <div style="margin-left: -66px;">
     <!-- <ul *ngFor="let c of CustomerDataById">
@@ -10,7 +10,7 @@
     <!-- <input type="text" style="visibility: hidden;" id="autofocus1"> -->
 <form [formGroup]="profileform" name="pf">
  
- <div class="accordion" style="background-color: #ffffff;">
+ <div class="accordion" style="background-color: #b3a9a930;">
     <h2 class="title subheading"  (click)="opened = !opened">Personal Information <i class="fa fa-chevron-down"></i> </h2>
     <div class="content-container" [class.opened]="opened" >
            <!--phto-->
@@ -303,7 +303,7 @@
 <form [formGroup]="cardetailForm">
   <!--Endof Personal-->
   <!--address start-->
-  <div class="accordion1" style="background-color: #ffffff;">
+  <div class="accordion1" style="background-color: #b3a9a930;">
     <h2 class="title1 subheading" (click)="opened1 = !opened1">Car Details<i class="fa fa-chevron-down"></i></h2>
     <div class="content-container1" [class.opened1]="opened1">
 
@@ -471,10 +471,10 @@
 
 
 
-        <table class="table " style="border: 1px solid #aeaeae;">
+        <table class="table vehiclemobvehicletbl" style="border: 1px solid black;">
             <thead style="background-color:#b7b7b7;border-bottom: 0.5px solid #aeaeae; color: black;font-weight: 400 !important;">
-              <th class="thfontwt">Registration No</th>
-              <th class="thfontwt">Type</th>
+              <th  class="thfontwt ">Registration No</th>
+              <th  class="thfontwt">Type</th>
               <th class="thfontwt">Brand</th>
               <th class="thfontwt">Model</th>
               <th class="thfontwt">Fuel Type</th>
@@ -482,13 +482,13 @@
               <th class="thfontwt">Delete</th>
             </thead>
             <tbody *ngIf="carDetailsById1.length==0">
-                <tr>
+                <tr style="background:white">
                     <td colspan="7">No data available</td>
                 </tr>
-            </tbody>
+            </tbody >
             <!-- <tbody *ngIf="carDetailsById1.length > 0" style="text-align: left;"> -->
-                <tr *ngFor="let c of carDetailsById1; let i=index" >
-                    <td>{{c.vehicle_number}}</td>
+                <tr *ngFor="let c of carDetailsById1; let i=index" style="background:white">
+                    <td class="">{{c.vehicle_number}}</td>
                     <td>{{c.type_name}}</td>
                     <td>{{c.brand_name}}</td>
                     <td>{{c.model_name}}</td>
@@ -512,7 +512,7 @@
 
 <br>
 
-<div class="accordion2" style="background-color: #ffffff;">
+<div class="accordion2" style="background-color: #b3a9a930;">
 
 
     <h2 class="title2 subheading" (click)="opened2 = !opened2">My Favorite Shops<i class="fa fa-chevron-down"></i></h2>
@@ -521,8 +521,8 @@
 
 
       <div class="row">
-        <div class="col-sm-1"></div>
-        <div class="col-sm-10">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-5">
           <div *ngIf = "Whislistid1 == '' " style="text-align: center;">
             <p style="font-weight: bold;">Add your Favorite Shop</p>
           </div>
@@ -533,25 +533,28 @@
               </td>
             </tr>
           </tbody> -->
+         
+
+
         <ngx-slick-carousel   class="carousel" #slickModal="slick-carousel" [config]="slideConfig3">
 
-          <div ngxSlickItem *ngFor="let image of Whislistid1" class="slide" style="padding-top:12px !important;padding-left:12px !important;">
-            
+          <div ngxSlickItem *ngFor="let image of Whislistid1" class="slide" style="padding-top:12px !important;padding-left:12px !important;text-align: center;">
+            <div style="margin-left: 51px;">
             <img src="{{apiurlforhtm}}/{{image.shop_logo}}" width="100px" height="100px">
-
-          <div class="d-flex justify-content-between align-items-center pt-1" >
+          </div>
+          <div class="justify-content-between align-items-center pt-1" >
            <h5 class="dress-name" style="text-align:center;font-weight:bold;">{{image.name}}</h5>
         </div>
 
 
 
-             <div class="d-flex justify-content-between align-items-center pt-1" >
+             <div class="justify-content-between align-items-center pt-1" >
                <h5 class="dress-name" style="text-align:center;font-weight:800;">{{image.city_name}}</h5>
               </div>
             </div>
         </ngx-slick-carousel>
         </div>
-        <div class="col-sm-1"></div>
+        <div class="col-sm-2"></div>
       </div>
 
 

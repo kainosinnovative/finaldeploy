@@ -29,8 +29,8 @@ export class ComboOffersComponent implements OnInit {
   year: Year = [
     { id: 2021, name: 2021 },
     { id: 2022, name: 2022 },
-    { id: 2023, name:2023 },
-    { id: 2024, name: 2024 }
+    // { id: 2023, name:2023 },
+    // { id: 2024, name: 2024 }
   ];
   serviceData: any;
   serviceData1: any;
@@ -61,6 +61,7 @@ export class ComboOffersComponent implements OnInit {
     public restApi: RestApiService,public datepipe: DatePipe,private toastr: ToastrService) { }
 
   ngOnInit(): void {
+    this.month = [];
     (<HTMLInputElement>document.getElementById("comboofferfocus")).focus();
     this.date=new Date();
     this.current_date =this.datepipe.transform(this.date, 'yyyy-MM-dd');
@@ -441,20 +442,31 @@ retreivedata()
     this.selectedmonth.push(this.val[i].id);
   }
   console.log("month>>",this.selectedmonth)
-  for(let i=0;i<this.val1.length;i++){
-    this.selectedyear.push(this.val1[i].name);
-  }
-  console.log("month>>",this.selectedmonth);
+  var yearid = (<HTMLInputElement>document.getElementById("yearid")).value;
+  // alert(yearid)
+  // for(let i=0;i<this.val1.length;i++){
+    this.selectedyear.push(yearid);
+    // this.selectedyear.push(this.val1[i].name);
+  // }
+  console.log("selectedyear>>",this.selectedyear);
   if(this.val.length == 0)
   {(<HTMLInputElement>document.getElementById("montherror")).style.display ="block";
 
   }
-  if(this.val1.length == 0)
-  {(<HTMLInputElement>document.getElementById("yearerror")).style.display ="block";
+  if(yearid == "" || this.year == null)
+  // if(this.val1.length == 0)
+  {
+    (<HTMLInputElement>document.getElementById("yearerror")).style.display ="block";
 
   }
   
+  if(yearid != "" || this.val.length > 0) {
   (<HTMLInputElement>document.getElementById("history")).style.display = "block";
+  
+  }
+  if(yearid == "" || this.val.length == 0) {
+    (<HTMLInputElement>document.getElementById("history")).style.display = "none";
+    }
      let currentUserId = localStorage.getItem('currentUserId');
       
     this.restApi.getComboOffersData(this.selectedmonth,this.selectedyear,currentUserId).subscribe((data: {}) => {
@@ -518,6 +530,79 @@ this.restApi.RemoveMyComboInfo(offerid).subscribe((data: {}) => {
    this.retreivedata();
   }
  })
+}
+
+
+getyearbasedmonth(){
+  if((<HTMLInputElement>document.getElementById("yearerror")).style.display == "block") {
+  (<HTMLInputElement>document.getElementById("yearerror")).style.display ="none";
+  }
+  // this.selectedmonth = new Array();
+  this.val = new Array();
+  (<HTMLInputElement>document.getElementById("history")).style.display="none";
+  this.shortMonth = null;
+  var yearid1 = (<HTMLInputElement>document.getElementById("yearid")).value;
+  // alert(yearid1)
+  var currentyr = new Date().getFullYear().toString();
+  if(currentyr > yearid1) {
+    this.month= [
+      { id: 1, name: "Jan" },
+      { id: 2, name: "Feb" },
+      { id: 3, name: "Mar" },
+      { id: 4, name: "Apr" },
+      { id: 5, name: "May" },
+      { id: 6, name: "Jun" },
+      { id: 7, name: "Jul" },
+      { id: 8, name: "Aug" },
+      { id: 9, name: "Sep" },
+      { id: 10, name: "Oct" },
+      { id: 11, name: "Nov" },
+      { id: 12, name: "Dec"}
+    ];
+    // alert(currentyr);
+    // this.month = this.month;
+  }
+  else {
+    this.month= [
+      { id: 1, name: "Jan" },
+      { id: 2, name: "Feb" },
+      { id: 3, name: "Mar" },
+      { id: 4, name: "Apr" },
+      { id: 5, name: "May" },
+      { id: 6, name: "Jun" },
+      { id: 7, name: "Jul" },
+      { id: 8, name: "Aug" },
+      { id: 9, name: "Sep" },
+      { id: 10, name: "Oct" },
+      { id: 11, name: "Nov" },
+      { id: 12, name: "Dec"}
+    ];
+    var currentmonth = new Date().getMonth()+1;
+
+    this.month.splice(currentmonth, 11);
+console.log(this.month); 
+
+    // if(currentmonth == 0) {
+      
+    // }
+    // alert(currentmonth)
+   // for(var i=0;i<=currentmonth;i++){
+      
+      // alert(this.month[i])
+      // const index = this.month.indexOf(5);
+// if (index > -1) {
+ // this.month.splice(i, 1); // 2nd parameter means remove one item only
+//}
+      // this.month.push(this.month[i]);
+//       this.month.push({ id: i, name: "Jan" });
+// alert(i);
+// this.month = "id: 1, name: "Jan""
+    // }
+    // this.month = [
+    //   { id: 1, name: "Jan" }
+    // ]
+  }
+ 
 }
 }
 type Month = Array<{ id: number; name: String }>;

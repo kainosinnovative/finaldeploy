@@ -13,7 +13,7 @@
       
   
       <div class="col-sm-5" >
-        <div class="addtdyoffbox" style="border: 1px solid white;margin-left: 19px;background: white;">
+        <div class="addtdyoffbox" style="border: 1px solid white;margin-left: 19px;background: #b3a9a930;">
   <div >
     <br>
     <h2 style="text-align: left;" class="mainheading combooffheading">Add Today's Combo Offer</h2>
@@ -111,13 +111,22 @@
           <td  style="width: 50px;"></td>
           <!-- <td style="width: 200px;display:hidden;">{{service.service_id}}</td> -->
           <td style="width: 250px;text-align: left;"></td>
-          <td style="width: 100px;text-align: right;"><span ></span>
+          <!-- <td style="width: 100px;text-align: right;"><span ></span>
             
               
                 <label class="amt" style="width: 70px;text-align: right; padding-right: 3px;">Total &nbsp;(<i class="fa fa-rupee"> </i>)</label>
-          </td>
+          </td> -->
            <td style="width: 48px;text-align: right;">
-                <input type="number" min="1" class="amt1" readonly id="totalamount" style="margin-right: -46px;width: 80px;height: 24px;text-align: left;">
+           <div style="margin-left: -19px;;">
+              <tr>
+              <td><label style="width: 35px;">Total</label> </td>
+              <td>
+                 <input type="number" min="1" class="amt1" readonly id="totalamount" style="margin-left: 9px;width: 80px;height: 24px;text-align: right;">
+
+              </td>
+            </tr>
+          </div>
+              <!-- <label class="amt" style="width: 70px;text-align: right; padding-right: 3px;">Total &nbsp;(<i class="fa fa-rupee"> </i>)</label>  -->
     
               
            
@@ -239,10 +248,33 @@
       <div class="col-sm-7">
 
 
-        <div class="accordioncombooffers accordionmin" style="background-color: white;">
+        <div class="accordioncombooffers accordionmin" style="background-color: #b3a9a930;">
           <h2 class="title subheading" style="overflow: auto;width: 100%;"  (click)="opened = !opened">Your Previous Combo Offers <i class="fa fa-chevron-down"></i> </h2>
           <div class="content-container" [class.opened]="opened">
             <div class="row">
+              <div class="col-sm-4">
+                <label style="width: 59px;">Year</label>
+
+                <br>
+                          <select  class="yearcombobox"  style="width: 130px;height: 36px;"  id="yearid" (change)="getyearbasedmonth()">
+                              <option value="">--Select Year--</option>
+  
+                              <option *ngFor="let s of year" [value]="s.name">
+                                  {{s.name}}
+                              </option>
+                              </select>
+              
+                  <!-- <ng-select 
+            [items]="year"
+            bindLabel="name"
+            placeholder="Select Category"
+            appendTo="body"
+            [multiple]="true"
+            [(ngModel)]="ComboCurrentyear"
+            (change)="changeFn1(ComboCurrentyear)">
+          </ng-select> -->
+                  <p style="color: red;display: none;text-align: left;" id="yearerror">Select Year</p>
+                </div>
             <div class="col-sm-4" style="text-align: left;"  >
               <label style="width: 74px;">Month</label>
         
@@ -254,29 +286,16 @@
               <ng-select style=" padding-top: 0px !important; padding-left: 1px !important;"
           [items]="month"
           bindLabel="name"
-          placeholder="Select Category"
+          placeholder="Select month"
           appendTo="body"
           [multiple]="true"
           [(ngModel)]="shortMonth"
           (change)="changeFn(shortMonth)">
         </ng-select>
-              <p style="color: red;display: none;text-align: center;" id="montherror">Select Month</p>
+              <p style="color: red;display: none;text-align: left;" id="montherror">Select Month</p>
             </div>
         
-            <div class="col-sm-4">
-              <label style="width: 59px;">Year</label>
             
-                <ng-select 
-          [items]="year"
-          bindLabel="name"
-          placeholder="Select Category"
-          appendTo="body"
-          [multiple]="true"
-          [(ngModel)]="ComboCurrentyear"
-          (change)="changeFn1(ComboCurrentyear)">
-        </ng-select>
-                <p style="color: red;display: none;text-align: center;" id="yearerror">Select Year</p>
-              </div>
             <div class="col-sm-3" >
               <br>
               <button id="retreive" class="allSubmitbtn btn" style="width: 68px;border: none;height: 28px;" (click)="retreivedata()" >Submit</button>
