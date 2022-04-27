@@ -111,6 +111,23 @@
  
   </mat-list-item>
 
+  <mat-list-item class="mobilelogocls" *ngIf="userroleSes=='shopOwnerSes'" style="display:none;margin-right: -152px;"> 
+    <div  style="text-align: right;">
+      <div  style="text-align: right;
+      background: white;
+      width:93px;
+      /* margin-top: 1px; */
+      margin-left: 210px;
+      text-align: center;
+      padding: 4px;
+      border-radius: 15px;
+      border: 1px solid #000000;">
+        <img src="{{apiurlforhtm}}/{{shoplogo}}" style=" width: 74px; height: 41px; padding: 2px;"> 
+      </div>
+    </div>
+   
+    </mat-list-item>
+
   <mat-list-item class="weblogocls" *ngIf="userroleSes=='CustomerSes'" style="display:block;"> 
     <!-- <div class="row" style="height: 85px;background: #8BC34A;margin-left: -17px;"> -->
     <!-- <img src="https://o.remove.bg/downloads/948cfcc0-42ba-45df-9148-13b8b9a3bed9/Kainos_logo__1_-removebg-preview.png" style="width: 53%;"> -->
