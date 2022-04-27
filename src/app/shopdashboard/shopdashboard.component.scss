@@ -140,6 +140,9 @@ table.dataTable tbody th, table.dataTable tbody td {
 }
 @media screen and (max-width: 768px) {
 
+  .mobilechartcls {
+    overflow: auto;
+  }
   // .bookingid{
 
   //   cursor: pointer;

@@ -62,6 +62,7 @@ citytype: any;
 
   ngOnInit(): void {
     
+    (<HTMLInputElement>document.getElementById("footerabovespace")).style.display="none";
     (<HTMLInputElement>document.getElementById("shopprofilefocus")).focus();
     
     var currentUserId = localStorage.getItem('currentUserId');

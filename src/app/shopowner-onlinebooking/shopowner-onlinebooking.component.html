@@ -291,7 +291,8 @@
 
       <div class="col-sm-5">
         <div *ngIf="offerslist != null && offerslist.length !=0">
-        <h2 class="mainheading" style="text-align: center;">Deal Of The Day (offers)</h2>
+        <h2 *ngIf="offerslist.length ==1" class="mainheading" style="text-align: center;">Deal Of The Day</h2>
+        <h2 *ngIf="offerslist.length >1" class="mainheading" style="text-align: center;">Deals Of The Day</h2>
 <!-- <div class="accordion1" *ngIf="offerslist != null && offerslist.length !=0"> -->
   <!---End of Booking details-->
 
@@ -446,16 +447,18 @@
                       <span #other_content *ngIf = "date2 >= shoplist.from_date && date2 <= shoplist.to_date && shoplist.offer_percent!=0;else other_content" class="openClosed">yes</span> -->
 
 
-        <div class="extser">
+        <div class="extser" >
 
-          <div class="d-flex justify-content-between align-items-center" *ngIf = "date2 >= shoplist.from_date && date2 <= shoplist.to_date && shoplist.offer_percent!=0;">
+          <!-- <div class="d-flex justify-content-between align-items-center" *ngIf = "date2 >= shoplist.from_date && date2 <= shoplist.to_date && shoplist.offer_percent!=0;">
              <span class="discount2" >Up to {{shoplist. offer_percent}}% Off {{shoplist.is_pickup_drop_avl}}</span>
-        </div>
+        </div> -->
           <!--Section: Content-->
             <div class="text-center white-text d-md-flex justify-content-between p6 indigo lighten-2 pdingbtmreduceservice"  >
               <div class="servicename">
                <p class="font-weight-bold;back" >
-                {{shoplist.service_name}}</p>
+                <span class="discount2" *ngIf = "date2 >= shoplist.from_date && date2 <= shoplist.to_date && shoplist.offer_percent!=0;">Up to {{shoplist. offer_percent}}% Off {{shoplist.is_pickup_drop_avl}} &nbsp;</span>
+                {{shoplist.service_name}}
+              </p>
                </div>
               <br>
               <div class="serviceprice">

@@ -93,9 +93,9 @@
     font-weight: 500;
     background: rgb(5, 168, 73);
     border-radius: 6px;
-    padding-left: 4px;
-    padding-right: 4px;
-
+    // padding-left: 4px;
+    // padding-right: 4px;
+  padding: 4px;
 }
 
 
@@ -387,6 +387,9 @@ color: white;
   }
 
   @media screen and (min-width: 768px) {
+    .extser{
+      height: 70px;
+    }
     .pdingbtmreduceservice{
       padding-bottom: 4px !important;
     }
