@@ -2,7 +2,7 @@
 <div class="headerbelowheight" ></div>
 
 <div id="movetopid"></div>
-<h2 class="mainheading" style="text-align:center;font-family: cursive;">Online Booking</h2>
+<h2 class="mainheading" style="text-align:center;">Online Booking</h2>
 
 <div style="text-align: center;" >
   <img src="{{apiurlforhtm}}/{{ShopProfileDetailsLogo}}" style="width: 50px;margin-top: -7px;"><b class="subheading"> {{ShopProfileDetailsName}}</b>
@@ -11,7 +11,7 @@
 <div >
 
   <form [formGroup]="onlinebooking" class="form-container" >
-      <mat-card style="border: 1px solid #aeaeae;background-color: white;">
+      <mat-card style="border: 1px solid #aeaeae;background-color: #dfe1eccc">
 
         <!-- <mat-card-header>
           <mat-card-title>
@@ -32,7 +32,7 @@
               <input type="hidden" id="autofocus" >
                 <!-- <div > -->
                 <label>Customer <span class="requiredfield">  *</span></label> <br>
-                <select   class="carmodelcls" id="autofocus2" formControlName="Customer_id"  style="border: 1px solid;height: 34px;width: 180px;background: white;" (change)="loadcarDetailsById($event)" id="customerid2">
+                <select   class="carmodelcls"  formControlName="Customer_id"  style="border: 1px solid;height: 34px;width: 180px;background: white;" (change)="loadcarDetailsById($event)" id="customerid2">
 
                   <option value="">--Select--</option>
                   <option *ngFor="let c1 of custDetBycity1" [value]="c1.customer_id">

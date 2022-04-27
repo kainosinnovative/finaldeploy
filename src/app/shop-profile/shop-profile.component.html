@@ -1,13 +1,13 @@
 <input type="text" id="shopprofilefocus">
 <div class="headerbelowheight" ></div>
 <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
-    <h2  style="text-align:center;font-family: cursive;" class="mainheading">My Profile </h2>
+    <h2  style="text-align:center;" class="mainheading">My Profile </h2>
     <!-- *ngFor = "let news  of ShopProfileDetails" -->
     <div style="margin-left: -66px;">
        
     
 
-        <div class="accordion1"  style="background-color: white;">
+        <div class="accordion1"  style="background-color: #b3a9a930;">
             <h2 class="title2 subheading" (click)="opened2 = !opened2">Shop Information<i class="fa fa-chevron-down"></i> </h2> 
             <div class="content-container2" [class.opened2]="opened2" >
                 <!--phto-->
@@ -196,7 +196,7 @@
             <br>
 
             <form [formGroup]="shopprofile" >
-    <div class="accordion"  style="background-color: white;">
+    <div class="accordion"  style="background-color: #b3a9a930;">
         <h2 class="title subheading" (click)="opened = !opened">Shop Owner Information <i class="fa fa-chevron-down"></i> </h2> 
         <div class="content-container" [class.opened]="opened">
             <!--phto-->
@@ -386,7 +386,7 @@
     <br>
 
     <form [formGroup]="shopprofile2" >
-    <div class="accordion1"  style="background-color: white;">
+    <div class="accordion1"  style="background-color: #b3a9a930;">
         <h2 class="title1 subheading" (click)="opened1 = !opened1">Business Hours <i class="fa fa-chevron-down"></i> </h2> 
         <div class="content-container1" [class.opened1]="opened1">
             <!--phto-->
@@ -422,8 +422,8 @@
                         <p class="businesshrcls" style="display: none;"></p>
                      </div>
 
-                        <div class="col-sm-6"> 
-                            <label style="width:25px;">To</label>
+                        <div class="col-sm-6 toworkingtimecls"> 
+                            <label style="width:11px;">To</label>
                             <p class="labelFieldSpace" style="display: none;"></p>
 
                                 <select  placeholder=""   class="shopgender3" formControlName="shop_timing_to" [(ngModel)]="ShopProfileDetails.shop_timing_to">
@@ -453,7 +453,7 @@
                         
                             </div>
 <br>
-                            <div class="col-sm-11 form-inline workinghoursupdcls" style="text-align: right;">
+                            <div class="col-sm-9 form-inline workinghoursupdcls" style="text-align: right;">
             
                                 <button class="btn btn-success allSubmitbtn" style=" width: 68px;border: none;height: 28px;" (click)="updateworkinghours(shopprofile2.value)" [disabled]='!shopprofile2.valid' >Update</button>
                                 <!-- [disabled]='!shopprofile.valid' -->
@@ -482,7 +482,7 @@
 
         </div> -->
 
-        <div class="col-sm-2" > 
+        <div class="col-sm-2 selectholidaysdivcls" > 
             <label style="padding-bottom: 22px;">Select Holidays</label>
 
             <!-- <mat-calendar   #calendar [dateClass]="dateClass()" (selectedChange)="select($event,calendar,this)" ></mat-calendar> -->
@@ -515,15 +515,15 @@
          <div class="col-sm-5">
             <h2 style="text-align: center;" class="mainheading holidayheadingcls">Holidays</h2>
             <table  class="table table-responsive servicecss" style="border: 0.5px solid #aeaeae;">
-                <thead style="background: #202c45;border-bottom: 0.5px solid #aeaeae;color: white;">
+                <thead style="background: #80808091;border-bottom: 0.5px solid #aeaeae;color: black;">
                   
                     <tr>
-                        <th style="width:50px;font-weight:normal;">S.No</th>
-                    <th style="width:50px;font-weight:normal;">Date</th>
-                    <th style="width:50px;font-weight:normal;">From</th>
-                    <th style="width:50px;font-weight:normal;">To</th>
+                        <th style="width:50px;font-weight:bold;">S.No</th>
+                    <th style="width:50px;font-weight:bold;">Date</th>
+                    <th style="width:50px;font-weight:bold;">From</th>
+                    <th style="width:50px;font-weight:bold;">To</th>
                     
-                    <th style="width:50px;font-weight:normal;" >Delete</th>
+                    <th style="width:50px;font-weight:bold;" >Delete</th>
                    
                     
                   </tr>

@@ -96,7 +96,7 @@ date2:any;
 
   ngOnInit(): void {
     
-    (<HTMLInputElement>document.getElementById("autofocus2")).focus();
+    (<HTMLInputElement>document.getElementById("customerid2")).focus();
     this.date2=new Date();
     this.date2 =this.datepipe.transform(this.date2, 'yyyy-MM-dd');
 
@@ -442,7 +442,7 @@ changeBgColor(offer_id:any){
         this.counter = this.counter - 1;
         // alert("count else>>"+this.counter);
       (<HTMLInputElement>document.getElementById(buttonid)).innerHTML = "Select";
-      (<HTMLInputElement>document.getElementById(buttonid)).style.backgroundColor = "#0c5578";
+      (<HTMLInputElement>document.getElementById(buttonid)).style.backgroundColor = "#1872f2";
        offer_amt = Number((<HTMLInputElement>document.getElementById(offer_totalid)).value);
        this.finalvalue = this.finalvalue -(offer_amt);
        this.onlinebooking.controls.comboprice_total.setValue(this.finalvalue.toFixed());
@@ -499,7 +499,7 @@ selectbuttoncolor(service_id:any,indexval:any){
  // alert(selecttext);
 
       if(selecttext === 'Select') {
-        (<HTMLInputElement>document.getElementById(currentserviceid)).innerHTML = "Selected";
+        (<HTMLInputElement>document.getElementById(currentserviceid)).innerHTML = "Selected "+"<i class='fa fa-check'></i>";
        (<HTMLInputElement>document.getElementById(currentserviceid)).style.backgroundColor = "rgb(24, 114, 242)";
        var service_amt = Number((<HTMLInputElement>document.getElementById(service_totalid)).value);
        console.log(service_amt);
@@ -511,7 +511,7 @@ selectbuttoncolor(service_id:any,indexval:any){
        } else {
 
      (<HTMLInputElement>document.getElementById(currentserviceid)).innerHTML = "Select";
-     (<HTMLInputElement>document.getElementById(currentserviceid)).style.backgroundColor = "#0c5578";
+     (<HTMLInputElement>document.getElementById(currentserviceid)).style.backgroundColor = "#1872f2";
      var service_amt = Number((<HTMLInputElement>document.getElementById(service_totalid)).value);
      this.totalvalue = this.totalvalue -(service_amt);
     //  (<HTMLInputElement>document.getElementById("totalamount")).value =  this.totalvalue.toFixed();

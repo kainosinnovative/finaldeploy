@@ -1,7 +1,7 @@
 <div class="headerbelowheight" ></div>
 <div style="overflow-x: hidden;">
 
-<h2 style="text-align: center;padding-top: 7px;font-family: cursive;" class="mainheading">My Booking</h2>
+<h2 style="text-align: center;padding-top: 7px;" class="mainheading">My Booking</h2>
 
 <div class="row">
     <div class="col-sm-1"></div>
@@ -9,18 +9,18 @@
     <div class="col-sm-10 table-responsive">
 
 
-        <table  class="table table-responsive servicecss" id="user" *ngIf="posts" datatable="ng"  datatable [dtOptions]="dtOptions" style="border:1px solid white; ">
-            <thead style="background-color:#056a64;border-bottom: 0.5px solid #aeaeae;color: white;">
+        <table  class="table table-responsive servicecss" id="user" *ngIf="posts" datatable="ng"  datatable [dtOptions]="dtOptions" style="border: 1px solid #000000;">
+            <thead style="background-color:#b7b7b7;border-bottom: 0.5px solid #aeaeae;color: black;">
 
                 <tr>
                   <th  style="display:none;width: 0px;">b</th>
-                <th style="width:10%;font-weight:normal;text-align: left;">Booking Id</th>
-                <th style="width: 17%;font-weight:normal;text-align: left;">Registration No</th>
-                <th style="width:11%;padding: left 9px;font-weight:normal;text-align: left;">Booking Date</th>
-                <th style="width:20%;font-weight:normal;text-align: left;">Shop</th>
-                <th style="width:13%;font-weight:normal;text-align: left;">Booking Status</th>
-                <th style="width:12%;font-weight:normal;text-align: left;">Service Status</th>
-                <th style="width:8%;font-weight:normal;text-align: right;">Total (<span><i class="fa fa-rupee"></i></span>) </th>
+                <th style="width:10%;font-weight:bold;text-align: left;">Booking Id</th>
+                <th style="width: 17%;font-weight:bold;text-align: left;">Registration No</th>
+                <th style="width:11%;padding: left 9px;font-weight:bold;text-align: left;">Booking Date</th>
+                <th style="width:20%;font-weight:bold;text-align: left;">Shop</th>
+                <th style="width:13%;font-weight:bold;text-align: left;">Booking Status</th>
+                <th style="width:12%;font-weight:bold;text-align: left;">Service Status</th>
+                <th style="width:8%;font-weight:bold;text-align: right;">Total (<span><i class="fa fa-rupee"></i></span>) </th>
 
 
 
@@ -35,7 +35,7 @@
             </tbody> -->
             <!-- <ng-template #mybookintbl> -->
             <tbody  style="background-color: #ededed8c;" >
-              <tr  *ngFor="let b of  posts| paginate: config ;  let i=index;" style="border:1px solid #aeaeae; background-color: #ededed8c;">
+              <tr  *ngFor="let b of  posts| paginate: config ;  let i=index;" style="border:1px solid #aeaeae; background-color: white">
                 <td style="display:none;width: 0px;">{{b.id}}</td>
                <td><a style="cursor: pointer;color: #000000; text-decoration:underline;font-weight: 500;text-align: left;margin-left: 8px;"  (click)="ViewDetailsPopup(b.Booking_id,'My Booking')" >{{b.Booking_id}}</a></td>
                <!-- <td><a style="cursor: pointer;color: #26a0fc;">{{b.Booking_id}}</a></td> -->

@@ -239,6 +239,10 @@ input {
 }
 
 @media screen and (max-width: 768px){
+    
+    .vehiclemobvehicletbl{
+        width: 800px !important;
+    }
 .mobilecarDeatail{
     width: 400px;
 }
@@ -330,7 +334,7 @@ body .slick-next {
 
 
 .slick-slide {
-    width: 14vw !important;
+    // width: 14vw !important;
     // for absorbing width from @Ken Wheeler answer
     box-sizing: border-box !important;
 }
@@ -338,7 +342,7 @@ body .slick-next {
     width: 70% !important;
     margin: auto;
     height:180px !important;
-    background: #ffffff !important;
+    background: none !important;
 }
 
 .table>:not(:first-child) {
@@ -346,5 +350,5 @@ body .slick-next {
 }
 
 .thfontwt {
-font-weight: normal;
+font-weight: bold;
 }

@@ -479,7 +479,8 @@ changeBgColor(offer_id:any){
           this.counter = this.counter + 1;
 
         (<HTMLInputElement>document.getElementById(buttonid)).innerHTML = "Selected";
-      (<HTMLInputElement>document.getElementById(buttonid)).style.backgroundColor = "rgb(24 114 242)";
+      (<HTMLInputElement>document.getElementById(buttonid)).style.backgroundColor = "#1872f2";
+      // (<HTMLInputElement>document.getElementById(buttonid)).style.fontWeight = "bold";
        offer_amt = Number((<HTMLInputElement>document.getElementById(offer_totalid)).value);
         //alert(offer_amt);
         this.finalvalue = this.finalvalue +(offer_amt);
@@ -495,7 +496,7 @@ changeBgColor(offer_id:any){
         this.counter = this.counter - 1;
         // alert("count else>>"+this.counter);
       (<HTMLInputElement>document.getElementById(buttonid)).innerHTML = "Select";
-      (<HTMLInputElement>document.getElementById(buttonid)).style.backgroundColor = "#00bdb0";
+      (<HTMLInputElement>document.getElementById(buttonid)).style.backgroundColor = "#1872f2";
        offer_amt = Number((<HTMLInputElement>document.getElementById(offer_totalid)).value);
        this.finalvalue = this.finalvalue -(offer_amt);
        this.onlinebooking.controls.comboprice_total.setValue(this.finalvalue.toFixed());
@@ -517,8 +518,9 @@ selectbuttoncolor(service_id:any,indexval:any){
  // alert(selecttext);
 
       if(selecttext === 'Select') {
-        (<HTMLInputElement>document.getElementById(currentserviceid)).innerHTML = "Selected";
-       (<HTMLInputElement>document.getElementById(currentserviceid)).style.backgroundColor = "rgb(24 114 242)";
+        (<HTMLInputElement>document.getElementById(currentserviceid)).innerHTML = "Selected "+ "<i  class='fa fa-check'></i>";
+       (<HTMLInputElement>document.getElementById(currentserviceid)).style.backgroundColor = "#1872f2";
+      //  (<HTMLInputElement>document.getElementById(currentserviceid)).style.fontWeight = "bold";
        var service_amt = Number((<HTMLInputElement>document.getElementById(service_totalid)).value);
        console.log(service_amt);
       this.totalvalue = this.totalvalue +(service_amt);
@@ -529,7 +531,7 @@ selectbuttoncolor(service_id:any,indexval:any){
        } else {
 
      (<HTMLInputElement>document.getElementById(currentserviceid)).innerHTML = "Select";
-     (<HTMLInputElement>document.getElementById(currentserviceid)).style.backgroundColor = "#00bdb0";
+     (<HTMLInputElement>document.getElementById(currentserviceid)).style.backgroundColor = "#1872f2";
      var service_amt = Number((<HTMLInputElement>document.getElementById(service_totalid)).value);
      this.totalvalue = this.totalvalue -(service_amt);
     //  (<HTMLInputElement>document.getElementById("totalamount")).value =  this.totalvalue.toFixed();
