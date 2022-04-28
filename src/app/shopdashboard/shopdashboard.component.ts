@@ -117,7 +117,7 @@ export class ShopdashboardComponent implements OnInit {
       this.http.get(this.apiURL + "/shop/customerBookingForShop?currentUserId="+currentUserId)
         .subscribe(posts => {
           this.posts = posts;
-          console.log("ss>>",this.posts);
+          console.log("ss newbooking>>",this.posts);
       }, error => console.error(error));
       this.http.get(this.apiURL + "/shop/AcceptedBookingList?currentUserId="+currentUserId)
       .subscribe(posts1 => {
@@ -167,6 +167,8 @@ export class ShopdashboardComponent implements OnInit {
       pageLength: 5,
       processing: true,
       dom: 'Bfrtip',
+      order:[[2, 'desc']],
+      
       buttons: {
         dom: {
           button: {

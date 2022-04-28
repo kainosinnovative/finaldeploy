@@ -304,7 +304,7 @@
   <!--Endof Personal-->
   <!--address start-->
   <div class="accordion1" style="background-color: #b3a9a930;">
-    <h2 class="title1 subheading" (click)="opened1 = !opened1">Car Details<i class="fa fa-chevron-down"></i></h2>
+    <h2 class="title1 subheading" (click)="opened1 = !opened1">Car Details <i class="fa fa-chevron-down"></i></h2>
     <div class="content-container1" [class.opened1]="opened1">
 
 
@@ -518,7 +518,7 @@
 <div class="accordion2" style="background-color: #b3a9a930;">
 
 
-    <h2 class="title2 subheading" (click)="opened2 = !opened2">My Favorite Shops<i class="fa fa-chevron-down"></i></h2>
+    <h2 class="title2 subheading" (click)="opened2 = !opened2">My Favorite Shops <i class="fa fa-chevron-down"></i></h2>
     <div class="content-container2" [class.opened2]="opened2">
 
 
@@ -542,11 +542,11 @@
         <ngx-slick-carousel   class="carousel" #slickModal="slick-carousel" [config]="slideConfig3">
 
           <div ngxSlickItem *ngFor="let image of Whislistid1" class="slide" style="padding-top:12px !important;padding-left:12px !important;text-align: center;">
-            <div style="margin-left: 51px;">
+            <div class="favlogomob" >
             <img src="{{apiurlforhtm}}/{{image.shop_logo}}" width="100px" height="100px">
           </div>
           <div class="justify-content-between align-items-center pt-1" >
-           <h5 class="dress-name" style="text-align:center;font-weight:bold;">{{image.name}}</h5>
+           <h5 class="dress-name favshopnamecls" style="text-align:center;font-weight:bold;">{{image.name}}</h5>
         </div>
 
 
