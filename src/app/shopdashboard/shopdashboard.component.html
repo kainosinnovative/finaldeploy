@@ -48,7 +48,7 @@
             </td>  -->
           <!-- <td>{{b.serviceprice_total}}</td> -->
           <td >
-            <p style="text-align: right;margin-right: 96px;">{{b.payable_amt}}</p>
+            <p style="text-align: right;margin-right: 80px;">{{b.payable_amt}}</p>
 
           </td>
           <!-- <td>
@@ -88,7 +88,7 @@
              <th style="width:10%;text-align: center;" class="fontwghtcls">Total (<span><i class="fa fa-rupee"></i></span>) </th>
               <th   hidden>Status</th>   <!-- for excel print only -->
 
-              <th  style="width: 129px;text-align: left;  padding-left: 29px;" class="fontwghtcls">Status</th>
+              <th style="width: 8% !important;text-align: left;">Status</th>
               <th style="width:5%;text-align: center;" class="fontwghtcls">Update</th>
 
 
@@ -106,14 +106,14 @@
             <tr *ngFor="let b of  posts1;  let i=index;" style="border-bottom:1px solid #aeaeae;text-align: left;">
 
               <td style="display:none;width: 0px;">{{b.id}}</td>
-              <td class="fontwghtcls"><a class="bookingid"  (click)="ViewDetailsPopup(b.Booking_id,'Carwash Status')">{{b.Booking_id}}</a></td>
-              <td><p style="margin-left: 64px;">{{b.vehicle_number}}</p></td>
+              <td class="fontwghtcls"><a style=" margin-left: 45px;" (click)="ViewDetailsPopup(b.Booking_id,'Carwash Status')">{{b.Booking_id}}</a></td>
+              <td><p style=" margin-left: 62px;">{{b.vehicle_number}}</p></td>
               <td>
-                <p style="margin-left: 62px;">{{b.bookingdate | date: 'dd-MM-yyyy'}}</p>
+                <p style="margin-left: 57px;">{{b.bookingdate | date: 'dd-MM-yyyy'}}</p>
               </td>
               <td style="text-align: left;"><p style="margin-left: 134px;">{{b.firstname}}</p></td>
 
-              <td ><p style="text-align: right;margin-right: 90px;">{{b.payable_amt}}</p></td>
+              <td ><p style="text-align: right;margin-right: 76px;">{{b.payable_amt}}</p></td>
 
                 <td hidden>
                   <span *ngFor="let m1 of  carwashstatus1;" >
@@ -125,7 +125,7 @@
                 </td>
                 <td>
 
-                  <select  style="width: 100px;height: 26px;margin-left: 25px;"   id="carwash_{{b.Booking_id}}" [(ngModel)]="b.carwash_status" >
+                  <select  style="height: 26px;margin-left: 15px;"   id="carwash_{{b.Booking_id}}" [(ngModel)]="b.carwash_status" >
                     <option value="">--Select---</option>
                    <option *ngFor="let c of carwashstatus1" [value]="c.id">
                     {{c.carwash_status_name}}

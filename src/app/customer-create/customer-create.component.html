@@ -333,7 +333,27 @@
                                    </div>
 
                                   </div>
-                        </div>
+                        </div><br>
+
+                        <div class="form-group">
+                          <label class="customerProfileLbl">Model<span class="requiredfield">  *</span></label>
+                          <select  style="width: 100px;"  class="carmodel  carmodel" id="model" formControlName="model" >
+                              <option value="">--Select---</option>
+                             <option *ngFor="let carmodels of modelsdata" [value]="carmodels.id">
+                              {{carmodels.model_name}}
+                              </option>
+                              </select>
+                              <div *ngIf="cardetailForm.controls['model'].touched && cardetailForm.controls['model'].invalid ">
+
+                                  <div *ngIf="cardetailForm.controls['model'].errors" style="color: red;">
+                                    <div *ngIf="cardetailForm.controls['model'].errors.required" style="font-size: 12px;">
+                                        Select model
+                                    </div>
+
+                                 </div>
+
+                                </div>
+                      </div>
                       </td>
 
                       <td class="noBorder">
