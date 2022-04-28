@@ -125,6 +125,15 @@ table.dataTable tbody th, table.dataTable tbody td {
 
 @media screen and (min-width: 768px) {
 
+  .bookingid{
+    
+    cursor: pointer;
+    color: black;
+    text-decoration: underline;
+    margin-left: 43px !important;
+    font-weight: 500 !important;
+  } 
+
   // .bookingid{
 
   //   cursor: pointer;
@@ -153,4 +162,12 @@ table.dataTable tbody th, table.dataTable tbody td {
     text-align: center;
     padding-left: 13px;
   }
+  .bookingid{
+
+    cursor: pointer;
+    color: black;
+    text-decoration: underline;
+    margin-left: 14px !important;
+    font-weight: 500 !important;
+  } 
 }

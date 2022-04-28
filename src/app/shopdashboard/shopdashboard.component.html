@@ -26,7 +26,7 @@
         <tr *ngFor="let b of  posts | paginate: config ;  let i=index;" style="border-bottom:1px solid #aeaeae;text-align: left;">
 
           <td  style="display:none;width: 0px;">{{b.id}}</td>
-          <td class="fontwghtcls"><a class="bookingid" style="cursor: pointer;color: black;text-decoration: underline;margin-left: 46px !important;font-weight: 500 !important;"  (click)="ViewDetailsPopup(b.Booking_id,'Upcoming Booking')" >{{b.Booking_id}}</a></td>
+          <td class="fontwghtcls"><a class="bookingid"  (click)="ViewDetailsPopup(b.Booking_id,'Upcoming Booking')" >{{b.Booking_id}}</a></td>
           <td ><p style="margin-left: 69px;">{{b.vehicle_number}}</p></td>
           <td>
             <p style="margin-left: 65px;">{{b.bookingdate | date: 'dd-MM-yyyy'}}</p>
@@ -106,7 +106,7 @@
             <tr *ngFor="let b of  posts1;  let i=index;" style="border-bottom:1px solid #aeaeae;text-align: left;">
 
               <td style="display:none;width: 0px;">{{b.id}}</td>
-              <td class="fontwghtcls"><a style="cursor: pointer;color: black;text-decoration: underline;margin-left: 43px;font-weight: 500 !important;" (click)="ViewDetailsPopup(b.Booking_id,'Carwash Status')">{{b.Booking_id}}</a></td>
+              <td class="fontwghtcls"><a class="bookingid"  (click)="ViewDetailsPopup(b.Booking_id,'Carwash Status')">{{b.Booking_id}}</a></td>
               <td><p style="margin-left: 64px;">{{b.vehicle_number}}</p></td>
               <td>
                 <p style="margin-left: 62px;">{{b.bookingdate | date: 'dd-MM-yyyy'}}</p>
