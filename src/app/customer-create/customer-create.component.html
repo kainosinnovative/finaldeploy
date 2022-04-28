@@ -307,20 +307,21 @@
     <h2 class="title1 subheading" (click)="opened1 = !opened1">Car Details<i class="fa fa-chevron-down"></i></h2>
     <div class="content-container1" [class.opened1]="opened1">
 
-
-
-        <div class="table-responsive">
-            <table class="table table-bordered" style="overflow: auto !important;">
+      <div class="row"> 
+        <div class="col-sm-6">
+          <div class="table-responsive">
+            <table class="table table-bordered">
 
                 <tbody>
-                  <div class="mainheading">Add New Vechicle</div>
-                  <div style="border: 1px solid black;">
+                  
+                  <div class="mainheading" style="padding-bottom: 5px;">Add New Vechicle</div>
+                  <div style="border: 1px solid black;width: 618px;height: 153px;">
                      <tr >
 
-                      <td class="noBorder">
+                      <td class="noBorder" style="padding-top: 6px;">
 
                         <div class="form-group" style="margin-left: 24px;">
-                            <label class="customerProfileLbl">Registration No<span class="requiredfield">  *</span></label>
+                            <label class="customerProfileLbl">Registration No<span class="requiredfield">  *</span></label><br>
                             <input type="text"    style="padding-left: 2px !important;"   class="lastname " placeholder="" formControlName="vehicle_number" style="width: 120px;">
 
                                 <div *ngIf="cardetailForm.controls['vehicle_number'].touched && cardetailForm.controls['vehicle_number'].invalid ">
@@ -335,8 +336,8 @@
                                   </div>
                         </div><br>
 
-                        <div class="form-group">
-                          <label class="customerProfileLbl">Model<span class="requiredfield">  *</span></label>
+                        <div class="form-group" style="margin-left: 24px;">
+                          <label class="customerProfileLbl">Model<span class="requiredfield">  *</span></label><br>
                           <select  style="width: 100px;"  class="carmodel  carmodel" id="model" formControlName="model" >
                               <option value="">--Select---</option>
                              <option *ngFor="let carmodels of modelsdata" [value]="carmodels.id">
@@ -358,8 +359,8 @@
 
                       <td class="noBorder">
 
-                        <div class="form-group" >
-                            <label class="customerProfileLbl">Type<span class="requiredfield">  *</span></label>
+                        <div class="form-group" style="margin-left: 55px;">
+                            <label class="customerProfileLbl">Type<span class="requiredfield">  *</span></label><br>
                             <select  style="width: 120px !important;" class="cartype  cartypecls" formControlName="cartype" id="cartype" (ngModelChange)="onchangecartype($event)" >
                                 <option value="">--Select Car Type---</option>
 
@@ -377,12 +378,36 @@
                                    </div>
 
                                   </div>
-                        </div>
+                        </div><br>
+
+                        <div class="form-group"  style="margin-left: 55px;">
+                          <label class="customerProfileLbl">Fuel Type<span class="requiredfield">  *</span></label><br>
+                          <select  placeholder="" class="fueltype  fueltype" formControlName="fueltype" name="" >
+                              <option value="">--Select Fuel Type---</option>
+                              <option value="Petrol">Petrol</option>
+                              <option value="Diesel">Diesel</option>
+                              <option value="Electric">Electric</option>
+                              <option value="Hybrid">Hybrid</option>
+
+                              </select>
+                              <div *ngIf="cardetailForm.controls['fueltype'].touched && cardetailForm.controls['fueltype'].invalid ">
+
+                                  <div *ngIf="cardetailForm.controls['fueltype'].errors" style="color: red;">
+                                    <div *ngIf="cardetailForm.controls['fueltype'].errors.required" style="font-size: 12px;" class="fueltypevalid">
+                                        Select fuel type
+                                    </div>
+
+                                 </div>
+
+                                </div>
+
+
+                      </div>
                       </td>
                         <td class="noBorder">
 
-                          <div class="form-group">
-                            <label class="customerProfileLbl">Brand<span class="requiredfield">  *</span></label>
+                          <div class="form-group" style="margin-left: 55px;">
+                            <label class="customerProfileLbl">Brand<span class="requiredfield">  *</span></label><br>
                             <select  style="width: 100px;" class="carbrand  carbrand" formControlName="brand" id="carbrand" (ngModelChange)="onChangeObj($event)" >
                                 <option value="">--Select---</option>
                                 <option *ngFor="let carbrand of branddata" [value]="carbrand.id">
@@ -399,139 +424,85 @@
                                    </div>
 
                                   </div>
-                        </div>
+                        </div><br>
+
+                        <div class="form-group" style="margin-left: 55px;">
+                          <label class="customerProfileLbl">Color<span class="requiredfield">  *</span></label><br>
+                          <select  placeholder="" class="carcolor  carcolor" formControlName="color" name="" >
+                              <option value="">--Select---</option>
+                              <option value="Black">Black</option>
+                              <option value="Red">Red</option>
+                              <option value="Yellow">Yellow</option>
+                              <option value="Gray">Gray </option>
+                              </select>
+                              <div *ngIf="cardetailForm.controls['color'].touched && cardetailForm.controls['color'].invalid ">
+
+                                  <div *ngIf="cardetailForm.controls['color'].errors" style="color: red;">
+                                    <div *ngIf="cardetailForm.controls['color'].errors.required" style="font-size: 12px;" class="carcolorvalid">
+                                        Select color
+                                    </div>
+
+                                 </div>
+
+                                </div>
+                      </div>
+
+                    
                         </td>
-                      
-                        <td class="noBorder">
+                       
+                         </tr>
+                         <div class="col-sm-12 form-inline webbuttonAddCustomer" style="text-align: right;margin-left: -16px;margin-top: -37px;">
 
-                            <div class="form-group">
-                                <label class="customerProfileLbl">Model<span class="requiredfield">  *</span></label>
-                                <select  style="width: 100px;"  class="carmodel  carmodel" id="model" formControlName="model" >
-                                    <option value="">--Select---</option>
-                                   <option *ngFor="let carmodels of modelsdata" [value]="carmodels.id">
-                                    {{carmodels.model_name}}
-                                    </option>
-                                    </select>
-                                    <div *ngIf="cardetailForm.controls['model'].touched && cardetailForm.controls['model'].invalid ">
-
-                                        <div *ngIf="cardetailForm.controls['model'].errors" style="color: red;">
-                                          <div *ngIf="cardetailForm.controls['model'].errors.required" style="font-size: 12px;">
-                                              Select model
-                                          </div>
-
-                                       </div>
-
-                                      </div>
-                            </div>
-                          </td>
-                          <td class="noBorder">
-
-                            <div class="form-group">
-                                <label class="customerProfileLbl">Fuel Type<span class="requiredfield">  *</span></label>
-                                <select  placeholder="" class="fueltype  fueltype" formControlName="fueltype" name="" >
-                                    <option value="">--Select Fuel Type---</option>
-                                    <option value="Petrol">Petrol</option>
-                                    <option value="Diesel">Diesel</option>
-                                    <option value="Electric">Electric</option>
-                                    <option value="Hybrid">Hybrid</option>
-
-                                    </select>
-                                    <div *ngIf="cardetailForm.controls['fueltype'].touched && cardetailForm.controls['fueltype'].invalid ">
-
-                                        <div *ngIf="cardetailForm.controls['fueltype'].errors" style="color: red;">
-                                          <div *ngIf="cardetailForm.controls['fueltype'].errors.required" style="font-size: 12px;" class="fueltypevalid">
-                                              Select fuel type
-                                          </div>
-
-                                       </div>
-
-                                      </div>
-
-
-                            </div>
-                          </td>
-                          <td class="noBorder">
-
-                            <div class="form-group" style="margin-right: 41px;">
-                                <label class="customerProfileLbl">Color<span class="requiredfield">  *</span></label>
-                                <select  placeholder="" class="carcolor  carcolor" formControlName="color" name="" >
-                                    <option value="">--Select---</option>
-                                    <option value="Black">Black</option>
-                                    <option value="Red">Red</option>
-                                    <option value="Yellow">Yellow</option>
-                                    <option value="Gray">Gray </option>
-                                    </select>
-                                    <div *ngIf="cardetailForm.controls['color'].touched && cardetailForm.controls['color'].invalid ">
-
-                                        <div *ngIf="cardetailForm.controls['color'].errors" style="color: red;">
-                                          <div *ngIf="cardetailForm.controls['color'].errors.required" style="font-size: 12px;" class="carcolorvalid">
-                                              Select color
-                                          </div>
-
-                                       </div>
-
-                                      </div>
-                            </div>
-                          </td>
-
-                    </tr>
+                          <button class="allSubmitbtn btn" style="width: 68px !important;border: none;height: 28px !important;"  (click)="AddCustomerCarDetails(cardetailForm.value)"  [disabled]='!cardetailForm.valid'>Add</button>
+              
+              
+                      </div>
+                     
                   </div>
 
                 </tbody>
             </table>
           </div>
+ </div>
 
-
-          <div class="col-sm-12 form-inline webbuttonAddCustomer" style="text-align: right;margin-left: -16px;">
-
-            <button class="allSubmitbtn btn" style="width: 68px !important;border: none;height: 28px !important;"  (click)="AddCustomerCarDetails(cardetailForm.value)"  [disabled]='!cardetailForm.valid'>Add</button>
-
-
-        </div>
-        <br>
-        <div class="mainheading">My Vechicles</div><br>
-<div class="table-responsive vehicletblcls" >
-
-
-
-        <table class="table vehiclemobvehicletbl" style="border: 1px solid black;">
-            <thead style="background-color:#b7b7b7;border-bottom: 0.5px solid #aeaeae; color: black;font-weight: 400 !important;">
-              <th  class="thfontwt ">Registration No</th>
-              <th  class="thfontwt">Type</th>
-              <th class="thfontwt">Brand</th>
-              <th class="thfontwt">Model</th>
-              <th class="thfontwt">Fuel Type</th>
-              <th class="thfontwt">Color</th>
-              <th class="thfontwt">Delete</th>
-            </thead>
-            <tbody *ngIf="carDetailsById1.length==0">
-                <tr style="background:white">
-                    <td colspan="7">No data available</td>
-                </tr>
-            </tbody >
-            <!-- <tbody *ngIf="carDetailsById1.length > 0" style="text-align: left;"> -->
-                <tr *ngFor="let c of carDetailsById1; let i=index" style="background:white">
-                    <td class="">{{c.vehicle_number}}</td>
-                    <td>{{c.type_name}}</td>
-                    <td>{{c.brand_name}}</td>
-                    <td>{{c.model_name}}</td>
-                    <td>{{c.fueltype}}</td>
-                    <td>{{c.color}}</td>
-                    <td><i  (click)="RemoveMyCarInfo(c.carinfo_id)" style="color: red;cursor: pointer;" class="fa fa-trash"></i></td>
-                  </tr>
-            <!-- </tbody> -->
-
-          </table>
-        </div>
-
-        </div>
-
-
-
-  </div>
-
-
-
+        <div class="col-sm-6 myvechleft">
+          <div class="mainheading" style="padding-bottom: 5px;">My Vechicles</div>
+          <div class="table-responsive vehicletblcls" >
+            <table class="table vehiclemobvehicletbl" style="border: 1px solid black;">
+                      <thead style="background-color:#b7b7b7;border-bottom: 0.5px solid #aeaeae; color: black;font-weight: 400 !important;">
+                        <th  class="thfontwt " style="    padding-left: 10px;">Registration No</th>
+                        <th  class="thfontwt">Type</th>
+                        <th class="thfontwt">Brand</th>
+                        <th class="thfontwt">Model</th>
+                        <th class="thfontwt">Fuel Type</th>
+                        <th class="thfontwt">Color</th>
+                        <th class="thfontwt">Delete</th>
+                      </thead>
+                      <tbody *ngIf="carDetailsById1.length==0">
+                          <tr style="background:white">
+                              <td colspan="7">No data available</td>
+                          </tr>
+                      </tbody >
+                      <!-- <tbody *ngIf="carDetailsById1.length > 0" style="text-align: left;"> -->
+                          <tr *ngFor="let c of carDetailsById1; let i=index" style="background:white">
+                              <td class="" style="    padding-left: 10px;">{{c.vehicle_number}}</td>
+                              <td>{{c.type_name}}</td>
+                              <td>{{c.brand_name}}</td>
+                              <td>{{c.model_name}}</td>
+                              <td>{{c.fueltype}}</td>
+                              <td>{{c.color}}</td>
+                              <td><i  (click)="RemoveMyCarInfo(c.carinfo_id)" style="color: red;cursor: pointer;" class="fa fa-trash"></i></td>
+                            </tr>
+                      <!-- </tbody> -->
+          
+                    </table>
+                  </div>
+          
+          </div>
+      
+      </div>
+ </div>
+ </div>
 
 <br>
 
