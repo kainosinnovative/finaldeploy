@@ -114,15 +114,17 @@
   <mat-list-item class="mobilelogocls" *ngIf="userroleSes=='shopOwnerSes'" style="display:none;margin-right: -152px;"> 
     <div  style="text-align: right;">
       <div  style="text-align: right;
-      background: white;
-      width:93px;
+      /* background: white; */
+      /* width:93px; */
       /* margin-top: 1px; */
       margin-left: 210px;
       text-align: center;
-      padding: 4px;
-      border-radius: 15px;
-      border: 1px solid #000000;">
-        <img src="{{apiurlforhtm}}/{{shoplogo}}" style=" width: 74px; height: 41px; padding: 2px;"> 
+      /* padding: 4px; */
+      /* border-radius: 15px; */
+      /* border: 1px solid #000000; */
+      ">
+        <img src="{{apiurlforhtm}}/{{shoplogo}}" style=" width: 74px; height: 41px; padding: 2px;border: 1px solid #000000;
+        border-radius: 15px;background: white;"> 
       </div>
     </div>
    
@@ -244,13 +246,15 @@
     <router-outlet (activate)="onActivate($event)"></router-outlet>
 
      
-<div style="height: 60px;"></div>
+<div id="footerabovespace" style="height: 60px;"></div>
 
 <div class="footer" style="height: 340px;background-image: linear-gradient(to right, #6078F0,#c95a49,#6078F0);" #footer id="footerdisplay">
   <footer class=" page-footer font-small blue pt-4">
 
+    <!--  abi footer color -   background-image: linear-gradient(to right, #6078F0,#c95a49,#6078F0); -->
+    <!-- vj footer color - background-image: linear-gradient(to right, #1bf666,#4f8adc,#1bf666); -->
     <!-- Footer Links -->
-    <div class="container-fluid text-center text-md-left" style="background-image: linear-gradient(to right, #6078F0,#c95a49,#6078F0);">
+    <div class="container-fluid text-center text-md-left" style="background-image: linear-gradient(to right, #6078F0,#c95a49,#6078F0)">
 
       <!-- Grid row -->
       <div class="row">

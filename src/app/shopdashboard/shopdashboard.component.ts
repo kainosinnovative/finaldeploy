@@ -564,7 +564,7 @@ combocustomerinfo()
       plotOptions: {
         bar: {
           horizontal: false,
-          width:20,
+          // width:20,
           columnWidth: '15%',
           color:"red"
           // data:20
@@ -635,7 +635,7 @@ currentComboOffers(){
      for(let i=0;i<this.currentOffer1.length;i++){
        this.ComboOfferAmountArr.push(Number(this.currentOffer1[i].offer_percent));
       // this.ComboOfferFromDateTodate.push(this.currentOffer1[i].start_date + " - " + this.currentOffer1[i].end_date);
-      this.ComboOfferFromDateTodate.push(this.currentOffer1[i].offer_name+"("+this.currentOffer1[i].model_name+")");
+      this.ComboOfferFromDateTodate.push(this.currentOffer1[i].offer_name  +"(" +this.currentOffer1[i].model_name+")");
      }
      console.log("combo apr8>>>",this.ComboOfferFromDateTodate);
 
@@ -663,6 +663,7 @@ currentComboOffers(){
           colors: ['red']
         },
         type: "bar",
+
         height: 300,
         width:400,
         colors: "red",
@@ -671,10 +672,9 @@ currentComboOffers(){
 
       plotOptions: {
         bar: {
-          horizontal: false,
+          horizontal: true,
           width:20,
           columnWidth: '15%',
-          // data:20
         }
       },
       dataLabels: {
@@ -684,7 +684,7 @@ currentComboOffers(){
         // categories: ["test"],
         categories: this.ComboOfferFromDateTodate,
         title: {
-          text: "Offer Type",
+          text: "Offer %",
           style: {
             color: "#000000",
             //font:"20px"
