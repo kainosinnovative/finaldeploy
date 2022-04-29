@@ -9,7 +9,7 @@
       <thead style="color: black;text-align: left;background-color: #80808091;">
 
           <tr>
-          <th  style="display:none;width: 0px;">b</th>
+          <!-- <th  style="display:none;width: 0px;">b</th> -->
           <th style="width:8%;text-align: center;padding-left: 12px;" class="fontwghtcls">Booking Id</th>
           <th style="width: 12%;text-align: center; padding-left: 0px;" class="fontwghtcls">Registration No</th>
           <th style="width:8%;text-align: center;" class="fontwghtcls">Date</th>
@@ -25,7 +25,7 @@
       <tbody >
         <tr *ngFor="let b of  posts | paginate: config ;  let i=index;" style="border-bottom:1px solid #aeaeae;text-align: left;">
 
-          <td  style="display:none;width: 0px;">{{b.id}}</td>
+          <!-- <td  style="display:none;width: 0px;">{{b.bookingdate}}</td> -->
           <td class="fontwghtcls"><a class="bookingid"  (click)="ViewDetailsPopup(b.Booking_id,'Upcoming Booking')" >{{b.Booking_id}}</a></td>
           <td ><p style="margin-left: 69px;">{{b.vehicle_number}}</p></td>
           <td>
@@ -60,9 +60,14 @@
             </td> -->
 
           <td style="text-align: center;">
-            <a  (click)="acceptrejectbooking('Accepted',b.Booking_id,b.pickup_drop)" ><i style="color: #01992d;font-size: 20px;cursor: pointer;" class="fa fa-check-circle"></i></a> </td>
+            <a *ngIf="b.booked_status ==''" (click)="acceptrejectbooking('Accepted',b.Booking_id,b.pickup_drop)" ><i style="color: #01992d;font-size: 20px;cursor: pointer;" class="fa fa-check-circle"></i></a>
+
+
+            <a  *ngIf="b.booked_status !=''"  ><i style=" color: gray; font-size: 20px; opacity: .65;" class="fa fa-check-circle"></i></a>
+           </td>
             <td style="text-align: center;">
-            <a  (click)="acceptrejectbooking('Rejected',b.Booking_id,b.pickup_drop)" ><i style="color: #bf3900;font-size: 20px;cursor: pointer;" class="fa fa-times-circle"></i></a>
+            <a *ngIf="b.booked_status ==''" (click)="acceptrejectbooking('Rejected',b.Booking_id,b.pickup_drop)" ><i style="color: #bf3900;font-size: 20px;cursor: pointer;" class="fa fa-times-circle"></i></a>
+          <p  *ngIf="b.booked_status !=''">Rejected</p>
           </td>
         </tr>
 

@@ -239,6 +239,9 @@ input {
 }
 
 @media screen and (max-width: 768px){
+    .favshopnamecls{
+        height: 26px;
+    }
     
     .vehiclemobvehicletbl{
         width: 800px !important;
@@ -254,6 +257,12 @@ input {
 }
 
 @media screen and (min-width: 768px){
+    .favshopnamecls{
+        height: 15px;
+    }
+    .favlogomob {
+        margin-left: 51px;
+    }
 .webonlybtn{
     margin-left: -78px;
 }
