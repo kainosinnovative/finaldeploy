@@ -93,14 +93,14 @@
     font-weight: 500;
     background: rgb(5, 168, 73);
     border-radius: 6px;
-    // padding-left: 4px;
-    // padding-right: 4px;
-  padding: 4px;
+     padding: 4px;
+     width: 74px;
+   
 }
 
 
 .p6 {
-padding: 1rem!important;
+padding: 0.8rem!important;
 }
 
 #DivForHoverItem {
@@ -194,7 +194,7 @@ color: white;
 .selectnow3{
 
           height: 30px;
-          width: 55px;
+          width: 45px;
           border-radius: 6%;
           font-size: 15px;
     //margin-top: -11px;
@@ -221,7 +221,7 @@ color: white;
 }
 .servicename{
     font-size: 17x;
-    width: 150px;
+    // width: 150px;
     text-align: left;
 }
 
@@ -388,7 +388,9 @@ color: white;
 
   @media screen and (min-width: 768px) {
     .extser{
-      height: 70px;
+      height: 72px;
+      margin-left: -1px;
+      width: 638px;
     }
     .pdingbtmreduceservice{
       padding-bottom: 4px !important;
@@ -405,8 +407,10 @@ color: white;
       }
 
       .serviceprice{
-        margin-left: 80px;
+        margin-left: 42px;
         font-size: 14px;
+        // width: 197px !important;
+        text-align: right !important;
     }
     .slick-slider {
       width: 50% !important;
@@ -416,6 +420,12 @@ color: white;
     }
 
   @media screen and (max-width: 768px) {
+
+    .extser{
+      // height: 72px;
+      margin-left: 10px !important;
+      // width: 638px;
+    }
     .card {
       border-right: 2px solid #aeaeae;
     }
@@ -453,8 +463,10 @@ color: white;
    
       
       text-align: left;
-      margin-top: -30px;
+      // margin-top: -30px;
       font-size: 14px;
+      margin-left: -46px;
+      margin-bottom: -17px;
   
 }
 

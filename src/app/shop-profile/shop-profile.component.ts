@@ -47,6 +47,7 @@ citytype: any;
   ShopHolidaysDetails:any;
   ShopHolidaysDetails1:any;
   config1: any;
+  current_date: any;
   constructor(public router: Router,
     private frmbuilder: FormBuilder,
     private http: HttpClient,
@@ -92,8 +93,9 @@ citytype: any;
   let currentShopId:any = localStorage.getItem('currentUserId');
   this. loadcitylist();
   this.getstatedata();
+
   this.date=new Date();
-let current_date =this.datepipe.transform(this.date, 'yyyy-MM-dd');
+  this.current_date =this.datepipe.transform(this.date, 'yyyy-MM-dd');
   const aadharPattern="^[2-9]{1}[0-9]{3}\\s[0-9]{4}\\s[0-9]{4}$";
   const emailPattern = "^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$";
   const mobilePattern = "^((\\+91-?)|0)?[0-9]{10}$";
@@ -105,7 +107,7 @@ let current_date =this.datepipe.transform(this.date, 'yyyy-MM-dd');
     city: ['', Validators.required],
     state: ['', Validators.required],
     zipcode: ['', [Validators.required, Validators.pattern(zipcodePattern)]],
-    lastupddt: [current_date, [Validators.required]],
+    lastupddt: [this.current_date, [Validators.required]],
     shop_id:[currentShopId, [Validators.required]],
   }
   )
@@ -125,7 +127,7 @@ let current_date =this.datepipe.transform(this.date, 'yyyy-MM-dd');
     // zipcode: ['', [Validators.required, Validators.pattern(zipcodePattern)]],
      emailid: ['', [Validators.required, Validators.pattern(emailPattern)]],
      mobileno:['', [Validators.required, Validators.pattern(mobilePattern)]],
-    lastupddt: [current_date, [Validators.required]],
+    lastupddt: [this.current_date, [Validators.required]],
     shop_id:[currentShopId, [Validators.required]],
     // shop_timing_from:['',[Validators.required]],
     // shop_timing_to:['',[Validators.required]]
@@ -135,7 +137,7 @@ let current_date =this.datepipe.transform(this.date, 'yyyy-MM-dd');
     this.shopprofile2 = this.frmbuilder.group({
       shop_timing_from:['',[Validators.required]],
     shop_timing_to:['',[Validators.required]],
-      lastupddt: [current_date, [Validators.required]],
+      lastupddt: [this.current_date, [Validators.required]],
       shop_id:[currentShopId, [Validators.required]],
     }
     )

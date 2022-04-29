@@ -1,3 +1,9 @@
+.autocomplete-container .suggestions-container ul li a {
+  padding: 5px 15px !important;
+
+}
+
+
 table{
     padding:20px !important;
     width: 100%;
@@ -21,6 +27,8 @@ tr
 .ng-autocomplete {
     width: 100px;
     }
+
+  
 
     .switch {
         position: relative;
@@ -173,13 +181,15 @@ max-height: none;
   // width: 100%;
   // }
   .ng-autocomplete {
-    // ::ng-deep .autocomplete-container {
+    ::ng-deep .autocomplete-container {
       width: 0% !important;
-    // }
+      padding: 5px 15px !important;
+    }
   }
   autocomplete-container .input-container input {
 
     width: 0% !important;
+    // padding: 5px 15px !important;
   }
   .offerptage{
 

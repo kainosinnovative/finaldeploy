@@ -271,7 +271,10 @@
              <div class="col-sm-6" *ngIf="currentOffer1 != '' && serviceDataOffers1 !='' && combocustomer1 ==''">
               <h2 style="text-align: center;" class="mainheading">Services Offers</h2>
               <div > <!-- style="border: 1px solid #aeaeae;" -->
-                <div  [chart]="donutChart"></div>
+               
+                <div  [chart]="donutChart">
+                  
+                </div>
               </div>
              </div>
 
@@ -287,8 +290,9 @@
 
               <div class="col-sm-4" *ngIf="currentOffer1 != '' && serviceDataOffers1 !='' && combocustomer1 !=''">
                 <h2 style="text-align: center;" class="mainheading">Services Offers</h2>
+               
                 <div > <!-- style="border: 1px solid #aeaeae;" -->
-                  <div  [chart]="donutChart"></div>
+                  <div  [chart]="donutChart" id="chart"></div>
                 </div>
               </div>
               

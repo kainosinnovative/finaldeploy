@@ -821,9 +821,11 @@ initDonut(serviceDataOffers1:any) {
       plotBorderWidth: 0,
       plotShadow: false
     },
+  
     title: {
       text: '',
       // text: '<strong>Service<br>Offers</strong>',
+      
       align: 'center',
       verticalAlign: 'middle',
       y: 0
@@ -840,12 +842,17 @@ initDonut(serviceDataOffers1:any) {
         cursor: 'pointer',
         dataLabels: {
           enabled: false,
-          // distance: -50,
+
+         // distance: -50,
           style: {
-            fontWeight: 'bold',
+           mode: 'percentage',
+           render: 'value',
+           fontWeight: 'bold',
             color: 'white'
           }
         },
+        
+       
         // startAngle: -90,
         // endAngle: -180,
         center: ['50%', '50%'],
@@ -853,14 +860,17 @@ initDonut(serviceDataOffers1:any) {
         showInLegend: true
       }
     },
+    
+    
     series: [
       {
         name: 'Service',
         data:  finaljson,
-       
+
         type: 'pie',
         innerSize: '50%',
-      }]
+      }],
+      
   });
   this.donutChart = donut;
 

@@ -340,7 +340,7 @@ export class ShopServiceComponent implements  OnInit{
       offeramtid="offeramount_"+splitted[1]+"_"+splitted[2];
 //alert(offeramtid);
       if(Number(term)  >0 && Number(term) <= 99){
-        (<HTMLInputElement>document.getElementById(offeramtid)).value =originalVal.toString();
+        (<HTMLInputElement>document.getElementById(offeramtid)).value =originalVal.toFixed();
       }
       else{
         (<HTMLInputElement>document.getElementById(offeramtid)).value = "";
