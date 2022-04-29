@@ -20,7 +20,7 @@
         <div class="row dateselectdivcls" >
           
           
-          <div class="col-sm-3 databtn fromdatecls" style="text-align: left;">
+          <div class="col-sm-3 databtn fromdatecls " style="text-align: left;">
             <label style="width: 74px;">From date</label>  
             <!-- <p class="labelFieldSpace" style="display: block;"></p> -->
              <input type="date" id="combooffer_fromdate" min="{{current_date}}" value="{{date | date:'yyyy-MM-dd'}}" style="width: 120px;" >
@@ -30,14 +30,14 @@
             
           </div> -->
   
-          <div class="col-sm-3 databtn" style="margin-left: 16px;">
+          <div class="col-sm-3 databtn btnmodelcombo" style="margin-left: 16px;">
             <label style="width: 59px;">To date</label>  
             <!-- <p class="labelFieldSpace" style="display: block;"></p> -->
              <input (click)="dateErrorMsg()" class="todate" type="date" id="combooffer_todate" min="{{current_date}}" value="{{date | date:'yyyy-MM-dd'}}" style="width: 120px;">
             <br><span id="enddate_message" style="color: red;display: none;">To date Invalid</span>
           </div>
           <!-- <div class="col-sm-1"></div> -->
-          <div class="col-sm-3 databtn" style="margin-left: 16px;">
+          <div class="col-sm-3 databtn btnmodelcombo" style="margin-left: 16px;">
             <label style="width: 53px;">Model</label> 
             <!-- <p class="labelFieldSpace" style="display: block;"></p> -->
                           <select  class="model"  style="width: 130px;height: 24px;" (change)="loadcombooffertblByModelid(2)" id="model_id">
@@ -60,18 +60,18 @@
   
   <br>
 
-  <div id="secondtblid2" class="onchangetable" style="display: none;">
+  <div id="secondtblid2" class="onchangetable table-responsive" style="display: none;">
 
         
-    <table  class="table table-responsive addcombooffer"  style="text-align:center;width: 73%;border: 0.5px solid #000000 !important;margin-left:75px;overflow: auto;" >
+    <table  class="table  addcombooffer"  style="text-align:center;border: 0.5px solid #000000 !important;margin-left:62px;overflow: auto;" >
       <thead style="background: #202c45;color:white;">
         <tr >
 
-          <th  style="width: 50px;">Sl. No.</th>
+          <th  style="width: 60px;">Sl. No.</th>
 
           <th style="width: 250px;text-align: left;">Service Name</th>
           <th style="width: 100px;text-align: right;">Amount &nbsp;(<i class="fa fa-rupee">) </i></th>
-          <th style="width: 100px;">Select</th>
+          <th style="width: 120px;">Select</th>
         </tr>
       </thead>
       <tbody *ngIf="combooffertblByModelid1.length < 2">
@@ -117,7 +117,7 @@
                 <label class="amt" style="width: 70px;text-align: right; padding-right: 3px;">Total &nbsp;(<i class="fa fa-rupee"> </i>)</label>
           </td> -->
            <td style="width: 48px;text-align: right;">
-           <div style="margin-left: -19px;;">
+           <div class="totalmobalign" style="margin-left: -19px;;">
               <tr>
               <td><label style="width: 35px;">Total</label> </td>
               <td>
@@ -201,6 +201,7 @@
       
   
       <div class="col-sm-2">
+        <div class="offpercentdivcls" >
         <label class="offerpreg1" style="width: 80px;">Offer (%)</label>
         <br>
         <input  class="offerpreg2" type="number" (keyup)="getOfferPrice($event)" id="combooffer_offerpercent" style="width: 40px;height: 24px" positive>
@@ -208,10 +209,11 @@
         <p style="color: red;display: none;text-align: left;" id="offerpercentError">Enter offer %</p>
         <p style="color: red;display: none;text-align: left;" id="offerpercentError1">Invalid Offer %</p>
         <p style="color: red;display: none;text-align: left;" id="offerpercentError2">0% offer not accepted</p>
-       </div>
+      </div> 
+      </div>
   
       <div class="col-sm-3 offamtdiv">
-        <label class="offeramt spaceOffAmount2" >Offer Amount&nbsp;(<i class="fa fa-rupee"></i>)</label> <br> <input readonly class="offeramt" type="text" id="combooffer_offeramount" style="width: 70px;height: 24px;text-align:left;">
+        <label class="offeramt spaceOffAmount2" >Offer Amount&nbsp;(<i class="fa fa-rupee"></i>)</label> <br> <input readonly class="offeramt" type="text" id="combooffer_offeramount" style="width: 80px !important;height: 24px;text-align:left;">
         </div>
 
         <div class="col-sm-3 databtn2">
@@ -252,7 +254,8 @@
           <h2 class="title subheading" style="overflow: auto;width: 100%;"  (click)="opened = !opened">Your Previous Combo Offers <i class="fa fa-chevron-down"></i> </h2>
           <div class="content-container" [class.opened]="opened">
             <div class="row">
-              <div class="col-sm-4">
+              <!-- <div > -->
+              <div class="col-sm-3">
                 <label style="width: 59px;">Year</label>
 
                 <br>
@@ -275,7 +278,7 @@
           </ng-select> -->
                   <p style="color: red;display: none;text-align: left;" id="yearerror">Select Year</p>
                 </div>
-            <div class="col-sm-4" style="text-align: left;"  >
+            <div class="col-sm-4 monthcombooffercls" style="text-align: left;"  >
               <label style="width: 74px;">Month</label>
         
               <!-- <select  id="month" class="month"  style="width:80px;height: 24px;"  [(ngModel)]="shortMonth">
@@ -301,7 +304,7 @@
               <button id="retreive" class="allSubmitbtn btn" style="width: 68px;border: none;height: 28px;" (click)="retreivedata()" >Submit</button>
             </div>
             <div class="col-sm-1" ></div>
-        
+          <!-- </div> -->
           </div>
           <br>
           <div style="margin-right: 17px;">

@@ -4,18 +4,18 @@
  <div class="accordion" style="background-color: #b3a9a930;" >
   <h2 class="title subheading"  (click)="opened = !opened">Upcoming Booking <i class="fa fa-chevron-down"></i> </h2>
   <div class="content-container " [class.opened]="opened" >
-    <div class="table-responsive" >
-    <table  class="table  servicecss" *ngIf="posts"  datatable="ng"  datatable [dtOptions]="dtOptions" style="border: 0.5px solid #000000 !important;border-right: 2px solid !important;">
+    <div class="table-responsive " >
+    <table  class="table  servicecss tblnewbook" *ngIf="posts"  datatable="ng"  datatable [dtOptions]="dtOptions" style="border: 0.5px solid #000000 !important;border-right: 2px solid !important;">
       <thead style="color: black;text-align: left;background-color: #80808091;">
 
           <tr>
           <!-- <th  style="display:none;width: 0px;">b</th> -->
-          <th style="width:8%;text-align: center;padding-left: 12px;" class="fontwghtcls">Booking Id</th>
-          <th style="width: 12%;text-align: center; padding-left: 0px;" class="fontwghtcls">Registration No</th>
-          <th style="width:8%;text-align: center;" class="fontwghtcls">Date</th>
-          <th style="width:18%;text-align: center;" class="fontwghtcls">Customer Name</th>
-           <th style="width:10%;text-align: center;" class="fontwghtcls">Total (<span><i class="fa fa-rupee"></i></span>) </th>
-           <th style="width:5%;text-align: center;" class="fontwghtcls">Confirm</th>
+          <th  style="width:8%;text-align: center;" class="fontwghtcls tblheadingnewbook">Booking Id</th>
+          <th style="width: 12%;text-align: center; " class="fontwghtcls tblheadingnewbook">Registration No</th>
+          <th style="width:8%;text-align: center;" class="fontwghtcls tblheadingnewbook">Date</th>
+          <th style="width:18%;text-align: center;" class="fontwghtcls tblheadingnewbook">Customer Name</th>
+           <th style="width:10%;text-align: center;" class="fontwghtcls tblheadingtotalnewbook">Total (<span><i class="fa fa-rupee"></i></span>) </th>
+           <th style="width:5%;text-align: center;" class="fontwghtcls ">Confirm</th>
           <th style="width:5%;text-align: center;" class="fontwghtcls">Reject</th>
 
 
@@ -26,13 +26,13 @@
         <tr *ngFor="let b of  posts | paginate: config ;  let i=index;" style="border-bottom:1px solid #aeaeae;text-align: left;">
 
           <!-- <td  style="display:none;width: 0px;">{{b.bookingdate}}</td> -->
-          <td class="fontwghtcls"><a class="bookingid"  (click)="ViewDetailsPopup(b.Booking_id,'Upcoming Booking')" >{{b.Booking_id}}</a></td>
-          <td ><p style="margin-left: 69px;">{{b.vehicle_number}}</p></td>
+          <td ><a class="fontwghtcls" class="bookingid"  (click)="ViewDetailsPopup(b.Booking_id,'Upcoming Booking')" >{{b.Booking_id}}</a></td>
+          <td ><p class="vehiclenumbernewbook" >{{b.vehicle_number}}</p></td>
           <td>
-            <p style="margin-left: 65px;">{{b.bookingdate | date: 'dd-MM-yyyy'}}</p>
+            <p class="bookingdatenewbook">{{b.bookingdate | date: 'dd-MM-yyyy'}}</p>
             <!-- <input type="date" value="{{b.bookingdate}}" readonly style="width: 110px;border: none;"> -->
           </td>
-          <td><p style="margin-left: 140px;">{{b.firstname}}</p></td>
+          <td><p class="firstnamenewbook">{{b.firstname}}</p></td>
           <!-- <td>     {{b.combo_id}}           </td>  -->
           <!-- <td>{{b.comboprice_total}}</td> -->
           <!-- <td>
@@ -48,7 +48,7 @@
             </td>  -->
           <!-- <td>{{b.serviceprice_total}}</td> -->
           <td >
-            <p style="text-align: right;margin-right: 80px;">{{b.payable_amt}}</p>
+            <p class="totalnewbook" style="text-align: right;">{{b.payable_amt}}</p>
 
           </td>
           <!-- <td>
@@ -81,16 +81,16 @@
       <h2 class="title1 subheading"  (click)="opened1 = !opened1">Car Wash Status <i class="fa fa-chevron-down"></i> </h2>
       <div class="content-container1" [class.opened1]="opened1">
         <div class="table-responsive carwashstatustbl" >
-        <table  class="table  servicecss"  *ngIf="posts1"  datatable="ng"  datatable [dtOptions]="dtOptions1" style="border: 0.5px solid #000000 !important;border-right: 2px solid !important;">
+        <table  class="table  servicecss tabwidthstatusbook"  *ngIf="posts1"  datatable="ng"  datatable [dtOptions]="dtOptions1" style="border: 0.5px solid #000000 !important;border-right: 2px solid !important;">
           <thead style="color: black;text-align: left;background-color: #80808091;">
 
               <tr >
                 <th  style="display:none;width: 0px;">b</th>
-              <th style="width:8%;text-align: center;padding-left: 12px;" class="fontwghtcls">Booking Id</th>
-              <th style="width: 12%;text-align: center;padding-left: 0px;" class="fontwghtcls">Registration No</th>
-              <th style="width:8%;text-align: center;padding-left: 11px;" class="fontwghtcls">Date</th>
-              <th style="width:18%;text-align: center;" class="fontwghtcls">Customer Name</th>
-             <th style="width:10%;text-align: center;" class="fontwghtcls">Total (<span><i class="fa fa-rupee"></i></span>) </th>
+              <th style="width:10%;text-align: center;" class="fontwghtcls tblheadingstatusbook">Booking Id</th>
+              <th style="width: 12%;text-align: center;" class="fontwghtcls tblheadingstatusbook">Registration No</th>
+              <th style="width:10%;text-align: center;" class="fontwghtcls tblheadingstatusbook">Date</th>
+              <th style="width:18%;text-align: center;" class="fontwghtcls tblheadingstatusbook">Customer Name</th>
+             <th style="width:10%;text-align: center;" class="fontwghtcls tblheadingtotalstatusbook">Total (<span><i class="fa fa-rupee"></i></span>) </th>
               <th   hidden>Status</th>   <!-- for excel print only -->
 
               <th style="width: 8% !important;text-align: left;">Status</th>
@@ -111,14 +111,14 @@
             <tr *ngFor="let b of  posts1;  let i=index;" style="border-bottom:1px solid #aeaeae;text-align: left;">
 
               <td style="display:none;width: 0px;">{{b.id}}</td>
-              <td class="fontwghtcls"><a style=" margin-left: 45px;" (click)="ViewDetailsPopup(b.Booking_id,'Carwash Status')">{{b.Booking_id}}</a></td>
-              <td><p style=" margin-left: 62px;">{{b.vehicle_number}}</p></td>
+              <td class="fontwghtcls"><a class="idstatusbook" style="color: black;cursor: pointer;font-weight: 500;" (click)="ViewDetailsPopup(b.Booking_id,'Carwash Status')">{{b.Booking_id}}</a></td>
+              <td><p class="vehnostatusbook" >{{b.vehicle_number}}</p></td>
               <td>
-                <p style="margin-left: 57px;">{{b.bookingdate | date: 'dd-MM-yyyy'}}</p>
+                <p class="bookingdatestatusbook">{{b.bookingdate | date: 'dd-MM-yyyy'}}</p>
               </td>
-              <td style="text-align: left;"><p style="margin-left: 134px;">{{b.firstname}}</p></td>
+              <td style="text-align: left;"><p class="fnamestatusbook" >{{b.firstname}}</p></td>
 
-              <td ><p style="text-align: right;margin-right: 76px;">{{b.payable_amt}}</p></td>
+              <td ><p class="totalstatusbook" style="text-align: right;">{{b.payable_amt}}</p></td>
 
                 <td hidden>
                   <span *ngFor="let m1 of  carwashstatus1;" >

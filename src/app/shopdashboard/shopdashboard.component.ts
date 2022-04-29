@@ -221,6 +221,7 @@ export class ShopdashboardComponent implements OnInit {
       pageLength: 5,
       processing: true,
       dom: 'Bfrtip',
+      order:[[3, 'desc']],
       buttons: {
         dom: {
           button: {

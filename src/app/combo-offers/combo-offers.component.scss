@@ -1,7 +1,13 @@
 @media screen and (max-width: 768px) {
-  // .onchangetable{
-  //   margin-top: -250px;
-  // }
+  .combosearchdivcls{
+    // margin-left: 10px;
+  }
+  .monthcombooffercls{
+    padding-top: 14px;
+  }
+  .totalmobalign{
+    margin-left: -52px !important;
+  }
 
   .combotable{
     width: 800px;
@@ -45,6 +51,7 @@
   }
   .addcombooffer {
     margin-left: 14px !important;
+    width: 92%;
   }
   .addbtn{
     // width:75px !important;
@@ -77,6 +84,7 @@
    // margin-left: 10px;
     width: 127px !important;
     margin-left: 3px;
+    padding-top: 11px;
   }
   .offeramt1{
      margin-left: 0px !important;
@@ -140,17 +148,30 @@
 }
 
 @media screen and (min-width: 768px) {
+ 
+  .addcombooffer {
+    width: 78%;
+  }
+  .btnmodelcombo {
+    margin-left: 30px !important;
+  }
+  .offpercentdivcls{
+    margin-left: 32px;
+  }
+  .monthcombooffercls{
+    margin-left: -38px;
+  }
   .databtn2{ 
-    margin-left: 7px;
+    margin-left: -27px;
   }
   .bottonpadg{
     margin-right: 12px;
   }
   .dateselectdivcls {
-    margin-left: 72px;
+    margin-left: 58px;
   }
   .combooffheading{
-    margin-left: 77px;
+    margin-left: 64px;
   }
   .onchangecontent {
     margin-left: 59px;
@@ -170,7 +191,7 @@
    // margin-left: 66px;
   }
   .offamtdiv{
-    margin-left: -26px;
+    margin-left: 35px;
   }
   .offeramt{
     // margin-left: 10px;

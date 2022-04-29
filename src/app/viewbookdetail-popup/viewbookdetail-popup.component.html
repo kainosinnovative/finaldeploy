@@ -17,19 +17,35 @@
             <div class="col-sm-6">
                 <div class="row">
                     <!-- <p>Time Format From  24 to 12 : {{'23:11:00' | convertFrom24To12Format}}</p> -->
-                    <div class="col-sm-6"><b>Pick-up & Drop</b></div>
-                    <div class="col-sm-6 fontwt500"><span *ngIf = "b.pickup_drop == 0;else pickDropid" >No</span>
+                    <div class="col-sm-5"><b>Pick-up & Drop</b></div>
+                    <div class="col-sm-7 fontwt500"><span *ngIf = "b.pickup_drop == 0;else pickDropid" >No</span>
                         
                         <ng-template  #pickDropid>
                             
                           <span>Yes<br>
                             <span *ngIf="userroleSes == 'CustomerSes';else shoproleSesid">
-                                <span *ngIf="b.pickedAndDrop_status == ''">{{b.pickedAndDrop_status}}  on {{b.pickup_date}} <span *ngIf="b.pickup_time">@ {{b.pickup_time}}</span></span>
+                                <!-- {{b.pickedAndDrop_status}} -->
+                                <span *ngIf="b.pickedAndDrop_status == null">
+                                    <span> {{b.instructions}} </span> <br>
+                                    Pickup: {{b.pickup_date}}   <span *ngIf="b.pickup_time">@ {{b.pickup_time}}</span>
+                                    <br>
+                                    Drop: <span *ngIf="b.drop_date">{{b.drop_date}}</span>   <span *ngIf="b.drop_time">@ {{b.drop_time}}</span>
+                                    
+                                </span>
+
+                                <span *ngIf="b.pickedAndDrop_status != null">
+                                    {{b.pickedAndDrop_status}}  on {{b.pickup_date}} <span *ngIf="b.pickup_time">@ {{b.pickup_time}}</span>
+<br>
+                                    pickup  @ {{b.drop_date}} <span *ngIf="b.drop_time">@ {{b.drop_time}}</span>
+                                </span>
                             </span>
 
                             <ng-template  #shoproleSesid>
-                              <span> {{b.instructions}} </span> on {{b.pickup_date}} <span *ngIf="b.pickup_time">@ {{b.pickup_time}}</span>
-
+                              <!-- <span> {{b.instructions}} </span> on {{b.pickup_date}} <span *ngIf="b.pickup_time">@ {{b.pickup_time}}</span> -->
+                              <span> {{b.instructions}} </span> <br>
+                              Pickup: {{b.pickup_date}}   <span *ngIf="b.pickup_time">@ {{b.pickup_time}}</span>
+                              <br>
+                              Drop: <span *ngIf="b.drop_date">{{b.drop_date}}</span>   <span *ngIf="b.drop_time">@ {{b.drop_time}}</span>
                             </ng-template>
 
                             <!-- <span *ngIf="userroleSes == 'CustomerSes'">
@@ -92,8 +108,8 @@
         <div class="col-sm-6">
 
             <div class="row">
-                <div class="col-sm-6"><b>Extra Services & Price</b></div>
-                <div class="col-sm-6"><div *ngIf="b.services != null;else noservice">
+                <div class="col-sm-5"><b>Extra Services & Price</b></div>
+                <div class="col-sm-7"><div *ngIf="b.services != null;else noservice">
                     <div *ngFor="let m of  b.services.split(',');let j=index" >
                       <div class="fontwt500" *ngFor="let m1 of  MasterServiceData1;" >
                        
