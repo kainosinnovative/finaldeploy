@@ -846,7 +846,7 @@ initDonut(serviceDataOffers1:any) {
         dataLabels: {
           enabled: false,
 
-         // distance: -50,
+         distance: -50,
           style: {
            mode: 'percentage',
            render: 'value',

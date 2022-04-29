@@ -717,6 +717,12 @@ slideConfig1 = {"slidesToShow": 1, "slidesToScroll": 1};
 
     let pickup_date = this.onlinebooking.get('pickup_date').value;
     let instructions = this.onlinebooking.get('instructions').value;
+    let pickup_time = this.onlinebooking.get('pickup_time').value;
+
+
+    let drop_date = this.onlinebooking.get('drop_date').value;
+    // alert(drop_date)
+    let drop_time = this.onlinebooking.get('drop_time').value;
     // alert(pickup_date)
     // alert(instructions)
     // if(pickup_drop == false) {
@@ -734,6 +740,38 @@ slideConfig1 = {"slidesToShow": 1, "slidesToScroll": 1};
       this.toastr.error('Select pickup date');
 
     }
+
+     // pickdate -yes ,time - no
+     else if(pickup_date != null && pickup_time == '') {
+
+      (<HTMLInputElement>document.getElementById("pickup_timeid")).focus();
+    this.toastr.error('Select pickup time');
+
+  }
+// pick time - yes - date - no
+  else if(pickup_time  != null && pickup_date == '') {
+
+    (<HTMLInputElement>document.getElementById("pickup_dateid2")).focus();
+  this.toastr.error('Select pickup time');
+
+}
+
+  // dropdate - yes, time - no
+
+  else if(drop_date != "" && drop_time == '') {
+
+    (<HTMLInputElement>document.getElementById("drop_time")).focus();
+  this.toastr.error('Select drop time');
+
+}
+//  dropdate - no, time - yes
+else if(drop_time  != "" && drop_date == '') {
+
+  (<HTMLInputElement>document.getElementById("pickup_dateid2")).focus();
+this.toastr.error('Select drop date');
+
+}
+
     else if(payable_amt == "" || payable_amt == 0){
       this.toastr.error('Please select any service for your car');
     }
