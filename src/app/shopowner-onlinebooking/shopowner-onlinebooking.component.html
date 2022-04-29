@@ -441,7 +441,7 @@
   <div class="content-container" [class.opened]="opened">
     <div class="row">
       <div class="col-sm-6 heightdiv" style="display: inline;" *ngFor="let shoplist of shopdetails1;let j=index" >
-
+    
         <!-- <ng-template  #other_content><span  class="openClosed">no</span></ng-template>
 
                       <span #other_content *ngIf = "date2 >= shoplist.from_date && date2 <= shoplist.to_date && shoplist.offer_percent!=0;else other_content" class="openClosed">yes</span> -->
@@ -455,26 +455,31 @@
           <!--Section: Content-->
             <div class="text-center white-text d-md-flex justify-content-between p6 indigo lighten-2 pdingbtmreduceservice"  >
               <div class="servicename">
-               <p class="font-weight-bold;back" >
+               <!-- <p class="font-weight-bold;back" style="margin-top: -14px !important;height: 10px;">
                 <span class="discount2" *ngIf = "date2 >= shoplist.from_date && date2 <= shoplist.to_date && shoplist.offer_percent!=0;">Up to {{shoplist. offer_percent}}% Off {{shoplist.is_pickup_drop_avl}} &nbsp;</span>
+                </p> -->
+              <p class="font-weight-bold;back" style="width:210px !important">
                 {{shoplist.service_name}}
               </p>
                </div>
-              <br>
-              <div class="serviceprice">
+  
+              <div class="serviceprice" >
                 <ng-template  #other_content>
-                  <p  > Service Price @
+                  
+                  <div style="text-align: right !important;width: 252px !important;"> Service Price @
                     <input readonly type="text" class="selectnow3" value="{{shoplist.actual_amount}}" id="amount_{{shoplist.service_id}}">
-                  </p>
+                  </div>
 
                 </ng-template>
 
-                <p #other_content *ngIf = "date2 >= shoplist.from_date && date2 <= shoplist.to_date && shoplist.offer_percent!=0;else other_content" > Offer Price @
+                <div style="text-align: right !important;width:  250px !important;" #other_content *ngIf = "date2 >= shoplist.from_date && date2 <= shoplist.to_date && shoplist.offer_percent!=0;else other_content"  >
+                <span class="discount2">  Up to {{shoplist. offer_percent}} %&nbsp;</span>&nbsp;Offer Price @
+ 
                   <input readonly type="text" class="selectnow3" value="{{shoplist.offer_price}}" id="amount_{{shoplist.service_id}}">
-                </p>
+                </div>
 
                       <!-- <span #other_content *ngIf = "date2 >= shoplist.from_date && date2 <= shoplist.to_date && shoplist.offer_percent!=0;else other_content" class="openClosed">yes</span> -->
-              </div>
+              </div><br>.
               <!-- <div class="serviceprice">
               <p *ngIf="shoplist.offer_percent!=0" > Offer Price @
                 <input readonly type="text" class="selectnow3" value="{{shoplist.offer_price}}" id="amount_{{shoplist.service_id}}">
@@ -485,7 +490,7 @@
               </p>
             </div> -->
 
-            <div class="MobServSelectbtn">
+            <div class="MobServSelectbtn" >
               <button id="chooice_{{shoplist.service_id}}" class="selectnow" (click)="selectbuttoncolor(shoplist.service_id,shoplist.j)">{{textcontent}}</button>
             </div>
 

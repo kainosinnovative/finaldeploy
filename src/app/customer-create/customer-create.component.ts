@@ -90,6 +90,7 @@ dynamicArray: Array<DynamicGrid> = [];
   size: any;
   width: number;
   height: number;
+  current_date: any;
 
 
 
@@ -125,7 +126,7 @@ ngOnInit() {
   let currentUserId:any = localStorage.getItem('currentUserId');
 
   this.date=new Date();
-let current_date =this.datepipe.transform(this.date, 'yyyy-MM-dd');
+this.current_date =this.datepipe.transform(this.date, 'yyyy-MM-dd');
 
   const emailPattern = "^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$";
   const mobilePattern = "^((\\+91-?)|0)?[0-9]{10}$";
@@ -149,7 +150,7 @@ let current_date =this.datepipe.transform(this.date, 'yyyy-MM-dd');
      zipcode: ['', [Validators.required, Validators.pattern(zipcodePattern)]],
      emailid: ['', [Validators.required, Validators.pattern(emailPattern)]],
     mobileno:['', [Validators.required, Validators.pattern(mobilePattern)]],
-     lastupddt: [current_date, [Validators.required]],
+     lastupddt: [this.current_date, [Validators.required]],
     customer_id:[currentUserId, [Validators.required]]
 
     })
@@ -162,7 +163,7 @@ let current_date =this.datepipe.transform(this.date, 'yyyy-MM-dd');
        brand: ['', Validators.required],
        color: ['', Validators.required],
        model: ['', Validators.required],
-       lastupddt: [current_date, [Validators.required]],
+       lastupddt: [this.current_date, [Validators.required]],
        customer_id:[currentUserId, [Validators.required]],
        vehicle_number: ['', Validators.required],
        carinfo_status: [1, Validators.required]
