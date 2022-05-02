@@ -2,9 +2,12 @@
 <div class="headerbelowheight" ></div>
 
 <!-- <div style="background-color: #f3f3f3;"> -->
-  <div style="overflow: hidden !important;">
+  <div  style="overflow: hidden !important;">
 <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> -->
 <h2 style="text-align: center;" class="mainheading">Services/Offer Details</h2>
+<!-- <button  id="clickcheckid">
+  test
+</button> -->
 
 <!-- <div style="text-align: right;">
   <button class="btn btn-success" (click)="DisplayForm()" >Add New Service</button>
@@ -137,7 +140,7 @@
     <!-- <div style="border: 1px solid;overflow:auto;"> -->
       <!-- <h2 style="text-align: center;" class="mainheading">Add Service Price</h2> -->
     <form [formGroup]="shopserviceForm" name="pf">
-     <div class="table-responsive  boxwidht shopservicetblcls" style="display: block;width: 100%;padding-top: 10px;height:  65px;" id="shopservFormid" >
+     <div class="table-responsive  boxwidht shopservicetblcls" style="display: block;width: 100%;padding-top: 10px;height:  67px;" id="shopservFormid" >
       <table class="table  servicecss" style="border: none;margin-left:0px !important;">
         <tr style="text-align: left;">
           <td>Service</td>
@@ -240,14 +243,14 @@
     <!-- <div style="border: 1px solid;margin-left:0px!important;height: 68px;"> -->
       <!-- <h2 style="text-align: center;" class="mainheading">Add New Service</h2> -->
       <form [formGroup]="MasterserviceForm" name="pf">
-      <div class="table-responsive boxwidht" style="display: block;width: 100%;overflow-x: unset;padding-top: 3px;height: 78px !important;" id="shopservFormid2">
-        <table class="table" style="border: none;margin-top: -36px;border-collapse: inherit !important;padding-left:0px!important;margin-left:0px !important;">
+      <div  class="table-responsive boxwidht" style="display: block;width: 100%;overflow-x: unset;padding-top: 3px;height: 78px !important;" id="shopservFormid2">
+        <table  class="table" style="border: none;margin-top: -36px;border-collapse: inherit !important;padding-left:0px!important;margin-left:0px !important;">
           <tr style="text-align: Center;">
 
             <td>Service</td>
-            <td class="">
+            <td class="" >
 
-        <ng-autocomplete  style="height: 100% !important" class="ng-autocomplete"  minlength="3"  [data]="MasterServiceData1" formControlName="service_name" [searchKeyword]="keyword" (selected)='selectEvent($event)'
+        <ng-autocomplete id="autocserviceid"  style="height: 100% !important" class="ng-autocomplete"  minlength="3"  [data]="MasterServiceData1" formControlName="service_name" [searchKeyword]="keyword" (selected)='selectEvent($event)'
               (inputChanged)='onChangeSearch($event)'    (inputFocused)='onFocused($event)' [itemTemplate]="itemTemplate"
               [notFoundTemplate]="notFoundTemplate" >
             </ng-autocomplete>
@@ -272,10 +275,12 @@
                </div>
 
               </div>
+
+              
             </td>
 
         <td style="text-align: left;">
-              <button class="allSubmitbtn btn" style="margin-top: -9px;margin-left: 12px; width:68px; border:none; height:28px;"  (click)="AddMasterserviceDetails(MasterserviceForm.value)" [disabled]='!MasterserviceForm.valid'  >Add</button>
+              <button class="allSubmitbtn btn"  style="margin-top: -9px;margin-left: 12px; width:68px; border:none; height:28px;"   (click)="AddMasterserviceDetails(MasterserviceForm.value)" [disabled]='!MasterserviceForm.valid'  >Add</button>
 
             </td>
 

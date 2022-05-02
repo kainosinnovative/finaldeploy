@@ -101,7 +101,7 @@ date2:any;
     (<HTMLInputElement>document.getElementById("booking_date")).focus();
 
     this.date=new Date();
-     this.current_date1 =this.datepipe.transform(this.date, 'yyyy-MM-dd');
+     this.current_date =this.datepipe.transform(this.date, 'yyyy-MM-dd');
      let currentUserId = localStorage.getItem('currentUserId');
      let userroleSes = localStorage.getItem('userroleSes');
 

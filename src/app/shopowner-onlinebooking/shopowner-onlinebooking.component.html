@@ -410,7 +410,7 @@
 <br><br><br>
 <div class="comboofferpricediv" style="font-size: 17px;margin-top: 15px;text-align: center;">
 <input type="hidden" formControlName="combo_id" id="ComboPrimaryIdArr" class="selectnow2"  >
-<label class="mainheading" id="name" >Combo Offer price </label> &nbsp; <i style="margin-right: -13px;" class="fa fa-rupee"></i>
+<label class="subheading" style="font-weight: bold;" id="name" >Combo Offer price </label> &nbsp; <i style="margin-right: -13px;" class="fa fa-rupee"></i>
 <input type="number" readonly id="finalamount" formControlName="comboprice_total" class="selectnow2"  >
 <br>
 <!-- <div > -->
@@ -520,20 +520,20 @@
 
     </mat-card-content>
 
-    <div style="font-size: 17px;text-align: right;margin-right: 28px;">
+    <div class="belowextraservicesection" style="font-size: 17px;text-align: right;">
       <div *ngIf="shopdetails1 != null && shopdetails1.length !=0">
-        <label class="mainheading">Extra Services price: </label> &nbsp; <i style="margin-right: -13px;" class="fa fa-rupee"></i>
+        <label style="font-weight: bold;" class="subheading">Extra Services price: </label> &nbsp; <i style="margin-right: -13px;" class="fa fa-rupee"></i>
       <input readonly type="number" id="totalamount" formControlName="serviceprice_total" class="selectnow2"  >
     </div>
 <br><br>
 <!-- <input  type="checkbox" id="vehicle1" name="vehicle1" checked formControlName="payment_type" disabled> &nbsp;
 <label for="vehicle1"> Cash On Delivery</label> &nbsp; &nbsp; -->
 
-<label class="mainheading">Payment Type: </label>
-      <input readonly type="text" formControlName="payment_type" style="margin-left: 4px;border: none;width: 129px;color: #198754;font-weight: bold;"   class="selectnow2"  >
+<label class="subheading" style="font-weight: bold;">Payment Type: </label>
+      <input readonly type="text" formControlName="payment_type" style="margin-left: 4px;border: none;width: 129px;color: #198754;font-weight: bold;font-size: 14px;"   class="selectnow2"  >
 &nbsp;
 <input type="hidden" formControlName="services"  class="selectnow2"  >
-<label class="mainheading">Net Amount Payable: </label> &nbsp; <i style="margin-right: -13px;" class="fa fa-rupee"></i>
+<label class="subheading" style="font-weight: bold;">Net Amount Payable: </label> &nbsp; <i style="margin-right: -13px;" class="fa fa-rupee"></i>
       <input readonly type="number" formControlName="payable_amt" id="final_totalamount" class="selectnow2"  >
       <br><br>
 

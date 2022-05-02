@@ -1,5 +1,5 @@
 import { Component, ViewChild, OnInit } from '@angular/core';
-
+import { ChartComponent } from "ng-apexcharts";
 
 @Component({
   selector: 'app-testinsert',
@@ -11,17 +11,14 @@ import { Component, ViewChild, OnInit } from '@angular/core';
 // let ComboOfferFromDateTodate:any;
 export  class TestinsertComponent implements OnInit
 {
+ 
+  
 
-
-  ngOnInit(): void {
-   
+  ngOnInit() {
+    
   }
 
-
-
-
-
-
+ 
 
 }
 

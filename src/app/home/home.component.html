@@ -47,10 +47,10 @@
 <!-- <br><br><br> -->
 
   <input type="text" id="autofocus2">
-<div class="headerbelowheight" ></div>
-<div *ngIf="dashboardShop1 != ''" >
 
-  <h2 style="text-align: center;" class="mainheading">Combo Offers Of The Day </h2>
+<div *ngIf="dashboardShop1 != ''" >
+  <div id="headerbelowhtdivid" class="headerbelowheight" ></div>
+  <h2 style="text-align: center;" class="mainheading combooffheadinhome">Combo Offers Of The Day </h2>
 <div *ngFor="let s of dashboardShop1;let k=index">
   <p *ngIf="k==0" class="dark-blue-text w-responsive mx-auto fontitalyHome" style="text-align: center;margin-bottom: 2%;font-size: 14px;">Special <span *ngIf="dashboardShop1.length == 1">Deal</span> <span *ngIf="dashboardShop1.length > 1">Deals</span> Limited Offer Today 
      <img style="height: 40px;" src="{{apiurlforhtm}}/images/hurry-up-154424269.png"> 
@@ -169,8 +169,12 @@
 <br>
 
 
+<div style="height: 20px;" *ngIf="dashboardShop1 != '' || dashboardShopOffer1 != ''" >
+  
+  </div>
+
 <div *ngIf="dashboardShopOffer1 != ''">
-  <h2 style="text-align: center;" class="mainheading">Service Offers   </h2>
+  <h2 style="text-align: center;" class="mainheading ">Service Offers   </h2>
 
   <div *ngFor="let s of dashboardShopOffer1;let k=index">
     <p *ngIf="k==0 && s.offer_percent > 0" class="dark-blue-text w-responsive mx-auto fontitalyHome" style="text-align: center;margin-bottom: 2%;font-size: 14px">Incredible Services for Incredible People, Deals made especially for you
@@ -357,4 +361,12 @@
   </button>
 </div> -->
 <!-- <br><br> -->
-<app-testimonial></app-testimonial>
+
+<div style="height: 20px;" *ngIf="dashboardShop1 == '' && dashboardShopOffer1 == ''" >
+  
+  </div>
+
+<div  *ngIf="dashboardShop1 != '' || dashboardShopOffer1 != ''" >
+<br><br>
+</div>
+<app-testimonial ></app-testimonial>

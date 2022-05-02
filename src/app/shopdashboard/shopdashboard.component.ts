@@ -127,6 +127,8 @@ export class ShopdashboardComponent implements OnInit {
      }
 
   ngOnInit(): void {
+
+    
     (<HTMLInputElement>document.getElementById("shopdashboardfocus")).style.display="none";
     (<HTMLInputElement>document.getElementById("shopdashboardfocus")).focus();
     // alert(localStorage.getItem('is_pickup_drop_avl'))
@@ -782,7 +784,8 @@ initDonut(serviceDataOffers1:any) {
      json1 =
     {
       // + "<br>"+ "(" + serviceDataOffers1[i].model_name
-   name:  ((this.serviceDataOffers1[i].service_name + "<br>"+ "(" + this.serviceDataOffers1[i].model_name) + ")"),
+      // - " + serviceDataOffers1[i].offer_percent + "%
+   name:  ((this.serviceDataOffers1[i].service_name + "<br>"+ "(" + this.serviceDataOffers1[i].model_name) + ") - " + serviceDataOffers1[i].offer_percent + "%"),
   //  serviceDataOffers1[i].name,
    y: Number(serviceDataOffers1[i].offer_percent)
     }
@@ -834,14 +837,19 @@ initDonut(serviceDataOffers1:any) {
       y: 0
     },
     tooltip: {
-      pointFormat: '{series.name}: <b>{point.y}%</b>'
+      pointFormat: '{series.name}',
+      enabled:true
+      // pointFormat: '{series.name}: <b>{point.y}%</b>'
     },
     credits: {
       enabled: false
     },
+    exporting:{
+      enabled: false,
+      },
     plotOptions: {
       pie: {
-        // allowPointSelect: false,
+        allowPointSelect: true,
         cursor: 'pointer',
         dataLabels: {
           enabled: false,
@@ -867,7 +875,11 @@ initDonut(serviceDataOffers1:any) {
     
     series: [
       {
-        name: 'Service',
+        // minPointSize: 10,
+        // zMin: 0,
+        // name: 'Service',
+        name: '',
+        colorByPoint: true,
         data:  finaljson,
 
         type: 'pie',
