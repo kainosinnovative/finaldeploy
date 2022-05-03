@@ -89,9 +89,9 @@
                 <td>
 
                   <input type="date"  id="offerfromdate_{{service.service_id}}_{{i}}" (click)="removedatevalidate(service.service_id,i)"  class=" dateofbirthcls" style="width:112px !important;" value="{{service.from_date}}"  placeholder="">
-                  <p id="validatefromdate_{{service.service_id}}_{{i}}" style="color: red;display: none;font-size:10px;">Select Offer Starting Date</p> <p id="validatefromdateformat_{{service.service_id}}_{{i}}" style="color: red;display: none;font-size:10px;">Offer From Date Greater than To Date</p></td>
+                  <p id="validatefromdate_{{service.service_id}}_{{i}}" style="color: red;display: none;font-size:10px;">Select Offer Starting Date</p> <p id="validatefromdateformat_{{service.service_id}}_{{i}}" style="color: red;display: none;font-size:10px;">Start Date should be Greater than End Date</p></td>
                 <td> <input type="date"  id="offertodate_{{service.service_id}}_{{i}}" (click)="removedatevalidatesms(service.service_id,i)"  class=" dateofbirthcls"  style="width:112px !important;" value="{{service.to_date}}" placeholder="">
-                  <p id="validatetodate_{{service.service_id}}_{{i}}" style="color: red;display: none;font-size:10px;">Select Offer Ending Date</p>  <p id="validatetodateformat_{{service.service_id}}_{{i}}" style="color: red;display: none;font-size:10px;">Offer To Date Less than From Date</p></td>
+                  <p id="validatetodate_{{service.service_id}}_{{i}}" style="color: red;display: none;font-size:10px;">Select Offer Ending Date</p>  <p id="validatetodateformat_{{service.service_id}}_{{i}}" style="color: red;display: none;font-size:10px;">End Date should be Less than Start Date</p></td>
                 <td>
 
 

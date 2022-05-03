@@ -109,7 +109,7 @@
                   <label >Pick-up Date <span class="requiredfield">  *</span></label>
       <br>
 
-      <input class="datecls" min="{{current_date}}"  type="date" (change)="dropdatapicker()" style="border: 1px solid;height: 34px;width: 110px;" matinput="" formControlName="pickup_date" id="pickup_dateid" placeholder="Date From" >
+      <input class="datecls" min="{{current_date1}}" (keydown)="disableDate()" type="date" (change)="dropdatapicker()" style="border: 1px solid;height: 34px;width: 110px;" matinput="" formControlName="pickup_date" id="pickup_dateid" placeholder="Date From" >
       <!-- <br>  <span id="enddate_message2" style="color: red;display: none;">Pickup date Invalid</span> -->
   </div>
                 </td>
@@ -168,7 +168,7 @@
                   <div id="dropdatetdid" *ngIf="getPickupAvlData2 == 1" style="width: 110px;">
                   <label >Drop Date</label>
 
-      <input class="datecls" min="{{current_date}}" type="date" style="border: 1px solid;height: 34px;width: 110px;" (change)="dropdatapicker()" id="drop_dateid" matinput="" formControlName="drop_date" placeholder="Date From" >
+      <input class="datecls" min="{{current_date1}}" (keydown)="disableDate()" type="date" style="border: 1px solid;height: 34px;width: 110px;" (change)="dropdatapicker()" id="drop_dateid" matinput="" formControlName="drop_date" placeholder="Date From" >
       <br>  <span id="enddate_message1" style="color: red;display: none;">To date Invalid</span>
 
                 </div>
@@ -359,7 +359,7 @@
 
           <br>
           <!-- <br><br> -->
-          <div class="comboofferpricediv" style="font-size: 17px;text-align: center;">
+          <div class="comboofferpricediv" style="font-size: 17px;text-align: center; margin-left: 226px;">
           <input type="hidden" formControlName="combo_id" id="ComboPrimaryIdArr" class="selectnow2"  >
           <label class="mainheading" id="name" >Combo Offer price </label> &nbsp; <i style="margin-right: -13px;" class="fa fa-rupee"></i>
           <input type="number" readonly id="finalamount" formControlName="comboprice_total" class="selectnow2"  >
@@ -412,24 +412,28 @@
           <!--Section: Content-->
             <div class="text-center white-text d-md-flex justify-content-between p6 indigo lighten-2 pdingbtmreduceservice"  >
               <div class="servicename">
-               <p class="font-weight-bold;back" >
-                
-                <span *ngIf = "date2 >= shoplist.from_date && date2 <= shoplist.to_date && shoplist.offer_percent!=0;" class="discount2" >{{shoplist. offer_percent}}% Off {{shoplist.is_pickup_drop_avl}} &nbsp;</span> 
-                {{shoplist.service_name}} 
+               <!-- <p class="font-weight-bold;back" >
+                  <span *ngIf = "date2 >= shoplist.from_date && date2 <= shoplist.to_date && shoplist.offer_percent!=0;" class="discount2" >{{shoplist. offer_percent}}% Off {{shoplist.is_pickup_drop_avl}} &nbsp;</span> 
+              </p> -->
+
+              <p class="font-weight-bold;back" style="width:210px !important">
+                {{shoplist.service_name}}
               </p>
                </div>
               <br>
               <div class="serviceprice">
                 <ng-template  #other_content>
-                  <p  > Service Price @
+                  <div style="text-align: right !important;width: 252px !important;">
+                     Service Price @
                     <input readonly type="text" class="selectnow3" value="{{shoplist.actual_amount}}" id="amount_{{shoplist.service_id}}">
-                  </p>
+                  </div>
 
                 </ng-template>
 
-                <p #other_content *ngIf = "date2 >= shoplist.from_date && date2 <= shoplist.to_date && shoplist.offer_percent!=0;else other_content" > Offer Price @
+                <div #other_content style="text-align: right !important;width:  250px !important;" *ngIf = "date2 >= shoplist.from_date && date2 <= shoplist.to_date && shoplist.offer_percent!=0;else other_content" >
+                  <span class="discount2">  Up to {{shoplist. offer_percent}} %&nbsp;</span>&nbsp;Offer Price @
                   <input readonly type="text" class="selectnow3" value="{{shoplist.offer_price}}" id="amount_{{shoplist.service_id}}">
-                </p>
+                </div>
 
                       <!-- <span #other_content *ngIf = "date2 >= shoplist.from_date && date2 <= shoplist.to_date && shoplist.offer_percent!=0;else other_content" class="openClosed">yes</span> -->
               </div>
@@ -462,7 +466,7 @@
 </div>
 </div>
 <br>
-<div class="col-sm-12 extraservPrice" style="text-align: right;">
+<div class="col-sm-12 extraservPrice" style="text-align: right; margin-left: -32px;">
   <label class="mainheading">Extra Services price: </label> &nbsp; <i style="margin-right: -13px;" class="fa fa-rupee"></i>
       <input readonly type="number" id="totalamount" formControlName="serviceprice_total" class="selectnow2"  >
 </div>
@@ -482,7 +486,7 @@
 
     </mat-card-content>
 
-    <div class="confirmbkngFinalcls" style="font-size: 17px;text-align: right;">
+    <div class="confirmbkngFinalcls" style="font-size: 17px;text-align: right; margin-right: 30px;">
 
 
 <!-- <br><br> -->

@@ -109,7 +109,7 @@
               <td style="width: 120px">
                 <div >
                 <label>Booking Date <span class="requiredfield">  *</span></label> <br>
-                <input class="datecls" type="date" min="{{current_date}}" style="border: 1px solid;height: 34px;width: 110px;background: white;" matinput="" formControlName="bookingdate" placeholder="Date From" id="booking_date" >
+                <input class="datecls" type="date" (keydown)="disableDate()" min="{{current_date}}" style="border: 1px solid;height: 34px;width: 110px;background: white;" matinput="" formControlName="bookingdate" placeholder="Date From" id="booking_date" >
               </div>
               </td>
 
@@ -159,7 +159,7 @@
                 <label >Pick-up Date <span class="requiredfield">  *</span></label>
     <br>
 
-    <input class="datecls" min="{{current_date}}" type="date" (change)="dropdatapicker()" style="border: 1px solid;height: 34px;width: 116px;" matinput="" formControlName="pickup_date" id="pickup_dateid2" placeholder="Date From" >
+    <input class="datecls" min="{{current_date}}" (keydown)="disableDate()"  type="date" (change)="dropdatapicker()" style="border: 1px solid;height: 34px;width: 116px;" matinput="" formControlName="pickup_date" id="pickup_dateid2" placeholder="Date From" >
 </div>
               </td>
 
@@ -219,7 +219,7 @@
     <br>
 
 
-    <input class="datecls" min="{{current_date}}" type="date" style="border: 1px solid;height: 34px;width: 116px;" matinput="" formControlName="drop_date" placeholder="Date From" (change)="dropdatapicker()" id="drop_dateid">
+    <input class="datecls" min="{{current_date}}" (keydown)="disableDate()"  type="date" style="border: 1px solid;height: 34px;width: 116px;" matinput="" formControlName="drop_date" placeholder="Date From" (change)="dropdatapicker()" id="drop_dateid">
     <br>  <span id="enddate_message1" style="color: red;display: none;">To date Invalid</span>
            </div>
 

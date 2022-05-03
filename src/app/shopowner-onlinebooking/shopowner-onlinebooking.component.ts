@@ -863,4 +863,8 @@ slideConfig1 = {"slidesToShow": 1, "slidesToScroll": 1};
     }
 }
 
+disableDate(){
+  return false;
+}
+
 }

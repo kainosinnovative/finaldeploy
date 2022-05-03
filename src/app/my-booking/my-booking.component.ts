@@ -66,6 +66,8 @@ posts: any;
       pageLength: 10,
       processing: true,
       dom: 'Bfrtip',
+      order:[],
+      
       buttons: {
         dom: {
           button: {

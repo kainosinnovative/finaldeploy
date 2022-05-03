@@ -270,11 +270,23 @@
           </div>
             <div class="col-lg-3 col-md-6 footerpopularlink">
               <div class="footer-link footerpopularlink" >
-                  <h2 style="color: black;margin-bottom: 8px !important;">Useful Links </h2>
+                  <h2 style="color: black;margin-bottom: 8px !important;margin-left: -22px;">Useful Links </h2>
 <div class="footerpopularlink">
 
 <p class="bloglinkMob">
-  <a href="#" ><i class="fa fa-arrow-right" style="    font-size: 13px; margin-left: -2px;"></i> &nbsp;Blog</a>
+  <a *ngIf="userroleSes=='CustomerSes'" target=“_blank” href="https://www.carcare.org/" ><i class="fa fa-arrow-right" style="font-size: 13px; margin-left: -2px;"></i> &nbsp;car care</a>
+</p>
+
+<p class="bloglinkMob">
+  <a *ngIf="userroleSes=='CustomerSes'" target=“_blank” href="https://www.carbibles.com/car-maintenance-tips/" ><i class="fa fa-arrow-right" style="font-size: 13px; margin-left: -2px;"></i> &nbsp; car Maintanence</a>
+</p>
+
+<p class="bloglinkMob">
+  <a  *ngIf="userroleSes=='shopOwnerSes'" target=“_blank” href="https://www.carwash.org/car-wash-magazine/feature-stories/feature/5-interesting-tech-trends#:~:text=5%20Interesting%20Tech%20Trends%201%20CARS%20THAT%20KNOW,TRAINING.%20...%205%20DEVICES%20FOR%20SOCIAL%20DISTANCING.%20" ><i class="fa fa-arrow-right" style="font-size: 13px; margin-left: -2px;"></i> &nbsp;Latest Trends</a>
+</p>
+
+<p class="bloglinkMob">
+  <a  *ngIf="userroleSes=='shopOwnerSes'" target=“_blank” href="https://polishedprotection.com/proper-car-wash-techniques/" ><i class="fa fa-arrow-right" style="font-size: 13px; margin-left: -2px;"></i> &nbsp;CarWash Techniques</a>
 </p>
                   <!-- <a href="#"><i class="fa fa-arrow-right" style="font-size:8px"></i> &nbsp;Online Booking</a> -->
                   <!-- <a href="#"><i class="fa fa-arrow-right" style="font-size:8px"></i> &nbsp;Offers and Deals</a> -->
@@ -285,9 +297,8 @@
                   </div>
               </div>
           </div>
-        <!-- <div class="col-md-3 mb-md-0 mb-3">-->
 
-            <!-- Links -->
+           <!-- Links -->
             <!-- <h4 class="text-uppercase">Quick Links</h4>
 
             <ul class="list-unstyled">
