@@ -177,9 +177,9 @@
 <!-- for customer -->
   <!-- <mat-list-item  class="menudesk cursorcls" *ngIf="userroleSes=='CustomerSes' || !userroleSes"> <a class="colorheaderMenu" mat-list-item routerLink='/onlinebooking'>Online Booking </a> </mat-list-item> <span *ngIf="userroleSes=='CustomerSes' || !userroleSes">&nbsp; &nbsp;</span> -->
 
-  <mat-list-item *ngIf="userroleSes=='CustomerSes'" class="menudesk cursorcls"> <a class="colorheaderMenu" mat-list-item routerLink='/customercreate' [routerLinkActive]="['is-active']" style="font-family: cursive;">My Profile </a> </mat-list-item> <span *ngIf="userroleSes=='CustomerSes'">&nbsp; &nbsp;</span>
+  <mat-list-item *ngIf="userroleSes=='CustomerSes'" class="menudesk cursorcls"> <a class="colorheaderMenu" mat-list-item routerLink='/customercreate' [routerLinkActive]="['is-active']" style="font-family: cursive;">My<label style="width: 3px;"></label>Profile </a> </mat-list-item> <span *ngIf="userroleSes=='CustomerSes'">&nbsp; &nbsp;</span>
 
-  <mat-list-item *ngIf="userroleSes=='CustomerSes'" class="menudesk cursorcls"> <a class="colorheaderMenu" mat-list-item routerLink="/MyBooking" [routerLinkActive]="['is-active']" style="font-family: cursive;">My Booking </a> </mat-list-item> <span *ngIf="userroleSes=='CustomerSes'">&nbsp; &nbsp;</span>
+  <mat-list-item *ngIf="userroleSes=='CustomerSes'" class="menudesk cursorcls"> <a class="colorheaderMenu" mat-list-item routerLink="/MyBooking" [routerLinkActive]="['is-active']" style="font-family: cursive;">My<label style="width: 3px;"></label>Booking </a> </mat-list-item> <span *ngIf="userroleSes=='CustomerSes'">&nbsp; &nbsp;</span>
 
   <mat-list-item class="menudesk cursorcls" *ngIf="!userroleSes" > <a  class="colorheaderMenu" (click)="login();loginCheck1()" >Login</a> </mat-list-item>
 
@@ -189,14 +189,14 @@
 <!-- for shop owner -->
 <mat-list-item  class="menudesk cursorcls" *ngIf="userroleSes=='shopOwnerSes'"> <a class="colorheaderMenu" mat-list-item routerLink='/ShopService' [routerLinkActive]="['is-active']" style="font-family: cursive;">Services </a> </mat-list-item> &nbsp; &nbsp;
 
-<mat-list-item  class="menudesk cursorcls" *ngIf="userroleSes=='shopOwnerSes'"> <a class="colorheaderMenu" mat-list-item routerLink='/ComboOffers'  [routerLinkActive]="['is-active']" style="font-family: cursive;">Combo Offers </a> </mat-list-item> &nbsp; &nbsp;
+<mat-list-item  class="menudesk cursorcls" *ngIf="userroleSes=='shopOwnerSes'"> <a class="colorheaderMenu" mat-list-item routerLink='/ComboOffers'  [routerLinkActive]="['is-active']" style="font-family: cursive;">Combo<label style="width: 3px;"></label>Offers </a> </mat-list-item> &nbsp; &nbsp;
 
 
-<mat-list-item *ngIf="userroleSes=='shopOwnerSes'" class="menudesk cursorcls"> <a class="colorheaderMenu" mat-list-item routerLink='/ShopProfile' [routerLinkActive]="['is-active']" style="font-family: cursive;">My Profile </a> </mat-list-item> <span *ngIf="userroleSes=='shopOwnerSes'">&nbsp; &nbsp;</span>
+<mat-list-item *ngIf="userroleSes=='shopOwnerSes'" class="menudesk cursorcls"> <a class="colorheaderMenu" mat-list-item routerLink='/ShopProfile' [routerLinkActive]="['is-active']" style="font-family: cursive;">My<label style="width: 4px;"></label>Profile </a> </mat-list-item> <span *ngIf="userroleSes=='shopOwnerSes'">&nbsp; &nbsp;</span>
 
 <mat-list-item *ngIf="userroleSes=='shopOwnerSes'" class="menudesk cursorcls"> <a class="colorheaderMenu" mat-list-item  (click)="bookingRedirect()" routerLink='/shopownerOnlineBooking' [routerLinkActive]="['is-active']" style="font-family: cursive;">Booking </a> </mat-list-item> <span *ngIf="userroleSes=='shopOwnerSes'">&nbsp; &nbsp;&nbsp; </span>
 
-<mat-list-item *ngIf="userroleSes=='shopOwnerSes'" class="menudesk cursorcls"> <a class="colorheaderMenu" mat-list-item routerLink='/contactus' [routerLinkActive]="['is-active']" style="font-family: cursive;">Contact Us </a> </mat-list-item> <span *ngIf="userroleSes=='shopOwnerSes'">&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;</span>
+<mat-list-item *ngIf="userroleSes=='shopOwnerSes'" class="menudesk cursorcls"> <a class="colorheaderMenu" mat-list-item routerLink='/contactus' [routerLinkActive]="['is-active']" style="font-family: cursive;">Contact<label style="width: 3px;"></label>Us </a> </mat-list-item> <span *ngIf="userroleSes=='shopOwnerSes'">&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;</span>
 
 <!-- for shop owner -->
 
@@ -262,7 +262,7 @@
         
         <!-- Grid column -->
           <div class="col-md-6 mt-md-0 mt-3">
-              <div class="row" style="height: 300px;">
+              <div class="row utubevideocls" style="height: 300px;">
                 <iframe  class="embed-responsive-item" loop="1" autoplay="" src="https://www.youtube.com/embed/PU5orW-mtVs" allowfullscreen></iframe>
 
                   </div>

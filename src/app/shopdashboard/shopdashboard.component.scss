@@ -104,6 +104,8 @@ table.dataTable tbody th, table.dataTable tbody td {
   font-weight: bold !important;
 }
 
+
+
 @media screen and (min-width: 768px) {
 
   // .bookingid{
@@ -124,13 +126,44 @@ table.dataTable tbody th, table.dataTable tbody td {
 }
 
 @media screen and (min-width: 768px) {
+  
+  .vehiclenumbernewbook{
+    margin-left: 85px;
+  }
+  .bookingdatenewbook{
+    margin-left: 69px;
+  }
+  .firstnamenewbook{
+    margin-left: 148px;
+  }
+  .totalnewbook{
+    margin-right: 85px;
+  }
+
+  .idstatusbook{
+    margin-left: 66px;
+  }
+
+  .vehnostatusbook{
+    margin-left: 75px;
+  }
+
+  .bookingdatestatusbook{
+    margin-left: 81px;
+  }
+  .fnamestatusbook{
+    margin-left: 131px;
+  }
+  .totalstatusbook{
+    margin-right: 79px;
+  }
 
   .bookingid{
     
     cursor: pointer;
     color: black;
     text-decoration: underline;
-    margin-left: 43px !important;
+    margin-left: 54px !important;
     font-weight: 500 !important;
   } 
 
@@ -148,6 +181,68 @@ table.dataTable tbody th, table.dataTable tbody td {
   }
 }
 @media screen and (max-width: 768px) {
+  .tblnewbook {
+    width: 800px !important;
+  }
+
+  .tabwidthstatusbook{
+    width: 800px !important;
+  }
+
+  .tblheadingnewbook {
+    text-align: left !important;
+  }
+  .tblheadingtotalnewbook{
+    text-align: right !important;
+  }
+
+  .vehiclenumbernewbook{
+    text-align: left;
+    margin-left: 14px;
+  }
+  .bookingdatenewbook{
+    text-align: left;
+    margin-left: 14px;
+  }
+  .firstnamenewbook{
+    text-align: left;
+    margin-left: 14px;
+  }
+  .totalnewbook{
+    text-align: right !important;
+    margin-right: 16px;
+  }
+
+  .idstatusbook{
+    text-align: left;
+    margin-left: 14px;
+  }
+
+  .vehnostatusbook{
+    text-align: left;
+    margin-left: 16px;
+  }
+
+  .bookingdatestatusbook{
+    text-align: left;
+    margin-left: 14px;
+  }
+  .fnamestatusbook{
+    text-align: left;
+    margin-left: 14px;
+  }
+  .totalstatusbook{
+    text-align: right !important;
+    margin-right: 17px;
+  }
+
+  .tblheadingstatusbook {
+    text-align: left !important;
+  }
+  .tblheadingtotalstatusbook {
+    text-align: right !important;
+    
+  }
 
   .mobilechartcls {
     overflow: auto;

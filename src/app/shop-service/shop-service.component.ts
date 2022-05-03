@@ -39,6 +39,7 @@ export class ShopServiceComponent implements  OnInit{
    ProfileDataByIdObject:  any;
    ShopProfileDetails: any;
    statuspickupvalue: any;
+   shopservicestatus = false;
 
   rateControl: FormControl;
   constructor(private http: HttpClient,private router: Router,
@@ -426,13 +427,20 @@ export class ShopServiceComponent implements  OnInit{
 
 
   AddMasterserviceDetails(MasterserviceForm:any) {
-
+    // let autocserviceid = this.MasterserviceForm.get('service_name').value;
+    // alert(autocserviceid.service_name)
+    if(this.shopservicestatus == true) {
+      this.toastr.error('Enter service name');
+      
+    }
+    else {
     for(var j=0;j < (MasterserviceForm.length);j++) {
      // if(MasterserviceForm[j].shop_id == this.ShopHolidaysDetails1[i].shop_id){
         var newNum = "currentid";
         let currentUserId = localStorage.getItem('currentUserId');
         this.MasterserviceForm[j][newNum] = currentUserId;
       }
+      
       console.log("ssss>>>>>",MasterserviceForm.service_name);
     this.http.post(config_url+'/shop/AddMasterservice',{MasterserviceForm})
       .subscribe(res => {
@@ -448,6 +456,7 @@ export class ShopServiceComponent implements  OnInit{
         }
 
     });
+  }
     console.log(MasterserviceForm);
 
 
@@ -456,8 +465,8 @@ export class ShopServiceComponent implements  OnInit{
 
   AddShopserviceDetails(shopserviceForm:any) {
     // let formData = new FormData();
-    // formData.append('test','2');
-    // (<HTMLInputElement>document.getElementById("addserviceshopbtn")).disabled=true;
+    // formData.append('test','2'); 
+    // (<HTMLInputElement>document.getElementById("autocserviceid")).disabled=true;
     // (<HTMLInputElement>document.getElementById("addserviceshopbtn")).style.opacity="1";
     console.log(shopserviceForm);
     // let hidden_service = (<HTMLInputElement>document.getElementById("hidden_service")).value;
@@ -526,10 +535,12 @@ console.log(error.status)
 
   selectEvent(item:any) {
     this.toastr.error("Enter New Service Name");
+    this.shopservicestatus = true;
     this.MasterserviceForm.controls.service_name.setValue("");
   }
 
   onChangeSearch(val: string) {
+    this.shopservicestatus = false;
     // fetch remote data from here
     // And reassign the 'data' which is binded to 'data' property.
   }
@@ -620,6 +631,13 @@ success => {
 
       )
 
+    }
+
+    clickoutside() {
+      alert("hi");
+      console.log("hi");
+      // (<HTMLInputElement>document.getElementById("clickcheckid")).click();
+      // alert("clickcheckid");
     }
 }
 

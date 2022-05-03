@@ -1,6 +1,6 @@
 <div style="overflow-x: hidden;">
 <div class="headerbelowheight" ></div>
-
+<div style="height: 7px;"></div>
 <div id="movetopid"></div>
 <h2 class="mainheading" style="text-align:center;">My Online Booking</h2>
 
@@ -15,7 +15,7 @@
  
 <div class="col-sm-10">
 
-  <form [formGroup]="onlinebooking" class="form-container" style="margin-left: -63px; margin-right: -74px;">
+  <form [formGroup]="onlinebooking" class="form-container onlinebookformcls" >
       <mat-card style="border: 1px solid #aeaeae;background-color: #dfe1eccc;">
 
         <!-- <mat-card-header>
@@ -26,7 +26,7 @@
         </mat-card-header> -->
 
 
-        <div class="row" style="padding-top: 10px;padding-bottom: 10px;margin-left: -73px;">
+        <div class="row bookingdetailscls"  style="padding-top: 10px;padding-bottom: 10px;">
           <div class="col-sm-7 onlinebookingforms" >
 
             <h2 class="mainheading">  Booking Details</h2>
@@ -38,6 +38,14 @@
                   <div >
                   <label>Booking Date <span class="requiredfield">  *</span></label> <br>
                   <input class="datecls" min="{{current_date}}" type="date" style="border: 1px solid;height: 34px;width: 110px;"  formControlName="bookingdate" placeholder="Date From" id="booking_date" >
+                
+                  <div *ngIf="onlinebooking.controls['bookingdate'].touched && onlinebooking.controls['bookingdate'].invalid ">
+                    <div *ngIf="onlinebooking.controls['bookingdate'].errors" style="color: red;">
+                     <div *ngIf="onlinebooking.controls['bookingdate'].errors.required" style="margin-left: 0px;font-size: 12px;">
+                         Select Date
+                     </div>
+                   </div>
+                 </div>
                 </div>
                 </td>
                 <td style="width: 40px;">
@@ -181,7 +189,7 @@
                   <label >Drop time</label>
       <br>
 
-                        <select formControlName="drop_time" style="height: 34px;"  class="fromdata">
+                        <select formControlName="drop_time" style="height: 34px;"  class="fromdata" id="drop_time">
                           <option value="">--Select---</option>
                           <!-- <option value="12:00 am">12:00 am</option> -->
         <!-- <option value="1:00 am">1:00 am</option>
@@ -224,13 +232,7 @@
                     <!-- <br> -->
                       <textarea class="textcls" formControlName="instructions" style="border: 1px solid;height: 58px;width: 581px !important;" id="instructions" matinput="" placeholder=""></textarea>
 
-                      <div *ngIf="onlinebooking.controls['bookingdate'].touched && onlinebooking.controls['bookingdate'].invalid ">
-                        <div *ngIf="onlinebooking.controls['bookingdate'].errors" style="color: red;">
-                         <div *ngIf="onlinebooking.controls['bookingdate'].errors.required" style="margin-left: 0px;font-size: 12px;">
-                             Select Date
-                         </div>
-                       </div>
-                     </div>
+                      
                     </div>
                   </td>
                 </tr>
@@ -242,8 +244,8 @@
 
         <div class="col-sm-5">
           <div *ngIf="offerslist != null && offerslist.length !=0" class="dealofthedaysection">
-            <h2 *ngIf="offerslist.length == 1" class="mainheading" style="text-align: center;">Deal Of The Day </h2>
-            <h2 *ngIf="offerslist.length > 1" class="mainheading" style="text-align: center;">Deals Of The Day</h2>
+            <h2 *ngIf="offerslist.length == 1" class="mainheading dealsheadingcls" style="text-align: center;">Deal Of The Day </h2>
+            <h2 *ngIf="offerslist.length > 1" class="mainheading dealsheadingcls" style="text-align: center;">Deals Of The Day</h2>
           <!-- <div class="accordion1" *ngIf="offerslist != null && offerslist.length !=0"> -->
           <!---End of Booking details-->
 
@@ -251,7 +253,7 @@
           <!-- <h2 class="title1 subheading"  (click)="opened1 = !opened1">Deal Of The Day (offers)  <i class="fa fa-chevron-down"></i> </h2>  -->
           <!-- <div class="content-container1" [class.opened1]="opened1"> -->
             <!-- style="margin-left: -90px;" -->
-          <div class="col-sm-12" >
+          <div class="col-sm-12 dealofdaycls" >
           <!-- <div class="col-sm-12">
           <div class="container"> -->
 
@@ -359,9 +361,9 @@
 
           <br>
           <!-- <br><br> -->
-          <div class="comboofferpricediv" style="font-size: 17px;text-align: center; margin-left: 226px;">
+          <div class="comboofferpricediv" style="font-size: 17px;">
           <input type="hidden" formControlName="combo_id" id="ComboPrimaryIdArr" class="selectnow2"  >
-          <label class="mainheading" id="name" >Combo Offer price </label> &nbsp; <i style="margin-right: -13px;" class="fa fa-rupee"></i>
+          <label class="subheading" id="name" ><b>Combo Offer price</b> </label> &nbsp; <i style="margin-right: -13px;" class="fa fa-rupee"></i>
           <input type="number" readonly id="finalamount" formControlName="comboprice_total" class="selectnow2"  >
           <br>
           <!-- <div > -->
@@ -466,8 +468,13 @@
 </div>
 </div>
 <br>
+<<<<<<< HEAD
 <div class="col-sm-12 extraservPrice" style="text-align: right; margin-left: -32px;">
   <label class="mainheading">Extra Services price: </label> &nbsp; <i style="margin-right: -13px;" class="fa fa-rupee"></i>
+=======
+<div class="col-sm-12 extraservPrice" style="text-align: right;">
+  <label class="subheading"><b>Extra Services price:</b> </label> &nbsp; <i style="margin-right: -13px;" class="fa fa-rupee"></i>
+>>>>>>> 40ba160c1e0ffc6d83b41a326e268d8dd53f7ea8
       <input readonly type="number" id="totalamount" formControlName="serviceprice_total" class="selectnow2"  >
 </div>
 
@@ -493,11 +500,11 @@
 <!-- <input  type="checkbox" id="vehicle1" name="vehicle1" checked formControlName="payment_type" disabled> &nbsp;
 <label for="vehicle1"> Cash On Delivery</label> &nbsp; &nbsp; -->
 
-<label class="mainheading">Payment Type: </label>
-      <input readonly type="text" formControlName="payment_type" style="margin-left: 4px;border: none;width: 129px;color: #198754;font-weight: bold;"   class="selectnow2"  >
+<label class="subheading"><b>Payment Type:</b> </label>
+      <input readonly type="text" formControlName="payment_type" style="margin-left: 4px;border: none;width: 129px;color: #198754;font-weight: bold;font-size: 14px;"   class="selectnow2"  >
 &nbsp;
 <input type="hidden" formControlName="services"  class="selectnow2"  >
-<label class="mainheading">Net Amount Payable: </label> &nbsp; <i style="margin-right: -13px;" class="fa fa-rupee"></i>
+<label class="subheading"><b>Net Amount Payable:</b> </label> &nbsp; <i style="margin-right: -13px;" class="fa fa-rupee"></i>
       <input readonly type="number" formControlName="payable_amt" id="final_totalamount" class="selectnow2"  >
       <br><br>
 
