@@ -131,7 +131,7 @@
                         <div class="form-group">
                         <label class="customerProfileLbl">Date of Birth </label>
                         <p class="labelFieldSpace" style="display: none;"></p>
-                        <input type="date" max="{{current_date}}" class="page.pdf span.date-toggle datepicker"   style="width: 119px !important;padding-right: 0px;border-radius: 2px !important;background: white;border: 1px solid #878787;" [(ngModel)]="CustomerDataById1.dob" placeholder="" formControlName="dob">
+                        <input type="date" max="{{current_date}}"   (keydown)="disableDate()" class="page.pdf span.date-toggle datepicker"   style="width: 119px !important;padding-right: 0px;border-radius: 2px !important;background: white;border: 1px solid #878787;" [(ngModel)]="CustomerDataById1.dob" placeholder="" formControlName="dob">
                         <!-- <div *ngIf="profileform.controls['dob'].touched && profileform.controls['dob'].invalid ">
 
                             <div *ngIf="profileform.controls['dob'].errors" style="color: red;">

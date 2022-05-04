@@ -608,6 +608,9 @@ AddCustomerCarDetails(cardetailForm:any)
       }
 
    
+      disableDate(){
+        return false;
+    }
 
   }
 
