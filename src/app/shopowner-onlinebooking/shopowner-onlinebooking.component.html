@@ -410,7 +410,7 @@
 <br><br><br>
 <div class="comboofferpricediv" style="font-size: 17px;margin-top: 15px;text-align: center;">
 <input type="hidden" formControlName="combo_id" id="ComboPrimaryIdArr" class="selectnow2"  >
-<label class="subheading" style="font-weight: bold;" id="name" >Combo Offer price </label> &nbsp; <i style="margin-right: -13px;" class="fa fa-rupee"></i>
+<label class="subheading" style="font-weight: bold;" id="name" >Combo Offer price </label> &nbsp; <i style="font-size: 14px;" class="fa fa-rupee"></i>
 <input type="number" readonly id="finalamount" formControlName="comboprice_total" class="selectnow2"  >
 <br>
 <!-- <div > -->
@@ -522,10 +522,11 @@
 
     <div class="belowextraservicesection" style="font-size: 17px;text-align: right;">
       <div *ngIf="shopdetails1 != null && shopdetails1.length !=0">
-        <label style="font-weight: bold;" class="subheading">Extra Services price: </label> &nbsp; <i style="margin-right: -13px;" class="fa fa-rupee"></i>
+        <div class=" extraservPrice" style="text-align: right;">
+        <label style="font-weight: bold;" class="subheading extraservicelbl">Extra Services price : </label> <span>&nbsp; <i style="font-size: 14px;" class="fa fa-rupee"></i></span>
       <input readonly type="number" id="totalamount" formControlName="serviceprice_total" class="selectnow2"  >
     </div>
-<br><br>
+<br></div>
 <!-- <input  type="checkbox" id="vehicle1" name="vehicle1" checked formControlName="payment_type" disabled> &nbsp;
 <label for="vehicle1"> Cash On Delivery</label> &nbsp; &nbsp; -->
 <div class="row">
@@ -536,24 +537,34 @@
   <div class="col-sm-6">
     <div class="row">
       <div class="col-sm-2"></div>
-      <div class="col-sm-5"></div>
+      <div class="col-sm-5">
+        <div class="paymenttypedivcls" >
+        <label class="subheading paymenttypelbl" style="font-weight: bold;">Payment Type: </label>
+        <input readonly type="text" formControlName="payment_type" style="margin-left: 4px;border: none;width: 129px;color: #198754;font-weight: bold;font-size: 14px;background: none;"   class="selectnow2"  >
+  &nbsp;
+  <input type="hidden" formControlName="services"  class="selectnow2"  >
+  </div>
+      </div>
+      <div class="col-sm-5">
+        <div class="netamtpayablecls" >
+        <label class="subheading amtpaylbl" style="font-weight: bold;">Net Amount Payable: </label> <span>&nbsp; <i style="font-size: 14px;" class="fa fa-rupee"></i></span>
+      <input readonly type="number" formControlName="payable_amt" id="final_totalamount" class="selectnow2"  >
+    </div>
+  </div>
     </div>
   </div>
   </div>
 
-<label class="subheading" style="font-weight: bold;">Payment Type: </label>
-      <input readonly type="text" formControlName="payment_type" style="margin-left: 4px;border: none;width: 129px;color: #198754;font-weight: bold;font-size: 14px;background: none;"   class="selectnow2"  >
-&nbsp;
-<input type="hidden" formControlName="services"  class="selectnow2"  >
-<label class="subheading" style="font-weight: bold;">Net Amount Payable: </label> &nbsp; <i style="margin-right: -13px;" class="fa fa-rupee"></i>
-      <input readonly type="number" formControlName="payable_amt" id="final_totalamount" class="selectnow2"  >
-      <br><br>
+
+
+      <br>
 
 
       <!-- <br> <br> -->
-
+<div class="cnfrmbtncls" >
       <button class="allSubmitbtn btn" mat-raised-button=""  [disabled]='!onlinebooking.valid' (click)="OnlineBooking(onlinebooking.value)">Confirm Booking</button>
-      </div>
+    </div> 
+    </div>
 
      <mat-card-actions style="text-align: right;">
 

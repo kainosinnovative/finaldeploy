@@ -839,7 +839,7 @@ initDonut(serviceDataOffers1:any) {
     },
     tooltip: {
       pointFormat: '{series.name}',
-      enabled:true
+      enabled:true,
       // pointFormat: '{series.name}: <b>{point.y}%</b>'
     },
     credits: {
