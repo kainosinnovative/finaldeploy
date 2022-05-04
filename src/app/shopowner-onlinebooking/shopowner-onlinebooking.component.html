@@ -466,13 +466,13 @@
               <div class="serviceprice" >
                 <ng-template  #other_content>
                   
-                  <div style="text-align: right !important;width: 252px !important;"> Service Price @
+                  <div style="width: 252px !important;"> Service Price @
                     <input readonly type="text" class="selectnow3" value="{{shoplist.actual_amount}}" id="amount_{{shoplist.service_id}}">
                   </div>
 
                 </ng-template>
 
-                <div style="text-align: right !important;width:  250px !important;" #other_content *ngIf = "date2 >= shoplist.from_date && date2 <= shoplist.to_date && shoplist.offer_percent!=0;else other_content"  >
+                <div style="width:  250px !important;" #other_content *ngIf = "date2 >= shoplist.from_date && date2 <= shoplist.to_date && shoplist.offer_percent!=0;else other_content"  >
                 <span class="discount2">  Up to {{shoplist. offer_percent}} %&nbsp;</span>&nbsp;Offer Price @
  
                   <input readonly type="text" class="selectnow3" value="{{shoplist.offer_price}}" id="amount_{{shoplist.service_id}}">
@@ -528,9 +528,21 @@
 <br><br>
 <!-- <input  type="checkbox" id="vehicle1" name="vehicle1" checked formControlName="payment_type" disabled> &nbsp;
 <label for="vehicle1"> Cash On Delivery</label> &nbsp; &nbsp; -->
+<div class="row">
+  <div class="col-sm-6">
+
+  </div>
+
+  <div class="col-sm-6">
+    <div class="row">
+      <div class="col-sm-2"></div>
+      <div class="col-sm-5"></div>
+    </div>
+  </div>
+  </div>
 
 <label class="subheading" style="font-weight: bold;">Payment Type: </label>
-      <input readonly type="text" formControlName="payment_type" style="margin-left: 4px;border: none;width: 129px;color: #198754;font-weight: bold;font-size: 14px;"   class="selectnow2"  >
+      <input readonly type="text" formControlName="payment_type" style="margin-left: 4px;border: none;width: 129px;color: #198754;font-weight: bold;font-size: 14px;background: none;"   class="selectnow2"  >
 &nbsp;
 <input type="hidden" formControlName="services"  class="selectnow2"  >
 <label class="subheading" style="font-weight: bold;">Net Amount Payable: </label> &nbsp; <i style="margin-right: -13px;" class="fa fa-rupee"></i>

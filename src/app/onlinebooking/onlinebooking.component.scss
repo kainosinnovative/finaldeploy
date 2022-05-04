@@ -193,7 +193,7 @@ padding: 1rem!important;
           width: 65px;
           border-radius: 6%;
           font-size: 16px;
-          margin-left: 20px;
+          margin-left: 5px;
 }
 
 .selectnow3{
@@ -240,7 +240,7 @@ padding: 1rem!important;
     border-radius: 6%;
     font-size: 15px;
 //margin-top: -11px;
-    margin-left: 10px;
+    margin-left: -4px;
 }
 
 .buy {
@@ -390,6 +390,9 @@ padding: 1rem!important;
   }
 
   @media screen and (min-width: 768px) {
+    .paymenttypedivcls{
+      margin-right: -50px;
+    }
     .dealsheadingcls{
       
         text-align: right !important;
@@ -455,6 +458,16 @@ padding: 1rem!important;
     }
 
   @media screen and (max-width: 768px) {
+    .netamtpayablecls{
+      margin-top: -78px;
+    }
+    .paymenttypedivcls{
+      margin-top: 31px;
+    }
+    // .bookingpaymentlbl{
+    //   margin-right: -8px;
+    // }
+    
     .selectnow3{
 
       width: 50px;
@@ -481,11 +494,17 @@ padding: 1rem!important;
       text-align: center !important;
       margin-right: -5px !important;
     }
+    .extraservicelbl{
+      width: 142px;
+    }
     .amtpaylbl{
       padding-top: 15px;
+      //width: 150px;
+      // width: 154px;
     }
     .paymenttypelbl{
-      margin-left: 11px;
+      
+      margin-left: 19px;
     }
   .pickupDroplbl {
     width: 100px;
@@ -542,7 +561,7 @@ padding: 1rem!important;
 
 .offerpriceMobile {
   height: 1px;
-  display: block !important;
+  // display: block !important;
 }
 
 .combovaluebox{

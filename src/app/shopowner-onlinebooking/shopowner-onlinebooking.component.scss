@@ -233,7 +233,7 @@ color: white;
     border-radius: 6%;
     font-size: 15px;
 //margin-top: -11px;
-    margin-left: 10px;
+    // margin-left: 10px;
 }
 
 .buy {
@@ -414,7 +414,7 @@ color: white;
         margin-left: 42px;
         font-size: 14px;
         // width: 197px !important;
-        text-align: right !important;
+        text-align: right;
     }
     .slick-slider {
       width: 50% !important;
@@ -427,7 +427,7 @@ color: white;
 
     .extser{
       // height: 72px;
-      margin-left: 10px !important;
+      // margin-left: 10px !important;
       // width: 638px;
     }
     .card {
@@ -460,7 +460,7 @@ color: white;
   }
 
   .comboofferpricediv{
-    margin-left: -21px;
+    // margin-left: -21px;
   }
 
   .serviceprice{
@@ -469,13 +469,14 @@ color: white;
       text-align: left;
       // margin-top: -30px;
       font-size: 14px;
-      margin-left: -46px;
+      // margin-left: -46px;
       margin-bottom: -17px;
   
 }
 
 .MobServSelectbtn {
-  text-align:left;
+  text-align:center;
+  margin-left: -144px;
 }
 
 .heightdiv {
@@ -491,7 +492,7 @@ color: white;
 
 .offerpriceMobile {
   height: 1px;
-  display: block !important;
+  // display: block !important;
 }
 
 .combovaluebox{

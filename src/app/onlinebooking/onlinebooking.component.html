@@ -363,7 +363,7 @@
           <!-- <br><br> -->
           <div class="comboofferpricediv" style="font-size: 17px;">
           <input type="hidden" formControlName="combo_id" id="ComboPrimaryIdArr" class="selectnow2"  >
-          <label class="subheading" id="name" ><b>Combo Offer price</b> </label> &nbsp; <i style="margin-right: -13px;" class="fa fa-rupee"></i>
+          <label class="subheading" id="name" ><b>Combo Offer price</b> </label> &nbsp; <i style="font-size: 14px;" class="fa fa-rupee"></i>
           <input type="number" readonly id="finalamount" formControlName="comboprice_total" class="selectnow2"  >
           <br>
           <!-- <div > -->
@@ -469,7 +469,7 @@
 </div>
 <br>
 <div class="col-sm-12 extraservPrice" style="text-align: right;">
-  <label class="subheading"><b>Extra Services price:</b> </label> &nbsp; <i style="margin-right: -13px;" class="fa fa-rupee"></i>
+  <label class="subheading extraservicelbl"><b>Extra Services price:</b>  </label> <span>&nbsp; <i style="font-size: 14px;" class="fa fa-rupee"></i></span>
       <input readonly type="number" id="totalamount" formControlName="serviceprice_total" class="selectnow2"  >
 </div>
 
@@ -494,13 +494,40 @@
 <!-- <br><br> -->
 <!-- <input  type="checkbox" id="vehicle1" name="vehicle1" checked formControlName="payment_type" disabled> &nbsp;
 <label for="vehicle1"> Cash On Delivery</label> &nbsp; &nbsp; -->
+<!-- <div class="bookingpaymentlbl" style="text-align: right;"> -->
 
-<label class="subheading paymenttypelbl"><b>Payment Type:</b> </label>
-      <input readonly type="text" formControlName="payment_type" style="margin-left: 4px;border: none;width: 129px;color: #198754;font-weight: bold;font-size: 14px;"   class="selectnow2"  >
+<div class="row">
+  <div class="col-sm-6">
+
+  </div>
+
+  <div class="col-sm-6">
+    <div class="row">
+      <div class="col-sm-2"></div>
+      <div class="col-sm-5">
+        <div class="paymenttypedivcls" >
+        <label class="subheading paymenttypelbl"><b>Payment Type:</b> </label>
+      <input readonly type="text" formControlName="payment_type" style="margin-left: 4px;border: none;width: 129px;color: #198754;font-weight: bold;font-size: 14px;background: none;"   class="selectnow2"  >
 &nbsp;
 <input type="hidden" formControlName="services"  class="selectnow2"  >
-<label class="subheading amtpaylbl"><b>Net Amount Payable:</b> </label> &nbsp; <i style="margin-right: -13px;" class="fa fa-rupee"></i>
+</div>
+        </div>
+        <div class="col-sm-5">
+          <div class="netamtpayablecls" >
+          <label class="subheading amtpaylbl"><b>Net Amount Payable:</b> </label>  <span>&nbsp; <i style="font-size: 14px;" class="fa fa-rupee"></i></span>
       <input readonly type="number" formControlName="payable_amt" id="final_totalamount" class="selectnow2"  >
+    </div>
+   </div>
+        </div>
+
+  </div>
+
+</div>
+
+
+<!-- </div> -->
+<!-- <br> -->
+
       <br><br>
 
 
