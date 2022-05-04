@@ -784,10 +784,11 @@ initDonut(serviceDataOffers1:any) {
   for(let i=0;i<serviceDataOffers1.length;i++){
      json1 =
     {
+      name2:((this.serviceDataOffers1[i].service_name + "<br>"+ "(" + this.serviceDataOffers1[i].model_name) + ")"),
       // + "<br>"+ "(" + serviceDataOffers1[i].model_name
       // - " + serviceDataOffers1[i].offer_percent + "%
-   name:  ((this.serviceDataOffers1[i].service_name + "<br>"+ "(" + this.serviceDataOffers1[i].model_name) + ") - " + serviceDataOffers1[i].offer_percent + "%"),
-  //  serviceDataOffers1[i].name,
+   //name1:  ((this.serviceDataOffers1[i].service_name + "<br>"+ "(" + this.serviceDataOffers1[i].model_name) + ") - " + serviceDataOffers1[i].offer_percent + "%"),
+  name:   serviceDataOffers1[i].offer_percent + "%",
    y: Number(serviceDataOffers1[i].offer_percent)
     }
     // alert(json1)
@@ -838,22 +839,24 @@ initDonut(serviceDataOffers1:any) {
       y: 0
     },
     tooltip: {
-      pointFormat: '{series.name}',
+      // pointFormat: '{series.name1}',
       enabled:true,
-      // pointFormat: '{series.name}: <b>{point.y}%</b>'
+      pointFormat: '{point.name2}'
     },
     credits: {
-      enabled: false
+      //pointFormat: '{series.name}',
+      // enabled: false
     },
     exporting:{
       enabled: false,
       },
     plotOptions: {
       pie: {
+       
         allowPointSelect: true,
         cursor: 'pointer',
         dataLabels: {
-          enabled: false,
+          enabled: true,
 
          distance: -50,
           style: {
@@ -868,8 +871,8 @@ initDonut(serviceDataOffers1:any) {
         // startAngle: -90,
         // endAngle: -180,
         center: ['50%', '50%'],
-        size: '100%',
-        showInLegend: true
+        size: '80%',
+        showInLegend: false
       }
     },
     
@@ -882,7 +885,7 @@ initDonut(serviceDataOffers1:any) {
         name: '',
         colorByPoint: true,
         data:  finaljson,
-
+        
         type: 'pie',
         innerSize: '50%',
       }],
