@@ -95,12 +95,12 @@
                   <img src="{{apiurlforhtm}}/{{s.shop_logo}}" style="width: 50px;margin-top: -7px;"> {{s.name}}
                   </div>
 
-                    <div *ngIf="s.wishlistcheck === 'Yes';else whislistElse"  class="fa fa-heart " id="wishlistvalue_{{s.shop_id}}" style="margin-top:12px;color: red;cursor: pointer;" (click)="clickEvent(s.shop_id,'combooffer')"> </div> 
+                    <div *ngIf="s.wishlistcheck === 'Yes';else whislistElse"  class="fa fa-heart " id="wishlistvalue_{{s.shop_id}}" style="margin-bottom: 14px;margin-top:12px;color: red;cursor: pointer;" (click)="clickEvent(s.shop_id,'combooffer')"> </div> 
                   
                      
                      
                      <ng-template #whislistElse>
-                      <span class="wishlist"  title="Add to Wishlist" id="wishlistvalue_{{s.shop_id}}" (click)="clickEvent(s.shop_id,'combooffer')" style="margin-top:12px;color: gray;cursor: pointer;"><i class="fa fa-heart"></i> </span>
+                      <span class="wishlist"  title="Add to Wishlist" id="wishlistvalue_{{s.shop_id}}" (click)="clickEvent(s.shop_id,'combooffer')" style="margin-top:12px;margin-bottom: 14px;color: gray;cursor: pointer;"><i class="fa fa-heart"></i> </span>
                      </ng-template>
                      
   
@@ -217,11 +217,11 @@
                   <img src="{{apiurlforhtm}}/{{s.shop_logo}}" style="width: 50px;margin-top: -7px;"> {{s.name}}
                   </div>
 
-                  <div *ngIf="s.wishlistcheck === 'Yes';else whislistElse2"  class="fa fa-heart " id="wishlistvalue2_{{s.shop_id}}" style="margin-top:12px;color: red;cursor: pointer;" (click)="clickEvent(s.shop_id,'offer')"> </div> 
+                  <div *ngIf="s.wishlistcheck === 'Yes';else whislistElse2"  class="fa fa-heart " id="wishlistvalue2_{{s.shop_id}}" style="margin-bottom: 14px;margin-top:12px;color: red;cursor: pointer;" (click)="clickEvent(s.shop_id,'offer')"> </div> 
                   
                  
                   <ng-template #whislistElse2>
-                   <span class="wishlist"  title="Add to Wishlist" id="wishlistvalue2_{{s.shop_id}}" (click)="clickEvent(s.shop_id,'offer')" style="margin-top:12px;color: gray;cursor: pointer;"><i class="fa fa-heart"></i> </span>
+                   <span class="wishlist"  title="Add to Wishlist" id="wishlistvalue2_{{s.shop_id}}" (click)="clickEvent(s.shop_id,'offer')" style="margin-bottom: 14px;margin-top:12px;color: gray;cursor: pointer;"><i class="fa fa-heart"></i> </span>
                   </ng-template>
 
              </div>

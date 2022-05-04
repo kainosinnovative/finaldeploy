@@ -5,9 +5,9 @@
   <div  style="overflow: hidden !important;">
 <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> -->
 <h2 style="text-align: center;" class="mainheading">Services/Offer Details</h2>
-<button   id="clickcheckid">
+<!-- <button   id="clickcheckid">
   test
-</button>
+</button> -->
 
 <!-- <div style="text-align: right;">
   <button class="btn btn-success" (click)="DisplayForm()" >Add New Service</button>
@@ -250,7 +250,7 @@
             <td>Service</td>
             <td class="" >
 
-        <ng-autocomplete id="autocserviceid"  style="height: 100% !important" class="ng-autocomplete"  minlength="3"  [data]="MasterServiceData1" formControlName="service_name" [searchKeyword]="keyword" (selected)='selectEvent($event)'
+        <ng-autocomplete id="autocserviceid"  style="height: 100% !important" class="ng-autocomplete"  minlength="3"   [data]="MasterServiceData1" formControlName="service_name" [searchKeyword]="keyword" (selected)='selectEvent($event)'
               (inputChanged)='onChangeSearch($event)'    (inputFocused)='onFocused($event)' [itemTemplate]="itemTemplate"
               [notFoundTemplate]="notFoundTemplate" >
             </ng-autocomplete>

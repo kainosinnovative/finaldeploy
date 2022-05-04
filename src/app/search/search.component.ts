@@ -543,6 +543,6 @@ userloggedin(shopid :number,model_id:any)
 
 
   checkModelAvail2(model_name:any) {
-    this.toastr.error("Add your "+ model_name + " in your profile sectoin and continue booking");
+    this.toastr.error("Add your "+ model_name + " in your profile section and continue booking");
   }
   }

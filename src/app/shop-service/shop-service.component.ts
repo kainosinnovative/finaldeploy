@@ -635,7 +635,7 @@ success => {
 
     clickoutside() {
       // alert("hi");
-      console.log("hi");
+      // console.log("hi");
       // (<HTMLInputElement>document.getElementById("clickcheckid")).click();
       // alert("clickcheckid");
     }

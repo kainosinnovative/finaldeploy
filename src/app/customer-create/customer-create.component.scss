@@ -9,27 +9,27 @@
 .accordion{
     // box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
     margin: 12px;
-    margin-left:80px;
-
-    padding:10px;
+    // margin-left: 132px;
+    padding: 10px;
+    width: 87%;
 
 }
  .accordion1{
     // box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
     margin: 12px;
-    margin-left:80px;
-
-    padding:10px;
+    // margin-left: 132px;
+    padding: 10px;
+    width: 87%;
 
 }
 
 .accordion2{
     // box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
     margin: 12px;
-    margin-left:80px;
+    // margin-left: 132px;
 
     padding:10px;
-
+    width: 87%;
 }
 
 .title  {
@@ -239,6 +239,19 @@ input {
 }
 
 @media screen and (max-width: 768px){
+    .accordion{
+        
+        margin-left: 60px;
+    }
+    .accordion1{
+        
+        margin-left: 60px;
+    }
+    .accordion2{
+        
+        margin-left: 60px;
+    }
+
     .favshopnamecls{
         height: 26px;
     }
@@ -257,6 +270,21 @@ input {
 }
 
 @media screen and (min-width: 768px){
+    .accordion{
+        
+        margin-left: 132px;
+    }
+    .accordion1{
+        
+        margin-left: 132px;
+    }
+    .accordion2{
+        
+        margin-left: 132px;
+    }
+    .firstaccordion2ndsection{
+        margin-left: 41px;
+    }
     .favshopnamecls{
         height: 15px;
     }
@@ -274,7 +302,7 @@ input {
 //   }
 
 .myvechleft{
-    margin-left: -58px;
+    margin-left: -21px;
     padding-left: 0px;
 }
 }

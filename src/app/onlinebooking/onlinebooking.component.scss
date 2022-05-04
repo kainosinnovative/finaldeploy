@@ -455,6 +455,18 @@ padding: 1rem!important;
     }
 
   @media screen and (max-width: 768px) {
+    .selectnow3{
+
+      width: 50px;
+     
+}
+    .servpricebookcls{
+      margin-left: -115px;
+    }
+
+    .servpricebookcls2{
+      margin-left: -66px;
+    }
     // .extser{
       
     //   height: 70px;
@@ -467,6 +479,13 @@ padding: 1rem!important;
     }
     .confirmbkngFinalcls{
       text-align: center !important;
+      margin-right: -5px !important;
+    }
+    .amtpaylbl{
+      padding-top: 15px;
+    }
+    .paymenttypelbl{
+      margin-left: 11px;
     }
   .pickupDroplbl {
     width: 100px;
@@ -498,12 +517,16 @@ padding: 1rem!important;
       
       text-align: left;
       margin-top: -30px;
-      font-size: 14px;
+      // margin-left: -111px;
+      font-size: 12px;
   
 }
 
 .MobServSelectbtn {
-  text-align:left;
+  
+    text-align: right;
+    padding-top: 5px;
+    margin-right: -9px;
 }
 
 .heightdiv {

@@ -117,7 +117,7 @@
                   <label >Pick-up Date <span class="requiredfield">  *</span></label>
       <br>
 
-      <input class="datecls" min="{{current_date1}}" (keydown)="disableDate()" type="date" (change)="dropdatapicker()" style="border: 1px solid;height: 34px;width: 110px;" matinput="" formControlName="pickup_date" id="pickup_dateid" placeholder="Date From" >
+      <input class="datecls" min="{{current_date}}" (keydown)="disableDate()" type="date" (change)="dropdatapicker()" style="border: 1px solid;height: 34px;width: 110px;" matinput="" formControlName="pickup_date" id="pickup_dateid" placeholder="Date From" >
       <!-- <br>  <span id="enddate_message2" style="color: red;display: none;">Pickup date Invalid</span> -->
   </div>
                 </td>
@@ -176,7 +176,7 @@
                   <div id="dropdatetdid" *ngIf="getPickupAvlData2 == 1" style="width: 110px;">
                   <label >Drop Date</label>
 
-      <input class="datecls" min="{{current_date1}}" (keydown)="disableDate()" type="date" style="border: 1px solid;height: 34px;width: 110px;" (change)="dropdatapicker()" id="drop_dateid" matinput="" formControlName="drop_date" placeholder="Date From" >
+      <input class="datecls" min="{{current_date}}" (keydown)="disableDate()" type="date" style="border: 1px solid;height: 34px;width: 110px;" (change)="dropdatapicker()" id="drop_dateid" matinput="" formControlName="drop_date" placeholder="Date From" >
       <br>  <span id="enddate_message1" style="color: red;display: none;">To date Invalid</span>
 
                 </div>
@@ -425,14 +425,14 @@
               <br>
               <div class="serviceprice">
                 <ng-template  #other_content>
-                  <div style="text-align: right !important;width: 252px !important;">
+                  <div style="text-align: right !important;width: 252px !important;" class="servpricebookcls">
                      Service Price @
                     <input readonly type="text" class="selectnow3" value="{{shoplist.actual_amount}}" id="amount_{{shoplist.service_id}}">
                   </div>
 
                 </ng-template>
 
-                <div #other_content style="text-align: right !important;width:  250px !important;" *ngIf = "date2 >= shoplist.from_date && date2 <= shoplist.to_date && shoplist.offer_percent!=0;else other_content" >
+                <div class="servpricebookcls2" #other_content style="text-align: right !important;width:  250px !important;" *ngIf = "date2 >= shoplist.from_date && date2 <= shoplist.to_date && shoplist.offer_percent!=0;else other_content" >
                   <span class="discount2">  Up to {{shoplist. offer_percent}} %&nbsp;</span>&nbsp;Offer Price @
                   <input readonly type="text" class="selectnow3" value="{{shoplist.offer_price}}" id="amount_{{shoplist.service_id}}">
                 </div>
@@ -495,11 +495,11 @@
 <!-- <input  type="checkbox" id="vehicle1" name="vehicle1" checked formControlName="payment_type" disabled> &nbsp;
 <label for="vehicle1"> Cash On Delivery</label> &nbsp; &nbsp; -->
 
-<label class="subheading"><b>Payment Type:</b> </label>
+<label class="subheading paymenttypelbl"><b>Payment Type:</b> </label>
       <input readonly type="text" formControlName="payment_type" style="margin-left: 4px;border: none;width: 129px;color: #198754;font-weight: bold;font-size: 14px;"   class="selectnow2"  >
 &nbsp;
 <input type="hidden" formControlName="services"  class="selectnow2"  >
-<label class="subheading"><b>Net Amount Payable:</b> </label> &nbsp; <i style="margin-right: -13px;" class="fa fa-rupee"></i>
+<label class="subheading amtpaylbl"><b>Net Amount Payable:</b> </label> &nbsp; <i style="margin-right: -13px;" class="fa fa-rupee"></i>
       <input readonly type="number" formControlName="payable_amt" id="final_totalamount" class="selectnow2"  >
       <br><br>
 

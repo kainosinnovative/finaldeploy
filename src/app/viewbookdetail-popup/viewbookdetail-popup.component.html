@@ -29,7 +29,7 @@
                                     <span> {{b.instructions}} </span> <br>
                                     Pickup: {{b.pickup_date}}   <span *ngIf="b.pickup_time">@ {{b.pickup_time}}</span>
                                     <br>
-                                    Drop: <span *ngIf="b.drop_date">{{b.drop_date}}</span>   <span *ngIf="b.drop_time">@ {{b.drop_time}}</span>
+                                   <p *ngIf="b.drop_date && b.drop_date != '0000-00-00'"> Drop: <span *ngIf="b.drop_date && b.drop_date != '0000-00-00'">{{b.drop_date}}</span>   <span *ngIf="b.drop_time">@ {{b.drop_time}}</span></p>
                                     
                                 </span>
 
@@ -45,7 +45,7 @@
                               <span> {{b.instructions}} </span> <br>
                               Pickup: {{b.pickup_date}}   <span *ngIf="b.pickup_time">@ {{b.pickup_time}}</span>
                               <br>
-                              Drop: <span *ngIf="b.drop_date">{{b.drop_date}}</span>   <span *ngIf="b.drop_time">@ {{b.drop_time}}</span>
+                              <p *ngIf="b.drop_date && b.drop_date != '0000-00-00'">Drop: <span *ngIf="b.drop_date && b.drop_date != '0000-00-00'">{{b.drop_date}}</span>   <span *ngIf="b.drop_time">@ {{b.drop_time}}</span></p>
                             </ng-template>
 
                             <!-- <span *ngIf="userroleSes == 'CustomerSes'">

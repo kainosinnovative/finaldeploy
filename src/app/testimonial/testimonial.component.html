@@ -26,11 +26,9 @@
           <div *ngIf="!test.profile_img"> <img style="width: 100px;height: 100px;padding:5px;" src="{{apiurlforhtm}}/images/avatar.png" class="rounded-circle"></div>
         </div>
         <!--Content-->
-        <h4 class="font-weight-bold dark-grey-text mt-4 subheading">{{test.firstname}}</h4>
+        <h4 class="font-weight-bold dark-grey-text  subheading">{{test.firstname}}</h4>
         <!-- <h6 class="font-weight-bold blue-text my-3">{{test.user_title}}</h6> -->
-        <p style="height: 54px;" class="font-weight-normal dark-grey-text secondsubheading">
-          {{test.user_description}}
-      </p>
+       
         <!--Review-->
 
         <!-- <div role="progressbar"   style="--value:{{test.user_rating}}"></div> -->
@@ -41,7 +39,7 @@
 
         <!-- <div class="inside-circle"> 75% </div> -->
         
-        <div *ngIf="test.user_rating == 1">
+        <div *ngIf="test.user_rating == 1" style="margin-top: -13px;">
           
           <span  class="fa fa-star checked"></span>
 <span  class="fa fa-star "></span>
@@ -50,7 +48,7 @@
 <span  class="fa fa-star"></span>
 </div>
 
-<div *ngIf="test.user_rating == 2">
+<div *ngIf="test.user_rating == 2" style="margin-top: -13px;">
           
   <span  class="fa fa-star checked"></span>
 <span  class="fa fa-star checked"></span>
@@ -59,7 +57,7 @@
 <span  class="fa fa-star"></span>
 </div>
 
-<div *ngIf="test.user_rating == 3">
+<div *ngIf="test.user_rating == 3" style="margin-top: -13px;">
  
   <span  class="fa fa-star checked"></span>
 <span  class="fa fa-star checked"></span>
@@ -68,7 +66,7 @@
 <span  class="fa fa-star"></span>
 </div>
 
-<div *ngIf="test.user_rating == 4">
+<div *ngIf="test.user_rating == 4" style="margin-top: -13px;">
           
   <span  class="fa fa-star checked"></span>
 <span  class="fa fa-star checked"></span>
@@ -77,7 +75,7 @@
 <span  class="fa fa-star"></span>
 </div>
 
-<div *ngIf="test.user_rating == 5">
+<div *ngIf="test.user_rating == 5" style="margin-top: -13px;">
           
   <span  class="fa fa-star checked"></span>
 <span  class="fa fa-star checked"></span>
@@ -85,6 +83,11 @@
 <span  class="fa fa-star checked"></span>
 <span  class="fa fa-star checked"></span>
 </div>
+
+
+<p style="height: 65px;" class="font-weight-normal dark-grey-text secondsubheading">
+  {{test.user_description}}
+</p>
        
       </div>
     <!-- </div> -->

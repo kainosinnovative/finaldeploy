@@ -270,15 +270,15 @@
           </div>
             <div class="col-lg-3 col-md-6 footerpopularlink">
               <div class="footer-link footerpopularlink" >
-                  <h2 style="color: black;margin-bottom: 8px !important;margin-left: -22px;">Useful Links </h2>
+                  <h2 class="footerusefullnk" style="color: black;margin-bottom: 8px !important;">Useful Links </h2>
 <div class="footerpopularlink">
 
 <p class="bloglinkMob">
-  <a *ngIf="userroleSes=='CustomerSes'" target=“_blank” href="https://www.carcare.org/" ><i class="fa fa-arrow-right" style="font-size: 13px; margin-left: -2px;"></i> &nbsp;car care</a>
+  <a *ngIf="userroleSes=='CustomerSes' || !userroleSes" target=“_blank” href="https://www.carcare.org/" ><i class="fa fa-arrow-right" style="font-size: 13px; margin-left: -2px;"></i> &nbsp;Car Care</a>
 </p>
 
 <p class="bloglinkMob">
-  <a *ngIf="userroleSes=='CustomerSes'" target=“_blank” href="https://www.carbibles.com/car-maintenance-tips/" ><i class="fa fa-arrow-right" style="font-size: 13px; margin-left: -2px;"></i> &nbsp; car Maintanence</a>
+  <a *ngIf="userroleSes=='CustomerSes' || !userroleSes" target=“_blank” href="https://www.carbibles.com/car-maintenance-tips/" ><i class="fa fa-arrow-right" style="font-size: 13px; margin-left: -2px;"></i> &nbsp; Car Maintanence</a>
 </p>
 
 <p class="bloglinkMob">
