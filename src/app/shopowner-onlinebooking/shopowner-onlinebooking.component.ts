@@ -723,7 +723,7 @@ slideConfig1 = {"slidesToShow": 1, "slidesToScroll": 1};
     let drop_date = this.onlinebooking.get('drop_date').value;
     // alert(drop_date)
     let drop_time = this.onlinebooking.get('drop_time').value;
-    // alert(pickup_date)
+    alert(pickup_date)
     // alert(instructions)
     // if(pickup_drop == false) {
 
@@ -742,30 +742,30 @@ slideConfig1 = {"slidesToShow": 1, "slidesToScroll": 1};
     }
 
      // pickdate -yes ,time - no
-     else if(pickup_date != null && pickup_time == '') {
+     else if(pickup_drop == true && pickup_date != "" && pickup_time == '') {
 
       (<HTMLInputElement>document.getElementById("pickup_timeid")).focus();
     this.toastr.error('Select pickup time');
 
   }
 // pick time - yes - date - no
-  else if(pickup_time  != null && pickup_date == '') {
+  else if(pickup_drop == true && pickup_time  != null && pickup_date == '') {
 
     (<HTMLInputElement>document.getElementById("pickup_dateid2")).focus();
-  this.toastr.error('Select pickup time');
+  this.toastr.error('Select pickup date');
 
 }
 
   // dropdate - yes, time - no
 
-  else if(drop_date != "" && drop_time == '') {
+  else if(pickup_drop == true && drop_date != "" && drop_time == '') {
 
     (<HTMLInputElement>document.getElementById("drop_time")).focus();
   this.toastr.error('Select drop time');
 
 }
 //  dropdate - no, time - yes
-else if(drop_time  != "" && drop_date == '') {
+else if(pickup_drop == true && drop_time  != "" && drop_date == '') {
 
   (<HTMLInputElement>document.getElementById("pickup_dateid2")).focus();
 this.toastr.error('Select drop date');
